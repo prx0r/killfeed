@@ -89,6 +89,8 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| deep panel | weekly 2y x6, point-in-time; FINRA tapes cached forever | build_deep_panel.py |
+| E029-E031 | deep screen (mom survives) → momentum-only +1.07 vs bh -1.60 | experiments |
 | divergence | insider buys into weakness beat strength-buys (E025 directional) | experiments |
 | pre-disclosure | trade→filing vs filing→+5d drift split (E026) | experiments |
 | ESPP gates | <$10k drop, ≥80% same-date+price reject (needs ≥3 rows) | experiments E027 |

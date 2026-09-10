@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import datetime
 import urllib.request
+from pathlib import Path
 
 UA = {"User-Agent": "bneck research contact@localhost",
       "Accept": "text/plain, */*"}
@@ -108,11 +109,10 @@ def short_history(tickers: list[str], dates: list[str],
             day -= _dt.timedelta(days=1)
             if day.weekday() >= 5:
                 continue
-            ds = day.strftime("%Y%m%d")
+            ds = day.strftime("%Y-%m-%d")
             for venue in VENUES:
-                body = _fetch(f"https://cdn.finra.org/equity/regsho/daily/"
-                              f"{venue}shvol{ds}.txt", timeout)
-                if body and "ShortVolume" in body:
+                body = short_file(ds, venue, timeout)
+                if body:
                     found = (ds, body)
                     break
             if found:
@@ -124,3 +124,27 @@ def short_history(tickers: list[str], dates: list[str],
         out[asof] = {t: parsed.get(t.upper(), {}).get("short_ratio")
                      for t in tickers}
     return out
+
+
+def short_file(day: str, venue: str = "CNMS", timeout: int = 30) -> str | None:
+    """Raw tape for a date, cached forever (historical tapes immutable)."""
+    import hashlib as _h
+    import json as _j
+    key = f"finra-{venue}-{day}"
+    cache = Path(__file__).resolve().parents[1] / "data" / "cache"
+    meta = cache / (key + ".meta.json")
+    blob = cache / (key + ".txt")
+    if blob.exists() and meta.exists():
+        try:
+            if _j.loads(meta.read_text()).get("rows", 0) > 100:
+                return blob.read_text(encoding="utf-8", errors="replace")
+        except (OSError, ValueError):
+            pass
+    body = _fetch(f"https://cdn.finra.org/equity/regsho/daily/"
+                  f"{venue}shvol{day.replace('-', '')}.txt", timeout)
+    if not body or "ShortVolume" not in body:
+        return None
+    cache.mkdir(parents=True, exist_ok=True)
+    blob.write_text(body, encoding="utf-8")
+    meta.write_text(_j.dumps({"rows": body.count("\n"), "venue": venue}))
+    return body

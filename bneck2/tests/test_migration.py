@@ -209,6 +209,29 @@ class TestPredict(unittest.TestCase):
         self.assertIsNone(PD.forward_return(cl, "2026-01-14", 5))
 
 
+class TestDeep(unittest.TestCase):
+    def test_biweekly_grid_count(self):
+        from bneck2 import predict as PD
+        g = PD.grid("biweekly", 12)
+        self.assertEqual(len(g), 24)
+        self.assertTrue(all(g[i] < g[i + 1] for i in range(len(g) - 1)))
+
+    def test_submissions_cached(self):
+        from bneck2 import predict as PD
+        PD._SUBMISSIONS_CACHE["TEST"] = {"cached": True}
+        self.assertEqual(PD.submissions("TEST"), {"cached": True})
+        del PD._SUBMISSIONS_CACHE["TEST"]
+
+    def test_shift(self):
+        from bneck2 import predict as PD
+        self.assertEqual(PD._shift("2026-09-10", -30), "2026-08-11")
+
+    def test_finra_cache_file(self):
+        from collectors import finra
+        import tempfile
+        self.assertTrue(callable(finra.short_file))
+
+
 class TestFocusedNames(unittest.TestCase):
     def test_registry_has_focus(self):
         from bneck2 import experiments as X

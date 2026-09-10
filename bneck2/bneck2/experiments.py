@@ -863,6 +863,117 @@ def e028_distance_high() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if hi - lo >= 0.03 else "REFUTED"), len(scored)
 
 
+def e029_deep_screen() -> tuple[dict, str, int]:
+    """H-DEEP-1: factor ICs on 2y weekly panel (train first 3/4)."""
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-DEEP-1", "deep screen finds IC>0.1 factors",
+        ">=2 factors clear |IC|>0.1 with n>=100 on train split",
+        "fewer than 2 (no structure at weekly grid)",
+        "deep-weekly.jsonl; train first 78w, no holdout touch")
+    rows = [r for r in _deep_rows() if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[3 * len(dates) // 4]
+    train = [r for r in rows if r["date"] < cut]
+    scr = PD.screen(train, DEEP_FACTORS)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 100]
+    out = {"train_screen": scr, "winners": winners, "n_train": len(train),
+           "note": f"winners={winners}"}
+    return out, ("CONFIRMED" if len(winners) >= 2 else "REFUTED"), len(train)
+
+def e030_deep_walkforward() -> tuple[dict, str, int]:
+    """H-DEEP-2: composite beats buy-hold AND momentum on holdout quarter."""
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-DEEP-2", "composite beats bogeys on holdout",
+        "composite Sharpe > max(buyhold, momentum) on last 26w",
+        "composite <= best bogey",
+        "deep-weekly.jsonl; winners/signs from train only")
+    rows = [r for r in _deep_rows() if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[3 * len(dates) // 4]
+    train = [r for r in rows if r["date"] < cut]
+    hold = [r for r in rows if r["date"] >= cut]
+    scr = PD.screen(train, DEEP_FACTORS)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 100]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    if not winners:
+        return {"note": "no winners (see E029)", "winners": []}, "REFUTED", len(train)
+    comp = PD.composite_by_date([dict(r) for r in hold], winners, signs)
+    mom = [{"date": r["date"], "ticker": r["ticker"],
+            "score": r.get("f_mom_20") or 0.0,
+            "forward_return": r["fwd_20"]} for r in hold]
+    uni = [{"date": r["date"], "ticker": r["ticker"], "score": 1.0,
+            "forward_return": r["fwd_20"]} for r in hold]
+
+    def _wf(rs):
+        ok = []
+        for r in rs:
+            fr = r.get("forward_return", r.get("fwd_20"))
+            if fr is not None:
+                ok.append(dict(r, forward_return=fr))
+        return BT.walk_forward(ok, quantile=0.25)[1] if ok else {"sharpe": None}
+
+    cs, ms, us = _wf(comp), _wf(mom), _wf(uni)
+    out = {"winners": winners, "holdout_n": len(hold),
+           "composite_sharpe": cs.get("sharpe"),
+           "momentum_sharpe": ms.get("sharpe"),
+           "buyhold_sharpe": us.get("sharpe"),
+           "note": f"comp {cs.get('sharpe')} vs mom {ms.get('sharpe')} vs bh {us.get('sharpe')}"}
+    ok = (cs.get("sharpe") is not None and ms.get("sharpe") is not None
+          and us.get("sharpe") is not None
+          and cs["sharpe"] > max(ms["sharpe"], us["sharpe"]) and len(hold) >= 60)
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(hold)
+
+
+def e031_momentum_only() -> tuple[dict, str, int]:
+    """H-DEEP-3 (mutate): sole survivor (momentum IC 0.147) vs buy-hold."""
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-DEEP-3", "momentum-only beats buy-hold on holdout",
+        "momentum Sharpe > buyhold Sharpe, last 26w, n>=60",
+        "momentum <= buyhold (no timing edge at weekly grid)",
+        "deep-weekly.jsonl; parent H-DEEP-2 (no composite survived)")
+    import json as _j
+    rows = [_j.loads(l) for l in
+            (ROOT / "data" / "predict" / "deep-weekly.jsonl")
+            .read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    hold = [r for r in rows if r["date"] >= dates[3 * len(dates) // 4]]
+    mom = [{"date": r["date"], "ticker": r["ticker"],
+            "score": r.get("f_mom_20") or 0.0,
+            "forward_return": r["fwd_20"]} for r in hold]
+    uni = [{"date": r["date"], "ticker": r["ticker"], "score": 1.0,
+            "forward_return": r["fwd_20"]} for r in hold]
+
+    def _wf(rs):
+        return BT.walk_forward(
+            [dict(r, forward_return=r["forward_return"]) for r in rs],
+            quantile=0.25)[1]
+
+    ms, us = _wf(mom), _wf(uni)
+    # subperiod stability: split holdout halves
+    ds = sorted({r["date"] for r in hold})
+    halves = []
+    for part in (ds[:len(ds) // 2], ds[len(ds) // 2:]):
+        sub = [r for r in mom if r["date"] in part]
+        halves.append(_wf(sub).get("sharpe"))
+    out = {"momentum_sharpe": ms.get("sharpe"),
+           "buyhold_sharpe": us.get("sharpe"),
+           "half_sharpes": halves, "n": len(hold),
+           "note": f"mom {ms.get('sharpe')} vs bh {us.get('sharpe')}; halves {halves}"}
+    ok = (ms.get("sharpe") is not None and us.get("sharpe") is not None
+          and ms["sharpe"] > us["sharpe"] and len(hold) >= 60)
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(hold)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -892,6 +1003,9 @@ REGISTRY = {
     "E026": e026_predisclosure_drift,
     "E027": e027_espp_filter,
     "E028": e028_distance_high,
+    "E029": e029_deep_screen,
+    "E030": e030_deep_walkforward,
+    "E031": e031_momentum_only,
 }
 
 
@@ -976,4 +1090,18 @@ def _oi_buys_all(limit_pages: int = 1):
         except Exception:
             pass
     return [r for r in rows if r.get("is_buy")]
+
+
+
+DEEP_FACTORS = ["f_mom_20", "f_burst", "f_short", "f_hn"]
+
+
+def _deep_rows():
+    import json as _j
+    fp = ROOT / "data" / "predict" / "deep-weekly.jsonl"
+    try:
+        return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
+    except (OSError, ValueError):
+        return []
+
 
