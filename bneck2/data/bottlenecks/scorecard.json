@@ -1,0 +1,173 @@
+{
+ "asof": "2026-09-10",
+ "method": "judgment scorecard, see BOTTLENECK-FRAMEWORK.md",
+ "bottlenecks": [
+  "B1-laser",
+  "B2-telemetry",
+  "B3-dsp",
+  "B4-bom",
+  "B5-aichip",
+  "B6-hbm",
+  "B7-capex",
+  "B8-margin",
+  "B9-laborarb",
+  "B10-multiple",
+  "B11-concentration",
+  "B12-bypass"
+ ],
+ "scores": {
+  "LITE": {
+   "total": 30,
+   "by_bottleneck": [
+    5,
+    4,
+    1,
+    3,
+    0,
+    1,
+    2,
+    4,
+    0,
+    3,
+    4,
+    3
+   ]
+  },
+  "COHR": {
+   "total": 27,
+   "by_bottleneck": [
+    4,
+    5,
+    1,
+    3,
+    0,
+    1,
+    2,
+    3,
+    0,
+    2,
+    3,
+    3
+   ]
+  },
+  "AAOI": {
+   "total": 30,
+   "by_bottleneck": [
+    3,
+    5,
+    0,
+    5,
+    0,
+    0,
+    3,
+    5,
+    0,
+    2,
+    5,
+    2
+   ]
+  },
+  "MRVL": {
+   "total": 25,
+   "by_bottleneck": [
+    1,
+    2,
+    5,
+    2,
+    1,
+    0,
+    2,
+    2,
+    0,
+    3,
+    3,
+    4
+   ]
+  },
+  "AVGO": {
+   "total": 20,
+   "by_bottleneck": [
+    0,
+    1,
+    3,
+    4,
+    1,
+    0,
+    2,
+    2,
+    0,
+    2,
+    3,
+    2
+   ]
+  },
+  "NVDA": {
+   "total": 19,
+   "by_bottleneck": [
+    0,
+    0,
+    1,
+    1,
+    3,
+    4,
+    3,
+    1,
+    0,
+    3,
+    2,
+    1
+   ]
+  },
+  "PANW": {
+   "total": 12,
+   "by_bottleneck": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    4,
+    1,
+    4,
+    0,
+    0
+   ]
+  },
+  "CRWD": {
+   "total": 12,
+   "by_bottleneck": [
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    4,
+    1,
+    4,
+    0,
+    0
+   ]
+  },
+  "CHGG": {
+   "total": 8,
+   "by_bottleneck": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    5,
+    1,
+    0,
+    0
+   ]
+  }
+ }
+}
