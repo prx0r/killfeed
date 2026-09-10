@@ -712,6 +712,157 @@ def e024_pm_vs_x_order() -> tuple[dict, str, int]:
             "proxy_evidence": "E022 HN lags price +3w r=0.69"}, "INCONCLUSIVE", 0
 
 
+def e025_divergence() -> tuple[dict, str, int]:
+    """H-DIV-1: insider buying into price weakness beats buying strength.
+
+    Frontier (Johnsen 2026): divergent insider-bullish (buy vs bearish
+    news) +2.46% next-day; convergent already priced. Our proxy for news:
+    trailing-20d momentum sign at FILING date (public-info discipline).
+    """
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-DIV-1", "divergent buys beat convergent buys",
+        "buys with mom_20<0 outperform buys with mom_20>=0 by >=3pp fwd-20d",
+        "no gap (divergence adds nothing)",
+        "OpenInsider market-wide buys + Yahoo (filing-dated)")
+    rows = _oi_buys_all()
+    groups = {"div": [], "conv": []}
+    for r in rows:
+        t = r.get("ticker", "")
+        fd = (r.get("filing_date", "") or "")[:10]
+        if not t or len(fd) != 10:
+            continue
+        cl = {c["date"]: c["close"] for c in P.history(t, "3mo").get("closes", [])}
+        ds = sorted(cl)
+        i = next((k for k, d in enumerate(ds) if d >= fd), None)
+        if i is None or i < 20 or i + 20 >= len(ds):
+            continue
+        mom = (cl[ds[i]] - cl[ds[i - 20]]) / cl[ds[i]]
+        fwd = (cl[ds[i + 20]] - cl[ds[i]]) / cl[ds[i]]
+        groups["div" if mom < 0 else "conv"].append(fwd)
+    out = {k: {"n": len(v), "mean": round(sum(v) / len(v), 4) if v else None}
+           for k, v in groups.items()}
+    dm = out["div"]["mean"] if out["div"]["n"] else None
+    cm = out["conv"]["mean"] if out["conv"]["n"] else None
+    out["note"] = f"divergent {dm} (n={out['div']['n']}) vs convergent {cm} (n={out['conv']['n']})"
+    n = out["div"]["n"] + out["conv"]["n"]
+    verdict = ("CONFIRMED" if dm is not None and cm is not None and dm - cm >= 0.03
+               else "REFUTED" if n >= 10 else "INCONCLUSIVE")
+    return out, verdict, n
+
+
+def e026_predisclosure_drift() -> tuple[dict, str, int]:
+    """H-PRE-1: most of the move happens between trade and filing dates
+    (Ozlen & Batumoglu 2026: 70-80% pre-disclosure)."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-PRE-1", "pre-disclosure drift dominates",
+        "|trade->filing move| > |filing->+5d move| on >=60% of buys",
+        "filing-window moves dominate (disclosure is the event)",
+        "OpenInsider buy rows with both dates + Yahoo")
+    rows = _oi_buys_all()
+    pre, post, n = 0.0, 0.0, 0
+    for r in rows:
+        t = r.get("ticker", "")
+        td, fd = (r.get("trade_date", "") or "")[:10], (r.get("filing_date", "") or "")[:10]
+        if not t or len(td) != 10 or len(fd) != 10:
+            continue
+        cl = {c["date"]: c["close"] for c in P.history(t, "3mo").get("closes", [])}
+        ds = sorted(cl)
+        try:
+            i0 = next(k for k, d in enumerate(ds) if d >= td)
+            i1 = next(k for k, d in enumerate(ds) if d >= fd)
+        except StopIteration:
+            continue
+        if i1 + 5 >= len(ds):
+            continue
+        pre += abs((cl[ds[i1]] - cl[ds[i0]]) / cl[ds[i0]]) if cl[ds[i0]] else 0
+        post += abs((cl[ds[min(i1 + 5, len(ds) - 1)]] - cl[ds[i1]]) / cl[ds[i1]]) if cl[ds[i1]] else 0
+        n += 1
+        if n >= 40:
+            break
+    out = {"n": n, "pre_mean": round(pre / n, 4) if n else None,
+           "post_mean": round(post / n, 4) if n else None,
+           "note": f"pre-disclosure {pre / n:+.2%} vs post {post / n:+.2%} (n={n})" if n else "no rows"}
+    verdict = ("CONFIRMED" if n >= 10 and pre > post
+               else "REFUTED" if n >= 10 else "INCONCLUSIVE")
+    return out, verdict, n
+
+
+def e027_espp_filter() -> tuple[dict, str, int]:
+    """H-ESP-1: same-date+price clusters are programmatic (Johnsen gates).
+
+    Audit our cluster feed: flag groups where >=80% of qualifying buys
+    share date+price, and <$10k singles. Reports contamination rate."""
+    from bneck2 import lab as LAB
+    from collectors import openinsider as OI
+    LAB.preregister(
+        "H-ESP-1", "cluster feed contains programmatic blocks",
+        ">=1 cluster group meets ESPP signature (>=80% same date+price)",
+        "no group meets it (feed is clean)",
+        "cluster_buys page rows")
+    rows = OI.cluster_buys()
+    from collections import Counter
+    flagged, total = 0, 0
+    for t in {r.get("ticker", "") for r in rows if r.get("ticker")}:
+        g = [r for r in rows if r.get("ticker") == t and r.get("value_usd", 0) >= 10000]
+        if len(g) < 3:
+            continue  # singletons trivially "match" — not a cluster
+        total += 1
+        keys = Counter((r.get("trade_date", ""), r.get("price", "")) for r in g)
+        if keys and max(keys.values()) / len(g) >= 0.8:
+            flagged += 1
+    out = {"groups": total, "flagged": flagged,
+           "note": f"{flagged}/{total} cluster groups look programmatic"}
+    return out, ("CONFIRMED" if flagged > 0 else "REFUTED"), total
+
+
+def e028_distance_high() -> tuple[dict, str, int]:
+    """H-DH-1: buys nearer 52w highs do better (microcap paper: 36% weight).
+
+    Pilot on market-wide buy rows: split by distance-from-high terciles,
+    compare forward-20d means."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-DH-1", "distance-from-high sorts buy outcomes",
+        "top-tercile (nearest high) beats bottom by >=3pp fwd-20d",
+        "no ordering (distance is noise here)",
+        "OpenInsider buys + Yahoo 1y highs, filing-dated")
+    rows = _oi_buys_all()
+    scored = []
+    cache = {}
+    for r in rows:
+        t = r.get("ticker", "")
+        fd = (r.get("filing_date", "") or "")[:10]
+        if not t or len(fd) != 10:
+            continue
+        if t not in cache:
+            cache[t] = {c["date"]: c["close"] for c in P.history(t, "1y").get("closes", [])}
+        cl = cache[t]
+        ds = sorted(cl)
+        i = next((k for k, d in enumerate(ds) if d >= fd), None)
+        if i is None or i + 20 >= len(ds) or i < 200:
+            continue
+        hi = max(c for d, c in cl.items() if d <= ds[i])
+        dist = (cl[ds[i]] - hi) / hi if hi else 0
+        fwd = (cl[ds[i + 20]] - cl[ds[i]]) / cl[ds[i]]
+        scored.append((dist, fwd))
+        if len(scored) >= 60:
+            break
+    if len(scored) < 9:
+        return {"note": "insufficient buy rows with history", "n": len(scored)}, "INCONCLUSIVE", len(scored)
+    scored.sort()
+    k = max(len(scored) // 3, 1)
+    lo = sum(s[1] for s in scored[:k]) / k
+    hi = sum(s[1] for s in scored[-k:]) / k
+    out = {"n": len(scored), "near_high": round(hi, 4), "far_high": round(lo, 4),
+           "note": f"near-high {hi:+.1%} vs far {lo:+.1%} (n={len(scored)})"}
+    return out, ("CONFIRMED" if hi - lo >= 0.03 else "REFUTED"), len(scored)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -737,6 +888,10 @@ REGISTRY = {
     "E022": e022_hn_leads_price,
     "E023": e023_filings_vs_chatter,
     "E024": e024_pm_vs_x_order,
+    "E025": e025_divergence,
+    "E026": e026_predisclosure_drift,
+    "E027": e027_espp_filter,
+    "E028": e028_distance_high,
 }
 
 
@@ -808,4 +963,17 @@ def _weekly_panel_16w(ticker: str, cik: str, hn_query: str):
         rets.append(round((w[-1] - w[0]) / w[0], 4) if len(w) >= 2 and w[0] else 0.0)
     return starts, sec, hn_counts, rets
 
+
+
+
+def _oi_buys_all(limit_pages: int = 1):
+    """Market-wide buy rows (cluster + officer + latest), filing-dated."""
+    from collectors import openinsider as OI
+    rows = []
+    for fn in (OI.cluster_buys, OI.officer_buys):
+        try:
+            rows += fn()
+        except Exception:
+            pass
+    return [r for r in rows if r.get("is_buy")]
 

@@ -212,7 +212,8 @@ class TestPredict(unittest.TestCase):
 class TestFocusedNames(unittest.TestCase):
     def test_registry_has_focus(self):
         from bneck2 import experiments as X
-        for e in ("E018", "E019", "E020"):
+        for e in ("E018", "E019", "E020", "E021", "E022", "E023",
+                  "E024", "E025", "E026", "E027", "E028"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

@@ -89,6 +89,10 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| divergence | insider buys into weakness beat strength-buys (E025 directional) | experiments |
+| pre-disclosure | trade→filing vs filing→+5d drift split (E026) | experiments |
+| ESPP gates | <$10k drop, ≥80% same-date+price reject (needs ≥3 rows) | experiments E027 |
+| distance-high | near-high buys beat far buys (E028 directional) | experiments |
 | lead-lag | xcorr ±4w; SEC→price +4w/-0.32, price→HN +3w/0.69, HN→filings +4w/0.75 | leads.py, E021-E024 |
 | organism order | prices≈PM > whales > filings > HN echo > build > labs > research > permissions > macro | docs/ORGANISM.md |
 | source graph | 27 nodes (25 LIVE), validated both directions | scripts/sources_graph.py, data/sources/graph.json |
