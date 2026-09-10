@@ -2183,6 +2183,23 @@ def e053_step_obsolescence() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), len(rows)
 
 
+def g003_death_watch() -> tuple[dict, str, int]:
+    """G-GRAPH-3: researcher-sourced THREATENS overlay covers >=10 names."""
+    import json as _j
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "G-GRAPH-3", "death-watch overlay >=10 THREATENS edges with quotes",
+        "overlay grows with dated researcher evidence",
+        "overlay shrinks below 10 (extractor regressed or quiet corpus)",
+        "threat_graph.json overlay; min 2 negatives; researcher quotes")
+    ov = _j.load(open(ROOT / "data" / "bottlenecks" / "threat_graph.json"))
+    n = len(ov.get("edges", []))
+    with_ev = sum(1 for e in ov.get("edges", []) if e.get("evidence"))
+    res = {"edges": n, "with_evidence": with_ev,
+           "note": f"{n} THREATENS edges, {with_ev} evidenced"}
+    return res, ("CONFIRMED" if n >= 10 else "REFUTED"), n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2239,6 +2256,7 @@ REGISTRY = {
     "E051": e051_reflexivity,
     "E052": e052_capex_reflex,
     "E053": e053_step_obsolescence,
+    "G003": g003_death_watch,
 }
 
 
@@ -2363,6 +2381,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 

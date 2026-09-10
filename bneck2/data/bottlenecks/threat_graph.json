@@ -1,0 +1,1164 @@
+{
+ "nodes": [
+  {
+   "id": "CO_NVDA",
+   "type": "company",
+   "label": "NVDA",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_SKHY",
+   "type": "company",
+   "label": "SKHY",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_INTC",
+   "type": "company",
+   "label": "INTC",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_TSM",
+   "type": "company",
+   "label": "TSM",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_CRWD",
+   "type": "company",
+   "label": "CRWD",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_CSCO",
+   "type": "company",
+   "label": "CSCO",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_DBA",
+   "type": "company",
+   "label": "DBA",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_IREN",
+   "type": "company",
+   "label": "IREN",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_SIVE",
+   "type": "company",
+   "label": "SIVE",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_AAOI",
+   "type": "company",
+   "label": "AAOI",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_AMD",
+   "type": "company",
+   "label": "AMD",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_APP",
+   "type": "company",
+   "label": "APP",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_AVGO",
+   "type": "company",
+   "label": "AVGO",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_COHR",
+   "type": "company",
+   "label": "COHR",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_DDOG",
+   "type": "company",
+   "label": "DDOG",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_DT",
+   "type": "company",
+   "label": "DT",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_JBL",
+   "type": "company",
+   "label": "JBL",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_MRVL",
+   "type": "company",
+   "label": "MRVL",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_QLYS",
+   "type": "company",
+   "label": "QLYS",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_RPD",
+   "type": "company",
+   "label": "RPD",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_S",
+   "type": "company",
+   "label": "S",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  },
+  {
+   "id": "CO_TENB",
+   "type": "company",
+   "label": "TENB",
+   "status": "watched",
+   "grade": "SUPPORTED",
+   "provenance": "feedify researcher corpus"
+  }
+ ],
+ "edges": [
+  {
+   "source": "PML_L0",
+   "target": "CO_NVDA",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "as to wonder: If OpenAI says AI played a key role in designing Jalape\u00f1o, what is the new potential for other chip designers? One would imagine that $NVDA or $AMD have the resources and talent to take ",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "$NVDA created the neocloud industry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to take advantage",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "dustry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to take advantage of its quasi-monopoly $NVDA managed to get GPU-starved hyperscalers to str",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_SKHY",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Tek and other top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.c",
+     "source": "feedify:dnystedt",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "low), which focused on HBM/DRAM/HBF. Better yet, watch the entire session. It would be nearly impossible for you to come away with the belief MU SNDK $SKHY $005930 are at the top of a cycle or that HB",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta",
+     "source": "feedify:PhotonCap",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_INTC",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "d other top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.co/nlfJ",
+     "source": "feedify:dnystedt",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta",
+     "source": "feedify:PhotonCap",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "ophisticated logic component, leading $SKHY to outsource production to $TSM's 12nm-class process rather than manufacture it entirely in-house. - The $INTC angle remains unconfirmed, but the broader sh",
+     "source": "feedify:PhotonCap",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_TSM",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "r top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.co/nlfJmPxs2T",
+     "source": "feedify:dnystedt",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "saying the equipment was being moved and started to slide out of control, killing the 22-year old man, who was unable to get out of the way in time. $TSM #semiconductors https://t.co/1upJk8xngG",
+     "source": "feedify:dnystedt",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta",
+     "source": "feedify:PhotonCap",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_CRWD",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "I to identify attacks before they could even occur, and identified them as a leading AI cybersecurity company long before their IPO. Says Bloomberg, $CRWD offers \"an AI detection and response system t",
+     "source": "feedify:nanalyzetweets",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate on gross-margin risk. CrowdStrike Holdings, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "High. CrowdStrike Holdings, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_CSCO",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "High. Cisco Systems, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate-to-High. Cisco Systems, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_DBA",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel.",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "$DBA EXECUTIVE ASSESSMENT (1/x) The agricultural commodity complex presents a constructive but highly heterogeneous setup. The bullish case rests on tigh",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "$DBA breaking out. All commodities are dirt and diesel. https://t.co/CsHUiKPIgc",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_IREN",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Maybe I\u2019m going nuts I think $IREN is executing well and that the earnings were almost as good as $NBIS I genuinely think the only main, clear negative lately has been the executive",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "$IREN brings out so many dumb takes It\u2019s painful to read or listen to For some reason, this company attracts the most amateur critics with the shortest a",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "$IREN is just mega in the dog house right now. At this point, you need to let time pass, let the noise die down, and probably let a few of these upper-man",
+     "source": "feedify:StonkChris",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_SIVE",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Mix of algorithms, short sellers, dozens of repurposed/dormant accounts dedicated toward spreading negative news about $SIVE Hard to believe accounts used for marketing during 2016 Asian ICOs or new X",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "ubled relative to the jump of $JBL + $GFS. So it's signals that the new pluggable engagements might be pretty substantial relative to Jabil. So if $SIVE comes along with enormous amounts of CW DFB las",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "rently they've been in the works for this for awhile since it's \"available now\", and THIS IS VERY MATERIAL. CW lasers are in a massive shortage and $SIVE brought on new supply outside of Win Semi (als",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_AAOI",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Applied Optoelectronics, Inc.: negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_AMD",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "der: If OpenAI says AI played a key role in designing Jalape\u00f1o, what is the new potential for other chip designers? One would imagine that $NVDA or $AMD have the resources and talent to take this kind",
+     "source": "feedify:HyperTechInvest",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "has recently eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. $AMD and $AVGO reportedly booked most of Powertech's",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_APP",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Applovin $APP may have set a record for most short reports issued in 1.5 years - eight of them from seven different authors. The company issued public responses",
+     "source": "feedify:nanalyzetweets",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "d evil. Short reports are most useful when they target companies we hold or want to hold. Someone did all the work for you. If you're an Applovin $APP shareholder, you ought to at least browse the eig",
+     "source": "feedify:nanalyzetweets",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_AVGO",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "ntly eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. $AMD and $AVGO reportedly booked most of Powertech's planned",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate. Broadcom Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_COHR",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "InP substrates bottleneck/chokepoint got validated. With AXT it\u2019s more of a matter of ASP hikes moving forward with their agreements like $LITE and $COHR. AXT is negatively affected by high beta AI se",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "and Coherent Corp.: NEGATIVE",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_DDOG",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate on gross margin despite Positive revenue growth. Datadog, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "High. Datadog, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_DT",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate on infrastructure-cost intensity. Dynatrace, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate-to-High. Dynatrace, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_JBL",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "etter once they expand product lines (eg. More downstream into optical engines or complete pluggables). In the meantime I think it\u2019s better to track $JBL / qualification ramps and wafer capacity model",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "bottlenecked market. TLDR: - NEW substantial FOUNDRY ALLOCATION! (very, very material during CW laser shortage) - 6 new pluggable players outside of $JBL - Clear revenue ramp timelines from Jabil Heav",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_MRVL",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "ve for legacy DRAM shortages. 6. Cisco at SEMICON Taiwan said CPO is ready for mass deployment; pluggable modules will remain the market mainstay. $MRVL also said customers are actively planning scale",
+     "source": "feedify:aleabitoreddit",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "reating each business separately. - Chart analysis, Credit: @danjang1205, Thank You! The daily chart has improved meaningfully. Since the July low, $MRVL has formed higher lows and reclaimed key short",
+     "source": "feedify:PhotonCap",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_QLYS",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate-to-High. Qualys, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate. Qualys, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_RPD",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate. Rapid7, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "High. Rapid7, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_S",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate. SentinelOne, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    },
+    {
+     "value": "Moderate-to-High. SentinelOne, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  },
+  {
+   "source": "PML_L0",
+   "target": "CO_TENB",
+   "relation": "THREATENS",
+   "grade": "SUPPORTED",
+   "valid_from": "2026-08-01",
+   "valid_to": null,
+   "confidence": "medium",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "Moderate-to-High. Tenable Holdings, Inc.: Negative",
+     "source": "feedify:TheValueist",
+     "date": "2026-08",
+     "confidence": 0.55
+    }
+   ],
+   "note": "AI model/app capability threatens cash flow (researcher-sourced)"
+  }
+ ]
+}

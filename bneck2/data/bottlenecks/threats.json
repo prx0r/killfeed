@@ -1,0 +1,895 @@
+{
+ "NVDA": {
+  "researchers": [
+   "ArjunNMurti_historical",
+   "HyperTechInvest",
+   "TheValueist",
+   "nanalyzetweets"
+  ],
+  "n_researchers": 4,
+  "negatives": 6,
+  "positives": 2,
+  "quotes": [
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "as to wonder: If OpenAI says AI played a key role in designing Jalape\u00f1o, what is the new potential for other chip designers? One would imagine that $NVDA or $AMD have the resources and talent to take "
+   },
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "$NVDA created the neocloud industry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to take advantage"
+   },
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "dustry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to take advantage of its quasi-monopoly $NVDA managed to get GPU-starved hyperscalers to str"
+   }
+  ]
+ },
+ "SKHY": {
+  "researchers": [
+   "PhotonCap",
+   "TheValueist",
+   "dnystedt"
+  ],
+  "n_researchers": 3,
+  "negatives": 6,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "dnystedt",
+    "date": "",
+    "text": "Tek and other top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.c"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "low), which focused on HBM/DRAM/HBF. Better yet, watch the entire session. It would be nearly impossible for you to come away with the belief MU SNDK $SKHY $005930 are at the top of a cycle or that HB"
+   },
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta"
+   }
+  ]
+ },
+ "INTC": {
+  "researchers": [
+   "PhotonCap",
+   "dnystedt",
+   "jukan05"
+  ],
+  "n_researchers": 3,
+  "negatives": 5,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "dnystedt",
+    "date": "",
+    "text": "d other top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.co/nlfJ"
+   },
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta"
+   },
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "ophisticated logic component, leading $SKHY to outsource production to $TSM's 12nm-class process rather than manufacture it entirely in-house. - The $INTC angle remains unconfirmed, but the broader sh"
+   }
+  ]
+ },
+ "TSM": {
+  "researchers": [
+   "PhotonCap",
+   "dnystedt"
+  ],
+  "n_researchers": 2,
+  "negatives": 5,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "dnystedt",
+    "date": "",
+    "text": "r top TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.co/nlfJmPxs2T"
+   },
+   {
+    "by": "dnystedt",
+    "date": "",
+    "text": "saying the equipment was being moved and started to slide out of control, killing the 22-year old man, who was unable to get out of the way in time. $TSM #semiconductors https://t.co/1upJk8xngG"
+   },
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "- Initial reports said $SKHY was considering dual-sourcing HBM4E base dies from $TSM and $INTC Foundry, but $SKHY later said it is \u201cnot currently considering Intel Foundry for HBM4E production.\u201d - Sta"
+   }
+  ]
+ },
+ "CRWD": {
+  "researchers": [
+   "TheValueist",
+   "nanalyzetweets"
+  ],
+  "n_researchers": 2,
+  "negatives": 3,
+  "positives": 1,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "I to identify attacks before they could even occur, and identified them as a leading AI cybersecurity company long before their IPO. Says Bloomberg, $CRWD offers \"an AI detection and response system t"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate on gross-margin risk. CrowdStrike Holdings, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. CrowdStrike Holdings, Inc.: Negative"
+   }
+  ]
+ },
+ "CSCO": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 3,
+  "positives": 2,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Cisco Systems, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Cisco Systems, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. Cisco Systems, Inc.: Negative"
+   }
+  ]
+ },
+ "DBA": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 3,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel."
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA EXECUTIVE ASSESSMENT (1/x) The agricultural commodity complex presents a constructive but highly heterogeneous setup. The bullish case rests on tigh"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA breaking out. All commodities are dirt and diesel. https://t.co/CsHUiKPIgc"
+   }
+  ]
+ },
+ "IREN": {
+  "researchers": [
+   "HyperTechInvest",
+   "StonkChris"
+  ],
+  "n_researchers": 2,
+  "negatives": 3,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "Maybe I\u2019m going nuts I think $IREN is executing well and that the earnings were almost as good as $NBIS I genuinely think the only main, clear negative lately has been the executive"
+   },
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "$IREN brings out so many dumb takes It\u2019s painful to read or listen to For some reason, this company attracts the most amateur critics with the shortest a"
+   },
+   {
+    "by": "StonkChris",
+    "date": "",
+    "text": "$IREN is just mega in the dog house right now. At this point, you need to let time pass, let the noise die down, and probably let a few of these upper-man"
+   }
+  ]
+ },
+ "SIVE": {
+  "researchers": [
+   "aleabitoreddit"
+  ],
+  "n_researchers": 1,
+  "negatives": 3,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "Mix of algorithms, short sellers, dozens of repurposed/dormant accounts dedicated toward spreading negative news about $SIVE Hard to believe accounts used for marketing during 2016 Asian ICOs or new X"
+   },
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "ubled relative to the jump of $JBL + $GFS. So it's signals that the new pluggable engagements might be pretty substantial relative to Jabil. So if $SIVE comes along with enormous amounts of CW DFB las"
+   },
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "rently they've been in the works for this for awhile since it's \"available now\", and THIS IS VERY MATERIAL. CW lasers are in a massive shortage and $SIVE brought on new supply outside of Win Semi (als"
+   }
+  ]
+ },
+ "AAOI": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 1,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Applied Optoelectronics, Inc.: negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Applied Optoelectronics, Inc.: negative"
+   }
+  ]
+ },
+ "AMD": {
+  "researchers": [
+   "HyperTechInvest",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 2,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "der: If OpenAI says AI played a key role in designing Jalape\u00f1o, what is the new potential for other chip designers? One would imagine that $NVDA or $AMD have the resources and talent to take this kind"
+   },
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "has recently eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. $AMD and $AVGO reportedly booked most of Powertech's"
+   }
+  ]
+ },
+ "APP": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "Applovin $APP may have set a record for most short reports issued in 1.5 years - eight of them from seven different authors. The company issued public responses"
+   },
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "d evil. Short reports are most useful when they target companies we hold or want to hold. Someone did all the work for you. If you're an Applovin $APP shareholder, you ought to at least browse the eig"
+   }
+  ]
+ },
+ "AVGO": {
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 2,
+  "negatives": 2,
+  "positives": 3,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "ntly eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. $AMD and $AVGO reportedly booked most of Powertech's planned"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate. Broadcom Inc.: Negative"
+   }
+  ]
+ },
+ "COHR": {
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 2,
+  "negatives": 2,
+  "positives": 6,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "InP substrates bottleneck/chokepoint got validated. With AXT it\u2019s more of a matter of ASP hikes moving forward with their agreements like $LITE and $COHR. AXT is negatively affected by high beta AI se"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "and Coherent Corp.: NEGATIVE"
+   }
+  ]
+ },
+ "DDOG": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate on gross margin despite Positive revenue growth. Datadog, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Datadog, Inc.: Negative"
+   }
+  ]
+ },
+ "DT": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate on infrastructure-cost intensity. Dynatrace, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. Dynatrace, Inc.: Negative"
+   }
+  ]
+ },
+ "JBL": {
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 2,
+  "negatives": 2,
+  "positives": 2,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "etter once they expand product lines (eg. More downstream into optical engines or complete pluggables). In the meantime I think it\u2019s better to track $JBL / qualification ramps and wafer capacity model"
+   },
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "bottlenecked market. TLDR: - NEW substantial FOUNDRY ALLOCATION! (very, very material during CW laser shortage) - 6 new pluggable players outside of $JBL - Clear revenue ramp timelines from Jabil Heav"
+   }
+  ]
+ },
+ "MRVL": {
+  "researchers": [
+   "PhotonCap",
+   "TheValueist",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 3,
+  "negatives": 2,
+  "positives": 3,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "ve for legacy DRAM shortages. 6. Cisco at SEMICON Taiwan said CPO is ready for mass deployment; pluggable modules will remain the market mainstay. $MRVL also said customers are actively planning scale"
+   },
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "reating each business separately. - Chart analysis, Credit: @danjang1205, Thank You! The daily chart has improved meaningfully. Since the July low, $MRVL has formed higher lows and reclaimed key short"
+   }
+  ]
+ },
+ "QLYS": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. Qualys, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate. Qualys, Inc.: Negative"
+   }
+  ]
+ },
+ "RPD": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate. Rapid7, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Rapid7, Inc.: Negative"
+   }
+  ]
+ },
+ "S": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate. SentinelOne, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. SentinelOne, Inc.: Negative"
+   }
+  ]
+ },
+ "TENB": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 2,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. Tenable Holdings, Inc.: Negative"
+   },
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate-to-High. Tenable Holdings, Inc.: Negative"
+   }
+  ]
+ },
+ "AAPL": {
+  "researchers": [
+   "dnystedt"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "dnystedt",
+    "date": "",
+    "text": "TSMC clients in a win for Intel, media report, adding the victory is mainly due to the continued shortage of TSMC\u2019s CoWoS capacity. $SKHY $INTC $TSM $AAPL #semiconductors https://t.co/nlfJmPxs2T"
+   }
+  ]
+ },
+ "AXTI": {
+  "researchers": [
+   "aleabitoreddit"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "the restrictions.\" \"China has recently eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. $AMD and $AVGO reportedly "
+   }
+  ]
+ },
+ "CIEN": {
+  "researchers": [
+   "crux_capital_"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "crux_capital_",
+    "date": "",
+    "text": "s) That extends the optical opportunity beyond the short links inside the building and into the coherent equipment carrying data across kilometers. $CIEN and $NOK are currently the leading vendors in "
+   }
+  ]
+ },
+ "CXMT": {
+  "researchers": [
+   "aleabitoreddit"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "TrendForce expects server DRAM contract prices to rise 13-18% QoQ in 3Q26 SK Hynix also publicly stated the memory shortage lasts through 2030. 5. $CXMT has begun producing HBM3E in small quantities a"
+   }
+  ]
+ },
+ "DINO": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel."
+   }
+  ]
+ },
+ "DLO": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "Typically, companies with double-digit revenue growth, strong gross margins, and positive net income command a premium valuation. For dLocal $DLO, the opposite is true. The company sports a very low s"
+   }
+  ]
+ },
+ "FN": {
+  "researchers": [
+   "crux_capital_"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "crux_capital_",
+    "date": "",
+    "text": "$FN is about to give major signals &gt; 1.6T volume / timelines &gt; Significance of component shortages &gt; NPO / CPO / OCS volume/timelines &gt; Chin"
+   }
+  ]
+ },
+ "GFS": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "GlobalFoundries Inc.: NEGATIVE"
+   }
+  ]
+ },
+ "KEEL": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "am with a dream might be offering up to investors, we never ever invest in a company with a negative gross margin. That's a huge red flag. Right now $KEEL is a speculative, cash-burning transition sto"
+   }
+  ]
+ },
+ "LITE": {
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ],
+  "n_researchers": 2,
+  "negatives": 1,
+  "positives": 5,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "the $AXTI InP substrates bottleneck/chokepoint got validated. With AXT it\u2019s more of a matter of ASP hikes moving forward with their agreements like $LITE and $COHR. AXT is negatively affected by high "
+   }
+  ]
+ },
+ "MPC": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel."
+   }
+  ]
+ },
+ "MSFT": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 3,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate over the longer term. Microsoft Corporation: Negative"
+   }
+  ]
+ },
+ "NBIS": {
+  "researchers": [
+   "HyperTechInvest"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "HyperTechInvest",
+    "date": "",
+    "text": "Maybe I\u2019m going nuts I think $IREN is executing well and that the earnings were almost as good as $NBIS I genuinely think the only main, clear negative lately has been the executive compensation packa"
+   }
+  ]
+ },
+ "NET": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 1,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Moderate. Cloudflare, Inc.: Negative"
+   }
+  ]
+ },
+ "NOK": {
+  "researchers": [
+   "crux_capital_"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "crux_capital_",
+    "date": "",
+    "text": "xtends the optical opportunity beyond the short links inside the building and into the coherent equipment carrying data across kilometers. $CIEN and $NOK are currently the leading vendors in disaggreg"
+   }
+  ]
+ },
+ "OKTA": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Okta, Inc.: Negative"
+   }
+  ]
+ },
+ "PANW": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 8,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "Palo Alto Networks, Inc.: Negative"
+   }
+  ]
+ },
+ "PLTR": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "You can tell what type of an investor someone is by how they react when you say a popular growth stock like $PLTR is on your short list. Responsible investors know there should only ever be one meanin"
+   }
+  ]
+ },
+ "PSX": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel."
+   }
+  ]
+ },
+ "RPI": {
+  "researchers": [
+   "aleabitoreddit"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "aleabitoreddit",
+    "date": "",
+    "text": "Yes, I added that as a side note. But my theory is $RPI eventually gets the overflow from mac Mini shortages. Same idea with Openclaw now applied to frontier lab agent RL training. And those sales wou"
+   }
+  ]
+ },
+ "SNDK": {
+  "researchers": [
+   "PhotonCap"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "PhotonCap",
+    "date": "",
+    "text": "- $SNDK's HBF is better viewed as a new memory tier between HBM and NAND rather than an HBM replacement. - HBF Grade 3 targets 512GB of capacity and up to 3"
+   }
+  ]
+ },
+ "SOFI": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "sacred cow is seen as a threat to their future imagined wealth. Now imagine someone managing a portfolio of stocks and one of the names is $ZETA or $SOFI. They're much more likely to perceive criticis"
+   }
+  ]
+ },
+ "VLO": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "$DBA $VLO $MPC $PSX $DINO All commodities are dirt and diesel."
+   }
+  ]
+ },
+ "ZETA": {
+  "researchers": [
+   "nanalyzetweets"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 0,
+  "quotes": [
+   {
+    "by": "nanalyzetweets",
+    "date": "",
+    "text": "of their sacred cow is seen as a threat to their future imagined wealth. Now imagine someone managing a portfolio of stocks and one of the names is $ZETA or $SOFI. They're much more likely to perceive"
+   }
+  ]
+ },
+ "ZS": {
+  "researchers": [
+   "TheValueist"
+  ],
+  "n_researchers": 1,
+  "negatives": 1,
+  "positives": 1,
+  "quotes": [
+   {
+    "by": "TheValueist",
+    "date": "",
+    "text": "High. Zscaler, Inc.: Negative"
+   }
+  ]
+ },
+ "DELL": {
+  "researchers": [],
+  "n_researchers": 0,
+  "negatives": 0,
+  "positives": 0,
+  "quotes": [],
+  "moat_flag": "SUPPLIER TRAP \u2014 assembler; moat accrues to NVDA (component) and the hyperscaler buyer. Falsified UP only if Dell captures a proprietary integration layer customers cannot replicate."
+ },
+ "FLR": {
+  "researchers": [],
+  "n_researchers": 0,
+  "negatives": 0,
+  "positives": 0,
+  "quotes": [],
+  "moat_flag": "SUPPLIER TRAP \u2014 EPC contractor; moat accrues to the data-center owner. Falsified UP only if Fluor secures exclusive multi-year DC-build capacity competitors cannot match."
+ }
+}

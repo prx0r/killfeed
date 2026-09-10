@@ -342,6 +342,18 @@ class TestEdges(unittest.TestCase):
             g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
         self.assertEqual(m2, [])
 
+    def test_threat_overlay(self):
+        import json
+        import subprocess
+        r = subprocess.run(["python3", "scripts/threat_extract.py"],
+                           capture_output=True, text=True, timeout=300)
+        self.assertEqual(r.returncode, 0, r.stderr[-500:])
+        ov = json.load(open("data/bottlenecks/threat_graph.json"))
+        self.assertGreaterEqual(len(ov["edges"]), 10)
+        for e in ov["edges"]:
+            self.assertEqual(e["relation"], "THREATENS")
+            self.assertTrue(e["evidence"])
+
     def test_propagate_spreads(self):
         from bneck2 import propagate as P
         g = {"nodes": [{"id": "A"}, {"id": "B"}],
@@ -447,7 +459,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "E051", "E052", "E053", "G001", "G002"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "E051", "E052", "E053", "G001", "G002", "G003"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
