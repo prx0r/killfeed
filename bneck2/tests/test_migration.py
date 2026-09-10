@@ -288,7 +288,8 @@ class TestFocusedNames(unittest.TestCase):
         from bneck2 import experiments as X
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
-                  "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041"):
+                  "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
+                  "E042", "E043"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
@@ -321,6 +322,12 @@ class TestFocusedNames(unittest.TestCase):
             self.assertTrue((LAB.ALOG / "a-log.jsonl").exists())
         finally:
             LAB.ALOG = old_dir
+
+    def test_secret_gate(self):
+        import subprocess
+        r = subprocess.run(["bash", str(ROOT / "scripts" / "check_secrets.sh")],
+                           capture_output=True, text=True, timeout=60)
+        self.assertEqual(r.returncode, 0, r.stdout[-500:])
 
     def test_beta_math(self):
         br = [0.01, -0.02, 0.03]

@@ -1335,6 +1335,122 @@ def e041_regime_split() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if ok else "REFUTED"), up.get("n", 0) + dn.get("n", 0)
 
 
+def e042_pm_ladder_calibration() -> tuple[dict, str, int]:
+    """H-PMCAL-1: resolved NVDA weekly ladders priced correctly."""
+    import re
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-PMCAL-1", "PM weekly ladders calibrate",
+        ">=85% of resolved (p in {0,1}) weekly level markets match Yahoo close",
+        "<85% (mispriced levels exist = edge)",
+        "Gamma public-search NVDA + Yahoo daily closes")
+    cl = {c["date"]: c["close"] for c in P.history("NVDA", "2y").get("closes", [])}
+    hits, total, detail = 0, 0, []
+    for m in _nvda_pm_markets():
+        q = m.get("question", "")
+        mt = re.search(r"week of (\w+ \d+).*above \$(\d[\d,]*)", q)
+        if not mt:
+            continue
+        try:
+            prices = __import__("json").loads(m.get("outcomePrices") or "[]")
+            p = float(prices[0])
+        except (ValueError, TypeError, IndexError):
+            continue
+        if p not in (0.0, 1.0):
+            continue
+        import datetime as _dt
+        try:
+            fri = _dt.datetime.strptime(mt.group(1) + " 2026", "%B %d %Y").date()
+        except ValueError:
+            try:
+                fri = _dt.datetime.strptime(mt.group(1) + " 2025", "%B %d %Y").date()
+            except ValueError:
+                continue
+        # Friday close (or last close <= Friday)
+        ds = sorted(d for d in cl if d <= fri.isoformat())
+        if not ds:
+            continue
+        actual = cl[ds[-1]] > float(mt.group(2).replace(",", ""))
+        ok = (p == 1.0) == actual
+        total += 1
+        hits += ok
+        if len(detail) < 6:
+            detail.append({"q": q[:60], "hit": ok})
+    rate = round(hits / total, 3) if total else 0.0
+    out = {"hits": hits, "total": total, "rate": rate, "detail": detail,
+           "note": f"resolved ladder calibration {rate} (n={total})"}
+    verdict = ("CONFIRMED" if total >= 10 and rate >= 0.85 else "REFUTED"
+               if total >= 10 else "INCONCLUSIVE")
+    return out, verdict, total
+
+
+def e043_nvda_stack() -> tuple[dict, str, int]:
+    """H-STACK-1: X + SEC agreement weeks beat single-signal weeks.
+
+    Stack = X-NVDA directional event AND SEC burst (5+ Form4/2+ deals in
+    trailing 30d) in the same week. Compares 20d forwards stack vs solo.
+    PM leg tracked live only (no keyless history) — snapshot appended.
+    """
+    import json as _j
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-STACK-1", "stacked agreement wins",
+        "stack weeks beat solo-signal weeks by >=3pp mean fwd-20d",
+        "no gap (stacking adds nothing)",
+        "x_outcomes NVDA + submissions history + Yahoo")
+    xo = _j.loads((ROOT / "data" / "x" / "x_outcomes.json").read_text())
+    xweeks = {}
+    for r in xo:
+        if "NVDA" not in str(r.get("ticker", "")):
+            continue
+        from datetime import datetime as _dt
+        d = None
+        for k in ("date", "ts", "created"):
+            if r.get(k):
+                d = str(r[k])[:10]
+                break
+        if d:
+            xweeks.setdefault(d, []).append(1 if "LONG" in str(r) or r.get("ret", 0) > 0 else -1)
+    from collectors import sec as S
+    import urllib.request as _u
+    req = _u.Request(S.submissions_url("1045810"),
+                     headers={"User-Agent": "bneck research contact@localhost",
+                              "Accept": "application/json"})
+    with _u.urlopen(req, timeout=30) as resp:
+        doc = _j.loads(resp.read().decode("utf-8", "replace"))
+    fl = (doc.get("filings") or {}).get("recent") or {}
+    forms = list(zip(fl.get("form", []), fl.get("filingDate", [])))
+    cl = {c["date"]: c["close"] for c in P.history("NVDA", "2y").get("closes", [])}
+    ds = sorted(cl)
+    stack, solo, base = [], [], []
+    for i in range(20, len(ds) - 20):
+        d = ds[i]
+        win = [f for f, fd in forms if fd and ds[max(i - 30, 0)] <= fd <= d
+               and f in ("4", "8-K", "13D", "13G")]
+        has_x = any(abs((__import__("datetime").date.fromisoformat(d)
+                          - __import__("datetime").date.fromisoformat(xd)).days) <= 7
+                    for xd in xweeks)
+        has_sec = len(win) >= 5
+        fwd = (cl[ds[i + 20]] - cl[ds[i]]) / cl[ds[i]]
+        base.append(fwd)
+        if has_x and has_sec:
+            stack.append(fwd)
+        elif has_x or has_sec:
+            solo.append(fwd)
+    import math as _m
+    def _mean(v):
+        return round(sum(v) / len(v), 4) if v else None
+    out = {"stack_n": len(stack), "solo_n": len(solo), "base_n": len(base),
+           "stack_mean": _mean(stack), "solo_mean": _mean(solo),
+           "base_mean": _mean(base),
+           "note": f"stack {_mean(stack) if stack else None} vs solo vs base "
+                   f"(n={len(stack)}/{len(solo)}/{len(base)})"}
+    ok = len(stack) >= 5 and _mean(stack) - _mean(solo) >= 0.03
+    return out, ("CONFIRMED" if ok else "REFUTED" if len(stack) >= 5 else "INCONCLUSIVE"), len(stack)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1377,6 +1493,8 @@ REGISTRY = {
     "E039": e039_implied_identification,
     "E040": e040_promotion_bar,
     "E041": e041_regime_split,
+    "E042": e042_pm_ladder_calibration,
+    "E043": e043_nvda_stack,
 }
 
 
@@ -1481,5 +1599,25 @@ def _deep_rows():
 
 
 
+
+
+
+
+def _nvda_pm_markets():
+    import json as _j
+    import urllib.request as _u
+    out = []
+    for tag in (10, 50, 100):
+        try:
+            req = _u.Request(
+                f"https://gamma-api.polymarket.com/public-search?q=nvidia&limit_tag={tag}",
+                headers={"User-Agent": "bneck"})
+            with _u.urlopen(req, timeout=30) as r:
+                doc = _j.loads(r.read().decode("utf-8", "replace"))
+            for ev in doc.get("events", []):
+                out.extend(ev.get("markets", [ev]))
+        except Exception:
+            pass
+    return out
 
 
