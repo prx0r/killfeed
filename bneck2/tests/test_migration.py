@@ -342,6 +342,26 @@ class TestEdges(unittest.TestCase):
             g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
         self.assertEqual(m2, [])
 
+    def test_attribution_pure(self):
+        from bneck2 import attribution as A
+        xs = [float(i) for i in range(12)]
+        self.assertEqual(A._r2(xs, xs), 1.0)
+        self.assertEqual(A._r2([1, 1, 1], [1, 2, 3]), 0.0)
+        for got, exp in zip(A._rets([100.0, 110.0, 99.0]), [0.1, -0.1]):
+            self.assertAlmostEqual(got, exp)
+        a = A.attribute("NOPE")
+        self.assertIn("error", a)
+        panel = A.load_panel()
+        self.assertGreaterEqual(len(panel), 80)
+
+    def test_concepts(self):
+        from bneck2 import concepts as C
+        r = C.concept_report("optics")
+        self.assertGreaterEqual(r["suppliers"], 3)
+        rel = [x["reliance"] for x in r["crash_rank"]]
+        self.assertEqual(rel, sorted(rel, reverse=True))
+        self.assertIn("memory", C.CONCEPT_GROUPS)
+
     def test_bearcase_boolean(self):
         from bneck2 import bearcase as B
         doc = {"trees": {"T": [{"id": "a", "w": 3, "poll": "manual", "q": "x"},
