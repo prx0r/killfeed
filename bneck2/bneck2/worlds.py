@@ -55,8 +55,8 @@ def signal_company(inc: dict, worlds: list[dict]) -> dict:
     """SUM_s (P_you - P_market) x Impact x Duration. Negative = the pool
     shrinks in our distribution vs market pricing -> short-side candidate."""
     surv = inc.get("survives", {})
-    duration = float(inc.get("tech_duration_years", 5.0))
-    pool = float(inc.get("profit_pool_usd", 0.0))
+    duration = float(inc.get("tech_duration_years") if inc.get("tech_duration_years") is not None else 5.0)
+    pool = float(inc.get("profit_pool_usd") if inc.get("profit_pool_usd") is not None else 0.0)
     total, terms = 0.0, []
     for w in worlds:
         gap = w["p_you"] - w["p_market"]

@@ -71,14 +71,13 @@ def permission_friction(node: dict) -> tuple[float, bool]:
 def severity(node: dict, reading: dict | None = None) -> dict:
     """Endogenous bottleneck severity B_i (thesis §40)."""
     reading = reading or {}
-    induced = float(reading.get("demand_growth", 1.0))
-    indispensability = float(node.get("revenue_purity", 0.5))
-    repl_years = float(node.get("replacement_years",
-                               node.get("td_years", 3.0)))
+    induced = float(reading.get("demand_growth") if reading.get("demand_growth") is not None else 1.0)
+    indispensability = float(node.get("revenue_purity") if node.get("revenue_purity") is not None else 0.5)
+    repl_years = float(node.get("replacement_years") if node.get("replacement_years") is not None else (node.get("td_years") if node.get("td_years") is not None else 3.0))
     replacement = min(max(repl_years / 10.0, 0.0), 1.0)
     perm, perm_est = permission_friction(node)
     permission = 0.5 + 0.5 * perm
-    substitutes = float(node.get("substitutability", 0.5))
+    substitutes = float(node.get("substitutability") if node.get("substitutability") is not None else 0.5)
     b = induced * indispensability * replacement * permission / (substitutes + EPS)
     return {"B": round(b, 4), "induced": induced,
             "indispensability": indispensability,
@@ -138,7 +137,7 @@ def cross_world_exposure(incumbent: dict, worlds: list[dict]) -> dict:
     terms, x = [], 0.0
     for w in worlds:
         need = 1.0 - float(surv.get(w["id"], 1.0))
-        contrib = float(w.get("p_you", 0.0)) * need
+        contrib = float(w.get("p_you") if w.get("p_you") is not None else 0.0) * need
         x += contrib
         terms.append({"world": w["id"], "p_you": w.get("p_you"),
                       "need": round(need, 3), "x": round(contrib, 4)})
@@ -170,7 +169,7 @@ def hazard_update(prior_hazard: float, catalysts: list[dict]) -> float:
     """h_B' = h_B x (1 + SUM strength x automation_event). Pure."""
     mult = 1.0
     for c in catalysts:
-        mult += float(c.get("strength", 0.0)) * float(c.get("event", 0.0))
+        mult += float(c.get("strength") if c.get("strength") is not None else 0.0) * float(c.get("event") if c.get("event") is not None else 0.0)
     return round(float(prior_hazard) * mult, 6)
 
 

@@ -294,6 +294,18 @@ class TestEdges(unittest.TestCase):
         cands = [c for c in cands if c["source"] != "TEST_A"]
         E.QUARANTINE.write_text(__import__("json").dumps(cands, indent=1))
 
+    def test_prophetmap_backbone(self):
+        import json
+        import subprocess
+        r = subprocess.run(["python3", "scripts/prophetmap_import.py"],
+                           capture_output=True, text=True, timeout=120)
+        self.assertEqual(r.returncode, 0, r.stderr[-500:])
+        g = json.load(open("data/bottlenecks/graph_v2.json"))
+        pml = [n for n in g["nodes"] if n["id"].startswith("PML_")]
+        self.assertGreaterEqual(len(pml), 25)
+        for n in pml:
+            self.assertNotIn("tickers", n)
+
     def test_highlevel_watchlist(self):
         import json
         d = json.load(open("data/universe/highlevel_watchlist.json"))
@@ -378,7 +390,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "G001"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "G001", "G002"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

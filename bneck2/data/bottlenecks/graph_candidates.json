@@ -686,5 +686,464 @@
   },
   "evidence": [],
   "note": "memo3: Twist complex-gene expansion"
+ },
+ {
+  "source": "PML_L0",
+  "target": "PML_L1",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L1",
+  "target": "PML_L2",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L2",
+  "target": "PML_L2_5",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L2_5",
+  "target": "PML_L3",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L3",
+  "target": "PML_L3_5",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L3_5",
+  "target": "PML_L4",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L4",
+  "target": "PML_L5",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L5",
+  "target": "PML_L5_5",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L5_5",
+  "target": "PML_L6",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L6",
+  "target": "PML_L7",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L7",
+  "target": "PML_L8",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L8",
+  "target": "PML_L8_NET",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L8_NET",
+  "target": "PML_L8_COOL",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L8_COOL",
+  "target": "PML_L8_OPT",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L8_OPT",
+  "target": "PML_L9",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L9",
+  "target": "PML_L10",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L10",
+  "target": "PML_L_DCOMP",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
  }
 ]

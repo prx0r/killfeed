@@ -30,8 +30,8 @@ def load_graph(path: Path = GRAPH_PATH) -> dict:
 
 
 def score_node(node: dict) -> float:
-    prevalence = float(node.get("prevalence", 0.5))
-    crowdedness = float(node.get("crowdedness", 0.5))
+    prevalence = float(node.get("prevalence") if node.get("prevalence") is not None else 0.5)
+    crowdedness = float(node.get("crowdedness") if node.get("crowdedness") is not None else 0.5)
     evidence = min(1.0, len(node.get("evidence", [])) / 5.0)
     return round(0.5 * prevalence + 0.3 * (1 - crowdedness) + 0.2 * evidence, 3)
 
@@ -44,7 +44,7 @@ def rank(graph: dict) -> list[tuple[float, dict]]:
 
 def rebalance_action(node: dict, score: float) -> str:
     status = node.get("status", "latent")
-    crowded = float(node.get("crowdedness", 0.5))
+    crowded = float(node.get("crowdedness") if node.get("crowdedness") is not None else 0.5)
     if status == "solved":
         return "EXIT — thesis played out or dissolved"
     if status == "binding" and crowded < 0.5 and score >= 0.55:
@@ -65,7 +65,7 @@ def short_score(node: dict, triggered: list[str] | None = None) -> float:
     kills = node.get("kill_signals", [])
     trig = set(triggered or [])
     ratio = (sum(1 for k in kills if k in trig) / len(kills)) if kills else 0.0
-    return round(float(node.get("crowdedness", 0.5)) * (0.3 + 0.7 * ratio), 3)
+    return round(float(node.get("crowdedness") if node.get("crowdedness") is not None else 0.5) * (0.3 + 0.7 * ratio), 3)
 
 
 def short_action(node: dict, sscore: float, triggered: list[str] | None = None) -> str:

@@ -88,7 +88,7 @@ def binding_score(node: dict, reading: dict | None = None) -> dict:
         (vehicle, 0.15),
     ]
     read_score = _wmean(comps)
-    prior = float(node.get("prevalence", 0.5))
+    prior = float(node.get("prevalence") if node.get("prevalence") is not None else 0.5)
     return {"binding": round(0.6 * prior + 0.4 * read_score, 3),
             "from_readings": round(read_score, 3), "prior": prior}
 
@@ -126,17 +126,17 @@ def tk_td(node: dict) -> dict:
 
 def redundancy_risk(node: dict) -> float:
     """P(agi)*P(deploy)*purity*leverage*years — rent destruction probability mass."""
-    agi = float(node.get("agi_p", 0.3))
-    dep = float(node.get("deploy_p", 0.5))
-    pur = float(node.get("revenue_purity", 0.5))
-    lev = min(float(node.get("op_leverage", 1.0)), 2.0) / 2.0
-    yrs = min(float(node.get("expect_years", 5.0)), 10.0) / 10.0
+    agi = float(node.get("agi_p") if node.get("agi_p") is not None else 0.3)
+    dep = float(node.get("deploy_p") if node.get("deploy_p") is not None else 0.5)
+    pur = float(node.get("revenue_purity") if node.get("revenue_purity") is not None else 0.5)
+    lev = min(float(node.get("op_leverage") if node.get("op_leverage") is not None else 1.0), 2.0) / 2.0
+    yrs = min(float(node.get("expect_years") if node.get("expect_years") is not None else 5.0), 10.0) / 10.0
     return round(agi * dep * pur * lev * yrs, 4)
 
 
 def short_convexity(node: dict) -> float:
     """RedundancyRisk * crowded / (1 - crowded + 0.2): monster-trade ranker."""
-    crowded = float(node.get("crowdedness", 0.5))
+    crowded = float(node.get("crowdedness") if node.get("crowdedness") is not None else 0.5)
     return round(redundancy_risk(node) * crowded / (1 - crowded + 0.2), 4)
 
 
@@ -144,7 +144,7 @@ def regime(node: dict, reading: dict | None = None,
            triggered: list[str] | None = None) -> dict:
     b = binding_score(node, reading)["binding"]
     d = dissolution_score(node, reading, triggered)["dissolution"]
-    crowded = float(node.get("crowdedness", 0.5))
+    crowded = float(node.get("crowdedness") if node.get("crowdedness") is not None else 0.5)
     status = node.get("status", "latent")
     if status == "solved" or d >= 0.8:
         reg = "EXIT"

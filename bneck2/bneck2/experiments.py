@@ -1870,6 +1870,25 @@ def g001_graph_coverage() -> tuple[dict, str, int]:
     return cov, ("CONFIRMED" if ok else "REFUTED"), cov["edges"]
 
 
+def g002_layer_backbone() -> tuple[dict, str, int]:
+    """G-GRAPH-2: ProphetMap layer backbone imported as typed nodes."""
+    import json as _j
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "G-GRAPH-2", "layer backbone present (>=25 PML nodes, >=80 linked tickers)",
+        "backbone persists and grows",
+        "backbone removed/shrunk (import regressed)",
+        "graph_v2.json PML_ nodes + suppliers[]")
+    g = _j.load(open(ROOT / "data" / "bottlenecks" / "graph_v2.json"))
+    pml = [n for n in g.get("nodes", []) if n.get("id", "").startswith("PML_")]
+    linked = sum(len(n.get("suppliers", [])) for n in pml)
+    res = {"pml_nodes": len(pml), "tickers_linked": linked,
+           "nodes_total": len(g.get("nodes", [])),
+           "note": f"{len(pml)} layer nodes, {linked} supplier links"}
+    ok = len(pml) >= 25 and linked >= 80
+    return res, ("CONFIRMED" if ok else "REFUTED"), len(pml)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1922,6 +1941,7 @@ REGISTRY = {
     "E049": e049_highn_horserace,
     "E050": e050_nvda_mimic,
     "G001": g001_graph_coverage,
+    "G002": g002_layer_backbone,
 }
 
 
@@ -2046,6 +2066,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 

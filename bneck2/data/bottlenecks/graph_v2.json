@@ -1319,6 +1319,1653 @@
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
    "expect_years": 5.0
+  },
+  {
+   "id": "PML_L0",
+   "type": "layer",
+   "label": "AI Foundation Model & Platform",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 0,
+   "constraint": "Hyperscaler capex\u51b3\u7b56\u9a71\u52a8L1-L14\u5168\u94fe\u9700\u6c42\uff0c\u5176capex\u6307\u5f15\u4e3a\u9886\u5148\u6307\u6807",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "MSFT",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "AMZN",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "META",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.5,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ORCL",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L1",
+   "type": "layer",
+   "label": "AI Demand & Application",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 1,
+   "constraint": "\u4f01\u4e1aAI\u5e94\u7528\u89c4\u6a21\u5316\u2192\u7b97\u529b\u8ba2\u5355\uff0c\u95f4\u63a5\u4f46\u91cf\u5927",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "GOOG",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.55,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "PLTR",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.7,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L2",
+   "type": "layer",
+   "label": "AI Training Compute",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 2,
+   "constraint": "\u5927\u6a21\u578b\u8bad\u7ec3\u65e0\u6cd5\u7ed5\u8fc7\u9ad8\u5e76\u884c\u5ea6GPU\uff0c\u7269\u7406\u7ea6\u675f\u6781\u5f3a",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "NVDA",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.85,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "AMD",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.65,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CBRS",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 1,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L2_5",
+   "type": "layer",
+   "label": "AI Inference & Edge Silicon",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 2.5,
+   "constraint": "\u63a8\u7406\u9700\u6c42\u4e0e\u8bad\u7ec3\u9700\u6c42\u5728\u529f\u8017/\u5ef6\u8fdf/\u6210\u672c\u7ef4\u5ea6\u5b8c\u5168\u5206\u79bb\uff0c\u4ea7\u751f\u72ec\u7acb\u82af\u7247\u5e02\u573a",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "QCOM",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ARM",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.6,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "MRVL",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.6,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "AVGO",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.55,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CRDO",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.85,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L3",
+   "type": "layer",
+   "label": "EDA & Chip Design Tools",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 3,
+   "constraint": "\u65e0EDA\u5de5\u5177\u65e0\u6cd5\u8fdb\u884c\u5148\u8fdb\u5236\u7a0b\u82af\u7247\u8bbe\u8ba1\uff0c\u5ba2\u6237\u5207\u6362\u6210\u672c\u6781\u9ad8",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "SNPS",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CDNS",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ALAB",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.85,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L3_5",
+   "type": "layer",
+   "label": "Semiconductor Materials & Specialty Gases",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 3.5,
+   "constraint": "\u5149\u523b\u80f6/CMP\u6d46\u6599/\u7279\u79cd\u6c14\u4f53\u7b49\u65e0\u53ef\u66ff\u4ee3\uff0c\u8bbe\u5907\u65e0\u6b64\u7c7b\u6750\u6599\u65e0\u6cd5\u8fd0\u4f5c",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "ENTG",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.25,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "APD",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "LIN",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "TSEM",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.5,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "MKSI",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L4",
+   "type": "layer",
+   "label": "Semiconductor Manufacturing Equipment",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 4,
+   "constraint": "\u5148\u8fdb\u5236\u7a0b\u6269\u4ea7\u5fc5\u987b\u91c7\u8d2d\u65b0\u8bbe\u5907\uff0c\u8bbe\u5907\u4e0d\u53ef\u79df\u7528/\u5171\u4eab\uff0c\u7269\u7406\u7ea6\u675f\u6781\u5f3a",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "AMAT",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "LRCX",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ASML",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "KLAC",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "TER",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "KLIC",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L5",
+   "type": "layer",
+   "label": "Advanced Packaging",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 5,
+   "constraint": "HBM\u4e0eGPU\u96c6\u6210\u5fc5\u987b\u901a\u8fc7CoWoS\u7b49\u5148\u8fdb\u5c01\u88c5\uff0c\u65e0\u53ef\u66ff\u4ee3\uff0c\u4ea7\u80fd\u6781\u5ea6\u7d27\u5f20",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "AMKR",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "TSM",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.5,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "INTC",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L5_5",
+   "type": "layer",
+   "label": "PCB & Substrates",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 5.5,
+   "constraint": "\u9ad8\u5c42\u6570HDI\u5236\u9020\u9700\u8981\u4e13\u7528\u4ea7\u7ebf\uff0cABF\u57fa\u677f\u7531\u5473\u4e4b\u7d20\u7b49\u5c11\u6570\u65e5\u5382\u5784\u65ad\uff0c\u56fd\u4ea7\u66ff\u4ee3\u5c1a\u4e0d\u6210\u719f",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "TTMI",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L6",
+   "type": "layer",
+   "label": "Memory & Storage (HBM/DRAM)",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 6,
+   "constraint": "GPU\u7b97\u529b\u9700\u8981\u7b49\u91cfHBM\u5e26\u5bbd\uff0c\u5b58\u50a8\u662fAI\u6027\u80fd\u7684\u786c\u6027\u74f6\u9888",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "MU",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.55,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L7",
+   "type": "layer",
+   "label": "Server OEM & EMS",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 7,
+   "constraint": "GPU\u5fc5\u987b\u96c6\u6210\u8fdb\u670d\u52a1\u5668\u7cfb\u7edf\u65b9\u53ef\u4f7f\u7528\uff0c\u7cfb\u7edf\u96c6\u6210\u9700\u6c42\u968fGPU\u51fa\u8d27\u540c\u6b65\u589e\u957f",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "CLS",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.7,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "DELL",
+     "exposure": "secondary",
+     "moat_capture": 1,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CRWV",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.85,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "SPCX",
+     "exposure": "secondary",
+     "moat_capture": 4,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "SMCI",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.75,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L8",
+   "type": "layer",
+   "label": "Data Center Internal Infrastructure",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 8,
+   "constraint": "\u4e09\u4e2a\u5b50\u5c42\u5e73\u884c\u5b58\u5728\uff0c\u5747\u4e3a\u6570\u636e\u4e2d\u5fc3\u5fc5\u5907\uff0c\u4f20\u5bfc\u901f\u5ea6\u76f8\u8fd1",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": []
+  },
+  {
+   "id": "PML_L8_NET",
+   "type": "layer",
+   "label": "Data Center Network Interconnect",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 8.1,
+   "constraint": "GPU\u96c6\u7fa4\u5fc5\u987b\u901a\u8fc7\u9ad8\u901f\u4ea4\u6362\u673a\u4e92\u8054\uff0c\u5e26\u5bbd\u9700\u6c42\u968fGPU\u6570\u91cf\u6307\u6570\u589e\u957f",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "ANET",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.7,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L8_COOL",
+   "type": "layer",
+   "label": "Data Center Cooling & Power",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 8.2,
+   "constraint": "AI GPU\u529f\u8017\u5bc6\u5ea6>50kW/rack\uff0c\u98ce\u51b7\u7269\u7406\u6781\u9650\u5df2\u5230\uff0c\u6db2\u51b7\u4e0d\u53ef\u7ed5\u8fc7",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "VRT",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.65,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ETN",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "MOD",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.7,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L8_OPT",
+   "type": "layer",
+   "label": "Optical Fiber & Transceiver",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 8.3,
+   "constraint": "\u8d85\u957f\u8ddd\u79bb/\u9ad8\u5bc6\u5ea6\u6570\u636e\u4e2d\u5fc3\u4e92\u8054\u5fc5\u987b\u7528\u5149\uff0c\u94dc\u7f06\u7269\u7406\u6781\u9650\u5df2\u5230",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "GLW",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "COHR",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.55,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "LITE",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.8,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L9",
+   "type": "layer",
+   "label": "Data Center Construction & Real Estate",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 9,
+   "constraint": "\u6240\u6709AI\u7b97\u529b\u5fc5\u987b\u6709\u7269\u7406\u673a\u623f\u5bb9\u7eb3\uff0c\u571f\u5730+\u7535\u529b\u5ba1\u6279\u6210\u4e3a\u65b0\u74f6\u9888",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "EQIX",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "DLR",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "FLR",
+     "exposure": "secondary",
+     "moat_capture": 1,
+     "ai_contribution": 0.25,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CRH",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.32,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L10",
+   "type": "layer",
+   "label": "Cybersecurity",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 10,
+   "constraint": "AI\u6570\u636e\u4e2d\u5fc3\u89c4\u6a21\u6269\u5f20\u2192\u653b\u51fb\u9762\u6269\u5927\u2192\u5408\u89c4\u5f3a\u5236\u5b89\u5168\u652f\u51fa",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "CRWD",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.5,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "PANW",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L11",
+   "type": "layer",
+   "label": "Clean Baseload & Nuclear Power",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "B",
+   "position": 11,
+   "constraint": "\u6570\u636e\u4e2d\u5fc3\u9700\u8981\u53ef\u9760\u57fa\u8377\u7535\u529b\uff0c\u6838\u7535\u662f\u552f\u4e0024/7\u96f6\u78b3\u57fa\u8377\u65b9\u6848",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "CEG",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.25,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "VST",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "OKLO",
+     "exposure": "secondary",
+     "moat_capture": 4,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "SMR",
+     "exposure": "secondary",
+     "moat_capture": 4,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L11_FUEL",
+   "type": "layer",
+   "label": "Nuclear Fuel Feedstock",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "B",
+   "position": 11.5,
+   "constraint": "\u94c0\u77ff 7-10 \u5e74\u5f00\u53d1\u5468\u671f + Kazatomprom \u5168\u7403\u4f9b\u5e94\u96c6\u4e2d\u5ea6 + Westinghouse \u4e0b\u6e38\u71c3\u6599\u5236\u9020 JV\u2014\u2014\u5f62\u6210\u8de8\u6280\u672f\u67b6\u6784\u7684\u7269\u7406 chokepoint",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "CCJ",
+     "exposure": "primary",
+     "moat_capture": 3,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L12",
+   "type": "layer",
+   "label": "Grid Equipment & Electrical Infrastructure",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "B",
+   "position": 12,
+   "constraint": "\u65b0\u589e\u7535\u529b\u5fc5\u987b\u901a\u8fc7\u7535\u7f51\u4f20\u8f93\uff0c\u7535\u7f51\u5347\u7ea7\u662f\u7269\u7406\u5fc5\u7136",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "CAT",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CMI",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "GEV",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "PWR",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L13",
+   "type": "layer",
+   "label": "Energy Production (Natural Gas E&P)",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "B",
+   "position": 13,
+   "constraint": "\u5929\u7136\u6c14\u4e3a\u6570\u636e\u4e2d\u5fc3\u73b0\u573a\u53d1\u7535\u4e3b\u8981\u71c3\u6599\uff0cAI\u589e\u91cf\u7528\u7535\u5e26\u6765\u7ed3\u6784\u6027\u9700\u6c42\u589e\u957f",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "EOG",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.15,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "EQT",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.15,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L14",
+   "type": "layer",
+   "label": "Critical Commodities (Copper/Aluminum)",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "B",
+   "position": 14,
+   "constraint": "\u7535\u7f51\u4f20\u8f93/\u6570\u636e\u4e2d\u5fc3\u5e03\u7ebf/\u6563\u70ed\u7cfb\u7edf\u5927\u91cf\u7528\u94dc\uff0c\u4f20\u5bfc\u94fe\u7ec8\u6b62\u5c42",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "FCX",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.12,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "SCCO",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.12,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "AA",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.1,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L_EXP_QC",
+   "type": "layer",
+   "label": "Quantum Computing (Experimental)",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "experimental",
+   "position": 99,
+   "constraint": "\u4e0eAI\u4f20\u5bfc\u65e0\u76f4\u63a5\u7269\u7406\u7ea6\u675f\u5173\u7cfb\uff0c\u4e3a\u72ec\u7acb\u6295\u8d44thesis",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "IONQ",
+     "exposure": "primary",
+     "moat_capture": null,
+     "ai_contribution": 0.1,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "RGTI",
+     "exposure": "secondary",
+     "moat_capture": null,
+     "ai_contribution": 0.1,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L_DCOMP",
+   "type": "layer",
+   "label": "Decentralized AI Infrastructure",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "A",
+   "position": 99,
+   "constraint": "\u7f51\u7edc\u6548\u5e94\u62a4\u57ce\u6cb3\uff0c\u65e0\u786c\u4ef6moat\u4f46\u534f\u8bae\u5784\u65ad\u53ef\u8fbe4\u5206",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "RNDR",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.65,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "TAO",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.9,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "FIL",
+     "exposure": "primary",
+     "moat_capture": 2,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "LINK",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ETH",
+     "exposure": "bridge",
+     "moat_capture": 4,
+     "ai_contribution": 0.2,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CRCL",
+     "exposure": "bridge",
+     "moat_capture": 4,
+     "ai_contribution": 0.3,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L_EMBI",
+   "type": "layer",
+   "label": "Embodied AI Infrastructure",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "C",
+   "position": 97,
+   "constraint": "FDA/CE\u8ba4\u8bc1\u9501\u5b9a\u4e0e\u5de5\u5382\u96c6\u6210\u58c1\u5792\uff0c\u5207\u6362\u6210\u672c\u6781\u9ad8",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "ISRG",
+     "exposure": "primary",
+     "moat_capture": 5,
+     "ai_contribution": 0.75,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "CGNX",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.65,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "PH",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.15,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "TSLA",
+     "exposure": "secondary",
+     "moat_capture": 4,
+     "ai_contribution": 0.4,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "VPG",
+     "exposure": "secondary",
+     "moat_capture": 2,
+     "ai_contribution": 0.08,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L_SPACE",
+   "type": "layer",
+   "label": "Space Infrastructure",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "D",
+   "position": 98,
+   "constraint": "FCC\u8f68\u9053\u9891\u8c31\u8bb8\u53ef\u3001FAA/MIL-SPEC\u53d1\u5c04\u8ba4\u8bc1\uff0c\u7269\u7406\u58c1\u5792\u6781\u9ad8",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "RKLB",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.45,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "ASTS",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.35,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "MOG",
+     "exposure": "secondary",
+     "moat_capture": 3,
+     "ai_contribution": 0.15,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "PML_L_DEF",
+   "type": "layer",
+   "label": "Defense AI",
+   "status": "hypothesis",
+   "prevalence": null,
+   "crowdedness": null,
+   "constraint_class": "layer",
+   "tk_years": null,
+   "td_years": null,
+   "chain": "E",
+   "position": 99,
+   "constraint": "\u56fd\u9632\u5408\u540c\u5468\u671f 5-10 \u5e74 + ITAR \u51fa\u53e3\u7ba1\u5236 + DoD \u4f9b\u5e94\u5546\u8ba4\u8bc1\u6d41\u7a0b\u2014\u2014\u975e\u56fd\u9632\u539f\u751f\u4f01\u4e1a\u96be\u4ee5\u8fdb\u5165",
+   "grade": "HYPOTHESIS",
+   "provenance": "prophetmap v1.4.0",
+   "suppliers": [
+    {
+     "ticker": "AVAV",
+     "exposure": "primary",
+     "moat_capture": 4,
+     "ai_contribution": 0.65,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    },
+    {
+     "ticker": "KTOS",
+     "exposure": "secondary",
+     "moat_capture": 4,
+     "ai_contribution": 0.7,
+     "evidence": [
+      {
+       "value": "prophetmap universe.json",
+       "source": "third_party/prophetmap",
+       "date": "2026-09-10",
+       "confidence": 0.5
+      }
+     ]
+    }
+   ]
   }
  ],
  "thesis": "AI makes cognition/design cheaper; value migrates to the hardest-to-scale physical resource. Track n and rotate to n+1 before the ETF exists."
