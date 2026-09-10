@@ -1162,6 +1162,37 @@ def e036_tilt_attribution() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if share > 0.8 else "REFUTED"), len(by_date)
 
 
+def e037_weekend_effect() -> tuple[dict, str, int]:
+    """H-WE-1 (V026): Friday->Monday drift differs from midweek drift."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-WE-1", "weekend effect in semi names",
+        "|Fri-Mon mean| > |midweek mean| by >=1pp on 2y dailies",
+        "no difference (no weekend edge)",
+        "Yahoo daily closes, NVDA+AMD+MU+AVGO+GOOGL+META")
+    import datetime as _dt
+    groups = {"weekend": [], "midweek": []}
+    for ticker in ("NVDA", "AMD", "MU", "AVGO", "GOOGL", "META"):
+        cl = [(c["date"], c["close"]) for c in
+              P.history(ticker, "2y").get("closes", [])]
+        for i in range(1, len(cl)):
+            d = _dt.date.fromisoformat(cl[i][0])
+            r = (cl[i][1] - cl[i - 1][1]) / cl[i - 1][1]
+            key = "weekend" if d.weekday() == 0 else "midweek"
+            if d.weekday() < 5:
+                groups[key].append(r)
+    import math as _m
+    out = {}
+    for k, v in groups.items():
+        out[k] = {"n": len(v), "mean": round(sum(v) / len(v), 5) if v else None}
+    wm, mm = out["weekend"]["mean"], out["midweek"]["mean"]
+    out["note"] = f"Monday {wm} vs midweek {mm}"
+    verdict = ("CONFIRMED" if wm is not None and mm is not None
+               and abs(wm - mm) >= 0.01 else "REFUTED")
+    return out, verdict, min(out["weekend"]["n"], out["midweek"]["n"])
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1199,6 +1230,7 @@ REGISTRY = {
     "E034": e034_kalshi_momentum,
     "E035": e035_attribution,
     "E036": e036_tilt_attribution,
+    "E037": e037_weekend_effect,
 }
 
 
@@ -1296,6 +1328,7 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
 
 
 

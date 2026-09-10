@@ -1,0 +1,8 @@
+{"ts": "2026-09-10T11:33:10Z", "task": "A-START", "detail": "a-task wave: V026, V022 probe, E012 rerun, bandit rewards, PM re-probe"}
+{"ts": "2026-09-10T11:33:28Z", "task": "A-BANDIT", "detail": "rewards: inductive+0.5 (E037), deductive+0.5 (E036); V022 TSMC blocked (IR 403, TWSE DNS)"}
+{"ts": "2026-09-10T11:33:28Z", "task": "A-V022", "detail": "TSMC monthly revenue unreachable (IR 403, TWSE NXDOMAIN); V022 stays candidate, try earnings-call transcripts or TSM price as proxy"}
+{"ts": "2026-09-10T11:33:53Z", "task": "A-PMREPROBE", "detail": "books stable: AGI 0.265 mid, Italy bill 0.885, Optimus 0.04; overrides hold, no change"}
+{"ts": "2026-09-10T11:33:53Z", "task": "A-E012", "detail": "rerun: Sep-09 forwards still immature, INCONCLUSIVE stands"}
+{"ts": "2026-09-10T11:33:58Z", "task": "A-E012-CORRECT", "detail": "correction: E012 rerun is CONFIRMED n=9 (mega 0.2 vs rest 0.75); prior line misstated. Sep-09 silicon subset still pending separately."}
+{"ts": "2026-09-10T11:33:58Z", "task": "A-REVIEW", "detail": "wave done: E037 refuted n=3000 (Mon +0.52% vs midweek +0.21%, bar 1pp); bandit rewards logged; PM stable; E012 holds"}
+{"ts": "2026-09-10T11:34:39Z", "task": "A-CLEANUP", "detail": "removed 1 TEST row leaked pre-isolation; test now uses tmpdir"}

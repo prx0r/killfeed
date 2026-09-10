@@ -249,3 +249,16 @@ def cache_set(key: str, value) -> None:
 def cache_key(*parts: str) -> str:
     blob = "|".join(parts)
     return hashlib.sha256(blob.encode()).hexdigest()[:16]
+
+
+ALOG = LAB / "a-logs"
+
+
+def alog(task: str, detail: str, ts: str = "") -> dict:
+    """Append-only agent progress log (A-tasks). One line per action."""
+    ALOG.mkdir(parents=True, exist_ok=True)
+    row = {"ts": ts or utcnow(), "task": task, "detail": detail[:500]}
+    import json as _j
+    with open(ALOG / "a-log.jsonl", "a", encoding="utf-8") as f:
+        f.write(_j.dumps(row) + "\n")
+    return row

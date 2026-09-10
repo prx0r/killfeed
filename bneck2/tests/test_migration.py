@@ -267,7 +267,7 @@ class TestFocusedNames(unittest.TestCase):
         from bneck2 import experiments as X
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
-                  "E034"):
+                  "E034", "E035", "E036", "E037"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
@@ -287,6 +287,19 @@ class TestFocusedNames(unittest.TestCase):
         d = XE.density([{"text": "long NVDA", "isReply": False},
                         {"text": "hello", "isReply": True}])
         self.assertEqual(d["n"], 1)
+
+    def test_alog_appends(self):
+        import tempfile
+        from bneck2 import lab as LAB
+        old_dir = LAB.ALOG
+        LAB.ALOG = Path(tempfile.mkdtemp())
+        try:
+            r = LAB.alog("TEST", "hello")
+            self.assertEqual(r["task"], "TEST")
+            self.assertTrue(r["ts"].startswith("2026"))
+            self.assertTrue((LAB.ALOG / "a-log.jsonl").exists())
+        finally:
+            LAB.ALOG = old_dir
 
     def test_beta_math(self):
         br = [0.01, -0.02, 0.03]
