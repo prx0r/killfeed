@@ -196,12 +196,29 @@ def e008_venue_segmentation() -> tuple[dict, str, int]:
 
 
 def e009_severity_crowdedness() -> tuple[dict, str, int]:
+    from bneck2 import graph as G
+    from bneck2 import migration as M
+    from bneck2 import quant as Q
     _h("E009", "B-vs-conviction gap is the crowdedness term",
        "adding (1-crowdedness) to severity flips E005 rho positive",
        "rho stays <= 0.3 after the penalty (gap is structural, keep both)",
-       "PREREGISTERED ONLY: implement penalty, rerun E005")
-    return {"note": "preregistered from E005 rho=-0.44 finding"}, \
-        "INCONCLUSIVE", 0
+       "graph_v2 + readings (no network)")
+    g = G.load_graph()
+    readings = Q.load_readings()
+    ids = [n["id"] for n in g["nodes"]]
+    b = {}
+    for n in g["nodes"]:
+        s = M.severity(n, readings.get(n["id"]))["B"]
+        b[n["id"]] = s * (1 - float(n.get("crowdedness", 0.5)))
+    c = {n["id"]: G.score_node(n) for n in g["nodes"]}
+    n = len(ids)
+    rb = {i: r for r, i in enumerate(sorted(ids, key=lambda i: b[i]))}
+    rc = {i: r for r, i in enumerate(sorted(ids, key=lambda i: c[i]))}
+    d2 = sum((rb[i] - rc[i]) ** 2 for i in ids)
+    rho = round(1 - 6 * d2 / (n * (n * n - 1)), 3)
+    return {"rho_penalized": rho, "rho_plain": -0.438, "n": n,
+            "note": f"penalized rho={rho:.2f} vs plain -0.44"}, \
+        ("CONFIRMED" if rho > 0.3 else "REFUTED"), n
 
 
 REGISTRY = {

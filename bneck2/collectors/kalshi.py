@@ -89,3 +89,36 @@ def fetch_markets(query: str, timeout: int = 30,
     for m in out:
         m["tier"] = PM.liquidity_tier(m["volume"], m["liquidity"])
     return out
+
+
+def candles_url(series_ticker: str, ticker: str, start_ts: int, end_ts: int,
+                period: int = 1440) -> str:
+    return (f"{BASE}/series/{series_ticker}/markets/{ticker}/candlesticks"
+            f"?start_ts={int(start_ts)}&end_ts={int(end_ts)}"
+            f"&period_interval={int(period)}")
+
+
+def parse_candles(doc: dict) -> list[dict]:
+    out = []
+    for c in doc.get("candlesticks", []) or []:
+        price = c.get("price") or {}
+        try:
+            close = float(price.get("close_dollars")) if price.get("close_dollars") is not None else None
+        except (ValueError, TypeError):
+            close = None
+        out.append({"ts": c.get("end_period_ts"), "close": close,
+                    "volume": float(c.get("volume_fp") or 0)})
+    return out
+
+
+def fetch_candles(series_ticker: str, ticker: str, start_ts: int, end_ts: int,
+                  period: int = 1440, timeout: int = 30) -> list[dict]:
+    """Daily OHLC price history per market (pm velocity input)."""
+    try:
+        req = urllib.request.Request(
+            candles_url(series_ticker, ticker, start_ts, end_ts, period),
+            headers=UA)
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return parse_candles(json.loads(r.read().decode("utf-8", "replace")))
+    except Exception:
+        return []

@@ -280,6 +280,16 @@ class TestPolywhale(unittest.TestCase):
         self.assertAlmostEqual(s["total_value"], 300.0)
         self.assertAlmostEqual(s["win_rate"], 0.5)
 
+    def test_kalshi_candles_url_and_parse(self):
+        from collectors import kalshi as KL
+        u = KL.candles_url("KXELONMARS", "KXELONMARS-99", 1, 2)
+        self.assertIn("/series/KXELONMARS/markets/KXELONMARS-99/candlesticks", u)
+        rows = KL.parse_candles({"candlesticks": [
+            {"end_period_ts": 10, "price": {"close_dollars": "0.11"}, "volume_fp": "5.0"},
+            {"end_period_ts": 11, "price": {"close_dollars": None}, "volume_fp": "0"}]})
+        self.assertEqual(rows[0]["close"], 0.11)
+        self.assertIsNone(rows[1]["close"])
+
     def test_condition_id_passthrough(self):
         from collectors import polymarket as PM
         doc = {"events": [{"title": "T", "markets": [

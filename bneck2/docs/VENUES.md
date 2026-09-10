@@ -25,6 +25,10 @@ Rate limits (token bucket, per docs/getting_started/rate_limits):
   this volume. Higher tiers (Advanced 300 … Prestige 10000) need account
   + volume; check grants via `GET /account/limits` (key required).
 
+Price history (wired 2026-09-10): `GET /series/{series}/markets/{ticker}/candlesticks`
+(1/60/1440-min OHLC + volume/OI; settled pre-cutoff via /historical). Gives pm price
+velocity per market — feed into dB/dt-style pm momentum next.
+
 Possible next (all keyless): `GET /markets` (series_ticker/status filters),
 per-market orderbook (`/markets/{ticker}/orderbook` — bids only, binary
 structure), candlesticks (1m/1h/1d), all-trades feed, series list
