@@ -2410,6 +2410,52 @@ def e057_moatshield() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if s["mean"] > 0 else "REFUTED"), s["n"]
 
 
+def e058_agiproof() -> tuple[dict, str, int]:
+    """H-AGIP-1: structural AGI-proof rating predicts fragility (maxDD)."""
+    from bneck2 import agiproof as A
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-AGIP-1", "higher AGI-proof score -> shallower 1y max drawdown",
+        "cross-sectional corr(score, maxDD_1y) > 0.3 (less negative DD)",
+        "corr <= 0.3 (rating doesn't track realized fragility)",
+        "30 tickers w/ full data; 1y Yahoo; structural rating, no prices in")
+    import json as _j
+    uni = _j.load(open(ROOT / "third_party" / "prophetmap" / "data" / "universe.json"))
+    us = uni if isinstance(uni, list) else uni.get("tickers", [])
+    names = [u["symbol"] for u in us if u.get("symbol")
+             and "." not in u["symbol"] and "-" not in u["symbol"]]
+    names += ["CHGG", "UPWK", "FVRR", "DUOL", "IONQ"]
+    pts = []
+    for t in sorted(set(names)):
+        try:
+            cs = P.history(t, "1y").get("closes", [])
+        except Exception:
+            continue
+        if len(cs) < 200:
+            continue
+        px = [c["close"] for c in cs]
+        peak, dd = px[0], 0.0
+        for x in px:
+            peak = max(peak, x)
+            dd = min(dd, x / peak - 1 if peak else 0.0)
+        pts.append((A.rate(t)["score"], dd, t))
+    if len(pts) < 15:
+        return {"n": len(pts)}, "INCONCLUSIVE", len(pts)
+    import math as _m
+    n = len(pts)
+    mx = sum(s for s, _, _ in pts) / n
+    my = sum(d for _, d, _ in pts) / n
+    cov = sum((s - mx) * (d - my) for s, d, _ in pts) / n
+    vx = sum((s - mx) ** 2 for s, _, _ in pts) / n
+    vy = sum((d - my) ** 2 for _, d, _ in pts) / n
+    rho = cov / _m.sqrt(vx * vy) if vx > 0 and vy > 0 else 0.0
+    res = {"n": n, "rho_score_maxdd": round(rho, 3),
+           " weakest": sorted(pts)[:3], "strongest": sorted(pts)[-3:],
+           "note": f"corr(rating, maxDD)={rho:.2f} (n={n})"}
+    return res, ("CONFIRMED" if rho > 0.3 else "REFUTED"), n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2471,6 +2517,7 @@ REGISTRY = {
     "E055": e055_ai_beta,
     "E056": e056_aicontrib,
     "E057": e057_moatshield,
+    "E058": e058_agiproof,
 }
 
 
@@ -2595,6 +2642,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 

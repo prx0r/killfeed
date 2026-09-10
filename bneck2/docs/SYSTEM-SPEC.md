@@ -129,6 +129,8 @@ Dependency rules:
 | E055 | AI-beta LONG REFUTED (-2.6%/w, Sharpe -1.15; inverse worked, unclaimed) | experiments |
 | E056 | aiContribution L/S CONFIRMED directional (+4.4%/q, n=82 names) | experiments |
 | E057 | moat shield REFUTED directional (-4.6%/q; moats lagged) | experiments |
+| E058 | AGI-proof rating REFUTED (rho=0.18<0.3; extremes rank right) | experiments |
+| agiproof | structural 0-100: complement+moat-substitution-laborarb | agiproof.py |
 | CHGG | existence proof: -77% excess 1y post-ChatGPT; mechanism lives at names, not basket | exhibit |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |

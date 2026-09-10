@@ -354,6 +354,15 @@ class TestEdges(unittest.TestCase):
         panel = A.load_panel()
         self.assertGreaterEqual(len(panel), 80)
 
+    def test_agiproof(self):
+        from bneck2 import agiproof as A
+        c = A.rate("CHGG")
+        self.assertEqual(c["grade"], "F")
+        n = A.rate("NVDA")
+        self.assertGreater(n["score"], c["score"])
+        b = A.board(["CHGG", "NVDA"])
+        self.assertEqual(b[0]["ticker"], "CHGG")
+
     def test_concepts(self):
         from bneck2 import concepts as C
         r = C.concept_report("optics")
@@ -524,7 +533,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "E051", "E052", "E053", "E054", "E055", "E056", "E057", "G001", "G002", "G003"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "E051", "E052", "E053", "E054", "E055", "E056", "E057", "E058", "G001", "G002", "G003"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
