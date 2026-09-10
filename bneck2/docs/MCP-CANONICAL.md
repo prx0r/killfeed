@@ -45,6 +45,12 @@ prediction-market (Kalshi support unshipped); kalshitradingbot.app /
 KalshiArb (commercial, unverifiable); any executor MCP (out of scope —
 read-only house rule).
 
+## WE RUN ONE (2026-09-10)
+
+`scripts/mcp_server.py` — our own stdlib MCP server exposing the engine
+(13 tools). Tested headlessly by `scripts/mcp_test.py` (in-suite).
+Add to any MCP client as a stdio server: `python3 scripts/mcp_server.py`.
+
 ## Rule
 
 Before adding an MCP dependency: check whether its underlying endpoints

@@ -79,5 +79,27 @@ class TestExperienceBuild(unittest.TestCase):
         self.assertIn("sha", out)
 
 
+class TestMCPHeadless(unittest.TestCase):
+    def test_full_mcp_battery(self):
+        import subprocess
+        import sys as _sys
+        receipts = ROOT / "experimentation" / "receipts.jsonl"
+        runs = ROOT / "experimentation" / "runs"
+        before = receipts.read_bytes() if receipts.exists() else b""
+        before_runs = set(p.name for p in runs.glob("*.json")) if runs.exists() else set()
+        try:
+            r = subprocess.run(
+                [_sys.executable, str(ROOT / "scripts" / "mcp_test.py")],
+                capture_output=True, text=True, timeout=600, cwd=str(ROOT))
+            self.assertEqual(r.returncode, 0,
+                             f"mcp battery failed:\n{r.stdout[-1500:]}\n{r.stderr[-500:]}")
+        finally:
+            receipts.write_bytes(before)
+            if runs.exists():
+                for p in runs.glob("*.json"):
+                    if p.name not in before_runs:
+                        p.unlink()
+
+
 if __name__ == "__main__":
     unittest.main()
