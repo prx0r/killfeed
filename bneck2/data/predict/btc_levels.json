@@ -4,5 +4,11 @@
   "p": 0.555,
   "snapshot": "2026-09-10",
   "resolved": null
+ },
+ {
+  "question": "Will the price of Bitcoin be above $78,000 on September 10?",
+  "p": 0.49,
+  "snapshot": "2026-09-10",
+  "resolved": null
  }
 ]

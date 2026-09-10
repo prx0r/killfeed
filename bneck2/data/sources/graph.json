@@ -188,6 +188,17 @@
    "note": "recipes ex-polytrack/polywhale"
   },
   {
+   "id": "snapshots",
+   "category": "prediction",
+   "access": "keyless",
+   "status": "LIVE",
+   "collector": "collectors/snapshots.py",
+   "consumers": [
+    "immutable market reads for pure evaluation"
+   ],
+   "note": "IO boundary: enrich here"
+  },
+  {
    "id": "kalshi",
    "category": "prediction",
    "access": "keyless",

@@ -28,7 +28,12 @@ RUNS = LAB / "runs"
 CACHE = ROOT / "data" / "cache"
 
 VERDICTS = ("CONFIRMED", "REFUTED", "INCONCLUSIVE",
-            "PROVISIONAL", "DISPUTED", "BLOCKED")
+            "PROVISIONAL", "DISPUTED", "BLOCKED", "EXPLORATORY")
+# Lifecycle (peer-review P1 fix): DISCOVERY search results are EXPLORATORY
+# by construction — they may seed preregistrations but never count as
+# confirmation, however strong the selected statistic looks. Preregistered
+# tests on untouched data earn CONFIRMED/REFUTED. Every mutation gets a new
+# hypothesis ID (HEP rule).
 
 
 def utcnow() -> str:
@@ -52,12 +57,20 @@ def preregister(hyp_id: str, title: str, prediction: str, falsifier: str,
 
 
 def receipt(hyp_id: str, result: dict, verdict: str, n: int,
-            ts: str = "") -> dict:
+            ts: str = "", comparisons: int = 1) -> dict:
+    """comparisons = number of configurations searched to produce this
+    result (lags, thresholds, subsets). Uncorrected search inflates
+    significance: receipts with comparisons>1 are flagged and can only
+    carry EXPLORATORY, never CONFIRMED."""
     assert verdict in VERDICTS, f"verdict must be one of {VERDICTS}"
+    if comparisons > 1 and verdict == "CONFIRMED":
+        raise ValueError(
+            f"comparisons={comparisons} without correction cannot CONFIRM; "
+            f"use EXPLORATORY and preregister a holdout test")
     blob = json.dumps(result, sort_keys=True, default=str)
     row = {"ts": ts or utcnow(), "hyp": hyp_id,
            "inputs_hash": hashlib.sha256(blob.encode()).hexdigest()[:16],
-           "n": n, "verdict": verdict,
+           "n": n, "verdict": verdict, "comparisons": comparisons,
            "directional_only": n < 30,
            "result": result}
     LAB.mkdir(parents=True, exist_ok=True)
@@ -86,6 +99,9 @@ def report() -> str:
     for hyp, rs in sorted(by.items()):
         last = rs[-1]
         flag = " (directional-only)" if last.get("directional_only") else ""
+        comp = last.get("comparisons", 1)
+        if comp > 1:
+            flag += f" [searched {comp} configs]"
         lines.append(f"\n## {hyp}: {last['verdict']}{flag} "
                      f"(n={last.get('n')}, runs={len(rs)})")
         res = last.get("result", {})
@@ -118,7 +134,7 @@ def support_rate(rows: list[dict] | None = None) -> dict:
     w = wilson(hits, len(decided))
     w["decided"] = len(decided)
     w["open"] = sum(1 for r in rows if r.get("verdict") in
-                    ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED"))
+                    ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED", "EXPLORATORY"))
     w["blocked"] = sum(1 for r in rows if r.get("verdict") == "BLOCKED")
     return w
 
@@ -137,7 +153,8 @@ def possibility_ledger(rows: list[dict] | None = None) -> dict:
             "confirmed": sum(1 for v in by_hyp.values() if v == "CONFIRMED"),
             "refuted": sum(1 for v in by_hyp.values() if v == "REFUTED"),
             "open": sum(1 for v in by_hyp.values() if v in
-                        ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED")),
+                        ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED",
+                         "EXPLORATORY")),
             "runs": len(rows)}
 
 

@@ -48,6 +48,12 @@ Dependency rules:
 - Shorts require: binding status + crowdedness>=0.7 + kill_ratio>0 +
   Jevons=SUBSTITUTION. All four, no exceptions.
 - CEO ledger never mixes known/unknown; forecaster priors start n=0.
+- Stockify boundary (peer-review P1 fix): killfeed emits Evidence
+  (kill_observations rows), Claims (belief claims), Predictions (with
+  resolution functions), Experiments (receipts), WorldDeltas. Stockify
+  decides attention/ranking/delivery and NEVER adjudicates causal truth.
+  Killfeed never does UI, feeds, or ranking-for-humans. Contract objects
+  are the JSONL/JSON files both sides already share; no new API needed.
 
 ## 3. All weightings in one place
 
@@ -66,16 +72,19 @@ Dependency rules:
 | jevons | residual=(1−gain)·elasticity; <1 SUBSTITUTION | jevons.py |
 | Tk/Td | Td·2≤Tk LONG-WINDOW; Tk≤2 CLOSING | quant.py |
 | scarcity scan | keyword hit on label+kill/destroy phrases; tickers from node | scarcity.py (PORTED_MAP ex-stockify detector) |
-| AttackIntensity | growth=recent2y/prior2y−1; HIGH needs growth≥1.0 AND total≥200 | killfeed.py |
+| AttackIntensity | growth=recent-2 COMPLETE years vs prior 2 (current year excluded); HIGH needs growth≥1.0 AND total≥200 | killfeed.py |
 | AttackIntensity source | group_by=publication_year counts (NOT the 50-row sample page); ok=False → INCONCLUSIVE; label-derived queries + QUERY_OVERRIDES | collectors/openalex.py, killfeed.py |
-| SEC burst | Form4≥5 OR deal(8-K/13D/13G)≥2 per poll window | killfeed.py |
+| SEC burst | NEW accessions since last poll only (accession ledger; never re-counts) | killfeed.py, data/beliefs/sec_seen.json |
 | SEC cadence | per-ticker history (cap 30) → vs_base ratios in measured; verdict unchanged | killfeed.py, data/beliefs/sec_baselines.json |
 | PM venues | Polymarket Gamma + Kalshi open-events (keyword match), best book wins | collectors/polymarket.py, collectors/kalshi.py |
 | PM queries | topical overrides (AGI-2027, nuclear, robot…) — labels return noise | killfeed.py PM_QUERY_OVERRIDES |
-| pm reliability | high-liq 0.82 / mid 0.60 / low 0.50 (never p alone) | killfeed.py |
+| pm reliability | single home calibration.pm_reliability (0.82/0.60/0.50 priors, n=0) | calibration.py |
 | acq event study | 20d fwd vs SPY per dated lab deal; drops logged | bneck2/acq.py (H-ACQ-1 refuted → H-ACQ-2/3 refine) |
 | XBRL revenue | tag-rename aware series (Contract→Revenues→Sales) | collectors/sec_facts.py |
 | whale consensus | N+ wallets same outcome ≥$1k → WHALE_CONSENSUS signal (best-book mkt, 1 call) | collectors/polywhale.py (recipes ex-polytrack/polywhale) |
+| pm evidence grade | linked (typed market→node edge in pm_links.json) vs discovery (logged, never fused) | killfeed.py, data/pm_links.json |
+| IO boundary | run()+collectors do I/O; evaluate() pure (AST + socket-kill tested) | tests/test_purity.py |
+| lifecycle | EXPLORATORY for searches (comparisons>1 can't CONFIRM); mutations get new IDs | lab.py |
 | lab receipts | preregister → run → receipt → verdict; n<30 directional-only | bneck2/lab.py, experimentation/ (cg-flow) |
 | forward returns | Yahoo daily closes; close-to-close over N trading days | bneck2/prices.py history() |
 | fundamentals | XBRL companyfacts: rev TTM, growth, R&D intensity | collectors/sec_facts.py |
@@ -126,7 +135,7 @@ Dependency rules:
 | predictions | preregister + resolve-due (temporal validation clock) | lab.predict/resolve, bneck2/resolve.py |
 | obsolescence | −[ln Cit_t − ln Cit_{t−w}] on fixed external base | obsolescence.py (ex-kernel, exact Ma) |
 | implied p | min ‖Xp−y‖²+ridge‖p−prior‖² s.t. [0,1], projected-gradient | implied.py (ex-kernel ridge) |
-| backtest | per-date L/S quantiles, turnover-charged costs, Sharpe/maxDD | backtest.py (ex-kernel protocol) |
+| backtest | calendar clock: asof/entry(next-close)/exit, annualize from elapsed days, overlap flagged provisional | backtest.py |
 | LabSignal tiebreak | irrev·spec·rel·dur orders $‑unknown ties (no fabrication) | labs.py |
 | scarcity B_i | induced·indisp·repl_norm·(0.5+0.5·perm)/(sub+eps); perm priors §5-6 | migration.py |
 | dB/dt, accel | severity velocity + 2nd diff across severity_history.jsonl | migration.py |

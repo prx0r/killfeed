@@ -199,6 +199,25 @@ class TestBacktest(unittest.TestCase):
         self.assertEqual(stats["periods"], 4)
         self.assertIn("sharpe", stats)
 
+    def test_calendar_annualization(self):
+        # two dates exactly one year apart: ann ~= net return
+        panel = [{"date": "2025-01-06", "ticker": t, "score": s, "forward_return": r}
+                 for t, s, r in [("A", 1.0, 0.10), ("B", -1.0, -0.02)]]
+        panel += [{"date": "2026-01-05", "ticker": t, "score": s, "forward_return": r}
+                  for t, s, r in [("A", 1.0, 0.10), ("B", -1.0, -0.02)]]
+        _, stats = BT.walk_forward(panel)
+        self.assertFalse(stats["overlapping"])
+        self.assertGreater(stats["annualized_return"], 0)
+
+    def test_overlap_flag(self):
+        # daily snapshots with 5d forwards overlap -> flagged provisional
+        panel = [{"date": f"2026-01-0{d}", "ticker": t, "score": s, "forward_return": r}
+                 for d, (t, s, r) in enumerate(
+                     [("A", 1.0, 0.01), ("B", -1.0, 0.0)] * 3, start=1)]
+        _, stats = BT.walk_forward(panel, horizon_days=5)
+        self.assertTrue(stats["overlapping"])
+        self.assertIn("sharpe_note", stats)
+
     def test_costs_reduce_net(self):
         _, free = BT.walk_forward(self.PANEL, cost_bps=0.0)
         _, paid = BT.walk_forward(self.PANEL, cost_bps=100.0)

@@ -1,13 +1,14 @@
 """bneck2 killfeed — collectors -> verdict writers (build-queue #1-3).
 
-Wires what SYSTEM-SPEC listed as unwired:
-  1. kill-observations writer <- SEC filings (burst) + OpenAlex (attack)
-  2. OpenAlex velocity per node -> AttackIntensity numbers
-  3. polymarket pm-clock reads -> belief claims + evidence signals
+IO BOUNDARY (peer-review P0 fix, enforced by tests/test_purity.py):
+  - run() and collectors/* do ALL network I/O.
+  - evaluate(), pm_reading(), sec_burst(), attack_intensity() are PURE:
+    no imports of collectors, no sockets, no files. They take fetched
+    docs and MarketSnapshots (collectors/snapshots.py) and return rows.
+  - write_rows() does ALL disk writes.
+Evaluation with sockets disabled must succeed on fixtures.
 
 Design rules (do not weaken):
-  - All evaluation is pure + deterministic on fetched docs. Tests use
-    fixtures; no network in tests.
   - Collectors never raise (return [] / {}); killfeed skips missing inputs
     and logs INCONCLUSIVE rather than inventing data.
   - Nothing below digger L4 touches kill verdicts — this module writes
@@ -17,6 +18,7 @@ Design rules (do not weaken):
     anonymity; see collectors/sec.py UA).
 
 Thresholds live in THRESHOLDS (one place, auditable).
+Venue reliability lives in calibration.pm_reliability (single epistemology).
 """
 from __future__ import annotations
 
@@ -27,22 +29,25 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
+from bneck2 import calibration as CAL
 from bneck2 import evidence as E
 from bneck2 import graph as G
 
 BASELINES_PATH = ROOT / "data" / "beliefs" / "sec_baselines.json"
 BASELINE_KEEP = 30
 
+# accession ledger: which SEC filings have already been counted, per CIK.
+# Peer-review P0 fix: the unit of evidence is the accession number, so a
+# poll can never re-count the same filing. (File lives in data/beliefs/.)
+SEEN_PATH = ROOT / "data" / "beliefs" / "sec_seen.json"
+
 THRESHOLDS = {
-    # SEC burst inside one poll window
-    "sec_form4_burst": 5,     # >=5 insider Form 4s across node tickers
-    "sec_deal_burst": 2,      # >=2 8-K / 13D / 13G across node tickers
+    # SEC burst: NEW filings since last poll (accession-deduped).
+    "sec_form4_burst": 5,     # >=5 new insider Form 4s
+    "sec_deal_burst": 2,      # >=2 new 8-K / 13D / 13G
     # OpenAlex attack intensity on trailing window
     "attack_growth": 1.0,     # >=100% growth recent-2y avg vs prior-2y avg
     "attack_total": 200,      # and >=200 total works in window
-    # Polymarket reliability by book quality (mirrors collectors/polymarket.py)
-    "pm_reliability": {"high-liquidity": 0.82, "mid-liquidity": 0.60,
-                       "low-liquidity": 0.50},
 }
 
 # Ticker -> SEC CIK for node tickers we actually poll. Missing tickers are
@@ -137,9 +142,14 @@ def attack_intensity(velocity: dict) -> dict:
 
     growth = recent-2y mean / prior-2y mean - 1 over per_year counts.
     tier HIGH needs both growth and mass (no hype without a literature).
+
+    Peer-review P1 fix: the current calendar year is EXCLUDED (partial-year
+    counts systematically depress growth). Needs >=4 complete years.
     """
     per_year = velocity.get("per_year", {}) or {}
-    years = sorted(int(y) for y in per_year if str(y).isdigit())
+    current = datetime.now(timezone.utc).year
+    years = sorted(int(y) for y in per_year
+                   if str(y).isdigit() and int(y) < current)
     counts = [int(per_year.get(y, per_year.get(str(y), 0))) for y in years]
     growth = 0.0
     if len(counts) >= 4:
@@ -150,7 +160,7 @@ def attack_intensity(velocity: dict) -> dict:
     tier = ("HIGH" if growth >= THRESHOLDS["attack_growth"]
             and total >= THRESHOLDS["attack_total"] else "normal")
     return {"growth": round(growth, 3), "total": total, "tier": tier,
-            "years_seen": len(years)}
+            "years_seen": len(years), "excluded_year": current}
 
 
 def _attack_rows(nid: str, ts: str, velocity: dict) -> list[dict]:
@@ -221,54 +231,109 @@ def baseline_medians(doc: dict) -> dict[str, dict]:
     return med
 
 
-def pm_reading(markets: list[dict]) -> dict | None:
-    """Best-book market read: (p, tier, reliability). Never p alone."""
-    if not markets:
+def load_seen(path: Path = SEEN_PATH) -> dict:
+    try:
+        import json as _j
+        doc = _j.loads(path.read_text(encoding="utf-8"))
+        return doc if isinstance(doc, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def split_unseen(cik: str, filings: list[dict],
+                 seen: dict | None = None) -> tuple[list[dict], dict]:
+    """Partition filings into (new, updated-seen-store). Pure function:
+    unit of evidence is the accession number (peer-review P0 fix)."""
+    seen = dict(seen) if seen else {}
+    have = set(seen.get(cik, []))
+    new = [f for f in filings if f.get("accession") and f["accession"] not in have]
+    seen[cik] = sorted(have | {f["accession"] for f in new})
+    return new, seen
+
+
+def save_seen(seen: dict, path: Path = SEEN_PATH) -> None:
+    import json as _j
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(_j.dumps(seen, indent=1), encoding="utf-8")
+
+
+PM_LINKS_PATH = ROOT / "data" / "pm_links.json"
+
+
+def _pm_links(path: Path = PM_LINKS_PATH) -> list[dict]:
+    try:
+        import json as _j
+        doc = _j.loads(path.read_text(encoding="utf-8"))
+        return doc.get("links", []) if isinstance(doc, dict) else []
+    except (OSError, ValueError):
+        return []
+
+
+def link_market(question: str, links: list[dict] | None) -> dict | None:
+    """Typed causal edge market -> node, or None (= discovery-grade).
+    Links are passed in by the caller (run loads them once); evaluation
+    never touches disk itself."""
+    q = (question or "").lower()
+    for link in links or []:
+        if str(link.get("match", "")).lower() in q:
+            return link
+    return None
+
+
+def pm_reading(snapshots: list[dict],
+               links: list[dict] | None = None) -> dict | None:
+    """Best-book read over MarketSnapshots. PURE: no imports, no sockets,
+    no files. Snapshot enrichment (Gamma details + CLOB depth) happens in
+    collectors/snapshots.py before this is ever called.
+
+    Peer-review P1 fix: a probability is NOT directional evidence. The
+    reading carries an evidence grade — "linked" only when the caller
+    supplies a typed link (node + polarity) for the question; otherwise
+    "discovery" (logged, never fused into belief updates)."""
+    if not snapshots:
         return None
-    best = max(markets, key=lambda m: (float(m.get("liquidity", 0)),
-                                       float(m.get("volume", 0))))
+    best = max(snapshots, key=lambda m: (float(m.get("liquidity", 0)),
+                                         float(m.get("volume", 0))))
     tier = best.get("tier") or "low-liquidity"
-    rel = THRESHOLDS["pm_reliability"].get(tier, 0.50)
+    rel = CAL.pm_reliability(best.get("venue", ""), tier)
+    depth = float(best.get("depth_top5", 0) or 0)
+    spread = best.get("spread")
     depth_note = ""
-    if best.get("venue") == "polymarket" and best.get("conditionId"):
-        try:
-            from collectors import clob as _CLOB
-            import json as _j
-            import urllib.request as _u
-            req = _u.Request(
-                "https://gamma-api.polymarket.com/markets?condition_id="
-                + best["conditionId"], headers={"User-Agent": "bneck"})
-            with _u.urlopen(req, timeout=15) as _r:
-                _det = _j.loads(_r.read().decode("utf-8", "replace"))
-            tids = _j.loads((_det[0].get("clobTokenIds") or "[]")) if _det else []
-            if tids:
-                book = _CLOB.book(str(tids[0]))
-                depth_note = (f" depth=${book.get('depth_top5', 0):,.0f}"
-                              f" spread={book.get('spread')}")
-                if book.get("depth_top5", 0) >= 1_000_000:
-                    rel = min(rel + 0.1, 0.95)
-                if (book.get("spread") or 0) > 0.2:
-                    rel = max(rel - 0.1, 0.3)
-        except Exception:
-            pass
-    return {"question": best.get("question", "")[:160],
+    if depth or spread is not None:
+        depth_note = f" depth=${depth:,.0f} spread={spread}"
+        if depth >= 1_000_000:
+            rel = min(rel + 0.1, 0.95)
+        if (spread or 0) > 0.2:
+            rel = max(rel - 0.1, 0.3)
+    link = link_market(best.get("question", ""), links)
+    grade = "linked" if link else "discovery"
+    return {"question": (best.get("question") or "")[:160],
             "p": float(best.get("p", 0.0)), "tier": tier,
-            "venue": best.get("venue", "?") + depth_note,
-            "reliability": rel}
+            "venue": str(best.get("venue", "?")) + depth_note,
+            "reliability": round(rel, 3),
+            "conditionId": best.get("conditionId") or "",
+            "source_hash": best.get("source_hash", ""),
+            "evidence_grade": grade,
+            "link": {"node": link.get("node"), "polarity": link.get("polarity"),
+                     "relevance": link.get("relevance")} if link else None}
 
 
 def evaluate(node: dict, sec: list[dict] | None = None,
              velocity: dict | None = None,
              markets: list[dict] | None = None,
-             ts: str = "", sec_baseline: dict | None = None) -> list[dict]:
-    """Pure evaluation -> verdict rows (NOT yet written)."""
+             ts: str = "", sec_baseline: dict | None = None,
+             whales: list[dict] | None = None,
+             pm_links: list[dict] | None = None) -> list[dict]:
+    """Pure evaluation -> verdict rows (NOT yet written). `markets` must be
+    MarketSnapshots (collectors/snapshots.py); `whales` pre-fetched
+    consensus rows. No I/O here — enforced by tests/test_purity.py."""
     nid = node.get("id", "?")
     ts = ts or utcnow()
     rows: list[dict] = []
     if sec is not None:
         b = sec_burst(sec, sec_baseline)
         fired = b["form4_burst"] or b["deal_burst"]
-        measured = f"form4={b['form4']} deal={b['deal']} n={b['n']}"
+        measured = f"form4={b['form4']} deal={b['deal']} n={b['n']} (new accessions)"
         if "vs_base" in b:
             measured += f" vs_base={b['vs_base']}"
         rows.append({"ts": ts, "node_id": nid,
@@ -276,7 +341,7 @@ def evaluate(node: dict, sec: list[dict] | None = None,
                      % (THRESHOLDS["sec_form4_burst"],
                         THRESHOLDS["sec_deal_burst"]),
                      "measured": measured,
-                     "threshold": "burst on either leg",
+                     "threshold": "NEW filings since last poll (accession-deduped)",
                      "verdict": "TRIGGERED" if fired else "NOT TRIGGERED",
                      "source": "sec-edgar"})
     if velocity is not None:
@@ -292,7 +357,7 @@ def evaluate(node: dict, sec: list[dict] | None = None,
         else:
             rows.extend(_attack_rows(nid, ts, velocity))
     if markets is not None:
-        r = pm_reading(markets)
+        r = pm_reading(markets, pm_links)
         if r is None:
             rows.append({"ts": ts, "node_id": nid, "signal": "pm-clock",
                          "measured": "no markets returned",
@@ -301,7 +366,8 @@ def evaluate(node: dict, sec: list[dict] | None = None,
         else:
             rows.append({"ts": ts, "node_id": nid, "signal": "pm-clock",
                          "measured": f"p={r['p']} {r['tier']} "
-                         f"{r.get('venue', '?')} rel={r['reliability']}: "
+                         f"{r.get('venue', '?')} rel={r['reliability']} "
+                         f"grade={r.get('evidence_grade', 'discovery')}: "
                          f"{r['question']}",
                          "threshold": "best-book read, never p alone",
                          "verdict": "NOT TRIGGERED",
@@ -309,22 +375,14 @@ def evaluate(node: dict, sec: list[dict] | None = None,
                          "_emit_signal": {"type": "PM_CLOCK", "direction": 0,
                                           "strength": r["p"],
                                           "confidence": r["reliability"]}})
-            # Whale consensus on the best-book market only (1 holders call).
-            best_mkt = next((m for m in (markets or [])
-                             if (m.get("question") or "")[:160] == r["question"]
-                             and m.get("conditionId")), None)
-            if best_mkt is not None:
-                try:
-                    from collectors import polywhale as PW
-                    for c in PW.consensus([best_mkt])[:1]:
-                        rows[-1].setdefault("_extra_signals", []).append(
-                            {"type": "WHALE_CONSENSUS", "direction": 0,
-                             "strength": min(1.0, c["total_usd"] / 50000.0),
-                             "confidence": round(0.55 + 0.05 * min(c["n_wallets"], 5), 2),
-                             "note": f"{c['n_wallets']} whales ${c['total_usd']:,.0f} "
-                             f"outcome={c['outcome']}: {c['question']}"})
-                except Exception:
-                    pass
+            # Whale consensus on the best-book market (pre-fetched by run()).
+            for c in (whales or [])[:1]:
+                rows[-1].setdefault("_extra_signals", []).append(
+                    {"type": "WHALE_CONSENSUS", "direction": 0,
+                     "strength": min(1.0, float(c.get("total_usd", 0)) / 50000.0),
+                     "confidence": round(0.55 + 0.05 * min(int(c.get("n_wallets", 0)), 5), 2),
+                     "note": f"{c.get('n_wallets')} whales ${float(c.get('total_usd', 0)):,.0f} "
+                     f"outcome={c.get('outcome')}: {c.get('question', '')}"})
     return rows
 
 
@@ -367,11 +425,15 @@ def run(live: bool = False, write: bool = True,
     from collectors import openalex as OA
     from collectors import polymarket as PM
     from collectors import kalshi as KL
+    from collectors import polywhale as PW
+    from collectors import snapshots as SNAP
     from bneck2 import migration as MIG
     from bneck2 import quant as Q
     run_ts = utcnow()
     readings = Q.load_readings()
+    links = _pm_links()
     medians = baseline_medians(load_baselines())
+    seen = load_seen()
     ticker_counts: dict[str, dict] = {}
     for n in nodes:
         filings: list[dict] = []
@@ -379,10 +441,11 @@ def run(live: bool = False, write: bool = True,
             cik = CIK_MAP.get(t)
             if cik:
                 got = SEC.fetch_recent_filings(cik)
-                f4 = sum(1 for f in got if f.get("form") == "4")
-                dl = sum(1 for f in got if f.get("form") in ("8-K", "13D", "13G"))
+                new_got, seen = split_unseen(cik, got, seen)
+                f4 = sum(1 for f in new_got if f.get("form") == "4")
+                dl = sum(1 for f in new_got if f.get("form") in ("8-K", "13D", "13G"))
                 ticker_counts[t] = {"form4": f4, "deal": dl}
-                filings.extend(got)
+                filings.extend(new_got)
                 time.sleep(0.2)
         node_base = None
         tick_meds = [medians[t] for t in n.get("tickers", []) if t in medians]
@@ -402,8 +465,19 @@ def run(live: bool = False, write: bool = True,
         except Exception:
             pass
         time.sleep(sleep_s)
-        rows = evaluate(n, sec=filings, velocity=vel, markets=mkts,
-                        sec_baseline=node_base)
+        snaps = SNAP.snapshot_all(mkts, limit=3, sleep_s=0.5)
+        best = pm_reading(snaps)
+        whales: list[dict] = []
+        if best and best.get("conditionId"):
+            try:
+                whales = PW.consensus(
+                    [{"question": best["question"],
+                      "conditionId": best["conditionId"], "p": best["p"]}])[:1]
+            except Exception:
+                whales = []
+        rows = evaluate(n, sec=filings, velocity=vel, markets=snaps,
+                        sec_baseline=node_base, whales=whales,
+                        pm_links=links)
         if write:
             summary["verdicts"] += write_rows(rows)
             sev = MIG.severity(n, readings.get(n.get("id", "")))
@@ -413,6 +487,8 @@ def run(live: bool = False, write: bool = True,
             if r["verdict"] == "TRIGGERED")
     if live and write and ticker_counts:
         summary["baselines"] = record_baselines(ticker_counts, run_ts)
+    if live and write:
+        save_seen(seen)
     return summary
 
 

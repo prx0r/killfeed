@@ -35,7 +35,8 @@ def main() -> int:
             result, verdict, n = fn()
         except Exception as exc:
             result, verdict, n = {"error": str(exc)[:150]}, "INCONCLUSIVE", 0
-        LAB.receipt(hid, result, verdict, n)
+        LAB.receipt(hid, result, verdict, n,
+                      comparisons=int(result.get("comparisons", 1)))
         LAB.run_file(hid, {"fn": hid, "mode": "focus"}, result)
         flag = " [directional-only]" if n < 30 else ""
         print(f"  {hid}: {verdict}{flag} n={n}")

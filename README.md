@@ -9,14 +9,16 @@ mispriced, then find today's cash flows that cannot coexist with those worlds.
 - `bneck2/` — main engine (second-gen bottleneck/obsolescence engine).
   Stdlib-only, $0 data. `scripts/killfeed.py [--live]` runs the
   collect → evaluate → verdict-log loop (SEC / OpenAlex / Polymarket).
-  102 tests green. Start with `bneck2/README.md`, then
+  Suite green — see `bneck2/docs/STATE.md` for live counts (generated,
+  never hand-quoted). Start with `bneck2/README.md`, then
   `bneck2/docs/SYSTEM-SPEC.md` (all formulas in one table).
 - `bneck/` — v1 engine (superseded by bneck2; kept for the message archive
   and precedents). 45 tests.
 - `stockify/` — product surface: source adapters → detectors → ranked feeds
   (web/PWA/RSS/MCP), X-engine, Reality Feed L0–L4, Levin corpus
   (`data/levin/`: 675-entry metadata + PDFs + `levinite.md` thesis).
-- `NEXT-STEPS.md` — program status, per-project scores, P0/P1/P2 roadmap.
+- `bneck2/docs/REVIEW-2026-09-10.md` — program status, per-project scores, P0/P1/P2 roadmap.
+- `bneck2/docs/THREADS.md` — every open thread, by owner (guarded by `scripts/threads.py --check`).
 - `HANDOVER.md` — prior session handover (vault, pogtown, freaktown).
 
 ## Quick start (engine)
@@ -33,4 +35,4 @@ cd bneck2
 
 - `third_party/` clones excluded (URL manifests in `docs/RESOURCES.md`).
 - Live secrets must never be committed — rotate any exposed keys
-  (see NEXT-STEPS.md P0).
+  (see `bneck2/AGENTS.md` rule 9 + `bneck2/docs/THREADS.md`).

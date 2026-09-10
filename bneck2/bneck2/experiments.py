@@ -654,10 +654,9 @@ def e021_sec_leads_price() -> tuple[dict, str, int]:
         "NVDA submissions history + Yahoo weeklies, 17 windows")
     starts, sec, _, rets = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
     ll = LD.lead_lag(sec, rets)
-    out = {"windows": len(starts) - 1, "peak": ll,
-           "note": f"SEC->NVDA: {ll['verdict']}"}
-    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
-    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+    out = {"windows": len(starts) - 1, "peak": ll, "comparisons": 9,
+           "note": f"SEC->NVDA: {ll['verdict']} (9-lag search: discovery-grade)"}
+    return out, "EXPLORATORY", len(starts) - 1
 
 
 def e022_hn_leads_price() -> tuple[dict, str, int]:
@@ -671,10 +670,9 @@ def e022_hn_leads_price() -> tuple[dict, str, int]:
         "HN Algolia date ranges + Yahoo weeklies, 17 windows")
     starts, _, hn, rets = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
     ll = LD.lead_lag(hn, rets)
-    out = {"windows": len(starts) - 1, "peak": ll,
-           "note": f"HN->NVDA: {ll['verdict']}"}
-    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
-    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+    out = {"windows": len(starts) - 1, "peak": ll, "comparisons": 9,
+           "note": f"HN->NVDA: {ll['verdict']} (9-lag search: discovery-grade)"}
+    return out, "EXPLORATORY", len(starts) - 1
 
 
 def e023_filings_vs_chatter() -> tuple[dict, str, int]:
@@ -688,10 +686,9 @@ def e023_filings_vs_chatter() -> tuple[dict, str, int]:
         "same 17-window panel, both series")
     starts, sec, hn, _ = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
     ll = LD.lead_lag(sec, hn)
-    out = {"windows": len(starts) - 1, "peak": ll,
-           "note": f"SEC->HN: {ll['verdict']}"}
-    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
-    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+    out = {"windows": len(starts) - 1, "peak": ll, "comparisons": 9,
+           "note": f"SEC->HN: {ll['verdict']} (9-lag search: discovery-grade)"}
+    return out, "EXPLORATORY", len(starts) - 1
 
 
 def e024_pm_vs_x_order() -> tuple[dict, str, int]:

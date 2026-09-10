@@ -80,7 +80,8 @@ def main() -> int:
                 result, verdict, n = fn()
             except Exception as exc:
                 result, verdict, n = {"error": str(exc)[:150]}, "INCONCLUSIVE", 0
-            LAB.receipt(hid, result, verdict, n)
+            LAB.receipt(hid, result, verdict, n,
+                          comparisons=int(result.get("comparisons", 1)))
             got.append(f"{hid}:{verdict[0]}")
         return " ".join(got)
 

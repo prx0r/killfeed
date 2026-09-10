@@ -50,6 +50,8 @@ NODES = [
      ["book quality upgrade path"], ""),
     ("polywhale", "whales", "keyless", "LIVE", "collectors/polywhale.py",
      ["WHALE_CONSENSUS", "E004"], "recipes ex-polytrack/polywhale"),
+    ("snapshots", "prediction", "keyless", "LIVE", "collectors/snapshots.py",
+     ["immutable market reads for pure evaluation"], "IO boundary: enrich here"),
     ("kalshi", "prediction", "keyless", "LIVE", "collectors/kalshi.py",
      ["killfeed:pm-clock", "candles:pm-velocity"], "no per-trader data, ever"),
     ("manifold", "prediction", "keyless", "LIVE", "collectors/manifold.py",
