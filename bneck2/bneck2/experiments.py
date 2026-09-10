@@ -1784,6 +1784,33 @@ def e048_support_bounce() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), len(ndates)
 
 
+def e049_highn_horserace() -> tuple[dict, str, int]:
+    """H-HF-1: a train-picked monthly factor beats buy-hold on 2021+ test."""
+    import subprocess as _sp
+    import json as _j
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-HF-1", "train-picked factor beats buy-hold out-of-sample",
+        "test Sharpe(best) > Sharpe(buyhold), HF monthly panel",
+        "best factor <= buy-hold (no priced edge in these factors)",
+        "HF Stocks-Daily-Price monthly panel; train 2016-20, test 2021-26-07")
+    if not (ROOT / "data" / "hf_panel" / "daily.jsonl").exists():
+        return {"error": "panel not fetched"}, "INCONCLUSIVE", 0
+    r = _sp.run(["python3", "scripts/hf_horserace.py"], capture_output=True,
+                text=True, timeout=600)
+    if r.returncode != 0:
+        return {"error": r.stderr[-300:]}, "INCONCLUSIVE", 0
+    d = _j.loads(r.stdout)
+    best, bh = d[d["best"]], d["buyhold"]
+    res = {"tune": d["tune"], "best": d["best"],
+           "best_test": best, "buyhold_test": bh,
+           "symbols": d["symbols"],
+           "note": f"{d['best']} {best['sharpe']} vs bh {bh['sharpe']}"}
+    ok = (best.get("sharpe") is not None and bh.get("sharpe") is not None
+          and best["sharpe"] > bh["sharpe"])
+    return res, ("CONFIRMED" if ok else "REFUTED"), d.get("test_months", 0)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1833,6 +1860,7 @@ REGISTRY = {
     "E046": e046_rules_generalize,
     "E047": e047_forward_paper,
     "E048": e048_support_bounce,
+    "E049": e049_highn_horserace,
 }
 
 
@@ -1957,6 +1985,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
