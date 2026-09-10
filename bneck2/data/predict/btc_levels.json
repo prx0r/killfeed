@@ -28,5 +28,59 @@
   "p": 0.365,
   "snapshot": "2026-09-10",
   "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $95,000 in September?",
+  "p": 0.056,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $92,500 in September?",
+  "p": 0.075,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $90,000 in September?",
+  "p": 0.135,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $87,500 in September?",
+  "p": 0.215,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $85,000 in September?",
+  "p": 0.335,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin reach $82,500 in September?",
+  "p": 0.505,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin dip to $75,000 in September?",
+  "p": 0.68,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin dip to $72,500 in September?",
+  "p": 0.445,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will Bitcoin dip to $70,000 in September?",
+  "p": 0.265,
+  "snapshot": "2026-09-10",
+  "resolved": null
  }
 ]

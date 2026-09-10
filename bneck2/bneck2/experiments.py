@@ -1193,6 +1193,32 @@ def e037_weekend_effect() -> tuple[dict, str, int]:
     return out, verdict, min(out["weekend"]["n"], out["midweek"]["n"])
 
 
+def e038_nventures_mix() -> tuple[dict, str, int]:
+    """H-NVENT-1: NVentures is majority non-semiconductor (bio/robotics)."""
+    from collections import Counter
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-NVENT-1", "nventures majority non-semi",
+        ">50% of 96 portfolio cos outside chips/compute infra",
+        "<=50% (still a chip fund)",
+        "nvidia.com companies.json 2026-09-10")
+    import json as _j
+    doc = _j.loads((ROOT / "data" / "universe" / "nventures.json").read_text())
+    comps = doc["companies"]
+    cats = Counter(c.get("industry", "?") for c in comps)
+    chip_keys = ("semiconductor", "chip", "compute", "infrastructure",
+                 "networking", "hardware", "datacenter", "data center")
+    chip = sum(n for k, n in cats.items()
+               if any(w in k.lower() for w in chip_keys))
+    out = {"n": len(comps), "top": cats.most_common(6),
+           "chip_share": round(chip / len(comps), 3),
+           "note": f"non-semi {(len(comps)-chip)/len(comps):.0%} "
+                   f"(bio {cats.get('Healthcare & Digital Biology',0)}, "
+                   f"robotics {cats.get('Robotics',0)})"}
+    return out, ("CONFIRMED" if (len(comps) - chip) / len(comps) > 0.5
+                 else "REFUTED"), len(comps)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1231,6 +1257,7 @@ REGISTRY = {
     "E035": e035_attribution,
     "E036": e036_tilt_attribution,
     "E037": e037_weekend_effect,
+    "E038": e038_nventures_mix,
 }
 
 
@@ -1328,6 +1355,7 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
 
 
 
