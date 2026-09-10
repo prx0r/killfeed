@@ -463,6 +463,709 @@
     "capacity_available_by": null
    },
    "evidence": []
+  },
+  {
+   "source": "PML_L1",
+   "target": "PML_L2",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 1->2)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L2",
+   "target": "PML_L2_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 2->2.5)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L2_5",
+   "target": "PML_L3",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 2.5->3)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L3",
+   "target": "PML_L3_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 3->3.5)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L3_5",
+   "target": "PML_L4",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 3.5->4)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L4",
+   "target": "PML_L5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 4->5)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L5",
+   "target": "PML_L5_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 5->5.5)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L5_5",
+   "target": "PML_L6",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 5.5->6)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L6",
+   "target": "PML_L7",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 6->7)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L7",
+   "target": "PML_L8",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 7->8)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L8",
+   "target": "PML_L8_NET",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 8->8.1)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L8_NET",
+   "target": "PML_L8_COOL",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 8.1->8.2)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L8_COOL",
+   "target": "PML_L8_OPT",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 8.2->8.3)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L8_OPT",
+   "target": "PML_L9",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 8.3->9)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L9",
+   "target": "PML_L10",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain A (positions 9->10)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L11",
+   "target": "PML_L11_FUEL",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain B (positions 11->11.5)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L11_FUEL",
+   "target": "PML_L12",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain B (positions 11.5->12)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L12",
+   "target": "PML_L13",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain B (positions 12->13)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
+  },
+  {
+   "source": "PML_L13",
+   "target": "PML_L14",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "adjacent layers in chain B (positions 13->14)",
+     "source": "third_party/prophetmap/data/layers.json",
+     "date": "2026-09-10",
+     "confidence": 0.3
+    }
+   ],
+   "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)",
+   "valid_from": "2026-09-10",
+   "valid_to": null,
+   "confidence": "medium"
   }
  ],
  "name": "bottleneck graph v2 (2026-09-10) \u2014 capabilities vs constraints",
@@ -523,14 +1226,20 @@
   },
   {
    "branch": "compute",
-   "crowdedness": 0.8,
+   "crowdedness": 0.583,
    "depends_on": [
     "accelerators"
    ],
    "evidence": [
     "HBM demand pulls capacity from DRAM; tight into 2027+",
     "DRAM ETF (Roundhill): first memory ETF, ~$26B AUM by Jun 2026, +156% since inception",
-    "SK Hynix ~$1.3T cap on AI memory demand"
+    "SK Hynix ~$1.3T cap on AI memory demand",
+    {
+     "value": "crowdedness 0.8->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "memory_hbm",
    "kill_signals": [
@@ -590,13 +1299,19 @@
   },
   {
    "branch": "compute",
-   "crowdedness": 0.75,
+   "crowdedness": 0.583,
    "depends_on": [
     "memory_hbm"
    ],
    "evidence": [
     "HBM conversion cannibalizes conventional DRAM; phone prices rising (Verge 2026)",
-    "Roundhill deck: HBM -> DRAM -> NAND cascade"
+    "Roundhill deck: HBM -> DRAM -> NAND cascade",
+    {
+     "value": "crowdedness 0.75->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "memory_dram",
    "kill_signals": [
@@ -650,12 +1365,18 @@
   },
   {
    "branch": "compute",
-   "crowdedness": 0.5,
+   "crowdedness": 0.583,
    "depends_on": [
     "memory_dram"
    ],
    "evidence": [
-    "Roundhill cascade: more inference/agents -> more stored data"
+    "Roundhill cascade: more inference/agents -> more stored data",
+    {
+     "value": "crowdedness 0.5->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "storage",
    "kill_signals": [
@@ -762,13 +1483,19 @@
   },
   {
    "branch": "compute",
-   "crowdedness": 0.4,
+   "crowdedness": 0.677,
    "depends_on": [
     "packaging"
    ],
    "evidence": [
     "Moving bits costs more than manipulating bits (Lightmatter thesis)",
-    "Soitec Photonics-SOI explosive demand"
+    "Soitec Photonics-SOI explosive demand",
+    {
+     "value": "crowdedness 0.4->0.677 from FINRA short-vol avg 0.453 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "optical_io",
    "kill_signals": [
@@ -822,14 +1549,20 @@
   },
   {
    "branch": "compute",
-   "crowdedness": 0.35,
+   "crowdedness": 0.837,
    "depends_on": [
     "accelerators"
    ],
    "evidence": [
     "Crusoe/Redwood: solar + second-life batteries, 99.2% availability",
     "ALNT data-center power quality: $57.1M TTM, +69%",
-    "POWI 2200V GaN for AI datacenters + PV + HVDC"
+    "POWI 2200V GaN for AI datacenters + PV + HVDC",
+    {
+     "value": "crowdedness 0.35->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "power",
    "kill_signals": [
@@ -880,11 +1613,17 @@
   },
   {
    "branch": "embodiment",
-   "crowdedness": 0.7,
+   "crowdedness": 0.837,
    "depends_on": [],
    "evidence": [
     "ALNT Q2: $153.8M rev +10%, record 34.9% GM, orders +49%, book-to-bill 1.31x",
-    "ALNT robot-joint stack: frameless torque motor + zero-backlash gear + absolute encoder"
+    "ALNT robot-joint stack: frameless torque motor + zero-backlash gear + absolute encoder",
+    {
+     "value": "crowdedness 0.7->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "motors",
    "kill_signals": [
@@ -929,14 +1668,20 @@
   },
   {
    "branch": "embodiment",
-   "crowdedness": 0.3,
+   "crowdedness": 0.837,
    "depends_on": [
     "motors"
    ],
    "evidence": [
     "TKR Industrial Motion Q2: $453.9M +14.6%, margin 18.3% -> 23.3%",
     "SPINEA: only EU cycloidal producer covering all 6 small-robot axes",
-    "20-40+ joints per humanoid; inference cost cuts do nothing for backlash"
+    "20-40+ joints per humanoid; inference cost cuts do nothing for backlash",
+    {
+     "value": "crowdedness 0.3->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "reducers",
    "kill_signals": [
@@ -991,14 +1736,20 @@
   },
   {
    "branch": "embodiment",
-   "crowdedness": 0.55,
+   "crowdedness": 0.837,
    "depends_on": [
     "reducers"
    ],
    "evidence": [
     "NOVT Celera: 1.2nm optical encoder resolution; Motion Stack (motor+encoder+force+drive)",
     "NOVT AET: $136.2M at 52.6% gross margin",
-    "Priced: ~5.5x sales, ~38x forward earnings"
+    "Priced: ~5.5x sales, ~38x forward earnings",
+    {
+     "value": "crowdedness 0.55->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "id": "encoders",
    "kill_signals": [
@@ -1190,9 +1941,15 @@
    "branch": "compute",
    "status": "emerging",
    "prevalence": 0.5,
-   "crowdedness": 0.4,
+   "crowdedness": 1.0,
    "evidence": [
-    "AGI accelerates architecture search; design work commoditizes"
+    "AGI accelerates architecture search; design work commoditizes",
+    {
+     "value": "crowdedness 0.4->1.0 from FINRA short-vol avg 0.588 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "relieved_by": [
     "superior architecture discovery (incl. by AGI)"
@@ -1234,12 +1991,18 @@
    "branch": "compute",
    "status": "emerging",
    "prevalence": 0.55,
-   "crowdedness": 0.35,
+   "crowdedness": 1.0,
    "evidence": [
     "IonQ Aug 2025: 1000+ owned/licensed/controlled IP assets",
     "Networking ~400 by Mar 2025; Lightsynq 20+ memory/interconnect",
     "SkyWater acquisition Jul 2026: fab + packaging + gov relationships",
-    "CRISPR precedent: patents decide who captures rents, not whether science proceeds"
+    "CRISPR precedent: patents decide who captures rents, not whether science proceeds",
+    {
+     "value": "crowdedness 0.35->1.0 from FINRA short-vol avg 0.588 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ],
    "relieved_by": [
     "mass invalidity",

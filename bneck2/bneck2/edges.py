@@ -22,7 +22,8 @@ RELATIONS = ("REQUIRES", "CASCADE", "CATALYZES", "REGULATED_BY",
 def blank_edge(source: str, target: str, relation: str = "REQUIRES") -> dict:
     assert relation in RELATIONS, relation
     return {"source": source, "target": target, "relation": relation,
-            "grade": "HYPOTHESIS",
+            "grade": "HYPOTHESIS", "valid_from": None, "valid_to": None,
+            "confidence": "low",
             "requirement": {"quantity_per_unit": None, "unit": None,
                             "confidence": None},
             "supply": {"global_capacity": None, "utilization": None,
@@ -40,6 +41,8 @@ def add_evidence(edge: dict, value: str, source: str, date: str,
         "confidence": confidence}]
     edge["evidence"] = ev
     edge["grade"] = _grade(edge)
+    edge["confidence"] = {"SUPPORTED": "medium", "QUANTIFIED": "high",
+                          "VALIDATED": "high"}.get(edge["grade"], "low")
     return edge
 
 
@@ -62,7 +65,7 @@ def _grade(edge: dict) -> str:
 def propose(edge: dict) -> dict:
     """Discovery: quarantine a hypothesis-grade candidate, never production."""
     edge = dict(edge)
-    edge["grade"] = "HYPOTHESIS"
+    edge["grade"] = _grade(edge)
     cands = []
     if QUARANTINE.exists():
         cands = json.loads(QUARANTINE.read_text())

@@ -108,6 +108,9 @@ Dependency rules:
 | G001 | graph P0 bar (70% evidenced/30% quantified); baseline 8%/15%, 14 quarantined | edges.py |
 | edge | typed REQUIRES schema; unknowns=None; tickers off physical nodes | edges.py |
 | G002 | ProphetMap 27 layers -> PML_ nodes, 89 tickers as suppliers[] | prophetmap_import.py |
+| edge-update | filings bursts + FINRA short-vol -> supplier evidence/crowdedness | edge_update.py |
+| short-vol | FINRA feed is short-sale VOLUME share (~0.38 typical), not short interest | edge_update.py |
+| propagate | shock x elasticity x grade-conf x damping x delay-weight over DAG | propagate.py |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |

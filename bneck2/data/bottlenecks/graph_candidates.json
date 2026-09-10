@@ -688,37 +688,13 @@
   "note": "memo3: Twist complex-gene expansion"
  },
  {
-  "source": "PML_L0",
-  "target": "PML_L1",
-  "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
-  "requirement": {
-   "quantity_per_unit": null,
-   "unit": null,
-   "confidence": null
-  },
-  "supply": {
-   "global_capacity": null,
-   "utilization": null,
-   "lead_time_months": null,
-   "capacity_growth_rate": null
-  },
-  "substitution": {
-   "alternatives": [],
-   "score": null
-  },
-  "timing": {
-   "needed_by": null,
-   "capacity_available_by": null
-  },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
- },
- {
   "source": "PML_L1",
   "target": "PML_L2",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -738,14 +714,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 1->2)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L2",
   "target": "PML_L2_5",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -765,14 +751,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 2->2.5)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L2_5",
   "target": "PML_L3",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -792,14 +788,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 2.5->3)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L3",
   "target": "PML_L3_5",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -819,14 +825,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 3->3.5)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L3_5",
   "target": "PML_L4",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -846,14 +862,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 3.5->4)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L4",
   "target": "PML_L5",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -873,14 +899,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 4->5)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L5",
   "target": "PML_L5_5",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -900,14 +936,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 5->5.5)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L5_5",
   "target": "PML_L6",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -927,14 +973,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 5.5->6)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L6",
   "target": "PML_L7",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -954,14 +1010,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 6->7)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L7",
   "target": "PML_L8",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -981,14 +1047,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 7->8)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L8",
   "target": "PML_L8_NET",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1008,14 +1084,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 8->8.1)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L8_NET",
   "target": "PML_L8_COOL",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1035,14 +1121,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 8.1->8.2)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L8_COOL",
   "target": "PML_L8_OPT",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1062,14 +1158,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 8.2->8.3)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L8_OPT",
   "target": "PML_L9",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1089,14 +1195,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 8.3->9)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
   "source": "PML_L9",
   "target": "PML_L10",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1116,14 +1232,24 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain A (positions 9->10)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  },
  {
-  "source": "PML_L10",
-  "target": "PML_L_DCOMP",
+  "source": "PML_L11",
+  "target": "PML_L11_FUEL",
   "relation": "REQUIRES",
-  "grade": "HYPOTHESIS",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
   "requirement": {
    "quantity_per_unit": null,
    "unit": null,
@@ -1143,7 +1269,125 @@
    "needed_by": null,
    "capacity_available_by": null
   },
-  "evidence": [],
-  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain-A order \u2014 validate physically)"
+  "evidence": [
+   {
+    "value": "adjacent layers in chain B (positions 11->11.5)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L11_FUEL",
+  "target": "PML_L12",
+  "relation": "REQUIRES",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [
+   {
+    "value": "adjacent layers in chain B (positions 11.5->12)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L12",
+  "target": "PML_L13",
+  "relation": "REQUIRES",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [
+   {
+    "value": "adjacent layers in chain B (positions 12->13)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
+ },
+ {
+  "source": "PML_L13",
+  "target": "PML_L14",
+  "relation": "REQUIRES",
+  "grade": "SUPPORTED",
+  "valid_from": null,
+  "valid_to": null,
+  "confidence": "medium",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [
+   {
+    "value": "adjacent layers in chain B (positions 13->14)",
+    "source": "third_party/prophetmap/data/layers.json",
+    "date": "2026-09-10",
+    "confidence": 0.3
+   }
+  ],
+  "note": "skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 validate physically)"
  }
 ]

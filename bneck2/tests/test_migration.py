@@ -294,6 +294,39 @@ class TestEdges(unittest.TestCase):
         cands = [c for c in cands if c["source"] != "TEST_A"]
         E.QUARANTINE.write_text(__import__("json").dumps(cands, indent=1))
 
+    def test_edge_update_pure(self):
+        from bneck2 import edge_update as U
+        g = {"nodes": [{"id": "N", "crowdedness": 0.5,
+                        "suppliers": [{"ticker": "X", "evidence": []}],
+                        "evidence": []}]}
+        g2, m = U.short_to_crowdedness(g, {"X": 0.40}, "2026-09-10")
+        self.assertEqual(g2["nodes"][0]["crowdedness"], 0.5)
+        self.assertEqual(len(m), 1)
+        g3, m3 = U.short_to_crowdedness(
+            {"nodes": [{"id": "N", "suppliers": []}]}, {"X": 0.4}, "2026-09-10")
+        self.assertEqual(m3, [])
+
+    def test_filings_burst(self):
+        from bneck2 import edge_update as U
+        g = {"nodes": [{"id": "N",
+                        "suppliers": [{"ticker": "Y", "evidence": []}],
+                        "evidence": []}]}
+        _, m = U.filings_to_suppliers(
+            g, {"Y": {"form4": 12, "deal": 1, "base4": 3}}, "2026-09-10")
+        self.assertEqual(len(m), 1)
+        _, m2 = U.filings_to_suppliers(
+            g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
+        self.assertEqual(m2, [])
+
+    def test_propagate_spreads(self):
+        from bneck2 import propagate as P
+        g = {"nodes": [{"id": "A"}, {"id": "B"}],
+             "edges": [{"source": "A", "target": "B", "relation": "REQUIRES",
+                        "grade": "SUPPORTED"}]}
+        s = P.propagate(g, {"A": 1.0})
+        self.assertEqual(s["A"], 1.0)
+        self.assertGreater(s["B"], 0.0)
+
     def test_prophetmap_backbone(self):
         import json
         import subprocess

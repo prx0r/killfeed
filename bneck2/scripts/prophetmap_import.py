@@ -51,16 +51,24 @@ def main() -> dict:
                       "suppliers": sups})
     g["nodes"] = nodes
     GRAPH.write_text(json.dumps(g, indent=1))
-    # skeleton edges along chain A position order (quarantine)
-    chain_a = sorted([l for l in ls if l.get("chain") == "A"],
-                     key=lambda l: l.get("position", 0))
+    # skeleton edges along chain position order (quarantine)
+    def _chain(letter, lo, hi):
+        return sorted([l for l in ls if l.get("chain") == letter
+                       and lo <= (l.get("position") or 999) <= hi],
+                      key=lambda l: l.get("position", 0))
     n_edge = 0
-    for a, b in zip(chain_a, chain_a[1:]):
-        e = E.blank_edge(f"PML_{a['id']}", f"PML_{b['id']}", "REQUIRES")
-        e["note"] = ("skeleton: downstream layer requires upstream layer "
-                     "(ProphetMap chain-A order — validate physically)")
-        E.propose(e)
-        n_edge += 1
+    for seq in (_chain("A", 0, 10), _chain("B", 11, 14)):
+        for a, b in zip(seq, seq[1:]):
+            e = E.blank_edge(f"PML_{a['id']}", f"PML_{b['id']}", "REQUIRES")
+            e["note"] = ("skeleton: downstream layer requires upstream layer "
+                         "(ProphetMap chain order — validate physically)")
+            e = E.add_evidence(e, "adjacent layers in chain "
+                                   f"{a.get('chain')} (positions "
+                                   f"{a.get('position')}->{b.get('position')})",
+                               "third_party/prophetmap/data/layers.json",
+                               "2026-09-10", 0.3)
+            E.propose(e)
+            n_edge += 1
     return {"layers": len(ls), "tickers_linked": sum(len(v) for v in by_layer.values()),
             "nodes_total": len(nodes), "skeleton_edges": n_edge}
 
