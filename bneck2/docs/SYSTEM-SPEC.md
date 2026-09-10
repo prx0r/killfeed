@@ -111,6 +111,8 @@ Dependency rules:
 | edge-update | filings bursts + FINRA short-vol -> supplier evidence/crowdedness | edge_update.py |
 | short-vol | FINRA feed is short-sale VOLUME share (~0.38 typical), not short interest | edge_update.py |
 | propagate | shock x elasticity x grade-conf x damping x delay-weight over DAG | propagate.py |
+| E051 | reflexivity via R&D REFUTED (rho=-0.00; validated +17% < unvalidated +51%) | experiments |
+| E052 | reflexivity via capex REFUTED (rho=+0.20 arrow real, trade loses +22%<+39%) | experiments |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |

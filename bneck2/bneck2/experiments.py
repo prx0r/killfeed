@@ -1889,6 +1889,239 @@ def g002_layer_backbone() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), len(pml)
 
 
+CIK_MAP = {"NVDA": "1045810", "MSFT": "789019", "AAPL": "320193",
+           "GOOGL": "1652044", "AMZN": "1018724", "META": "1326801",
+           "TSLA": "1318605", "AVGO": "1730168", "AMD": "2488",
+           "NFLX": "1065280", "CRM": "1108524", "ORCL": "1341439",
+           "PLTR": "1321655", "COIN": "1679788", "INTC": "50863",
+           "IBM": "51143", "QCOM": "804328"}
+
+
+def _facts_cached(ticker: str) -> dict | None:
+    import json as _j
+    import urllib.request as _u
+    f = ROOT / "data" / "cache" / f"secfacts_{ticker}.json"
+    if f.exists():
+        try:
+            return _j.loads(f.read_text())
+        except Exception:
+            pass
+    try:
+        from collectors import sec_facts as SF
+        req = _u.Request(SF.facts_url(CIK_MAP[ticker]),
+                         headers={"User-Agent": "bneck research contact@localhost",
+                                  "Accept": "application/json"})
+        with _u.urlopen(req, timeout=60) as r:
+            doc = _j.loads(r.read().decode("utf-8", "replace"))
+        f.write_text(_j.dumps({"facts": doc.get("facts", {}),
+                               "entity": doc.get("entityName", "")}))
+        return {"facts": doc.get("facts", {}), "entity": doc.get("entityName", "")}
+    except Exception:
+        return None
+
+
+CAPEX_TAGS = ("PaymentsToAcquirePropertyPlantAndEquipment",
+                "PaymentsToAcquireProductiveAssets")
+
+
+def _fy_series(facts: dict, tags) -> tuple[list[tuple[int, float]], int]:
+    """(FY, value) annual series + FY-end month (1-12), first tag wins per FY."""
+    if isinstance(tags, str):
+        tags = (tags,)
+    gaap = (facts.get("facts") or {}).get("us-gaap", {})
+    per = {}
+    endmo = 12
+    for tag in tags:
+        series: dict[int, float] = {}
+        for u in gaap.get(tag, {}).get("units", {}).get("USD", []):
+            try:
+                fy, v = int(u.get("fy", 0)), float(u.get("val", 0))
+            except (ValueError, TypeError):
+                continue
+            if u.get("form") == "10-K" and fy > 0:
+                series[fy] = abs(v)
+                try:
+                    endmo = int(str(u.get("end", ""))[5:7])
+                except Exception:
+                    pass
+        per[tag] = series
+    yrs = sorted({f for d in per.values() for f in d})
+    return [(f, next(per[t][f] for t in tags if f in per[t])) for f in yrs], endmo
+
+
+def _fy_rd(facts: dict) -> tuple[list[tuple[int, float]], int]:
+    """(FY, R&D) annual series + FY-end month (1-12)."""
+    return _fy_series(facts, "ResearchAndDevelopmentExpense")
+
+
+def e051_reflexivity() -> tuple[dict, str, int]:
+    """H-REFL-1: price-validated R&D acceleration beats unvalidated run-ups."""
+    import datetime as _dt
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-REFL-1", "validated reflexivity (run-up + R&D accel) wins forward",
+        "fwd(validated) > fwd(unvalidated); corr(past_ret, next_RDg) > 0",
+        "no spread (market prices R&D paths already; price doesn't cause invest)",
+        "17 CIK-mapped megacaps; FY windows +100d entry; 10y Yahoo + XBRL R&D")
+    val_f, unv_f, pairs = [], [], []
+    for t in CIK_MAP:
+        doc = _facts_cached(t)
+        if not doc:
+            continue
+        rd, endmo = _fy_rd(doc)
+        if len(rd) < 4:
+            continue
+        try:
+            px = {c["date"]: c["close"] for c in P.history(t, "10y").get("closes", [])}
+        except Exception:
+            continue
+        if len(px) < 500:
+            continue
+        dys = sorted(px)
+
+        def _px(d: str) -> float | None:
+            while d not in px:
+                try:
+                    d = (_dt.date.fromisoformat(d) - _dt.timedelta(days=1)).isoformat()
+                except Exception:
+                    return None
+                if d < dys[0]:
+                    return None
+            return px[d]
+
+        for k in range(1, len(rd) - 1):
+            fy, r = rd[k]
+            r0 = rd[k - 1][1]
+            if not r0:
+                continue
+            g = (r - r0) / abs(r0)
+            ey, em = fy + (1 if endmo == 12 else 0), endmo
+            try:
+                entry = (_dt.date(ey, em, 1) + _dt.timedelta(days=100)).isoformat()
+                back = (_dt.date(ey - 1, em, 1) + _dt.timedelta(days=100)).isoformat()
+                fwd1 = (_dt.date(ey + 1, em, 1) + _dt.timedelta(days=100)).isoformat()
+            except ValueError:
+                continue
+            p1, p0, pf = _px(entry), _px(back), _px(fwd1)
+            if not (p1 and p0 and pf):
+                continue
+            past = (p1 - p0) / p0
+            fwd = (pf - p1) / p1
+            pairs.append((past, g, fwd))
+    if len(pairs) < 30:
+        return {"pairs": len(pairs)}, "INCONCLUSIVE", len(pairs)
+    import math as _m
+    pr = [p for p, _, _ in pairs]
+    mp = sorted(pr)[len(pr) // 2]
+    gs = [g for _, g, _ in pairs]
+    mg = sorted(gs)[len(gs) // 2]
+    for past, g, fwd in pairs:
+        (val_f if (past >= mp and g >= mg) else
+         unv_f if (past >= mp and g < mg) else None)
+        if past >= mp and g >= mg:
+            val_f.append(fwd)
+        elif past >= mp and g < mg:
+            unv_f.append(fwd)
+    # R1: corr(past return, R&D growth) — price -> investment arrow
+    n = len(pairs)
+    mx = sum(p for p, _, _ in pairs) / n
+    my = sum(g for _, g, _ in pairs) / n
+    cov = sum((p - mx) * (g - my) for p, g, _ in pairs) / n
+    vx = sum((p - mx) ** 2 for p, _, _ in pairs) / n
+    vy = sum((g - my) ** 2 for _, g, _ in pairs) / n
+    rho = cov / _m.sqrt(vx * vy) if vx > 0 and vy > 0 else 0.0
+    mv = sum(val_f) / len(val_f) if val_f else 0.0
+    mu = sum(unv_f) / len(unv_f) if unv_f else 0.0
+    res = {"n": n, "rho_pastret_rd": round(rho, 3),
+           "fwd_validated": round(mv, 4), "n_val": len(val_f),
+           "fwd_unvalidated": round(mu, 4), "n_unv": len(unv_f),
+           "spread": round(mv - mu, 4),
+           "note": f"rho={rho:.2f}; validated {mv:.1%} (n={len(val_f)}) vs "
+                   f"unvalidated {mu:.1%} (n={len(unv_f)})"}
+    ok = mv > mu and rho > 0
+    return res, ("CONFIRMED" if ok else "REFUTED"), n
+
+
+def e052_capex_reflex() -> tuple[dict, str, int]:
+    """H-REFL-2: price-validated CAPEX acceleration beats unvalidated run-ups."""
+    import datetime as _dt
+    import math as _m
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-REFL-2", "validated capex reflexivity wins forward",
+        "fwd(validated) > fwd(unvalidated); corr(past_ret, next_CAPEXg) > 0",
+        "no spread (capex doesn't follow price either)",
+        "same 17 CIK names; XBRL capex tags; FY+100d entry")
+    pairs = []
+    for t in CIK_MAP:
+        doc = _facts_cached(t)
+        if not doc:
+            continue
+        cx, endmo = _fy_series(doc, CAPEX_TAGS)
+        if len(cx) < 4:
+            continue
+        try:
+            px = {c["date"]: c["close"] for c in P.history(t, "10y").get("closes", [])}
+        except Exception:
+            continue
+        if len(px) < 500:
+            continue
+        dys = sorted(px)
+
+        def _px(d: str):
+            while d not in px:
+                try:
+                    d = (_dt.date.fromisoformat(d) - _dt.timedelta(days=1)).isoformat()
+                except Exception:
+                    return None
+                if d < dys[0]:
+                    return None
+            return px[d]
+
+        for k in range(1, len(cx) - 1):
+            fy, r = cx[k]
+            r0 = cx[k - 1][1]
+            if not r0:
+                continue
+            g = (r - r0) / abs(r0)
+            ey, em = fy + (1 if endmo == 12 else 0), endmo
+            try:
+                entry = (_dt.date(ey, em, 1) + _dt.timedelta(days=100)).isoformat()
+                back = (_dt.date(ey - 1, em, 1) + _dt.timedelta(days=100)).isoformat()
+                fwd1 = (_dt.date(ey + 1, em, 1) + _dt.timedelta(days=100)).isoformat()
+            except ValueError:
+                continue
+            p1, p0, pf = _px(entry), _px(back), _px(fwd1)
+            if not (p1 and p0 and pf):
+                continue
+            pairs.append(((p1 - p0) / p0, g, (pf - p1) / p1))
+    if len(pairs) < 30:
+        return {"pairs": len(pairs)}, "INCONCLUSIVE", len(pairs)
+    n = len(pairs)
+    mp = sorted(p for p, _, _ in pairs)[n // 2]
+    mg = sorted(g for _, g, _ in pairs)[n // 2]
+    val = [f for p, g, f in pairs if p >= mp and g >= mg]
+    unv = [f for p, g, f in pairs if p >= mp and g < mg]
+    mx = sum(p for p, _, _ in pairs) / n
+    my = sum(g for _, g, _ in pairs) / n
+    cov = sum((p - mx) * (g - my) for p, g, _ in pairs) / n
+    vx = sum((p - mx) ** 2 for p, _, _ in pairs) / n
+    vy = sum((g - my) ** 2 for _, g, _ in pairs) / n
+    rho = cov / _m.sqrt(vx * vy) if vx > 0 and vy > 0 else 0.0
+    mv = sum(val) / len(val) if val else 0.0
+    mu = sum(unv) / len(unv) if unv else 0.0
+    res = {"n": n, "rho_pastret_capex": round(rho, 3),
+           "fwd_validated": round(mv, 4), "n_val": len(val),
+           "fwd_unvalidated": round(mu, 4), "n_unv": len(unv),
+           "spread": round(mv - mu, 4),
+           "note": f"rho={rho:.2f}; validated {mv:.1%} (n={len(val)}) vs "
+                   f"unvalidated {mu:.1%} (n={len(unv)})"}
+    ok = mv > mu and rho > 0
+    return res, ("CONFIRMED" if ok else "REFUTED"), n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1942,6 +2175,8 @@ REGISTRY = {
     "E050": e050_nvda_mimic,
     "G001": g001_graph_coverage,
     "G002": g002_layer_backbone,
+    "E051": e051_reflexivity,
+    "E052": e052_capex_reflex,
 }
 
 
@@ -2066,6 +2301,8 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
+
 
 
 

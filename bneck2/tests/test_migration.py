@@ -294,6 +294,17 @@ class TestEdges(unittest.TestCase):
         cands = [c for c in cands if c["source"] != "TEST_A"]
         E.QUARANTINE.write_text(__import__("json").dumps(cands, indent=1))
 
+    def test_fy_series(self):
+        from bneck2 import experiments as X
+        facts = {"facts": {"us-gaap": {"ResearchAndDevelopmentExpense": {
+            "units": {"USD": [
+                {"fy": 2022, "val": 100, "form": "10-K", "end": "2022-12-31"},
+                {"fy": 2023, "val": 120, "form": "10-K", "end": "2023-12-31"},
+                {"fy": 2023, "val": 5, "form": "10-Q", "end": "2023-09-30"}]}}}}}
+        s, m = X._fy_series(facts, "ResearchAndDevelopmentExpense")
+        self.assertEqual(s, [(2022, 100.0), (2023, 120.0)])
+        self.assertEqual(m, 12)
+
     def test_edge_update_pure(self):
         from bneck2 import edge_update as U
         g = {"nodes": [{"id": "N", "crowdedness": 0.5,
@@ -423,7 +434,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "G001", "G002"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "E051", "E052", "G001", "G002"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
