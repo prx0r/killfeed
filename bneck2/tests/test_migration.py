@@ -269,6 +269,48 @@ class TestReasonBandit(unittest.TestCase):
         self.assertTrue(all("check" in r for r in rows))
 
 
+class TestEdges(unittest.TestCase):
+    def test_blank_unknowns(self):
+        from bneck2 import edges as E
+        e = E.blank_edge("A", "B")
+        self.assertIsNone(e["supply"]["lead_time_months"])
+        self.assertEqual(e["grade"], "HYPOTHESIS")
+
+    def test_evidence_grading(self):
+        from bneck2 import edges as E
+        e = E.blank_edge("A", "B")
+        e = E.add_evidence(e, "120 weeks", "Eaton ER", "2026-08-01", 0.7)
+        self.assertEqual(e["grade"], "SUPPORTED")
+        e["supply"]["lead_time_months"] = 30
+        e = E.add_evidence(e, "2nd source", "ABB ER", "2026-08-05", 0.6)
+        self.assertEqual(e["grade"], "QUANTIFIED")
+
+    def test_promote_blocked_without_evidence(self):
+        from bneck2 import edges as E
+        E.propose(E.blank_edge("TEST_A", "TEST_B"))
+        r = E.promote("TEST_A", "TEST_B", "REQUIRES")
+        self.assertIn("error", r)
+        cands = __import__("json").loads(E.QUARANTINE.read_text())
+        cands = [c for c in cands if c["source"] != "TEST_A"]
+        E.QUARANTINE.write_text(__import__("json").dumps(cands, indent=1))
+
+    def test_highlevel_watchlist(self):
+        import json
+        d = json.load(open("data/universe/highlevel_watchlist.json"))
+        self.assertGreaterEqual(len(d["candidates"]), 25)
+        self.assertGreaterEqual(len(d["primitives"]), 10)
+        for c in d["candidates"]:
+            self.assertIn("status", c)
+            self.assertIn("memo", c)
+
+    def test_coverage_keys(self):
+        from bneck2 import edges as E
+        c = E.coverage()
+        for k in ("edges", "with_evidence", "quantified",
+                  "pct_evidence", "pct_quantified"):
+            self.assertIn(k, c)
+
+
 class TestNvda(unittest.TestCase):
     def test_size_bounds(self):
         from bneck2 import nvda as NV
@@ -336,7 +378,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047", "E048"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048", "E049", "E050", "G001"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

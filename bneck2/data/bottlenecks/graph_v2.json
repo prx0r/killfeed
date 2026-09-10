@@ -12,7 +12,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "note": "HBM conversion cannibalizes conventional DRAM capacity",
@@ -27,7 +48,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "note": "agents + generated data pull enterprise NAND/SSD/HDD",
@@ -42,7 +84,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -56,7 +119,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -70,7 +154,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -84,7 +189,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -98,7 +224,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -112,7 +259,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -126,7 +294,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -140,7 +329,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "relation": "DEPENDS_ON",
@@ -154,7 +364,28 @@
    "valid_from": null,
    "valid_to": null,
    "confidence": "medium",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   },
   {
    "source": "trap_ion_qc",
@@ -168,7 +399,35 @@
    "valid_from": "2025-01-01",
    "valid_to": null,
    "confidence": "high",
-   "evidence_url": "https://investors.ionq.com (Aug 2025 IP disclosure)"
+   "evidence_url": "https://investors.ionq.com (Aug 2025 IP disclosure)",
+   "grade": "QUANTIFIED",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": 0.3
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": [
+    {
+     "value": "see url",
+     "source": "https://investors.ionq.com (Aug 2025 IP disclosure)",
+     "date": "2025-01-01",
+     "confidence": 0.7
+    }
+   ]
   },
   {
    "source": "accelerators",
@@ -182,7 +441,28 @@
    "valid_from": "2022-01-01",
    "valid_to": null,
    "confidence": "high",
-   "evidence_url": ""
+   "evidence_url": "",
+   "grade": "HYPOTHESIS",
+   "requirement": {
+    "quantity_per_unit": null,
+    "unit": null,
+    "confidence": null
+   },
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "substitution": {
+    "alternatives": [],
+    "score": 0.2
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "evidence": []
   }
  ],
  "name": "bottleneck graph v2 (2026-09-10) \u2014 capabilities vs constraints",
@@ -208,9 +488,6 @@
     "thermodynamic computing"
    ],
    "status": "binding",
-   "tickers": [
-    "NVDA"
-   ],
    "precedents": [
     "fiber_2000",
     "sun_2000",
@@ -235,7 +512,14 @@
    "deploy_p": 0.6,
    "revenue_purity": 0.9,
    "op_leverage": 1.6,
-   "expect_years": 7.0
+   "expect_years": 7.0,
+   "suppliers": [
+    {
+     "ticker": "NVDA",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -263,10 +547,6 @@
     "HBM capacity wave"
    ],
    "status": "binding",
-   "tickers": [
-    "MU",
-    "DRAM"
-   ],
    "precedents": [
     "solar_poly_2008",
     "lithium_2022",
@@ -294,7 +574,19 @@
    "deploy_p": 0.7,
    "revenue_purity": 0.8,
    "op_leverage": 1.5,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "MU",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "DRAM",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -318,10 +610,6 @@
     "demand destruction in consumer electronics"
    ],
    "status": "binding",
-   "tickers": [
-    "MU",
-    "DRAM"
-   ],
    "precedents": [
     "solar_poly_2008",
     "lithium_2022",
@@ -346,7 +634,19 @@
    "deploy_p": 0.7,
    "revenue_purity": 0.8,
    "op_leverage": 1.5,
-   "expect_years": 4.0
+   "expect_years": 4.0,
+   "suppliers": [
+    {
+     "ticker": "MU",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "DRAM",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -369,9 +669,6 @@
     "data-retention regulation / pruning norms"
    ],
    "status": "binding",
-   "tickers": [
-    "DRAM"
-   ],
    "precedents": [
     "lithium_2022",
     "dram_2019",
@@ -395,7 +692,14 @@
    "deploy_p": 0.6,
    "revenue_purity": 0.7,
    "op_leverage": 1.2,
-   "expect_years": 4.0
+   "expect_years": 4.0,
+   "suppliers": [
+    {
+     "ticker": "DRAM",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -419,11 +723,6 @@
     "monolithic 3D integration leapfrog"
    ],
    "status": "emerging",
-   "tickers": [
-    "LPK",
-    "SMHN",
-    "SOI"
-   ],
    "constraint_class": "physical-processes",
    "eliminability": 0.35,
    "tk_years": 6,
@@ -442,7 +741,24 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "LPK",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "SMHN",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "SOI",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -465,11 +781,6 @@
     "copper parity surprises"
    ],
    "status": "emerging",
-   "tickers": [
-    "COHR",
-    "LITE",
-    "SOI"
-   ],
    "precedents": [
     "fiber_2000"
    ],
@@ -490,7 +801,24 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "COHR",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "LITE",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "SOI",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "compute",
@@ -517,10 +845,6 @@
     "radical PV (50%+ tandem, space-based solar)"
    ],
    "status": "emerging",
-   "tickers": [
-    "POWI",
-    "ALNT"
-   ],
    "constraint_class": "physical-resources",
    "eliminability": 0.5,
    "tk_years": 8,
@@ -540,7 +864,19 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "POWI",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "ALNT",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "embodiment",
@@ -561,9 +897,6 @@
     "direct-drive high-torque-density motors"
    ],
    "status": "emerging",
-   "tickers": [
-    "ALNT"
-   ],
    "precedents": [
     "ddd_2014"
    ],
@@ -585,7 +918,14 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "ALNT",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "embodiment",
@@ -612,10 +952,6 @@
     "humanoid demand failure"
    ],
    "status": "emerging",
-   "tickers": [
-    "TKR",
-    "ALNT"
-   ],
    "precedents": [
     "molycorp_2011"
    ],
@@ -639,7 +975,19 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "TKR",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "ALNT",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "embodiment",
@@ -664,10 +1012,6 @@
     "vision-only proprioception"
    ],
    "status": "emerging",
-   "tickers": [
-    "NOVT",
-    "ALNT"
-   ],
    "constraint_class": "physical-resources",
    "eliminability": 0.4,
    "tk_years": 5,
@@ -686,7 +1030,19 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "NOVT",
+     "exposure": null,
+     "evidence": []
+    },
+    {
+     "ticker": "ALNT",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "embodiment",
@@ -707,9 +1063,6 @@
     "magnetic/air bearings at cost"
    ],
    "status": "emerging",
-   "tickers": [
-    "TKR"
-   ],
    "precedents": [
     "molycorp_2011"
    ],
@@ -730,7 +1083,14 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "TKR",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "embodiment",
@@ -752,9 +1112,6 @@
     "learned contact estimation"
    ],
    "status": "emerging",
-   "tickers": [
-    "NOVT"
-   ],
    "precedents": [
     "ddd_2014"
    ],
@@ -774,7 +1131,14 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "NOVT",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "branch": "validation",
@@ -797,7 +1161,6 @@
     "fully predictive biology (no wet validation needed) \u2014 unlikely this decade"
    ],
    "status": "binding",
-   "tickers": [],
    "constraint_class": "physical-processes",
    "eliminability": 0.3,
    "tk_years": 10,
@@ -828,9 +1191,6 @@
    "status": "emerging",
    "prevalence": 0.5,
    "crowdedness": 0.4,
-   "tickers": [
-    "IONQ"
-   ],
    "evidence": [
     "AGI accelerates architecture search; design work commoditizes"
    ],
@@ -858,7 +1218,14 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "IONQ",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "id": "quantum_ip",
@@ -868,9 +1235,6 @@
    "status": "emerging",
    "prevalence": 0.55,
    "crowdedness": 0.35,
-   "tickers": [
-    "IONQ"
-   ],
    "evidence": [
     "IonQ Aug 2025: 1000+ owned/licensed/controlled IP assets",
     "Networking ~400 by Mar 2025; Lightsynq 20+ memory/interconnect",
@@ -907,7 +1271,14 @@
    "deploy_p": 0.5,
    "revenue_purity": 0.5,
    "op_leverage": 1.0,
-   "expect_years": 5.0
+   "expect_years": 5.0,
+   "suppliers": [
+    {
+     "ticker": "IONQ",
+     "exposure": null,
+     "evidence": []
+    }
+   ]
   },
   {
    "id": "export_controls",
@@ -917,7 +1288,6 @@
    "status": "binding",
    "prevalence": 0.6,
    "crowdedness": 0.5,
-   "tickers": [],
    "evidence": [
     "Compute export licensing regimes; trusted-foundry requirements"
    ],

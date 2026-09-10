@@ -1,0 +1,690 @@
+[
+ {
+  "source": "AI_DATACENTER_1GW",
+  "target": "GRID_INTERCONNECT",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "AI_DATACENTER_1GW",
+  "target": "HV_TRANSFORMER",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "HV_TRANSFORMER",
+  "target": "GOES_STEEL",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "HV_TRANSFORMER",
+  "target": "COPPER",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "HV_TRANSFORMER",
+  "target": "TRANSFORMER_FACTORY_CAPACITY",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "AI_DATACENTER_1GW",
+  "target": "ACCELERATOR_RACKS",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "ACCELERATOR_RACKS",
+  "target": "MEMORY_HBM",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "MEMORY_HBM",
+  "target": "TSV_PROCESSING",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "MEMORY_HBM",
+  "target": "HYBRID_BONDING",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "HYBRID_BONDING",
+  "target": "HYBRID_BONDER_TOOL",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "ACCELERATOR_RACKS",
+  "target": "COWOS",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "ACCELERATOR_RACKS",
+  "target": "OPTICAL_IO",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "OPTICAL_IO",
+  "target": "OPTICAL_TEST",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "AI_DATACENTER_1GW",
+  "target": "COOLING",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": []
+ },
+ {
+  "source": "AI_DATACENTER",
+  "target": "PRECISION_TIMING",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo8: timing-content inflation"
+ },
+ {
+  "source": "PRECISION_TIMING",
+  "target": "TIMING_TEST",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo8: requires_verified_measurement"
+ },
+ {
+  "source": "OPTICAL_IO",
+  "target": "INP_SUBSTRATE",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo5: 0.6-0.75M vs 2.6-3.0M wafers"
+ },
+ {
+  "source": "INP_SUBSTRATE",
+  "target": "INP_CRYSTAL_GROWTH_TOOL",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo5: PVA TePla AI orders"
+ },
+ {
+  "source": "INP_SUBSTRATE",
+  "target": "INDIUM",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo5: China ~70%, byproduct-inelastic"
+ },
+ {
+  "source": "AI_SYSTEM",
+  "target": "CERTIFICATION_BANDWIDTH",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo10: Halos/ANAB precedent"
+ },
+ {
+  "source": "AI_DATACENTER",
+  "target": "STABLE_MW",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo7: power-quality scarcity"
+ },
+ {
+  "source": "STABLE_MW",
+  "target": "SYNCHRONOUS_CONDENSER",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo7: ABB AI microgrid orders"
+ },
+ {
+  "source": "SEMI_PROCESS",
+  "target": "MEASUREMENT_DENSITY",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo5: INFICON record orders"
+ },
+ {
+  "source": "PACKAGE_SUBSTRATE",
+  "target": "INTERFACE_CHEMISTRY",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo9: MEC CZ record"
+ },
+ {
+  "source": "SEMI_PROCESS",
+  "target": "VACUUM_VALVE",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo9: VAT orders +99%"
+ },
+ {
+  "source": "AI_BIOLOGY",
+  "target": "DNA_SYNTHESIS",
+  "relation": "REQUIRES",
+  "grade": "HYPOTHESIS",
+  "requirement": {
+   "quantity_per_unit": null,
+   "unit": null,
+   "confidence": null
+  },
+  "supply": {
+   "global_capacity": null,
+   "utilization": null,
+   "lead_time_months": null,
+   "capacity_growth_rate": null
+  },
+  "substitution": {
+   "alternatives": [],
+   "score": null
+  },
+  "timing": {
+   "needed_by": null,
+   "capacity_available_by": null
+  },
+  "evidence": [],
+  "note": "memo3: Twist complex-gene expansion"
+ }
+]

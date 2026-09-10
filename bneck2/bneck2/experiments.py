@@ -1811,6 +1811,65 @@ def e049_highn_horserace() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), d.get("test_months", 0)
 
 
+def e050_nvda_mimic() -> tuple[dict, str, int]:
+    """H-NVDA-M: NVDA's own public strategic holdings (13F 2026Q2,
+    known at filing 2026-08-14) beat SPY forward."""
+    import json as _j
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-NVDA-M", "buy-what-NVDA-buys beats SPY from filing date",
+        "value-weighted public NVDA holdings total return > SPY from 8/14",
+        "mimic <= SPY (NVDA's balance-sheet bets carry no edge)",
+        "NVDA 13F 2026Q2 public positions; enter at filing-date close")
+    d13 = _j.load(open(ROOT / "data" / "universe" / "nvda_13f_2026q2.json"))
+    pubs = [(x["ticker"], x["value_usd"]) for x in d13["positions"] if x.get("ticker")]
+    start = "2026-08-14"
+    rets, wsum = {}, sum(w for _, w in pubs)
+    for t, w in pubs:
+        try:
+            cs = [c for c in P.history(t, "3mo").get("closes", []) if c["date"] >= start]
+        except Exception:
+            continue
+        if len(cs) < 2 or not cs[0]["close"]:
+            continue
+        rets[t] = ((cs[-1]["close"] - cs[0]["close"]) / cs[0]["close"], w, cs[-1]["date"])
+    if not rets:
+        return {"error": "no prices"}, "INCONCLUSIVE", 0
+    port = sum(r * w for r, w in ((v[0], v[1]) for v in rets.values())) / sum(v[1] for v in rets.values())
+    spy = [c for c in P.history("SPY", "3mo").get("closes", []) if c["date"] >= start]
+    nv = [c for c in P.history("NVDA", "3mo").get("closes", []) if c["date"] >= start]
+    spy_r = (spy[-1]["close"] - spy[0]["close"]) / spy[0]["close"]
+    nv_r = (nv[-1]["close"] - nv[0]["close"]) / nv[0]["close"]
+    res = {"mimic": round(port, 4), "spy": round(spy_r, 4), "nvda": round(nv_r, 4),
+           "names": {t: round(v[0], 4) for t, v in rets.items()},
+           "asof": rets[next(iter(rets))][2],
+           "note": f"mimic {port:.2%} vs SPY {spy_r:.2%} vs NVDA {nv_r:.2%} since 8/14"}
+    ok = port > spy_r
+    return res, ("CONFIRMED" if ok else "REFUTED"), 1
+
+
+def g001_graph_coverage() -> tuple[dict, str, int]:
+    """G-GRAPH-1: production graph meets P0 evidence bar."""
+    from bneck2 import edges as E
+    from bneck2 import lab as LAB
+    import json as _j
+    LAB.preregister(
+        "G-GRAPH-1", "graph meets P0 bar (>=70% evidenced, >=30% quantified)",
+        "coverage ratchets up vs last receipt",
+        "coverage flat/down (graph work stalled)",
+        "graph_v2.json production edges only; quarantine excluded")
+    cov = E.coverage()
+    q = []
+    if E.QUARANTINE.exists():
+        q = _j.loads(E.QUARANTINE.read_text())
+    cov["quarantined"] = len(q)
+    ok = cov["pct_evidence"] >= 0.7 and cov["pct_quantified"] >= 0.3
+    cov["note"] = (f"{cov['edges']} edges, {cov['pct_evidence']:.0%} evidenced, "
+                   f"{cov['pct_quantified']:.0%} quantified, {len(q)} quarantined")
+    return cov, ("CONFIRMED" if ok else "REFUTED"), cov["edges"]
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1861,6 +1920,8 @@ REGISTRY = {
     "E047": e047_forward_paper,
     "E048": e048_support_bounce,
     "E049": e049_highn_horserace,
+    "E050": e050_nvda_mimic,
+    "G001": g001_graph_coverage,
 }
 
 
@@ -1985,6 +2046,8 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
+
 
 
 

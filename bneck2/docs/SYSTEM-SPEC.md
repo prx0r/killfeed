@@ -104,6 +104,9 @@ Dependency rules:
 | E046 | rules do NOT generalize cross-sectionally (REFUTED) | experiments |
 | E047 | forward paper test, 90 days, logging daily | scripts/paper.py |
 | E048 | fish bounce rule REFUTED (-0.65 vs bh +0.87; their 62% was artifact) | experiments |
+| E050 | NVDA-mimic REFUTED directional (-2.87% vs SPY -2.18% since 8/14 filing) | experiments |
+| G001 | graph P0 bar (70% evidenced/30% quantified); baseline 8%/15%, 14 quarantined | edges.py |
+| edge | typed REQUIRES schema; unknowns=None; tickers off physical nodes | edges.py |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |
