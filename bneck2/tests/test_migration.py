@@ -177,6 +177,38 @@ class TestAtoms(unittest.TestCase):
                            A.convexity(one, sev)["convexity"])
 
 
+class TestPredict(unittest.TestCase):
+    def test_spearman(self):
+        from bneck2 import predict as PD
+        self.assertAlmostEqual(
+            PD.spearman([1.0, 2.0, 3.0, 4.0, 5.0], [1.0, 2.0, 3.0, 4.0, 5.0]), 1.0)
+        self.assertIsNone(PD.spearman([1.0, 1.0], [1.0, 2.0]))
+        self.assertIsNone(PD.spearman([1.0], [1.0]))
+
+    def test_grid_shapes(self):
+        from bneck2 import predict as PD
+        self.assertEqual(len(PD.grid("monthly", 12)), 12)
+        self.assertEqual(len(PD.grid("biweekly", 12)), 24)
+
+    def test_composite_by_date_no_leak(self):
+        from bneck2 import predict as PD
+        rows = [{"date": "2026-01-01", "ticker": t, "f": float(i),
+                 "fwd_20": 0.01} for i, t in enumerate("ABCD")]
+        rows += [{"date": "2026-02-01", "ticker": t, "f": 100.0 + i,
+                  "fwd_20": 0.01} for i, t in enumerate("ABCD")]
+        out = PD.composite_by_date(rows, ["f"], {"f": 1.0})
+        jan = sorted(r["score"] for r in out if r["date"] == "2026-01-01")
+        feb = sorted(r["score"] for r in out if r["date"] == "2026-02-01")
+        # identical within-date ranks despite level shift => per-date norms
+        self.assertEqual([round(x, 3) for x in jan], [round(x, 3) for x in feb])
+
+    def test_trailing_forward(self):
+        from bneck2 import predict as PD
+        cl = [(f"2026-01-{d:02d}", 100.0 + d) for d in range(1, 15)]
+        self.assertAlmostEqual(PD.trailing_return(cl, "2026-01-14", 5), 5 / 109, places=3)
+        self.assertIsNone(PD.forward_return(cl, "2026-01-14", 5))
+
+
 class TestAcq(unittest.TestCase):
     def test_map_and_eligible(self):
         from bneck2 import acq as A

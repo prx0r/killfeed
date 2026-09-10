@@ -89,6 +89,10 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| predict panel | monthly 180 + biweekly 360 rows; point-in-time features only | predict.py, data/predict/ |
+| factor screen | Spearman IC + Wilson; train m1-9/signs, holdout m10-12 | experiments E014/E015 |
+| composite | per-date z-scores, signs from train (no look-ahead) | predict.composite_by_date |
+| acq backtest | 20d fwd vs SPY per dated lab deal; drops logged | acq.py, E010-E012 |
 | run files | immutable per-run inputs+outputs; receipts index them | lab.run_file, experimentation/runs/ |
 | content cache | sha-keyed free replays (yahoo daily, openalex weekly) | lab.cache_*, data/cache/ |
 | rebuild gate | delete projections → rebuild byte-equal (CI) | scripts/experience_build.py --check |

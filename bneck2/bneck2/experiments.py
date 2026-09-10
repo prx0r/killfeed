@@ -343,6 +343,156 @@ def e013_redteam() -> tuple[dict, str, int]:
         ("CONFIRMED" if ok else "REFUTED"), len(facts)
 
 
+def e014_signal_chain() -> tuple[dict, str, int]:
+    """H-SIG-1: factor composite beats momentum bogey on holdout."""
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-SIG-1", "composite beats momentum out-of-sample",
+        "holdout Sharpe(composite) > Sharpe(momentum), same dates/costs",
+        "composite <= momentum (factors add nothing)",
+        "12mo monthly panel; train m1-9, holdout m10-12; verdict needs n>=30 rows")
+    import json as _j
+    prow = sorted((ROOT / "data" / "predict").glob("panel-*.jsonl"))
+    rows = []
+    for f in prow:
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    if not rows:
+        return {"note": "no predict panel yet; run scripts/build_predict_panel.py",
+                "need": "panel files"}, "INCONCLUSIVE", 0
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[max(len(dates) - 3, 0)]
+    train = [r for r in rows if r["date"] < cut]
+    hold = [r for r in rows if r["date"] >= cut]
+    scr = PD.screen(train)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 20]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    if not winners:
+        return {"train_screen": scr, "note": "no factor clears IC>0.1 on train"},
+    ("REFUTED",  len(train))
+    comp_hold = PD.composite_by_date([dict(r) for r in hold], winners,
+                                       signs)
+    mom_hold = [{"date": r["date"], "ticker": r["ticker"],
+                 "score": r.get("f_mom_20") or 0.0,
+                 "forward_return": r.get("fwd_20")} for r in hold]
+    _, cs = BT.walk_forward([{"date": r["date"], "ticker": r["ticker"],
+                              "score": r["score"],
+                              "forward_return": r.get("fwd_20") or 0.0}
+                             for r in comp_hold if r.get("fwd_20") is not None])
+    _, ms = BT.walk_forward([dict(r, forward_return=r.get("forward_return") or 0.0)
+                             for r in mom_hold if r.get("forward_return") is not None])
+    out = {"train_screen": scr, "winners": winners,
+           "composite_sharpe": cs.get("sharpe"), "momentum_sharpe": ms.get("sharpe"),
+           "holdout_n": len(hold),
+           "note": f"composite {cs.get('sharpe')} vs momentum {ms.get('sharpe')} on holdout"}
+    verdict = ("CONFIRMED" if (cs.get("sharpe") or -9) > (ms.get("sharpe") or 9)
+               and len(hold) >= 30 else "REFUTED" if len(hold) >= 30 else "INCONCLUSIVE")
+    return out, verdict, len(hold)
+
+
+def e015_signal_biweekly() -> tuple[dict, str, int]:
+    """H-SIG-2 (mutate of H-SIG-1): biweekly grid (26 dates) cures the
+    3-point-Sharpe noise; same factors, train first 18, holdout last 8."""
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-SIG-2", "biweekly grid rescues the signal test",
+        "holdout Sharpe(composite) > Sharpe(momentum) on 8 biweekly dates",
+        "composite <= momentum (factors add nothing at any grid)",
+        "data/predict/biwk-*.jsonl; parent H-SIG-1")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    if not rows:
+        return {"note": "no biweekly panel; run build_predict_panel.py --biweekly",
+                "need": "biweekly panel"}, "INCONCLUSIVE", 0
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[max(len(dates) - 8, 0)]
+    train = [r for r in rows if r["date"] < cut]
+    hold = [r for r in rows if r["date"] >= cut]
+    scr = PD.screen(train)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 40]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    if not winners:
+        return {"train_screen": scr, "note": "no factor clears IC>0.1 on train"},
+    ("REFUTED", len(train))
+    comp_hold = PD.composite_by_date([dict(r) for r in hold], winners, signs)
+    mom_hold = [{"date": r["date"], "ticker": r["ticker"],
+                 "score": r.get("f_mom_20") or 0.0,
+                 "forward_return": r.get("fwd_20")} for r in hold]
+
+    def _wf(rs):
+        ok = []
+        for r in rs:
+            fr = r.get("forward_return", r.get("fwd_20"))
+            if fr is not None:
+                ok.append(dict(r, forward_return=fr))
+        return BT.walk_forward(ok)[1] if ok else {"sharpe": None}
+
+    cs, ms = _wf(comp_hold), _wf(mom_hold)
+    out = {"train_screen": scr, "winners": winners,
+           "composite_sharpe": cs.get("sharpe"),
+           "momentum_sharpe": ms.get("sharpe"),
+           "holdout_n": len(hold), "holdout_dates": len(dates) - len([d for d in dates if d < cut]),
+           "note": f"composite {cs.get('sharpe')} vs momentum {ms.get('sharpe')} on biweekly holdout"}
+    verdict = ("CONFIRMED" if (cs.get("sharpe") is not None and ms.get("sharpe") is not None
+               and cs["sharpe"] > ms["sharpe"]) and len(hold) >= 60
+               else "REFUTED" if len(hold) >= 60 else "INCONCLUSIVE")
+    return out, verdict, len(hold)
+
+
+def e016_burst_reversal() -> tuple[dict, str, int]:
+    """H-SIG-3 (mutate of H-SIG-2): insider bursts REVERSE (IC<0), and
+    leg attribution tells whether shorts carry the composite."""
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-SIG-3", "burst reversal + short-leg carry",
+        "negated-burst factor IC>0.15 on full biweekly panel AND "
+        "composite short leg Sharpe > long leg Sharpe",
+        "burst IC>=0 as long, or long leg carries (no reversal edge)",
+        "data/predict/biwk-*.jsonl; parent H-SIG-2")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    nb = [dict(r, f_burst_neg=-(r["f_burst"] or 0.0)) for r in rows
+          if r.get("f_burst") is not None]
+    ic = PD.spearman([r["f_burst_neg"] for r in nb],
+                     [r["fwd_20"] for r in nb])
+    # leg attribution on composite winners from E015 screen
+    by_date = {}
+    for r in rows:
+        by_date.setdefault(r["date"], []).append(r)
+    longs, shorts = [], []
+    for d in sorted(by_date):
+        g = by_date[d]
+        sc = {r["ticker"]: (r.get("f_mom_20") or 0) + (r.get("f_attack") or 0)
+              for r in g}
+        pos = BT.make_positions(sc, 0.2)
+        ret = {r["ticker"]: r["fwd_20"] for r in g}
+        longs.append(sum(max(pos[t], 0) * ret.get(t, 0) for t in pos))
+        shorts.append(sum(min(pos[t], 0) * ret.get(t, 0) for t in pos))
+    import math as _m
+    def _sh(xs):
+        m = sum(xs) / len(xs)
+        v = sum((x - m) ** 2 for x in xs) / max(len(xs) - 1, 1)
+        return round(m / (_m.sqrt(v) or 1e-9), 3)
+    out = {"burst_neg_IC": ic, "n_burst": len(nb),
+           "long_leg_sharpe_like": _sh(longs), "short_leg_sharpe_like": _sh(shorts),
+           "note": f"neg-burst IC={ic} n={len(nb)}; long {_sh(longs)} vs short {_sh(shorts)}"}
+    verdict = ("CONFIRMED" if (ic or 0) > 0.15 and _sh(shorts) > _sh(longs)
+               else "REFUTED")
+    return out, verdict, len(nb)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -357,6 +507,9 @@ REGISTRY = {
     "E011": e011_acq_silicon,
     "E012": e012_acq_size_split,
     "E013": e013_redteam,
+    "E014": e014_signal_chain,
+    "E015": e015_signal_biweekly,
+    "E016": e016_burst_reversal,
 }
 
 
@@ -378,5 +531,8 @@ def _acq_rows():
             seen.add(key)
             uniq.append(r)
     return uniq, dropped
+
+
+
 
 

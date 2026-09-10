@@ -1,0 +1,15 @@
+{"date": "2026-01-23", "ticker": "NVDA", "f_mom_20": -0.0081, "f_burst": 0.08108108108108109, "f_attack": 0.667, "f_hn": 19, "f_conv": 0.6, "f_B": 0.135, "fwd_20": 0.0207}
+{"date": "2026-01-23", "ticker": "AMD", "f_mom_20": 0.2084, "f_burst": 0.06896551724137931, "f_attack": 0.173, "f_hn": 19650, "f_conv": null, "f_B": null, "fwd_20": -0.2429}
+{"date": "2026-01-23", "ticker": "MU", "f_mom_20": 0.4466, "f_burst": 0.0, "f_attack": 0.406, "f_hn": 1614, "f_conv": 0.605, "f_B": 0.06, "fwd_20": 0.0533}
+{"date": "2026-01-23", "ticker": "INTC", "f_mom_20": 0.2399, "f_burst": 0.061224489795918366, "f_attack": 0.065, "f_hn": 9750, "f_conv": null, "f_B": null, "fwd_20": -0.032}
+{"date": "2026-01-23", "ticker": "FORM", "f_mom_20": 0.2586, "f_burst": null, "f_attack": 0.097, "f_hn": 1515, "f_conv": null, "f_B": null, "fwd_20": 0.3131}
+{"date": "2026-01-23", "ticker": "KEYS", "f_mom_20": 0.0375, "f_burst": 0.11764705882352941, "f_attack": 0.391, "f_hn": 1724, "f_conv": null, "f_B": null, "fwd_20": 0.1506}
+{"date": "2026-01-23", "ticker": "COHR", "f_mom_20": 0.0264, "f_burst": 0.0, "f_attack": 1.101, "f_hn": 1, "f_conv": 0.56, "f_B": 0.225, "fwd_20": 0.2638}
+{"date": "2026-01-23", "ticker": "LITE", "f_mom_20": -0.1245, "f_burst": 0.0, "f_attack": 1.101, "f_hn": 1, "f_conv": 0.56, "f_B": 0.225, "fwd_20": 0.9892}
+{"date": "2026-01-23", "ticker": "IONQ", "f_mom_20": -0.0806, "f_burst": null, "f_attack": -0.019, "f_hn": 0, "f_conv": 0.47, "f_B": 0.375, "fwd_20": -0.3486}
+{"date": "2026-01-23", "ticker": "RGTI", "f_mom_20": -0.0661, "f_burst": 0.0, "f_attack": 0.667, "f_hn": 387, "f_conv": null, "f_B": null, "fwd_20": -0.3168}
+{"date": "2026-01-23", "ticker": "AVGO", "f_mom_20": -0.0838, "f_burst": null, "f_attack": 0.507, "f_hn": 492, "f_conv": null, "f_B": null, "fwd_20": 0.0322}
+{"date": "2026-01-23", "ticker": "GOOGL", "f_mom_20": 0.0432, "f_burst": null, "f_attack": -0.061, "f_hn": 2341, "f_conv": null, "f_B": null, "fwd_20": -0.0501}
+{"date": "2026-01-23", "ticker": "AMZN", "f_mom_20": 0.0302, "f_burst": null, "f_attack": 0.384, "f_hn": 262, "f_conv": null, "f_B": null, "fwd_20": -0.1417}
+{"date": "2026-01-23", "ticker": "META", "f_mom_20": -0.0093, "f_burst": null, "f_attack": 0.195, "f_hn": 2426, "f_conv": null, "f_B": null, "fwd_20": -0.0327}
+{"date": "2026-01-23", "ticker": "CSCO", "f_mom_20": -0.044, "f_burst": null, "f_attack": 0.017, "f_hn": 1007, "f_conv": null, "f_B": null, "fwd_20": 0.0422}
