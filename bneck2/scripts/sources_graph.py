@@ -24,6 +24,10 @@ NODES = [
      ["full-text filing search"], "GET search-index; POST shape differs"),
     ("nasdaq", "holders", "keyless", "LIVE", "collectors/nasdaq.py",
      ["6k holders/ticker + accumulators + insider counts"], "13F-bulk workaround"),
+    ("cftc", "positioning", "keyless", "LIVE", "collectors/cftc.py",
+     ["speculative pressure gauge"], "Socrata, recipe ex-financial-mcp"),
+    ("fx", "macro", "keyless", "LIVE", "collectors/fx.py",
+     ["currency backdrop"], "Frankfurter/ECB, recipe ex-finance-mcp2"),
     ("sec_facts", "fundamentals", "keyless", "LIVE", "collectors/sec_facts.py",
      ["E012", "duration-mismatch"], "tag-rename aware"),
     ("openinsider", "insider", "keyless-http", "LIVE", "collectors/openinsider.py",
@@ -91,6 +95,7 @@ EDGES = [
     ("house", "connect"), ("usaspending", "connect"), ("grants", "connect"),
     ("prices", "experiments"), ("prices", "backtest"), ("x", "planned"),
     ("nasdaq", "connect"),
+    ("cftc", "connect"), ("fx", "connect"),
 ]
 
 

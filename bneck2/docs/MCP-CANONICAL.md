@@ -26,6 +26,18 @@ means documented, untouched.
 | GovInfo public MCP (preview) | exists; legislative corpus | queued behind api.data.gov key |
 | getxapi MCP package (`npx @getxapi/mcp`) | endpoint cost table verified against live billing | we call REST directly with ledger |
 
+## MINED this round (awesome-lists)
+
+- arnavbhatia1/FinancialMCP (33 tools, no keys): CFTC-Socrata path +
+  Google-Trends shape (Trends 429-walled) → collectors/cftc.py LIVE.
+- adididitagain/finance-mcp (no keys): Frankfurter FX + World Bank macro
+  → collectors/fx.py LIVE.
+- blockrunai/awesome-finance-mcp index: Maverick/Alpaca/FMP/Finnhub/
+  Massive/QuantConnect all need keys — catalogued, not cloned.
+- appcypher/awesome-mcp-servers (archived Aug 2026 — stale index, use
+  with care): ArXiv MCP, BlueSky MCP (API 403s this box), Congress MCP
+  (needs key), Exa/Tavily/Brave (need keys).
+
 ## QUEUED (known, untouched)
 
 thsmale/usaspending-mcp (we hit the API natively instead); OctoBot
