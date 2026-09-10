@@ -74,3 +74,53 @@ def daily_short(tickers: list[str], timeout: int = 30) -> dict:
                             "total_vol": int(v["total"])}
                         for t, v in agg.items()}
     return {}
+
+
+def _parse_day(body: str, want: set[str]) -> dict[str, dict]:
+    agg: dict[str, dict] = {}
+    for line in body.splitlines()[1:]:
+        parts = line.split("|")
+        if len(parts) < 5 or parts[1].upper() not in want:
+            continue
+        try:
+            sv, tv = float(parts[2]), float(parts[4])
+        except ValueError:
+            continue
+        a = agg.setdefault(parts[1].upper(), {"short": 0.0, "total": 0.0})
+        a["short"] += sv
+        a["total"] += tv
+    return {t: {"short_ratio": round(v["short"] / v["total"], 4) if v["total"] else 0.0}
+            for t, v in agg.items()}
+
+
+def short_history(tickers: list[str], dates: list[str],
+                  timeout: int = 30) -> dict[str, dict[str, float | None]]:
+    """Short ratios per ticker per asof-date (walks back to nearest tape).
+    One file per date covers all tickers. Returns {date: {ticker: ratio}}."""
+    import datetime as _dt
+    want = {t.upper() for t in tickers}
+    out: dict[str, dict[str, float | None]] = {}
+    for asof in dates:
+        y, m, d = map(int, asof.split("-"))
+        day = _dt.date(y, m, d)
+        found = None
+        for _ in range(10):
+            day -= _dt.timedelta(days=1)
+            if day.weekday() >= 5:
+                continue
+            ds = day.strftime("%Y%m%d")
+            for venue in VENUES:
+                body = _fetch(f"https://cdn.finra.org/equity/regsho/daily/"
+                              f"{venue}shvol{ds}.txt", timeout)
+                if body and "ShortVolume" in body:
+                    found = (ds, body)
+                    break
+            if found:
+                break
+        if not found:
+            out[asof] = {t: None for t in tickers}
+            continue
+        parsed = _parse_day(found[1], want)
+        out[asof] = {t: parsed.get(t.upper(), {}).get("short_ratio")
+                     for t in tickers}
+    return out

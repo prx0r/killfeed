@@ -1,0 +1,15 @@
+{"date": "2026-08-07", "ticker": "NVDA", "f_mom_20": 0.0616, "f_burst": 0.014925373134328358, "f_attack": 0.667, "f_hn": 31, "f_short": 0.3332, "f_conv": 0.6, "f_B": 0.135, "fwd_20": 0.0286}
+{"date": "2026-08-07", "ticker": "AMD", "f_mom_20": -0.1336, "f_burst": 0.03571428571428571, "f_attack": 0.173, "f_hn": 18604, "f_short": 0.4481, "f_conv": null, "f_B": null, "fwd_20": -0.012}
+{"date": "2026-08-07", "ticker": "MU", "f_mom_20": -0.1039, "f_burst": 0.0, "f_attack": 0.406, "f_hn": 1714, "f_short": 0.5312, "f_conv": 0.605, "f_B": 0.06, "fwd_20": 0.1584}
+{"date": "2026-08-07", "ticker": "INTC", "f_mom_20": -0.0746, "f_burst": 0.10714285714285714, "f_attack": 0.065, "f_hn": 8397, "f_short": 0.4197, "f_conv": null, "f_B": null, "fwd_20": -0.0576}
+{"date": "2026-08-07", "ticker": "FORM", "f_mom_20": -0.0011, "f_burst": null, "f_attack": 0.097, "f_hn": 1074, "f_short": 0.5886, "f_conv": null, "f_B": null, "fwd_20": -0.1149}
+{"date": "2026-08-07", "ticker": "KEYS", "f_mom_20": 0.0587, "f_burst": 0.037037037037037035, "f_attack": 0.391, "f_hn": 1115, "f_short": 0.3432, "f_conv": null, "f_B": null, "fwd_20": -0.0404}
+{"date": "2026-08-07", "ticker": "COHR", "f_mom_20": 0.1684, "f_burst": 0.0, "f_attack": 1.101, "f_hn": 1, "f_short": 0.6068, "f_conv": 0.56, "f_B": 0.225, "fwd_20": -0.2566}
+{"date": "2026-08-07", "ticker": "LITE", "f_mom_20": 0.1099, "f_burst": 0.0, "f_attack": 1.101, "f_hn": 1, "f_short": 0.5738, "f_conv": 0.56, "f_B": 0.225, "fwd_20": -0.01}
+{"date": "2026-08-07", "ticker": "IONQ", "f_mom_20": 0.0366, "f_burst": null, "f_attack": -0.019, "f_hn": 0, "f_short": 0.6191, "f_conv": 0.47, "f_B": 0.375, "fwd_20": -0.1105}
+{"date": "2026-08-07", "ticker": "RGTI", "f_mom_20": 0.0846, "f_burst": 0.0, "f_attack": 0.667, "f_hn": 346, "f_short": 0.5592, "f_conv": null, "f_B": null, "fwd_20": -0.1527}
+{"date": "2026-08-07", "ticker": "AVGO", "f_mom_20": 0.0695, "f_burst": null, "f_attack": 0.507, "f_hn": 454, "f_short": 0.4221, "f_conv": null, "f_B": null, "fwd_20": -0.1633}
+{"date": "2026-08-07", "ticker": "GOOGL", "f_mom_20": -0.0081, "f_burst": null, "f_attack": -0.061, "f_hn": 2213, "f_short": 0.5125, "f_conv": null, "f_B": null, "fwd_20": -0.0447}
+{"date": "2026-08-07", "ticker": "AMZN", "f_mom_20": 0.1188, "f_burst": null, "f_attack": 0.384, "f_hn": 236, "f_short": 0.3161, "f_conv": null, "f_B": null, "fwd_20": -0.0582}
+{"date": "2026-08-07", "ticker": "META", "f_mom_20": -0.1152, "f_burst": null, "f_attack": 0.195, "f_hn": 2301, "f_short": 0.2911, "f_conv": null, "f_B": null, "fwd_20": 0.0417}
+{"date": "2026-08-07", "ticker": "CSCO", "f_mom_20": 0.001, "f_burst": null, "f_attack": 0.017, "f_hn": 994, "f_short": 0.2617, "f_conv": null, "f_B": null, "fwd_20": -0.1007}

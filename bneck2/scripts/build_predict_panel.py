@@ -27,7 +27,7 @@ def main() -> int:
     for r in rows:
         by_date.setdefault(r["date"], []).append(r)
     for d, rs in sorted(by_date.items()):
-        (outdir / f"{prefix}{d[:7]}.jsonl").write_text(
+        (outdir / f"{prefix}{d}.jsonl").write_text(
             "\n".join(json.dumps(r) for r in rs) + "\n", encoding="utf-8")
     good = sum(1 for r in rows if r.get("fwd_20") is not None)
     print(f"panel: {len(rows)} rows over {len(by_date)} months, "

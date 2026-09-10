@@ -493,6 +493,49 @@ def e016_burst_reversal() -> tuple[dict, str, int]:
     return out, verdict, len(nb)
 
 
+def e017_long_only() -> tuple[dict, str, int]:
+    """H-SIG-4: long-only top-tercile beats equal-weight universe.
+
+    The L/S composites lose less but still lose (drawdown regime).
+    Test whether the long leg alone carries edge vs holding everything.
+    """
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-SIG-4", "long-only top tercile beats universe",
+        "mean(top-tercile fwd) > mean(all fwd) by >=2pp on holdout",
+        "no 2pp edge (ranking adds nothing long-only)",
+        "biweekly panel; parent H-SIG-2")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[max(len(dates) - 8, 0)]
+    hold = [r for r in rows if r["date"] >= cut]
+    train = [r for r in rows if r["date"] < cut]
+    scr = PD.screen(train)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 40]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    scored = PD.composite_by_date(hold, winners or ["f_mom_20"], signs)
+    by_date = {}
+    for r in scored:
+        by_date.setdefault(r["date"], []).append(r)
+    ex, ux = [], []
+    for d in sorted(by_date):
+        g = sorted(by_date[d], key=lambda r: -r["score"])
+        k = max(len(g) // 3, 1)
+        ex.append(sum(r["fwd_20"] for r in g[:k]) / k
+                  - sum(r["fwd_20"] for r in g) / len(g))
+    m = sum(ex) / len(ex) if ex else 0.0
+    out = {"winners": winners, "n_dates": len(ex),
+           "mean_excess_vs_universe": round(m, 4),
+           "note": f"top-tercile beats universe by {m:+.2%} per window"}
+    return out, ("CONFIRMED" if m >= 0.02 else "REFUTED"), len(ex)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -510,6 +553,7 @@ REGISTRY = {
     "E014": e014_signal_chain,
     "E015": e015_signal_biweekly,
     "E016": e016_burst_reversal,
+    "E017": e017_long_only,
 }
 
 
@@ -531,6 +575,7 @@ def _acq_rows():
             seen.add(key)
             uniq.append(r)
     return uniq, dropped
+
 
 
 

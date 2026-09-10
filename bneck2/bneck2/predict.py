@@ -6,6 +6,7 @@ Features are STRICTLY point-in-time (nothing dated after the window):
   f_burst     SEC Form4+deal count trailing 30d vs trailing-1y median
   f_attack    OpenAlex prior-year growth for the node's query (lagged 1y)
   f_hn        HN stories trailing 90d (Algolia created_at_i ranges)
+  f_short     FINRA short ratio, nearest tape before window
   f_conv      node conviction (static honesty-check: expect ~0 IC)
   f_B         node severity B (static honesty-check)
 Target: 20-trading-day forward return (Yahoo).
@@ -180,8 +181,12 @@ def build_panel(tickers: list[str] | None = None,
         for t in n.get("tickers", []):
             node_of.setdefault(t, n)
     hist = {t: _closes(t) for t in tickers}
+    dates = grid(freq, months)
+    from collectors import finra as _FIN
+    shorts = _FIN.short_history(
+        [t for t in tickers if t.isupper() and len(t) <= 6], dates)
     rows = []
-    for asof in grid(freq, months):
+    for asof in dates:
         for t in tickers:
             cl = hist.get(t, [])
             if not cl:
@@ -197,6 +202,7 @@ def build_panel(tickers: list[str] | None = None,
                             if sec["n30"] is not None else None),
                 "f_attack": attack_lagged(q, int(asof[:4])),
                 "f_hn": hn_count_90d(q.split("/")[0].strip(), asof),
+                "f_short": shorts.get(asof, {}).get(t),
                 "f_conv": G.score_node(node) if node else None,
                 "f_B": M.severity(node, readings.get(node.get("id", "")))["B"] if node else None,
                 "fwd_20": forward_return(cl, asof, 20),
@@ -229,7 +235,7 @@ def screen(rows: list[dict], factors: list[str] | None = None) -> list[dict]:
     from bneck2 import lab as L
     factors = factors or [k for k in
                           ("f_mom_20", "f_burst", "f_attack", "f_hn",
-                           "f_conv", "f_B") ]
+                           "f_short", "f_conv", "f_B")]
     out = []
     for f in factors:
         ic = spearman([r.get(f) for r in rows],
