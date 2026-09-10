@@ -90,3 +90,65 @@ def report() -> str:
         if note:
             lines.append(f"   {str(note)[:300]}")
     return "\n".join(lines)
+
+
+import math
+
+
+def wilson(hits: int, n: int, z: float = 1.96) -> dict:
+    """Wilson 95% interval for small-n hit rates (honest uncertainty)."""
+    if n <= 0:
+        return {"rate": 0.0, "lo": 0.0, "hi": 1.0, "n": 0}
+    ph = hits / n
+    den = 1 + z * z / n
+    c = ph + z * z / (2 * n)
+    m = z * math.sqrt(ph * (1 - ph) / n + z * z / (4 * n * n))
+    return {"rate": round(ph, 3), "lo": round(max((c - m) / den, 0.0), 3),
+            "hi": round(min((c + m) / den, 1.0), 3), "n": n}
+
+
+def support_rate(rows: list[dict] | None = None) -> dict:
+    """DiscoPER metric: fraction of disposed hypotheses CONFIRMED."""
+    rows = rows if rows is not None else load_receipts()
+    decided = [r for r in rows if r.get("verdict") in ("CONFIRMED", "REFUTED")]
+    hits = sum(1 for r in decided if r["verdict"] == "CONFIRMED")
+    w = wilson(hits, len(decided))
+    w["decided"] = len(decided)
+    w["open"] = sum(1 for r in rows if r.get("verdict") == "INCONCLUSIVE")
+    return w
+
+
+def possibility_ledger(rows: list[dict] | None = None) -> dict:
+    """Quantitative space accounting: what the logs have ruled in/out.
+
+    Space = (node x leg x window) verdict cells + hypothesis verdicts.
+    INCONCLUSIVE never counts as elimination (anti-hope rule).
+    """
+    rows = rows if rows is not None else load_receipts()
+    by_hyp: dict[str, str] = {}
+    for r in rows:
+        by_hyp[r.get("hyp", "?")] = r.get("verdict", "INCONCLUSIVE")
+    return {"hypotheses": len(by_hyp),
+            "confirmed": sum(1 for v in by_hyp.values() if v == "CONFIRMED"),
+            "refuted": sum(1 for v in by_hyp.values() if v == "REFUTED"),
+            "open": sum(1 for v in by_hyp.values() if v == "INCONCLUSIVE"),
+            "runs": len(rows)}
+
+
+def verdict_coverage(root=None) -> dict:
+    """(node, leg) cells ever TRIGGERED vs ever tested (local logs)."""
+    import json as _j
+    base = Path(root) if root else ROOT
+    try:
+        ver = [_j.loads(l) for l in
+               (base / "data" / "beliefs" / "kill_observations.jsonl")
+               .read_text(encoding="utf-8").splitlines() if l.strip()]
+    except (OSError, ValueError):
+        return {"cells_tested": 0, "cells_triggered": 0, "rows": 0}
+    tested = {(r.get("node_id"), (r.get("signal") or "").split("(")[0])
+              for r in ver}
+    trig = {(r.get("node_id"), (r.get("signal") or "").split("(")[0])
+            for r in ver if r.get("verdict") == "TRIGGERED"}
+    return {"cells_tested": len(tested), "cells_triggered": len(trig),
+            "rows": len(ver),
+            "triggered_cells": sorted(f"{a}:{b}" for a, b in trig)}

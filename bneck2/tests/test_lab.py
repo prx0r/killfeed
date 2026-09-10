@@ -37,6 +37,29 @@ class TestLab(unittest.TestCase):
         with self.assertRaises(AssertionError):
             LAB.receipt("TEST-H", {}, "MAYBE", 5)
 
+    def test_wilson_bounds(self):
+        from bneck2 import lab as LAB
+        w = LAB.wilson(2, 3)
+        self.assertLess(w["lo"], 0.67)
+        self.assertGreater(w["hi"], 0.67)
+        self.assertEqual(LAB.wilson(0, 0)["hi"], 1.0)
+
+    def test_support_and_ledger(self):
+        from bneck2 import lab as LAB
+        LAB.receipt("H-A", {"x": 1}, "CONFIRMED", 40, ts="2026-09-10T00:00:00Z")
+        LAB.receipt("H-B", {"x": 1}, "REFUTED", 40, ts="2026-09-10T00:00:00Z")
+        LAB.receipt("H-C", {"x": 1}, "INCONCLUSIVE", 2, ts="2026-09-10T00:00:00Z")
+        s = LAB.support_rate()
+        self.assertEqual((s["decided"], s["open"]), (2, 1))
+        leg = LAB.possibility_ledger()
+        self.assertEqual((leg["confirmed"], leg["refuted"], leg["open"]), (1, 1, 1))
+
+    def test_coverage_shape(self):
+        from bneck2 import lab as LAB
+        cov = LAB.verdict_coverage()
+        self.assertIn("cells_tested", cov)
+        self.assertGreaterEqual(cov["rows"], 400)
+
     def test_report_rebuilds(self):
         LAB.receipt("TEST-H", {"x": 1}, "CONFIRMED", 3,
                     ts="2026-09-10T00:00:00Z")
