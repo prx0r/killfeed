@@ -1,49 +1,48 @@
-# THREADS — every open thread, one place (auto-checked by scripts/threads.py)
+# THREADS — open threads by owner, ordered by priority
 
-Status key: OPEN (needs action) · WAITING (needs time/data, cron handles) ·
-BLOCKED (needs key/session/deps) · WATCH (monitor). Counts verified
-2026-09-10; rerun the script — this file rots if counts drift.
+`scripts/threads.py --check` guards the counts. Human items need a person
+(keys, judgment, calendar); everything else runs here, unattended.
 
-## Calibration (engine truthfulness)
+## A. Autonomous (this box, no keys, ordered by ROI)
 
-- [OPEN] p_market placeholders → pmxt adapter + venue-implied calibration
-  (consistency scores decorative until then).
-- [OPEN] Form-4 absolute gates → cadence-relative at baseline n≥10
-  (baselines seeded, 5 tickers).
-- [WAITING] Backtest significance (~12 complete dates; now 3).
-- [WAITING] dB/dt nonzero somewhere (static intraday, honest zeros).
-- [OPEN] PM queries re-probe periodically (Gamma keyword-side matching).
+1. **E011 + Sep-09 forwards maturation** — silicon-subset verdict lands via
+   cron as Yahoo history grows. Zero work, just don't break the loop.
+2. **Optical-attack prediction resolves Sep 20** — resolver already wired.
+3. **E007 burst panel** — needs 10+10 windows; accrues via cron verdicts.
+4. **Backtest significance** — panel grows 13→mature; check weekly via
+   `live_result`. No code needed, just passes.
+5. **PM query re-probe** — monthly: rerun the probe, update
+   `PM_QUERY_OVERRIDES` when books move. (First re-probe due ~Oct 10.)
+6. **dB/dt watch** — currently all-zero intraday; flag first nonzero movers
+   in review (migration board sorts by it already).
+7. **Phase 2–4 buildout** (bandit, triage gates, predictions volume) —
+   pure code, stdlib, per ML-LAB-PLAN. Next: bandit arms state in receipts.
+8. **House PTR PDF parsing** — needs pdf lib (no pip) or capitol-api
+   runtime (node exists; npm install queued). Index already live.
+9. **SI biweekly + FTD bulk + 13F/N-PORT bulk** — keyless, just build time.
+10. **SemScholar/NIH/Lever/lab-feed retries** — cheap probes, monthly.
+11. **Rediscovery blind checks** (TARGET-90D #8) — design + plant 3.
+12. **E006 relevance** — auto-resolves when p_market placeholders die.
 
-## Data sources (see RESOURCES-CANONICAL for the full map)
+## B. Human (needs a person — keys, judgment, calendar, money)
 
-- [OPEN] POWI/TKR/NOVT CIKs (www.sec.gov blocks box; need alt source).
-- [BLOCKED] Senate PTR (403), House PDFs (needs pdf lib), NIH path (405),
-  SemScholar pool (429s), USPTO/EPO (registration), FTD/CUSIP map.
-- [OPEN] api.data.gov signup (1 key flips Congress/GovInfo/Regulations/EIA).
-- [OPEN] Lever slugs + 3 lab feeds (404s logged, never guessed).
-- [OPEN] SI biweekly, FTD bulk, 13F/N-PORT bulk, GH Archive (queued).
-- [WATCH] Kalshi thin books; Manifold triangulation; CLOB depth upgrade.
+1. **Push umbrella** (valid token; remote behind local). Blocks all sharing.
+2. **api.data.gov signup** (free) — flips Congress/GovInfo/Regulations/EIA.
+   Single highest-leverage human action on the board.
+3. **Weekly 10-min review** (calendar) — ledger deltas, reflect memo sign-off.
+4. **USPTO/EPO registration** (ID.me / free tier) — patent leg depth.
+5. **E008 arb-pair curation** — human-confirmed PM↔Kalshi pairs (judgment,
+   can't automate: resolution rules differ).
+6. **Senate session / House browser run** — session-only walls need a human
+   browser session or approved credentials.
+7. **stockify decisions** — rename commit/revert, key rotation confirm,
+   equipped-box `uv sync` run.
+8. **pmxt adapter choice** — venue-implied p_market vendor/approach call.
+9. **Capital gating** — paper→small→scaled calls at P2 gates (never code).
+10. **LLM-key decision** — fund/scope a vault key with spend caps for the
+    proposer step, or keep agent-in-the-loop (current mode).
 
-## Lab / science
+## Live counts (guarded)
 
-- [OPEN] E006 gap board (baseline, needs pm calibration to matter).
-- [WAITING] E007 burst panel (needs 10+10 windows), E011 silicon subset
-  (Sep-09 forwards mature ~Oct), optical-attack prediction (resolves Sep 20).
-- [OPEN] E008 arb pairs curation (human-confirmed, pmbot workflow).
-- [OPEN] Phase 2-4 buildout (bandit, triage, predictions volume) per ML-LAB-PLAN.
-- [OPEN] Rediscovery blind checks (TARGET-90D #8).
-- [WATCH] Support 0.38 [0.21,0.59] — lab clean, no edge yet.
-
-## Product (stockify, own repo)
-
-- [OPEN] Commit/revert feedify→stockify rename; fix ml_routes NameError,
-  insiders_stats, dupe MCP routes, version skew, Dockerfile, stale paths.
-- [OPEN] 4 dead L0 stubs (port FROM bneck2) or delete; asserts in reality tests.
-- [OPEN] Gate mutating endpoints, persist idempotency, /v1 versioning.
-- [BLOCKED] Suite needs equipped box (`uv sync`).
-
-## Ops
-
-- [OPEN] Push umbrella (valid token; remote behind local).
-- [OPEN] Human weekly 10-min review (calendar, not code).
-- [WATCH] Cron heartbeat (alerts >30h gaps itself).
+- unknowns_open: 4 (3 CIKs + Senate) · hyps_open: 4 (all WAITING on time)
+  · preds_open: 1 (Sep 20). `scripts/threads.py --check` must exit 0.
