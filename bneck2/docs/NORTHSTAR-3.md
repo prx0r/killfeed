@@ -72,7 +72,20 @@ memo with redirect.
   weighting (currently: NOT PROMOTED, board is tilt-only).
 - Anything needing money/keys/judgment → THREADS.md human list.
 
-## 4. Current readings (today's truth, not last month's)
+## 4. Current readings (2026-09-10 refresh)
+
+- Triggers: NVDA burst quiet under ledger (0 new); optical SEC + research
+  attack holding.
+- Momentum is regime-conditional: IC +0.14 up-months / -0.12 down-months
+  n=660 (E041 CONFIRMED) — explains E031 halves; composites must gate on
+  regime (NS-2 #5 HIT).
+- Implied-p unidentified in general BUT our 2-incumbent instance is pinned
+  by degenerate survives maps (E039 refuted as stated — need incumbents
+  with different footprints, sharper requirement than 'more instruments').
+- Promotion bar: NOT PROMOTED (tilt -0.023, comp -1.62 vs mom -6.04, E040).
+- Cron ran 06:18 UTC daily; heartbeat live.
+
+## 4b. Previous readings (kept for audit, superseded above)
 
 - Triggers: NVDA burst, optical SEC + research attack (holding).
 - Best shape: long-only tilt +2.24%/window (n=8, directional).

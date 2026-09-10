@@ -288,7 +288,7 @@ class TestFocusedNames(unittest.TestCase):
         from bneck2 import experiments as X
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
-                  "E034", "E035", "E036", "E037", "E038"):
+                  "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

@@ -1219,6 +1219,122 @@ def e038_nventures_mix() -> tuple[dict, str, int]:
                  else "REFUTED"), len(comps)
 
 
+def e039_implied_identification() -> tuple[dict, str, int]:
+    """H-IMP-1: market-implied world probs are UNIDENTIFIED from current data.
+
+    market_survival_p[i] ~= SUM_s p_market(s) x survives[i][s]: 2 equations,
+    6 unknowns. Ridge solve + conditioning diagnostics quantify exactly how
+    many independent instruments calibration needs (NS-2 upgrade #4 path
+    without waiting on pmxt)."""
+    from bneck2 import implied as IM
+    from bneck2 import lab as LAB
+    from bneck2 import worlds as W
+    LAB.preregister(
+        "H-IMP-1", "implied-p underidentified",
+        "ridge solution depends on prior (condition number high / "
+        "residual flat across solutions)",
+        "data pins a unique distribution (well-conditioned)",
+        "worlds.json survives maps + market_survival_p")
+    doc = W.load_worlds()
+    worlds = doc["worlds"]
+    X, y, labels = [], [], []
+    for inc in doc.get("incumbents", []):
+        surv = inc.get("survives", {})
+        X.append([float(surv.get(w["id"], 1.0)) for w in worlds])
+        y.append(float(inc.get("market_survival_p", 1.0)))
+        labels.append(inc["id"])
+    prior = [w["p_market"] for w in worlds]
+    out = IM.infer_market_probabilities(X, y, prior=prior)
+    # sensitivity: re-solve from flat prior; distance = prior-dependence
+    flat = [1.0 / len(worlds)] * len(worlds)
+    out2 = IM.infer_market_probabilities(X, y, prior=flat)
+    shift = round(sum(abs(a - b) for a, b in zip(out["p"], out2["p"])), 3)
+    res = {"n_equations": len(X), "n_unknowns": len(worlds),
+           "ridge_from_placeholders": out["p"],
+           "ridge_from_flat": out2["p"], "prior_shift": shift,
+           "ill_conditioned": out["ill_conditioned"],
+           "note": f"2 eqs, 6 unknowns: prior shift {shift} (large = unidentified); "
+                   f"need >=6 independent instruments (pmxt/options/credit)"}
+    verdict = ("CONFIRMED" if shift > 0.3 or out["ill_conditioned"]
+               else "REFUTED")
+    return res, verdict, len(X)
+
+
+def e040_promotion_bar() -> tuple[dict, str, int]:
+    """H-BAR-1: single-statement promotion bar status (NS-2 section 4)."""
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-BAR-1", "promotion bar status",
+        "Sharpe(top-tercile)>0 AND Sharpe(comp)>Sharpe(mom) AND n>=60",
+        "any leg fails (NOT PROMOTED)",
+        "E014/E015/E017 receipts")
+    import json as _j
+    rec = [_j.loads(l) for l in
+           (ROOT / "experimentation" / "receipts.jsonl")
+           .read_text(encoding="utf-8").splitlines() if l.strip()]
+    last = {}
+    for r in rec:
+        last[r["hyp"]] = r
+    e17 = last.get("E017", {}).get("result", {})
+    e15 = last.get("E015", {}).get("result", {})
+    e14 = last.get("E014", {}).get("result", {})
+    legs = {
+        "long_tilt_mean": e17.get("mean_excess_vs_universe"),
+        "comp_vs_mom": (e15.get("composite_sharpe"), e15.get("momentum_sharpe")),
+        "n": e15.get("holdout_n", e14.get("holdout_n", 0)),
+    }
+    ok = (isinstance(legs["long_tilt_mean"], (int, float)) and legs["long_tilt_mean"] > 0
+          and e15.get("composite_sharpe") is not None and e15.get("momentum_sharpe") is not None
+          and e15["composite_sharpe"] > e15["momentum_sharpe"]
+          and legs["n"] >= 60)
+    out = {**legs, "promoted": bool(ok),
+           "note": f"bar: tilt {legs['long_tilt_mean']} comp {e15.get('composite_sharpe')} "
+                   f"vs mom {e15.get('momentum_sharpe')} n={legs['n']} -> {'PROMOTED' if ok else 'NOT PROMOTED'}"}
+    return out, ("CONFIRMED" if ok else "REFUTED"), 3
+
+
+def e041_regime_split() -> tuple[dict, str, int]:
+    """H-REG-1: momentum works in up regimes, fails in drawdowns."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-REG-1", "momentum is regime-conditional",
+        "momentum IC positive in SPY-up months, <=0 in SPY-down months",
+        "no regime split (IC same sign both)",
+        "biweekly panel + SPY month sign")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    sp = {c["date"]: c["close"] for c in P.history("SPY", "2y").get("closes", [])}
+    sds = sorted(sp)
+    def spy_up(d):
+        i = next((k for k, x in enumerate(sds) if x >= d[:7] + "-99"), None)
+        return None
+    # month sign from month-start to month-end closes
+    from collections import defaultdict
+    bym = defaultdict(list)
+    for r in rows:
+        if r.get("f_mom_20") is not None and r.get("fwd_20") is not None:
+            bym[r["date"][:7]].append(r)
+    reg, out = {}, {}
+    for m, rs in sorted(bym.items()):
+        ds = sorted(c for c in sds if c[:7] == m)
+        if len(ds) < 2 or not sp[ds[0]]:
+            continue
+        reg[m] = "up" if sp[ds[-1]] > sp[ds[0]] else "down"
+    for regime in ("up", "down"):
+        sub = [r for m, rs in bym.items() if reg.get(m) == regime for r in rs]
+        xs = [r["f_mom_20"] for r in sub]
+        ys = [r["fwd_20"] for r in sub]
+        out[regime] = {"n": len(sub), "IC": PD.spearman(xs, ys)}
+    up, dn = out.get("up", {}), out.get("down", {})
+    out["note"] = f"mom IC up-months {up.get('IC')} (n={up.get('n')}) vs down-months {dn.get('IC')} (n={dn.get('n')})"
+    ok = (up.get("IC") or 0) > 0.1 and (dn.get("IC") or 0) <= 0
+    return out, ("CONFIRMED" if ok else "REFUTED"), up.get("n", 0) + dn.get("n", 0)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1258,6 +1374,9 @@ REGISTRY = {
     "E036": e036_tilt_attribution,
     "E037": e037_weekend_effect,
     "E038": e038_nventures_mix,
+    "E039": e039_implied_identification,
+    "E040": e040_promotion_bar,
+    "E041": e041_regime_split,
 }
 
 
@@ -1355,6 +1474,8 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
+
 
 
 
