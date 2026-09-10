@@ -1,0 +1,20 @@
+{"id": "V001", "def": "SEC Form-4 filing count per ticker per pass (burst leg input)", "measures_via": "collectors/sec.py", "status": "active"}
+{"id": "V002", "def": "Form-4 count vs own trailing median (cadence ratio)", "measures_via": "killfeed baselines", "status": "active"}
+{"id": "V003", "def": "OpenAlex 2y/2y growth per node query (attack leg input)", "measures_via": "collectors/openalex.py group_by", "status": "active"}
+{"id": "V004", "def": "HN story points per node query per pass (narrative saturation)", "measures_via": "collectors/hn.py", "status": "active"}
+{"id": "V005", "def": "HF model/like counts per capability query (implementation heat)", "measures_via": "collectors/hf.py", "status": "active"}
+{"id": "V006", "def": "Best-book pm price per node query (belief leg input)", "measures_via": "killfeed pm leg", "status": "active"}
+{"id": "V007", "def": "Whale-consensus USD per node market (smart-money leg)", "measures_via": "collectors/polywhale.py", "status": "active"}
+{"id": "V008", "def": "Severity B per node per pass", "measures_via": "migration.severity", "status": "active"}
+{"id": "V009", "def": "dB/dt per node (needs >=2 passes)", "measures_via": "severity_history.jsonl", "status": "active"}
+{"id": "V010", "def": "Cross-world X per incumbent", "measures_via": "migration.cross_world_exposure", "status": "active"}
+{"id": "V011", "def": "5d forward return per ticker (target variable)", "measures_via": "prices.forward_return", "status": "active"}
+{"id": "V012", "def": "Severity-conviction rank gap per node (E005 residual: why opposed?)", "measures_via": "E005/E009", "status": "candidate"}
+{"id": "V013", "def": "PM-vs-Kalshi same-topic spread (venue disagreement)", "measures_via": "connect pm_spread", "status": "candidate"}
+{"id": "V014", "def": "Lab-announcement count per node per pass (capability inflow)", "measures_via": "oneclick lab_node joins", "status": "candidate"}
+{"id": "V015", "def": "Anthropic hiring-cluster mix shift week-over-week (revealed preference delta)", "measures_via": "collectors/jobs.py", "status": "candidate"}
+{"id": "V016", "def": "NSF award counts per attack direction (funding velocity)", "measures_via": "collectors/fed.py", "status": "candidate"}
+{"id": "V017", "def": "FedRegister doc counts per permission term (permission clock)", "measures_via": "collectors/fed.py", "status": "candidate"}
+{"id": "V018", "def": "ClinicalTrials totals per bio term (validation queue depth)", "measures_via": "collectors/bio.py", "status": "candidate"}
+{"id": "V019", "def": "Kalshi candle momentum per tracked market (pm velocity)", "measures_via": "collectors/kalshi.py candles", "status": "candidate"}
+{"id": "V020", "def": "CLOB spread/depth per best-book token (book quality beyond tiers)", "measures_via": "collectors/clob.py", "status": "candidate"}
