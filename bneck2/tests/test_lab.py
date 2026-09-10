@@ -15,11 +15,14 @@ class TestLab(unittest.TestCase):
         import tempfile
         self.tmp = Path(tempfile.mkdtemp())
         self._r, self._h = LAB.RECEIPTS, LAB.HYPS
+        self._p = LAB.PREDICTIONS
         LAB.RECEIPTS = self.tmp / "receipts.jsonl"
         LAB.HYPS = self.tmp / "hypotheses"
+        LAB.PREDICTIONS = self.tmp / "predictions.jsonl"
 
     def tearDown(self):
         LAB.RECEIPTS, LAB.HYPS = self._r, self._h
+        LAB.PREDICTIONS = self._p
         import shutil
         shutil.rmtree(self.tmp, ignore_errors=True)
     def test_pilot_flag(self):
@@ -53,6 +56,16 @@ class TestLab(unittest.TestCase):
         self.assertEqual((s["decided"], s["open"]), (2, 1))
         leg = LAB.possibility_ledger()
         self.assertEqual((leg["confirmed"], leg["refuted"], leg["open"]), (1, 1, 1))
+
+    def test_predictions_resolve(self):
+        from bneck2 import lab as LAB
+        LAB.predict("v", "t", +1, "2026-01-01", note="past")
+        LAB.predict("v", "t", -1, "2027-01-01", note="future")
+        done = LAB.resolve_due(lambda r: +1)
+        self.assertEqual(len(done), 1)
+        self.assertTrue(done[0]["hit"])
+        self.assertEqual(
+            sum(1 for r in LAB.load_predictions() if r.get("resolved") is None), 1)
 
     def test_coverage_shape(self):
         from bneck2 import lab as LAB

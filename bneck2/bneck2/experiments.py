@@ -308,6 +308,41 @@ def e012_acq_size_split() -> tuple[dict, str, int]:
     return out, verdict, sr.get("n", 0) + sm.get("n", 0)
 
 
+def e013_redteam() -> tuple[dict, str, int]:
+    """Monthly red-team: strongest case AGAINST the top-conviction node."""
+    from bneck2 import graph as G
+    from bneck2 import quant as Q
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "E013", "monthly red-team vs top conviction",
+        "top-conviction node shows >=3 disconfirming facts (non-firings, "
+        "negative drift, crowdedness>=0.7)",
+        "fewer than 3 disconfirming facts (conviction stands unattacked)",
+        "graph + verdicts + prices (no network)")
+    import json as _j
+    g = G.load_graph()
+    rows = Q.score_all(g, Q.load_readings())
+    top = max(rows, key=lambda r: r.get("binding", 0))
+    node = next(n for n in g["nodes"] if n["id"] == top["id"])
+    ver = [_j.loads(l) for l in
+           (ROOT / "data" / "beliefs" / "kill_observations.jsonl")
+           .read_text(encoding="utf-8").splitlines() if l.strip()]
+    nonfire = sum(1 for r in ver if r.get("node_id") == top["id"]
+                  and r.get("verdict") == "NOT TRIGGERED")
+    facts = []
+    if nonfire >= 10:
+        facts.append(f"{nonfire} non-firing verdicts on this node")
+    if float(node.get("crowdedness", 0)) >= 0.7:
+        facts.append(f"crowdedness {node.get('crowdedness')} (consensus long)")
+    if top.get("dissolution", 0) >= 0.2:
+        facts.append(f"dissolution {top['dissolution']:.2f} already priced")
+    ok = len(facts) >= 3
+    return {"node": top["id"], "binding": round(top.get("binding", 0), 3),
+            "disconfirming": facts,
+            "note": f"red-team vs {top['id']}: {len(facts)} disconfirming facts"}, \
+        ("CONFIRMED" if ok else "REFUTED"), len(facts)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -321,6 +356,7 @@ REGISTRY = {
     "E010": e010_acq_chain,
     "E011": e011_acq_silicon,
     "E012": e012_acq_size_split,
+    "E013": e013_redteam,
 }
 
 
@@ -342,4 +378,5 @@ def _acq_rows():
             seen.add(key)
             uniq.append(r)
     return uniq, dropped
+
 

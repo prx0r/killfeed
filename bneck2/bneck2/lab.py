@@ -152,3 +152,43 @@ def verdict_coverage(root=None) -> dict:
     return {"cells_tested": len(tested), "cells_triggered": len(trig),
             "rows": len(ver),
             "triggered_cells": sorted(f"{a}:{b}" for a, b in trig)}
+
+
+PREDICTIONS = LAB / "predictions.jsonl"
+
+
+def predict(var: str, target: str, direction: int, resolve_after: str,
+            note: str = "") -> dict:
+    """Preregister a directional prediction (resolve_after YYYY-MM-DD)."""
+    assert direction in (+1, -1)
+    LAB.mkdir(parents=True, exist_ok=True)
+    row = {"var": var, "target": target, "direction": direction,
+           "resolve_after": resolve_after, "resolved": None, "note": note}
+    with open(PREDICTIONS, "a", encoding="utf-8") as f:
+        f.write(json.dumps(row) + "\n")
+    return row
+
+
+def load_predictions() -> list[dict]:
+    try:
+        return [json.loads(l) for l in PREDICTIONS.read_text(encoding="utf-8").splitlines()
+                if l.strip()]
+    except (OSError, ValueError):
+        return []
+
+
+def resolve_due(resolver) -> list[dict]:
+    """Resolve due predictions via resolver(row)->+1|-1|None. Rewrites file."""
+    rows = load_predictions()
+    today = utcnow()[:10]
+    n = 0
+    for r in rows:
+        if r.get("resolved") is None and r.get("resolve_after", "") <= today:
+            out = resolver(r)
+            if out in (+1, -1):
+                r["resolved"] = out
+                r["hit"] = out == r["direction"]
+                n += 1
+    PREDICTIONS.write_text("\n".join(json.dumps(r) for r in rows) + "\n",
+                           encoding="utf-8")
+    return [r for r in rows if r.get("resolved") is not None][-n:] if n else []

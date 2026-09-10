@@ -196,3 +196,27 @@
 {"ts": "2026-09-10T05:57:32Z", "ticker": "TRAP_ION_QC", "type": "PM_CLOCK", "direction": 0, "strength": 0.98, "confidence": 0.5, "source": "polymarket"}
 {"ts": "2026-09-10T05:57:37Z", "ticker": "QUANTUM_IP", "type": "PM_CLOCK", "direction": 0, "strength": 0.98, "confidence": 0.5, "source": "polymarket"}
 {"ts": "2026-09-10T05:57:41Z", "ticker": "EXPORT_CONTROLS", "type": "PM_CLOCK", "direction": 0, "strength": 0.065, "confidence": 0.6, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:24Z", "ticker": "ACCELERATORS", "type": "PM_CLOCK", "direction": 0, "strength": 0.235, "confidence": 0.6, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:24Z", "ticker": "ACCELERATORS", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 1.0, "confidence": 0.8, "source": "polymarket|29 whales $109,401 outcome=0: OpenAI announces it has achieved AGI before 2027?"}
+{"ts": "2026-09-10T06:11:29Z", "ticker": "MEMORY_HBM", "type": "PM_CLOCK", "direction": 0, "strength": 1.0, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:33Z", "ticker": "MEMORY_DRAM", "type": "PM_CLOCK", "direction": 0, "strength": 1.0, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:37Z", "ticker": "STORAGE", "type": "PM_CLOCK", "direction": 0, "strength": 0.017, "confidence": 0.6, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:37Z", "ticker": "STORAGE", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.161, "confidence": 0.8, "source": "polymarket|5 whales $8,066 outcome=0: AI data center in space by December 31, 2026?"}
+{"ts": "2026-09-10T06:11:41Z", "ticker": "PACKAGING", "type": "PM_CLOCK", "direction": 0, "strength": 1.0, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:47Z", "ticker": "OPTICAL_IO", "type": "PM_CLOCK", "direction": 0, "strength": 0.017, "confidence": 0.6, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:47Z", "ticker": "OPTICAL_IO", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.161, "confidence": 0.8, "source": "polymarket|5 whales $8,066 outcome=0: AI data center in space by December 31, 2026?"}
+{"ts": "2026-09-10T06:11:51Z", "ticker": "POWER", "type": "PM_CLOCK", "direction": 0, "strength": 0.88, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:55Z", "ticker": "MOTORS", "type": "PM_CLOCK", "direction": 0, "strength": 0.035, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:55Z", "ticker": "MOTORS", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.131, "confidence": 0.7, "source": "polymarket|3 whales $6,530 outcome=0: Will Tesla release Optimus by December 31, 2026?"}
+{"ts": "2026-09-10T06:11:59Z", "ticker": "REDUCERS", "type": "PM_CLOCK", "direction": 0, "strength": 0.035, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:11:59Z", "ticker": "REDUCERS", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.131, "confidence": 0.7, "source": "polymarket|3 whales $6,530 outcome=0: Will Tesla release Optimus by December 31, 2026?"}
+{"ts": "2026-09-10T06:12:03Z", "ticker": "ENCODERS", "type": "PM_CLOCK", "direction": 0, "strength": 0.035, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:03Z", "ticker": "ENCODERS", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.131, "confidence": 0.7, "source": "polymarket|3 whales $6,530 outcome=0: Will Tesla release Optimus by December 31, 2026?"}
+{"ts": "2026-09-10T06:12:06Z", "ticker": "BEARINGS", "type": "PM_CLOCK", "direction": 0, "strength": 0.035, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:06Z", "ticker": "BEARINGS", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.131, "confidence": 0.7, "source": "polymarket|3 whales $6,530 outcome=0: Will Tesla release Optimus by December 31, 2026?"}
+{"ts": "2026-09-10T06:12:10Z", "ticker": "TORQUE_SENSING", "type": "PM_CLOCK", "direction": 0, "strength": 0.035, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:10Z", "ticker": "TORQUE_SENSING", "type": "WHALE_CONSENSUS", "direction": 0, "strength": 0.131, "confidence": 0.7, "source": "polymarket|3 whales $6,530 outcome=0: Will Tesla release Optimus by December 31, 2026?"}
+{"ts": "2026-09-10T06:12:14Z", "ticker": "EXPERIMENTATION", "type": "PM_CLOCK", "direction": 0, "strength": 0.145, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:20Z", "ticker": "TRAP_ION_QC", "type": "PM_CLOCK", "direction": 0, "strength": 0.985, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:24Z", "ticker": "QUANTUM_IP", "type": "PM_CLOCK", "direction": 0, "strength": 0.985, "confidence": 0.5, "source": "polymarket"}
+{"ts": "2026-09-10T06:12:28Z", "ticker": "EXPORT_CONTROLS", "type": "PM_CLOCK", "direction": 0, "strength": 0.065, "confidence": 0.6, "source": "polymarket"}

@@ -89,6 +89,10 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| heartbeat | pass writes data/heartbeat.json; >30h gap shouts (no silent stops) | scripts/oneclick.py |
+| backfill | reconstructed scores (graph sha labeled) + real Yahoo forwards | scripts/backfill_panel.py |
+| red-team | monthly anti-case vs top conviction, scored like any hyp | experiments.E013 |
+| predictions | preregister + resolve-due (temporal validation clock) | lab.predict/resolve, bneck2/resolve.py |
 | obsolescence | −[ln Cit_t − ln Cit_{t−w}] on fixed external base | obsolescence.py (ex-kernel, exact Ma) |
 | implied p | min ‖Xp−y‖²+ridge‖p−prior‖² s.t. [0,1], projected-gradient | implied.py (ex-kernel ridge) |
 | backtest | per-date L/S quantiles, turnover-charged costs, Sharpe/maxDD | backtest.py (ex-kernel protocol) |

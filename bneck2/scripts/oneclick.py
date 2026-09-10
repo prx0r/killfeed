@@ -36,6 +36,17 @@ def main() -> int:
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     print(f"# oneclick {ts}")
 
+    hb = ROOT / "data" / "heartbeat.json"
+    try:
+        import json as _j
+        last = _j.loads(hb.read_text(encoding="utf-8")).get("ts", "")
+        from datetime import datetime as _dt
+        gap = (datetime.now(timezone.utc) - _dt.fromisoformat(last)).total_seconds() / 3600
+        if gap > 30:
+            print(f"!! HEARTBEAT GAP {gap:.0f}h (>30h) — clock stopped, this pass is the recovery")
+    except Exception:
+        print("!! no heartbeat on record — first tracked pass")
+
     def do_poll():
         from bneck2 import prices as P
         moves = P.get_moves(sorted(P.YAHOO_MAP))
@@ -76,6 +87,13 @@ def main() -> int:
     def do_connect():
         return connect_pass()
 
+    def do_resolve():
+        from bneck2 import lab as LAB
+        from bneck2 import resolve as R
+        done = LAB.resolve_due(R.resolve)
+        hits = sum(1 for r in done if r.get("hit"))
+        return f"{hits}/{len(done)} hits"
+
     def do_backtest():
         from bneck2 import backtest as BT
         from bneck2 import graph as G
@@ -99,6 +117,7 @@ def main() -> int:
     step("migration", do_migration)
     step("experiments", do_experiments)
     step("connect", do_connect)
+    step("resolve", do_resolve)
     step("backtest", do_backtest)
 
     body = f"# One-click loop — {ts}\n\n" + "\n".join(f"- {s}" for s in STEPS)
@@ -106,6 +125,8 @@ def main() -> int:
     out = ROOT / "docs" / f"ONECLICK-{ts.replace(':', '')}.md"
     out.write_text(body + "\n", encoding="utf-8")
     print("\n".join(STEPS))
+    import json as _j2
+    hb.write_text(_j2.dumps({"ts": ts, "steps": STEPS}), encoding="utf-8")
     print(f"report: {out}")
     return 0
 
