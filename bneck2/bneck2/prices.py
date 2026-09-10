@@ -102,6 +102,32 @@ def history(ticker: str, range_: str = "1mo") -> dict:
         return {"ticker": ticker, "closes": [], "error": str(exc)[:120]}
 
 
+def crypto_history(coin: str = "bitcoin", days: int = 90) -> dict:
+    """Daily closes via CoinGecko market_chart (keyless, cached per day)."""
+    import datetime as _dt
+    from bneck2 import lab as _LAB
+    ckey = _LAB.cache_key("coingecko", coin, str(days),
+                          _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d"))
+    hit = _LAB.cache_get(ckey)
+    if isinstance(hit, dict) and hit.get("closes"):
+        return hit
+    import urllib.parse as _up
+    url = (f"https://api.coingecko.com/api/v3/coins/{_up.quote(coin)}/market_chart"
+           f"?vs_currency=usd&days={int(days)}&interval=daily")
+    body = _fetch_json(url, timeout=30) or {}
+    out = []
+    for ts_ms, px in body.get("prices", []) or []:
+        try:
+            out.append({"date": _dt.datetime.fromtimestamp(ts_ms / 1000, tz=_dt.timezone.utc).strftime("%Y-%m-%d"),
+                        "close": round(float(px), 2)})
+        except (ValueError, TypeError):
+            continue
+    res = {"ticker": coin.upper(), "closes": out}
+    if out:
+        _LAB.cache_set(ckey, res)
+    return res
+
+
 def forward_return(ticker: str, start: str, days: int = 5,
                    range_: str = "3mo") -> dict:
     """Close-to-close return over `days` trading days from `start` (YYYY-MM-DD)."""

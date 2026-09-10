@@ -89,6 +89,9 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| NVDA/OpenAI/BTC focus | insider buys=0 (all sells); BTC-NVDA rho 0.02 decoupled | E018-E020 |
+| BTC history | CoinGecko daily closes, cached | prices.crypto_history |
+| BTC calibration | live level markets snapshot, 7d resolve | E020, data/predict/btc_levels.json |
 | threads ledger | live counts (unknowns/hyps/preds) vs THREADS.md --check | scripts/threads.py |
 | predict panel | monthly 180 + biweekly 360 rows; point-in-time features only | predict.py, data/predict/ |
 | factor screen | Spearman IC + Wilson; train m1-9/signs, holdout m10-12 | experiments E014/E015 |

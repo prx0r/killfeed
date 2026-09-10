@@ -536,6 +536,113 @@ def e017_long_only() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if m >= 0.02 else "REFUTED"), len(ex)
 
 
+
+
+def utcnow() -> str:
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+def e018_nvda_sell_drift() -> tuple[dict, str, int]:
+    """H-NVDA-1: heavy insider SELL months precede negative drift."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    from collectors import openinsider as OI
+    LAB.preregister(
+        "H-NVDA-1", "insider sell intensity precedes drift",
+        "top-quartile sell months -> next-month return < median month",
+        "no difference (sales are noise/10b5-1)",
+        "OpenInsider NVDA tape (100 rows) + Yahoo monthly closes")
+    trades = [t for t in OI.by_ticker("NVDA") if t.get("is_sale")]
+    closes = {c["date"][:7]: c["close"] for c in P.history("NVDA", "1y").get("closes", [])}
+    by_m = {}
+    for t in trades:
+        by_m.setdefault(t.get("trade_date", "")[:7], 0.0)
+        by_m[t.get("trade_date", "")[:7]] += abs(t.get("value_usd", 0))
+    months = sorted(m for m in by_m if m in closes)
+    if len(months) < 4:
+        return {"note": "insufficient months", "months": months}, "INCONCLUSIVE", 0
+    vals = sorted(by_m[m] for m in months)
+    cut = vals[3 * len(vals) // 4]
+    heavy = [m for m in months if by_m[m] >= cut]
+    res = []
+    for m in months:
+        y, mm = map(int, m.split("-"))
+        nm = f"{y + (mm == 12)}-{mm % 12 + 1:02d}"
+        if m in closes and nm in closes and closes[m]:
+            res.append((m, (closes[nm] - closes[m]) / closes[m], m in heavy))
+    if len(res) < 4:
+        return {"note": "insufficient forward months"}, "INCONCLUSIVE", 0
+    hr = [r for _, r, h in res if h]
+    lr = [r for _, r, h in res if not h]
+    mh = sum(hr) / len(hr)
+    ml = sum(lr) / len(lr)
+    out = {"heavy_months": len(hr), "light_months": len(lr),
+           "heavy_mean": round(mh, 4), "light_mean": round(ml, 4),
+           "note": f"heavy-sell months {mh:+.1%} vs rest {ml:+.1%}"}
+    return out, ("CONFIRMED" if mh < ml - 0.02 else "REFUTED"), len(res)
+
+
+def e019_btc_nvda_beta() -> tuple[dict, str, int]:
+    """H-BTC-1: BTC-NVDA trailing correlation (pair readout)."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-BTC-1", "BTC-NVDA correlation measurable and positive",
+        "90d return correlation > 0.3",
+        "rho <= 0.3 (decoupled — trade separately)",
+        "CoinGecko BTC daily + Yahoo NVDA daily")
+    bc = {c["date"]: c["close"] for c in P.crypto_history("bitcoin", 120).get("closes", [])}
+    nv = {c["date"]: c["close"] for c in P.history("NVDA", "6mo").get("closes", [])}
+    days = sorted(set(bc) & set(nv))[-90:]
+    if len(days) < 30:
+        return {"note": "insufficient overlap", "n": len(days)}, "INCONCLUSIVE", 0
+    br = [(bc[days[i + 1]] - bc[days[i]]) / bc[days[i]] for i in range(len(days) - 1)]
+    nr = [(nv[days[i + 1]] - nv[days[i]]) / nv[days[i]] for i in range(len(days) - 1)]
+    rho = PD.spearman(br, nr)
+    mb, mn = sum(br) / len(br), sum(nr) / len(nr)
+    den = sum((b - mb) ** 2 for b in br)
+    beta = (sum((b - mb) * (n - mn) for b, n in zip(br, nr)) / den) if den else None
+    out = {"rho": rho, "beta_btc_on_nvda": round(beta, 3) if beta else None,
+           "n_days": len(days),
+           "note": f"90d BTC-NVDA return rho={rho}, beta={beta}"}
+    return out, ("CONFIRMED" if (rho or 0) > 0.3 else "REFUTED"), len(days)
+
+
+def e020_btc_pm_snapshot() -> tuple[dict, str, int]:
+    """H-BTC-2: snapshot live BTC price-level markets for 7d resolution."""
+    from bneck2 import lab as LAB
+    from collectors import polymarket as PM
+    LAB.preregister(
+        "H-BTC-2", "BTC level markets resolve as priced (calibration)",
+        ">=70% resolve in the priced direction",
+        "below 70% (miscalibrated levels)",
+        "snapshot today, resolve via re-fetch in 7d")
+    rows = PM.fetch_markets("bitcoin")
+    live = [r for r in rows if 0.05 < r.get("p", 0) < 0.95][:10]
+    import json as _j
+    snap_path = ROOT / "data" / "predict" / "btc_levels.json"
+    try:
+        snaps = _j.loads(snap_path.read_text())
+    except (OSError, ValueError):
+        snaps = []
+    have = {(s.get("question"), s.get("p")) for s in snaps}
+    new = 0
+    for r in live:
+        if (r["question"], r["p"]) not in have:
+            snaps.append({"question": r["question"], "p": r["p"],
+                          "snapshot": utcnow()[:10], "resolved": None})
+            new += 1
+    (ROOT / "data" / "predict").mkdir(parents=True, exist_ok=True)
+    snap_path.write_text(_j.dumps(snaps, indent=1))
+    res = [s for s in snaps if s.get("resolved") is not None]
+    hits = sum(1 for s in res if s.get("hit"))
+    out = {"tracked": len(snaps), "new": new, "resolved": len(res),
+           "hits": hits, "note": f"{len(snaps)} BTC levels tracked, {len(res)} resolved"}
+    if len(res) < 5:
+        return out, "INCONCLUSIVE", len(res)
+    return out, ("CONFIRMED" if hits / len(res) >= 0.7 else "REFUTED"), len(res)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -554,6 +661,9 @@ REGISTRY = {
     "E015": e015_signal_biweekly,
     "E016": e016_burst_reversal,
     "E017": e017_long_only,
+    "E018": e018_nvda_sell_drift,
+    "E019": e019_btc_nvda_beta,
+    "E020": e020_btc_pm_snapshot,
 }
 
 

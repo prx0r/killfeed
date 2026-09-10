@@ -209,6 +209,27 @@ class TestPredict(unittest.TestCase):
         self.assertIsNone(PD.forward_return(cl, "2026-01-14", 5))
 
 
+class TestFocusedNames(unittest.TestCase):
+    def test_registry_has_focus(self):
+        from bneck2 import experiments as X
+        for e in ("E018", "E019", "E020"):
+            self.assertIn(e, X.REGISTRY)
+
+    def test_crypto_history_shape(self):
+        from bneck2 import prices as P
+        h = P.crypto_history("bitcoin", 7)
+        self.assertIn("closes", h)
+        if h["closes"]:
+            self.assertIn("date", h["closes"][0])
+
+    def test_beta_math(self):
+        br = [0.01, -0.02, 0.03]
+        nr = [0.02, -0.04, 0.06]
+        mb, mn = sum(br) / 3, sum(nr) / 3
+        beta = sum((b - mb) * (n - mn) for b, n in zip(br, nr)) / sum((b - mb) ** 2 for b in br)
+        self.assertAlmostEqual(beta, 2.0)
+
+
 class TestAcq(unittest.TestCase):
     def test_map_and_eligible(self):
         from bneck2 import acq as A
