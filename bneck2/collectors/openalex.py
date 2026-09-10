@@ -74,6 +74,13 @@ def parse_yearly(doc: dict) -> dict:
 
 
 def fetch_yearly(query: str, timeout: int = 30) -> dict:
+    import datetime as _dt
+    from bneck2 import lab as _LAB
+    week = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-W%V")
+    ckey = _LAB.cache_key("openalex", query, week)
+    hit = _LAB.cache_get(ckey)
+    if isinstance(hit, dict) and hit.get("ok"):
+        return hit
     try:
         req = urllib.request.Request(yearly_url(query),
                                      headers={"User-Agent": "bneck"})
@@ -81,6 +88,10 @@ def fetch_yearly(query: str, timeout: int = 30) -> dict:
             doc = json.loads(r.read().decode("utf-8", "replace"))
         out = parse_yearly(doc)
         out["ok"] = True
+        try:
+            _LAB.cache_set(ckey, out)
+        except Exception:
+            pass
         return out
     except Exception:
         return {"total_works": 0, "per_year": {}, "ok": False}

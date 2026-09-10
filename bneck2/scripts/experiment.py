@@ -36,6 +36,8 @@ def main() -> int:
             except Exception as exc:
                 result, verdict, n = {"error": str(exc)[:200]}, "INCONCLUSIVE", 0
             row = LAB.receipt(hid, result, verdict, n)
+            LAB.run_file(hid, {"fn": hid}, result,
+                         ts=row["ts"], code_refs={"suite": "tests"})
             flag = " [directional-only]" if row["directional_only"] else ""
             print(f"{hid}: {verdict}{flag} n={n}")
         return 0

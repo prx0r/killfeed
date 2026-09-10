@@ -131,4 +131,7 @@ def live_result(path: Path = PANEL_PATH) -> dict:
                 "complete_dates": len(dates),
                 "need": ">=2 complete 5d-forward dates"}
     _, stats = walk_forward(rows)
+    if stats.get("max_drawdown", 0) is not None and stats["max_drawdown"] <= -0.5:
+        return {"status": "BLOCKED", **stats,
+                "note": "drawdown gate: review machinery, not a result"}
     return {"status": "OK", **stats}

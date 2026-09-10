@@ -89,6 +89,12 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| run files | immutable per-run inputs+outputs; receipts index them | lab.run_file, experimentation/runs/ |
+| content cache | sha-keyed free replays (yahoo daily, openalex weekly) | lab.cache_*, data/cache/ |
+| rebuild gate | delete projections → rebuild byte-equal (CI) | scripts/experience_build.py --check |
+| sealed eval | eval-side modules import no live/runner code (AST-tested) | tests/test_cg.py |
+| backtest gate | maxDD <= -50% → BLOCKED (review machinery, not a result) | backtest.live_result |
+| experience db | derived sqlite projection (rebuildable, deletable) | scripts/experience_build.py |
 | heartbeat | pass writes data/heartbeat.json; >30h gap shouts (no silent stops) | scripts/oneclick.py |
 | backfill | reconstructed scores (graph sha labeled) + real Yahoo forwards | scripts/backfill_panel.py |
 | red-team | monthly anti-case vs top conviction, scored like any hyp | experiments.E013 |

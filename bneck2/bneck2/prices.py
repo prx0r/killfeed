@@ -73,7 +73,15 @@ def poll_stock(ticker: str) -> dict:
 
 def history(ticker: str, range_: str = "1mo") -> dict:
     """Daily closes via Yahoo v8 chart (keyless). Returns
-    {ticker, closes: [{date, close}...]}. Never raises."""
+    {ticker, closes: [{date, close}...]}. Never raises.
+    Content-cached per (ticker, range, today) — free replays intraday."""
+    import datetime as _dt
+    from bneck2 import lab as _LAB
+    ckey = _LAB.cache_key("yahoo", ticker, range_,
+                          _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%d"))
+    hit = _LAB.cache_get(ckey)
+    if isinstance(hit, dict) and hit.get("closes"):
+        return hit
     symbol = YAHOO_MAP.get(ticker, ticker)
     if ticker in CRYPTO_IDS:
         return {"ticker": ticker, "closes": [], "error": "crypto history unsupported"}
@@ -87,7 +95,9 @@ def history(ticker: str, range_: str = "1mo") -> dict:
         out = [{"date": datetime.datetime.fromtimestamp(t, tz=datetime.timezone.utc).strftime("%Y-%m-%d"),
                 "close": round(float(c), 2)}
                for t, c in zip(ts, closes) if c is not None]
-        return {"ticker": ticker, "closes": out}
+        res = {"ticker": ticker, "closes": out}
+        _LAB.cache_set(ckey, res)
+        return res
     except Exception as exc:
         return {"ticker": ticker, "closes": [], "error": str(exc)[:120]}
 

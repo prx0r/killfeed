@@ -24,8 +24,11 @@ ROOT = Path(__file__).resolve().parents[1]
 LAB = ROOT / "experimentation"
 HYPS = LAB / "hypotheses"
 RECEIPTS = LAB / "receipts.jsonl"
+RUNS = LAB / "runs"
+CACHE = ROOT / "data" / "cache"
 
-VERDICTS = ("CONFIRMED", "REFUTED", "INCONCLUSIVE")
+VERDICTS = ("CONFIRMED", "REFUTED", "INCONCLUSIVE",
+            "PROVISIONAL", "DISPUTED", "BLOCKED")
 
 
 def utcnow() -> str:
@@ -114,7 +117,9 @@ def support_rate(rows: list[dict] | None = None) -> dict:
     hits = sum(1 for r in decided if r["verdict"] == "CONFIRMED")
     w = wilson(hits, len(decided))
     w["decided"] = len(decided)
-    w["open"] = sum(1 for r in rows if r.get("verdict") == "INCONCLUSIVE")
+    w["open"] = sum(1 for r in rows if r.get("verdict") in
+                    ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED"))
+    w["blocked"] = sum(1 for r in rows if r.get("verdict") == "BLOCKED")
     return w
 
 
@@ -131,7 +136,8 @@ def possibility_ledger(rows: list[dict] | None = None) -> dict:
     return {"hypotheses": len(by_hyp),
             "confirmed": sum(1 for v in by_hyp.values() if v == "CONFIRMED"),
             "refuted": sum(1 for v in by_hyp.values() if v == "REFUTED"),
-            "open": sum(1 for v in by_hyp.values() if v == "INCONCLUSIVE"),
+            "open": sum(1 for v in by_hyp.values() if v in
+                        ("INCONCLUSIVE", "PROVISIONAL", "DISPUTED")),
             "runs": len(rows)}
 
 
@@ -192,3 +198,37 @@ def resolve_due(resolver) -> list[dict]:
     PREDICTIONS.write_text("\n".join(json.dumps(r) for r in rows) + "\n",
                            encoding="utf-8")
     return [r for r in rows if r.get("resolved") is not None][-n:] if n else []
+
+
+def run_file(hyp_id: str, inputs: dict, outputs: dict, ts: str = "",
+             code_refs: dict | None = None) -> Path:
+    """Immutable per-run file (cg RunReceipt idea): full inputs+outputs.
+    Receipt row indexes it. Volatile fields (ts) live beside the id."""
+    RUNS.mkdir(parents=True, exist_ok=True)
+    ts = ts or utcnow()
+    blob = json.dumps(inputs, sort_keys=True, default=str)
+    rid = hashlib.sha256(blob.encode()).hexdigest()[:12]
+    path = RUNS / f"{hyp_id}-{ts.replace(':', '')}-{rid}.json"
+    path.write_text(json.dumps({"hyp": hyp_id, "ts": ts,
+                                "inputs_hash": rid, "inputs": inputs,
+                                "outputs": outputs,
+                                "code_refs": code_refs or {}}, indent=1),
+                    encoding="utf-8")
+    return path
+
+
+def cache_get(key: str):
+    try:
+        return json.loads((CACHE / (key + ".json")).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+
+
+def cache_set(key: str, value) -> None:
+    CACHE.mkdir(parents=True, exist_ok=True)
+    (CACHE / (key + ".json")).write_text(json.dumps(value), encoding="utf-8")
+
+
+def cache_key(*parts: str) -> str:
+    blob = "|".join(parts)
+    return hashlib.sha256(blob.encode()).hexdigest()[:16]

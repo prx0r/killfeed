@@ -32,6 +32,7 @@ scripts/revealed.py LabSignal ranking + diversification + diggers + FTO + CEO
 scripts/killfeed.py collect (opt --live) -> evaluate -> verdict-log loop
 scripts/migration.py severity/velocity/X/derivatives/consistency board
 scripts/experiment.py list|run|report (hypothesize→receipt→verdict lab)
+scripts/experience_build.py [--check] (rebuildable derived store)
 scripts/oneclick.py (ONE command: poll→killfeed→migrate→experiments→
   connections→backtest→report docs/ONECLICK-<ts>.md)
 experimentation/ hypotheses + receipts.jsonl + notes (cg-flow)
@@ -48,7 +49,7 @@ outbox/           zips staged for email delivery
 /usr/bin/python3 scripts/revealed.py
 /usr/bin/python3 scripts/killfeed.py [--live] [--max-nodes N]
 /usr/bin/python3 scripts/seed_claims.py [--force]
-/usr/bin/python3 -m unittest discover -s tests   # 176 tests
+/usr/bin/python3 -m unittest discover -s tests   # 182 tests
 See docs/RESOURCES-CANONICAL.md for the live-vs-not source map.
 ```
 
