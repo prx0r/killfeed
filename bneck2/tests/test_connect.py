@@ -107,6 +107,20 @@ class TestNewVenues(unittest.TestCase):
         self.assertIn("CNMS", finra.VENUES)
 
 
+class TestSourceGraph(unittest.TestCase):
+    def test_graph_valid(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "sources_graph", str(ROOT / "scripts" / "sources_graph.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        self.assertEqual(mod.validate(), [])
+        live = sum(1 for n in mod.build()["nodes"] if n["status"] == "LIVE")
+        self.assertGreaterEqual(live, 20)
+
+
 class TestBacktestPanel(unittest.TestCase):
     def test_append_idempotent_and_fill(self):
         import tempfile

@@ -50,7 +50,7 @@ outbox/           zips staged for email delivery
 /usr/bin/python3 scripts/revealed.py
 /usr/bin/python3 scripts/killfeed.py [--live] [--max-nodes N]
 /usr/bin/python3 scripts/seed_claims.py [--force]
-/usr/bin/python3 -m unittest discover -s tests   # 190 tests
+/usr/bin/python3 -m unittest discover -s tests   # 191 tests
 See docs/RESOURCES-CANONICAL.md for the live-vs-not source map.
 ```
 

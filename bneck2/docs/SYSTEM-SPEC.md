@@ -89,6 +89,7 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| source graph | 27 nodes (25 LIVE), validated both directions | scripts/sources_graph.py, data/sources/graph.json |
 | NVDA/OpenAI/BTC focus | insider buys=0 (all sells); BTC-NVDA rho 0.02 decoupled | E018-E020 |
 | BTC history | CoinGecko daily closes, cached | prices.crypto_history |
 | BTC calibration | live level markets snapshot, 7d resolve | E020, data/predict/btc_levels.json |
