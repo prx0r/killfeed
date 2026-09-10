@@ -117,6 +117,8 @@ Dependency rules:
 | observation | OBSERVATION primitive; 9 families routed to edge/node fields | observation.py |
 | actors | 34-actor registry, seed-unverified, no spend yet | actor_registry.json |
 | G003 | death-watch: feedify researcher threats -> THREATENS overlay (>=10) | threat_extract.py |
+| death-watch | shock PML_L0 -> THREATENS-ranked exposure + evidence-depth tiebreak | propagate.py |
+| triage | DYING/UNPRICED/QUESTIONED buckets vs SPY since first threat | threat_triage.py |
 | CHGG | existence proof: -77% excess 1y post-ChatGPT; mechanism lives at names, not basket | exhibit |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |

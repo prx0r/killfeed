@@ -342,6 +342,22 @@ class TestEdges(unittest.TestCase):
             g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
         self.assertEqual(m2, [])
 
+    def test_death_watch_ranked(self):
+        import json as _j
+        from bneck2 import propagate as P
+        d = P.death_watch()
+        self.assertGreaterEqual(len(d["watch"]), 10)
+        tickers = [w["ticker"] for w in d["watch"]]
+        self.assertIn("SKHY", tickers)
+        ov = _j.load(open("data/bottlenecks/threat_graph.json"))
+        self.assertTrue(any(e["target"] == "CO_AAOI" for e in ov["edges"]))
+        import json
+        qf = _j.load(open("data/bottlenecks/threat_queue.json"))
+        self.assertIn("queue", qf)
+        self.assertGreaterEqual(len(qf["queue"]), 20)
+        for r in qf["queue"]:
+            self.assertIn(r["status"], ("DYING", "UNPRICED", "QUESTIONED", "NO-DATA"))
+
     def test_threat_overlay(self):
         import json
         import subprocess

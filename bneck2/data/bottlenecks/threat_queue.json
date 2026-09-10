@@ -1,0 +1,223 @@
+{
+ "asof": "2026-09-10",
+ "queue": [
+  {
+   "ticker": "APP",
+   "status": "DYING",
+   "first_threat": "2026-08",
+   "excess": -0.2316,
+   "maxdd": -0.2886,
+   "by": [
+    "nanalyzetweets"
+   ]
+  },
+  {
+   "ticker": "DDOG",
+   "status": "DYING",
+   "first_threat": "2026-08",
+   "excess": -0.1898,
+   "maxdd": -0.2739,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "TENB",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0823,
+   "maxdd": -0.1929,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "AVGO",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0772,
+   "maxdd": -0.1687,
+   "by": [
+    "TheValueist",
+    "aleabitoreddit"
+   ]
+  },
+  {
+   "ticker": "AAOI",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0649,
+   "maxdd": -0.3519,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "CSCO",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0617,
+   "maxdd": -0.1233,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "JBL",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0544,
+   "maxdd": -0.1923,
+   "by": [
+    "aleabitoreddit"
+   ]
+  },
+  {
+   "ticker": "S",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": -0.0112,
+   "maxdd": -0.185,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "CRWD",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0252,
+   "maxdd": -0.178,
+   "by": [
+    "TheValueist",
+    "nanalyzetweets"
+   ]
+  },
+  {
+   "ticker": "RPD",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0252,
+   "maxdd": -0.2409,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "COHR",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.047,
+   "maxdd": -0.3026,
+   "by": [
+    "TheValueist",
+    "aleabitoreddit"
+   ]
+  },
+  {
+   "ticker": "DBA",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0485,
+   "maxdd": -0.0217,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "QLYS",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0593,
+   "maxdd": -0.1574,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "TSM",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0658,
+   "maxdd": -0.0484,
+   "by": [
+    "PhotonCap",
+    "dnystedt"
+   ]
+  },
+  {
+   "ticker": "AMD",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.069,
+   "maxdd": -0.1204,
+   "by": [
+    "HyperTechInvest",
+    "aleabitoreddit"
+   ]
+  },
+  {
+   "ticker": "NVDA",
+   "status": "UNPRICED",
+   "first_threat": "2026-08",
+   "excess": 0.0762,
+   "maxdd": -0.0747,
+   "by": [
+    "HyperTechInvest"
+   ]
+  },
+  {
+   "ticker": "IREN",
+   "status": "QUESTIONED",
+   "first_threat": "2026-08",
+   "excess": 0.1072,
+   "maxdd": -0.2105,
+   "by": [
+    "HyperTechInvest",
+    "StonkChris"
+   ]
+  },
+  {
+   "ticker": "DT",
+   "status": "QUESTIONED",
+   "first_threat": "2026-08",
+   "excess": 0.1419,
+   "maxdd": -0.0788,
+   "by": [
+    "TheValueist"
+   ]
+  },
+  {
+   "ticker": "INTC",
+   "status": "QUESTIONED",
+   "first_threat": "2026-08",
+   "excess": 0.1612,
+   "maxdd": -0.1655,
+   "by": [
+    "PhotonCap",
+    "dnystedt"
+   ]
+  },
+  {
+   "ticker": "MRVL",
+   "status": "QUESTIONED",
+   "first_threat": "2026-08",
+   "excess": 0.2065,
+   "maxdd": -0.1774,
+   "by": [
+    "PhotonCap",
+    "aleabitoreddit"
+   ]
+  },
+  {
+   "ticker": "SKHY",
+   "status": "NO-DATA",
+   "first_threat": "2026-08"
+  },
+  {
+   "ticker": "SIVE",
+   "status": "NO-DATA",
+   "first_threat": "2026-08"
+  }
+ ]
+}

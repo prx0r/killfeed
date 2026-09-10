@@ -83,6 +83,52 @@ def bottleneck_rank(state: dict, graph: dict, top: int = 10) -> list:
             for nid, v in sorted(state.items(), key=lambda x: -abs(x[1]))[:top]]
 
 
+def with_threats() -> dict:
+    """Production graph + THREATENS overlay merged (overlay wins ties)."""
+    graph = json.loads(GRAPH.read_text())
+    nodes = {n["id"]: dict(n) for n in graph.get("nodes", [])}
+    edges = list(graph.get("edges", []))
+    try:
+        ov = json.loads((ROOT / "data" / "bottlenecks" / "threat_graph.json").read_text())
+        for n in ov.get("nodes", []):
+            nodes.setdefault(n["id"], n)
+        edges += ov.get("edges", [])
+    except OSError:
+        pass
+    return {"nodes": list(nodes.values()), "edges": edges}
+
+
+def death_watch(shock_node: str = "PML_L0", shock: float = 1.0,
+                top: int = 15) -> dict:
+    """Shock an AI capability -> threatened companies ranked by exposure."""
+    import re as _re
+    graph = with_threats()
+    state = propagate(graph, {shock_node: shock})
+    co = [(nid, v) for nid, v in state.items() if nid.startswith("CO_")]
+    depth = {}
+    try:
+        _ov = json.loads((ROOT / "data" / "bottlenecks" / "threat_graph.json").read_text())
+        for e in _ov.get("edges", []):
+            by = {q.get("source", "") for q in e.get("evidence", [])}
+            depth[e["target"]] = (len(e.get("evidence", [])), len(by))
+    except OSError:
+        pass
+    co.sort(key=lambda x: (-abs(x[1]), -depth.get(x[0], (0, 0))[0],
+                           -depth.get(x[0], (0, 0))[1]))
+    names = {n["id"]: n.get("label", n["id"]) for n in graph["nodes"]}
+    ev = {}
+    try:
+        ov = json.loads((ROOT / "data" / "bottlenecks" / "threat_graph.json").read_text())
+        for e in ov.get("edges", []):
+            ev[e["target"]] = [q.get("source", "").replace("feedify:", "")
+                               for q in e.get("evidence", [])[:2]]
+    except OSError:
+        pass
+    return {"shock": {shock_node: shock},
+            "watch": [{"ticker": _re.sub(r"^CO_", "", nid), "exposure": v,
+                       "by": ev.get(nid, [])} for nid, v in co[:top] if abs(v) > 0.0005]}
+
+
 def main() -> dict:
     graph = json.loads(GRAPH.read_text())
     shocks = {"PML_L2": 1.0}  # +1 training-compute demand shock
