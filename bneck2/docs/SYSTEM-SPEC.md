@@ -119,6 +119,9 @@ Dependency rules:
 | G003 | death-watch: feedify researcher threats -> THREATENS overlay (>=10) | threat_extract.py |
 | death-watch | shock PML_L0 -> THREATENS-ranked exposure + evidence-depth tiebreak | propagate.py |
 | triage | DYING/UNPRICED/QUESTIONED buckets vs SPY since first threat | threat_triage.py |
+| E054 | death-watch basket REFUTED (+1.3%, t=0.52); value in DYING subset only | experiments |
+| DW-fwd | re-run triage+E054 at 90d = forward leg | threat_queue.json |
+| BODYCOUNT | 2022-11-30->now: CHGG -184pp, FVRR -161, CNXC -165, FIVN -139, UPWK -118, FRSH -107, DUOL +19 | exhibit |
 | CHGG | existence proof: -77% excess 1y post-ChatGPT; mechanism lives at names, not basket | exhibit |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |

@@ -2200,6 +2200,39 @@ def g003_death_watch() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if n >= 10 else "REFUTED"), n
 
 
+def e054_death_watch_test() -> tuple[dict, str, int]:
+    """H-DW-1: threatened names underperform SPY."""
+    import datetime as _dt
+    import json as _j
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-DW-1", "death-watch basket underperforms SPY",
+        "mean excess(threatened vs SPY since threat) < 0, "
+        "and forward leg confirms at 90d",
+        "mean excess >= 0 (researcher threats carry no price signal)",
+        "threat_queue.json (fresh<=7d); forward leg resolves 90d post-first-run")
+    qf = _j.load(open(ROOT / "data" / "bottlenecks" / "threat_queue.json"))
+    age = (_dt.date.today() - _dt.date.fromisoformat(qf.get("asof", "2020-01-01"))).days
+    if age > 7:
+        return {"asof": qf.get("asof"), "age_days": age}, "INCONCLUSIVE", 0
+    rows = [r for r in qf["queue"] if r["status"] in ("DYING", "UNPRICED", "QUESTIONED")
+            and isinstance(r.get("excess"), (int, float))]
+    if len(rows) < 10:
+        return {"n": len(rows)}, "INCONCLUSIVE", len(rows)
+    import math as _m
+    xs = [r["excess"] for r in rows]
+    n = len(xs)
+    mu = sum(xs) / n
+    sd = _m.sqrt(sum((x - mu) ** 2 for x in xs) / (n - 1)) if n > 1 else 0.0
+    tstat = mu / (sd / _m.sqrt(n)) if sd > 0 else 0.0
+    dying = sum(1 for r in rows if r["status"] == "DYING")
+    res = {"n": n, "mean_excess": round(mu, 4), "tstat": round(tstat, 2),
+           "dying": dying,
+           "note": f"mean excess {mu:.1%} (t={tstat:.2f}, n={n}), {dying} dying"}
+    ok = mu < 0 and tstat < -1.0
+    return res, ("CONFIRMED" if ok else "REFUTED"), n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2257,6 +2290,7 @@ REGISTRY = {
     "E052": e052_capex_reflex,
     "E053": e053_step_obsolescence,
     "G003": g003_death_watch,
+    "E054": e054_death_watch_test,
 }
 
 
@@ -2381,6 +2415,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
