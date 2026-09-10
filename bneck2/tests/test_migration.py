@@ -232,6 +232,22 @@ class TestDeep(unittest.TestCase):
         self.assertTrue(callable(finra.short_file))
 
 
+class TestReasonBandit(unittest.TestCase):
+    def test_pick_and_record(self):
+        from bneck2 import reason
+        doc = {a: {"pulls": 0, "reward": 0.0} for a in reason.ARMS}
+        self.assertIn(reason.pick(doc, seed=1), reason.ARMS)
+        doc = reason.record("causal", 2.0, dict(doc))
+        self.assertEqual(doc["causal"], {"pulls": 1, "reward": 2.0})
+        self.assertEqual(len(reason.PROMPTS), 6)
+
+    def test_rediscovery_file(self):
+        import json as _j
+        rows = _j.loads(Path("/home/ubuntu/bneck2/experimentation/rediscovery.json").read_text())
+        self.assertEqual(len(rows), 3)
+        self.assertTrue(all("check" in r for r in rows))
+
+
 class TestFocusedNames(unittest.TestCase):
     def test_kalshi_series_fields(self):
         from collectors import kalshi as KL

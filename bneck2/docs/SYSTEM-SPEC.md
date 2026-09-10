@@ -98,6 +98,8 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| reason bandit | 6 lenses, Boltzmann picks, rewards in data/lab/bandit.json | reason.py |
+| rediscovery | 3 blind checks, all surfaced 2026-09-10 | experimentation/rediscovery.json |
 | MCP server | stdlib JSON-RPC stdio: 13 tools over engine | scripts/mcp_server.py |
 | headless battery | initialize→list→13 calls incl. errors, 0 failures | scripts/mcp_test.py (+suite) |
 | sweep | full chain per ticker: SEC/insiders/holders/short/PM/whales/HN/EFTS/facts | scripts/sweep.py, docs/SWEEP-*.md |

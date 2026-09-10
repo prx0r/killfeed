@@ -14,7 +14,8 @@ UA = {"User-Agent": "bneck research contact@localhost"}
 FEEDS = {
     "openai": "https://openai.com/news/rss.xml",
     "deepmind": "https://deepmind.google/blog/rss.xml",
-    # Queued (paths unresolved 2026-09-10): anthropic, meta, xai.
+    "meta": "https://about.fb.com/news/rss/",
+    # Queued (paths unresolved 2026-09-10): anthropic, xai.
 }
 
 

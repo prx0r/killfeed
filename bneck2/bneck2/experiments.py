@@ -1068,6 +1068,56 @@ def e034_kalshi_momentum() -> tuple[dict, str, int]:
     return out, verdict, n
 
 
+def e035_attribution() -> tuple[dict, str, int]:
+    """H-ATT-1: leave-one-out attribution of the long tilt (E017 flip)."""
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-ATT-1", "tilt driven by few names, not a factor",
+        "dropping <=3 tickers flips the sign of mean excess",
+        "sign survives all single drops (broad factor, not luck)",
+        "biweekly 30-ticker panel")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[max(len(dates) - 8, 0)]
+    hold = [r for r in rows if r["date"] >= cut]
+    train = [r for r in rows if r["date"] < cut]
+    scr = PD.screen(train)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 40]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    scored = PD.composite_by_date(hold, winners or ["f_mom_20"], signs)
+    by_date = {}
+    for r in scored:
+        by_date.setdefault(r["date"], []).append(r)
+
+    def _excess(rs):
+        ex = []
+        for d in sorted(by_date):
+            g = sorted(by_date[d], key=lambda r: -r["score"]) if rs is None else                 sorted([r for r in by_date[d] if r["ticker"] not in rs],
+                       key=lambda r: -r["score"])
+            k = max(len(g) // 3, 1)
+            ex.append(sum(r["fwd_20"] for r in g[:k]) / k
+                      - sum(r["fwd_20"] for r in g) / len(g))
+        return round(sum(ex) / len(ex), 4) if ex else None
+
+    base = _excess(None)
+    tickers = sorted({r["ticker"] for r in hold})
+    drops = {}
+    for t in tickers:
+        drops[t] = _excess({t})
+    out = {"base_excess": base, "n_tickers": len(tickers),
+           "worst_drops": sorted(drops.items(), key=lambda kv: kv[1] or 0)[:3],
+           "best_drops": sorted(drops.items(), key=lambda kv: kv[1] or 0)[-3:],
+           "note": f"base {base}; dropping changes outcomes, see extremes"}
+    flip = any((d or 0) > 0 for d in drops.values())
+    return out, ("CONFIRMED" if flip else "REFUTED"), len(tickers)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1103,6 +1153,7 @@ REGISTRY = {
     "E032": e032_nvda_basket,
     "E033": e033_x_calls,
     "E034": e034_kalshi_momentum,
+    "E035": e035_attribution,
 }
 
 
@@ -1200,6 +1251,7 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
 
 
 

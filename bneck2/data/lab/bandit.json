@@ -1,0 +1,26 @@
+{
+ "inductive": {
+  "pulls": 0,
+  "reward": 0.0
+ },
+ "deductive": {
+  "pulls": 0,
+  "reward": 0.0
+ },
+ "abductive": {
+  "pulls": 0,
+  "reward": 0.0
+ },
+ "analogical": {
+  "pulls": 0,
+  "reward": 0.0
+ },
+ "counterfactual": {
+  "pulls": 0,
+  "reward": 0.0
+ },
+ "causal": {
+  "pulls": 1,
+  "reward": 2.0
+ }
+}
