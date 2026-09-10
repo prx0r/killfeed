@@ -14,9 +14,10 @@ bneck2/           engine (v1 + labs/LabSignal, diggers, patents, ceo,
                 worlds/Signal, scarcity, killfeed, backtest, implied,
                 obsolescence, migration, consistency, atoms, kernel_bridge)
 data/universe/    ai_atoms.json (test/measurement/certification universe)
-collectors/       sec, sec_facts, github, openalex, crossref, biorxiv,
-                polymarket, clob, polywhale, kalshi, manifold, hn, hf,
-                bio, fed, jobs, labs_rss, usaspending, grants
+collectors/       sec, sec_facts, openinsider, finra, github, openalex,
+                crossref, biorxiv, semscholar, polymarket, clob, polywhale,
+                kalshi, manifold, hn, hf, bio, fed, jobs, labs_rss,
+                usaspending, grants
 data/labs/        deals.json, commitments.json, diggers.json, ceo.json
 data/patents/     fto.json (IonQ estate seed)
 data/bottlenecks/ graph_v2.json, precedents.json, readings_*.json

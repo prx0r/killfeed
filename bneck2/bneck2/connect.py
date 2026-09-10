@@ -114,3 +114,26 @@ def render(rows: list[dict]) -> str:
     for r in rows:
         lines.append(f"  [{r['rule']}] {r.get('node', '?')} ({r.get('legs', 1)} legs): {r['note'][:220]}")
     return "\n".join(lines)
+
+
+def rule_insider_cluster(node: str, rows: list[dict],
+                         min_usd: float = 500000.0) -> dict | None:
+    """Multi-insider buying one name (cluster page = pre-joined).
+    Caller pre-filters rows to the node; min_usd per row."""
+    hits = [r for r in rows if r.get("value_usd", 0) >= min_usd]
+    if not hits:
+        return None
+    tot = sum(h["value_usd"] for h in hits)
+    return {"rule": "insider_cluster", "node": node, "legs": 2,
+            "note": f"{len(hits)} cluster rows ${tot:,.0f}: " +
+                    ", ".join(h.get("insider", "")[:20] for h in hits[:3])}
+
+
+def rule_short_crowded(ticker: str, short_ratio: float | None,
+                       crowdedness: float) -> dict | None:
+    """High short interest on a crowded long = squeeze-or-funeral watch."""
+    if short_ratio is None or short_ratio < 0.4 or crowdedness < 0.6:
+        return None
+    return {"rule": "short_crowded", "node": ticker, "legs": 2,
+            "note": f"short ratio {short_ratio:.0%} + crowdedness "
+                    f"{crowdedness:.2f}: positioned both ways, watch"}

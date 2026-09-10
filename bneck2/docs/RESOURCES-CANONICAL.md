@@ -7,6 +7,20 @@ not yet in the loop) · KEY (needs key/signup) · HEAVY (infra/compute/bulk)
 
 ## Filings, insiders, fundamentals — LIVE-WIRED
 
+- FINRA daily short volume per symbol (Reg SHO CDN, email-UA, walk-back
+  trading days) — `collectors/finra.py` — live (NVDA 0.40, IONQ 0.59).
+  CloudFront 403 = unpublished-yet, not ban. SI biweekly queued.
+- OpenInsider screener/cluster/officer reads (plain HTTP; 443 refused) —
+  `collectors/openinsider.py` — live (NVDA 100 rows, Stevens sales).
+  Recipes ex-`third_party/openinsider-mcp` (Node; patterns ported stdlib).
+- us-gov-open-data-mcp cloned (`third_party/us-gov-mcp`, 42 APIs/343 tools,
+  TS SDK importable sans MCP) — recipe mine for Treasury/FRED/Congress/FDA
+  once keys land; keyless endpoints already covered natively.
+- unignorant cloned (`third_party/unignorant`, 191-country reality graph) —
+  World Bank Data360 (no key, OData) noted for geo layer; HDX/IATI need ids.
+- GovInfo runs its own public MCP (preview) — queued behind api.data.gov key.
+
+
 - SEC submissions (Form 4/13D/13G/8-K) — `collectors/sec.py` — burst leg live.
 - SEC companyfacts (XBRL: revenue TTM, growth, R&D intensity) —
   `collectors/sec_facts.py` — live (NVDA verified).

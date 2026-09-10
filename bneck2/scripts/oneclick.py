@@ -217,6 +217,29 @@ def connect_pass() -> str:
     for topic, rs in by_topic.items():
         rows.append(C.rule_pm_spread(topic, rs))
 
+    # Insider clusters + short flow (bounded: 3 calls, mapped to nodes).
+    from collectors import finra as FIN
+    from collectors import openinsider as OI
+    tick_to_node: dict[str, str] = {}
+    for n in g["nodes"]:
+        for t in n.get("tickers", []):
+            tick_to_node.setdefault(t, n["id"])
+    crowd_by = {n["id"]: float(n.get("crowdedness", 0.5)) for n in g["nodes"]}
+    cluster_rows = OI.cluster_buys() + OI.officer_buys()
+    time.sleep(0.5)
+    by_node: dict[str, list[dict]] = {}
+    for r in cluster_rows:
+        nid = tick_to_node.get(r.get("ticker", ""))
+        if nid:
+            by_node.setdefault(nid, []).append(r)
+    for nid, rs in by_node.items():
+        rows.append(C.rule_insider_cluster(nid, rs))
+    node_tickers = sorted(t for t in tick_to_node if t.isupper() and len(t) <= 6)
+    for t, s in FIN.daily_short(node_tickers).items():
+        rows.append(C.rule_short_crowded(
+            tick_to_node.get(t, t), s.get("short_ratio"),
+            crowd_by.get(tick_to_node.get(t, t), 0.0)))
+
     rows.extend(lab_rows[:8])
     ranked = C.rank(rows)
     _CONNECT_RENDER = "## Connections\n\n" + C.render(ranked)

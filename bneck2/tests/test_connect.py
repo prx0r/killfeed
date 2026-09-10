@@ -49,6 +49,35 @@ class TestConnectRules(unittest.TestCase):
         self.assertEqual(rows[0]["rule"], "a")
 
 
+class TestInsiderShort(unittest.TestCase):
+    def test_insider_cluster(self):
+        from bneck2 import connect as C
+        rows = [{"ticker": "X", "value_usd": 600000.0, "insider": "A B"},
+                {"ticker": "X", "value_usd": 100.0, "insider": "C D"}]
+        r = C.rule_insider_cluster("node-x", rows)
+        self.assertIsNotNone(r)
+        self.assertIn("600,000", r["note"])
+        self.assertIsNone(C.rule_insider_cluster("node-x", rows[1:]))
+
+    def test_short_crowded(self):
+        from bneck2 import connect as C
+        r = C.rule_short_crowded("n", 0.55, 0.8)
+        self.assertIsNotNone(r)
+        self.assertIsNone(C.rule_short_crowded("n", 0.2, 0.8))
+        self.assertIsNone(C.rule_short_crowded("n", 0.55, 0.3))
+
+    def test_openinsider_ticker_clean(self):
+        from collectors import openinsider as OI
+        dirty = """<b> <a href="/PRTS" onmouseover="Tip('<img>', DELAY, 1)">PRTS</a></b>"""
+        self.assertEqual(OI._ticker(dirty), "PRTS")
+
+    def test_finra_recent_dates(self):
+        from collectors import finra
+        days = finra._recent_dates(6)
+        self.assertEqual(len(days), 6)
+        self.assertTrue(all(len(d) == 8 for d in days))
+
+
 class TestBacktestPanel(unittest.TestCase):
     def test_append_idempotent_and_fill(self):
         import tempfile
