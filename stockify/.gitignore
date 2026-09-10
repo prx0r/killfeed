@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.db
+.DS_Store
+data/prices.jsonl
+data/prices_latest.json
+data/levin/pdfs/
+data/levin/pages/
+data/levin/articles/

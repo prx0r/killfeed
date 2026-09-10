@@ -1,0 +1,18 @@
+name = "stockify-price-poller"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# $0 cron: Workers Free includes scheduled triggers. Every 5 min = 288 req/day,
+# well under the 100k/day free allowance. Secrets are NOT stored here —
+# inject at deploy time from agent-vault oracle vault:
+#   CLOUDFLARE_ACCOUNT_ID, CLOUDFLARE_API_TOKEN (or CLOUDFLARE_WORKERS_TOKEN)
+# Optional sink back to your VPS Stockify API:
+#   STOCKIFY_INGEST_URL (e.g. https://your-host/api/prices/ingest + token)
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Uncomment to persist snapshots in R2 ($0: 10 GB free) instead of just POSTing:
+# [[r2_buckets]]
+# binding = "PRICE_BUCKET"
+# bucket_name = "stockify-prices"

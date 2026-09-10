@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "stockify": {
+      "command": "python",
+      "args": ["-m", "stockify.mcp_stdio"],
+      "env": {
+        "STOCKIFY_URL": "https://feedify.egoic.ai"
+      }
+    }
+  }
+}

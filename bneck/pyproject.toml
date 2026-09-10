@@ -1,0 +1,10 @@
+[project]
+name = "bneck"
+version = "0.1.0"
+description = "Bottleneck dependency graph: track n, rotate to n+1, short the shovels at dissolution"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

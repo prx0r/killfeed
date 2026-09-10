@@ -1,0 +1,542 @@
+[
+  {
+    "category": "Core radar",
+    "name": "AI Release Radar",
+    "url": "https://github.com/Beltran12138/ai-release-radar",
+    "use_case": "Pre-announcement model signals from GitHub, HF, arXiv, Reddit/X and Polymarket",
+    "priority": "S",
+    "license_note": "MIT per README",
+    "free_status": "Free"
+  },
+  {
+    "category": "Bottleneck mapping",
+    "name": "ProphetMap",
+    "url": "https://github.com/Beltran12138/prophetmap",
+    "use_case": "Physical AI bottleneck layers, falsifiers, pricing and bottleneck-relay investing",
+    "priority": "S++",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Bottleneck mapping",
+    "name": "Keystone",
+    "url": "https://github.com/Skeeter-spec/keystone",
+    "use_case": "Evidence-backed industrial chokepoint and keystone-firm maps",
+    "priority": "S++",
+    "license_note": "AGPL-3.0",
+    "free_status": "Free"
+  },
+  {
+    "category": "Supply chain",
+    "name": "Supply Chain Intelligence",
+    "url": "https://github.com/eugenehp/supplychain",
+    "use_case": "Reverse-traces AI accelerators through foundry, HBM, OSAT, EDA, equipment and materials",
+    "priority": "S++",
+    "license_note": "Verify non-commercial terms",
+    "free_status": "Free for research"
+  },
+  {
+    "category": "Bottleneck quant",
+    "name": "CHOKEPOINT",
+    "url": "https://github.com/atharvahirulkar/chokepoint",
+    "use_case": "Counterfactual supplier removal and system-coverage-collapse scoring",
+    "priority": "S++",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Semiconductor graph",
+    "name": "Chip Sense",
+    "url": "https://github.com/aminalav/chip-sense",
+    "use_case": "Semiconductor firms, fabs, supplier arcs, trade flows and stress scenarios",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Semiconductor graph",
+    "name": "Silicon Stack",
+    "url": "https://github.com/sflans99/silicon-stack",
+    "use_case": "Large semiconductor company/material/dependency graph",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Memory graph",
+    "name": "Memory Atlas",
+    "url": "https://github.com/upamanyuacharya/memory-atlas",
+    "use_case": "HBM/CXL/photonics/memory-wall dependency atlas",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "AI supply chain",
+    "name": "AI Supply Chain Research",
+    "url": "https://github.com/YichengYang-Ethan/ai-supply-chain-research",
+    "use_case": "Cross-sector AI supply chain and bottleneck-relay research",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC graph",
+    "name": "alphasig",
+    "url": "https://github.com/sushaan-k/alphasig",
+    "use_case": "SEC-derived structural dependency graph with timestamped evidence",
+    "priority": "S",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Knowledge graph",
+    "name": "TWSE-KG",
+    "url": "https://github.com/tunglich/TWSE-KG",
+    "use_case": "Supply graph, centrality, propagation and backtesting",
+    "priority": "S",
+    "license_note": "Proprietary notice; research reference only",
+    "free_status": "Public code"
+  },
+  {
+    "category": "Supply chain",
+    "name": "Taiwan Coverage",
+    "url": "https://github.com/Timeverse/My-TW-Coverage",
+    "use_case": "Taiwan company and supply-chain mappings",
+    "priority": "S",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC relation extraction",
+    "name": "Stock Relation",
+    "url": "https://github.com/supat-roong/stock-relation",
+    "use_case": "SEC filings to supplier/customer relationship graph",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC GraphRAG",
+    "name": "SEC Graph",
+    "url": "https://github.com/Jumade/sec-graph",
+    "use_case": "GraphRAG over 10-K/10-Q/8-K for indirect dependencies",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Disruption",
+    "name": "DisruptIQ",
+    "url": "https://github.com/Sakshi3027/disruptiq",
+    "use_case": "News disruption classification and graph risk propagation",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Semiconductor quant",
+    "name": "Semiconductor AI Analysis",
+    "url": "https://github.com/navyawalia23-bit/Semiconductor-AI-Analysis",
+    "use_case": "NetworkX semiconductor chokepoint centrality",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Research radar",
+    "name": "arXiv Trend Radar",
+    "url": "https://github.com/meelod/arxiv-trend-radar",
+    "use_case": "Emerging research clusters and research-industry mismatches",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Tech scouting",
+    "name": "Tech Scouting Agent",
+    "url": "https://github.com/unicodeveloper/tech-scouting-agent",
+    "use_case": "Patent velocity, citation acceleration, government-grant flow",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Research graph",
+    "name": "Radar",
+    "url": "https://github.com/JeffMboya/radar",
+    "use_case": "arXiv research digest with semantic dependency graph extraction",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Trend radar",
+    "name": "Idea Radar",
+    "url": "https://github.com/DanieleGiovanardi2408/idea-radar",
+    "use_case": "Momentum radar across GitHub/HF/arXiv/HN/npm/RSS",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Open-source trends",
+    "name": "Agents Radar",
+    "url": "https://github.com/duanyytop/agents-radar",
+    "use_case": "Daily AI open-source trend monitoring",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Venture signals",
+    "name": "VC Signals",
+    "url": "https://github.com/abhishek255/vc-signals",
+    "use_case": "Public chatter to weekly theme/company radar",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "Prediction Market Analysis",
+    "url": "https://github.com/Jon-Becker/prediction-market-analysis",
+    "use_case": "Polymarket/Kalshi markets and trades dataset for calibration",
+    "priority": "S++",
+    "license_note": "Verify data/license terms",
+    "free_status": "Free/public"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "PMXT",
+    "url": "https://github.com/pmxt-dev/pmxt",
+    "use_case": "Unified self-hostable API across prediction markets",
+    "priority": "S+",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "Pytheum",
+    "url": "https://github.com/pytheum/pytheum",
+    "use_case": "Settlement-verified cross-venue market equivalence",
+    "priority": "S+",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "AgentTrader",
+    "url": "https://github.com/finnfujimura/agenttrader",
+    "use_case": "Research/backtest/paper-trade prediction-market agents",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "Kalshi Price Data",
+    "url": "https://github.com/vcorp-dev/kalshi-price-data",
+    "use_case": "Kalshi live prices/order books/historical integration",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free code"
+  },
+  {
+    "category": "Prediction markets",
+    "name": "Kalshi MCP Server",
+    "url": "https://github.com/cejor6/kalshi-mcp-server",
+    "use_case": "Self-hosted Kalshi MCP with WebSocket data",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free code"
+  },
+  {
+    "category": "OSINT",
+    "name": "World Monitor",
+    "url": "https://github.com/deco31416/worldmonitor",
+    "use_case": "Large real-time OSINT dashboard and cross-stream correlation",
+    "priority": "A+",
+    "license_note": "AGPL/commercial-use caveats",
+    "free_status": "Free for permitted use"
+  },
+  {
+    "category": "News graph",
+    "name": "NewsFresh",
+    "url": "https://github.com/krishjag/newsfresh",
+    "use_case": "GDELT-based LLM alerting from frequent KG updates",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "News graph",
+    "name": "GDELT Pulse",
+    "url": "https://github.com/UnbubbleHub/gdelt-pulse",
+    "use_case": "Continuous GDELT ingest, dedupe, embeddings, clustering",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "News graph",
+    "name": "GDELT GitHub",
+    "url": "https://github.com/gdelt/gdelt.github.io",
+    "use_case": "GDELT project resources",
+    "priority": "A",
+    "license_note": "Verify assets",
+    "free_status": "Free"
+  },
+  {
+    "category": "Hiring",
+    "name": "Jobseek",
+    "url": "https://github.com/colophon-group/jobseek",
+    "use_case": "Tracks thousands of company career pages; hiring changes as signals",
+    "priority": "S",
+    "license_note": "MIT code; dataset terms vary",
+    "free_status": "Free/self-host"
+  },
+  {
+    "category": "Hiring",
+    "name": "JobScout",
+    "url": "https://github.com/fikaventures/jobscout",
+    "use_case": "Hiring-velocity monitor and alerts",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC",
+    "name": "EdgarTools",
+    "url": "https://github.com/dgunning/edgartools",
+    "use_case": "10-K/10-Q/8-K/Form 3/4/5/13F and XBRL",
+    "priority": "S++",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC",
+    "name": "sec-cli",
+    "url": "https://github.com/tianrking/sec-cli",
+    "use_case": "CLI including normalized Form 4 insider fields",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Market/filings",
+    "name": "Equibles",
+    "url": "https://github.com/daniel3303/Equibles",
+    "use_case": "Agent-friendly SEC/13F/insider/economic data toolkit",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free code"
+  },
+  {
+    "category": "SEC live",
+    "name": "Bellingcat EDGAR",
+    "url": "https://github.com/bellingcat/EDGAR",
+    "use_case": "Live SEC RSS/ticker monitoring",
+    "priority": "S",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "SEC parsing",
+    "name": "pibou-filings",
+    "url": "https://github.com/Pierre-Bouquet/pibou-filings",
+    "use_case": "Large-scale filing parsing incl. Section 16 transactions",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Fund holdings",
+    "name": "Public US Funds Data",
+    "url": "https://github.com/global-capital-allocation-project/public-US-funds-data",
+    "use_case": "N-PORT parser/pipeline",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Fund holdings",
+    "name": "13F Tracker",
+    "url": "https://github.com/Sunny-1991/13F-Tracker",
+    "use_case": "Institutional holdings tracking",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Patents",
+    "name": "Patents AI Assistant",
+    "url": "https://github.com/yorkeccak/patents",
+    "use_case": "USPTO/EPO patent search, FTO, citations, landscapes, federal-spend linkage",
+    "priority": "S+",
+    "license_note": "Verify",
+    "free_status": "Free code"
+  },
+  {
+    "category": "Patents",
+    "name": "WIPO Analytics",
+    "url": "https://github.com/wipo-analytics",
+    "use_case": "Patent analytics notebooks/workshops",
+    "priority": "S",
+    "license_note": "WIPO repository terms",
+    "free_status": "Free"
+  },
+  {
+    "category": "Government spending",
+    "name": "USAspending MCP",
+    "url": "https://github.com/agilesix/usaspending-mcp-nextjs",
+    "use_case": "MCP for U.S. federal awards/contracts",
+    "priority": "A+",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Government spending",
+    "name": "USAspending ORM",
+    "url": "https://github.com/planetary-society/usaspending-orm",
+    "use_case": "Typed Python access to USAspending",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Government spending",
+    "name": "USAspending API",
+    "url": "https://github.com/fedspendingtransparency/usaspending-api",
+    "use_case": "Official federal spending API codebase",
+    "priority": "A",
+    "license_note": "Government repo",
+    "free_status": "Free"
+  },
+  {
+    "category": "Graph analysis",
+    "name": "NetworkX",
+    "url": "https://github.com/networkx/networkx",
+    "use_case": "Centrality, articulation, cuts, flows, node-removal simulations",
+    "priority": "S++",
+    "license_note": "BSD",
+    "free_status": "Free"
+  },
+  {
+    "category": "Temporal KG",
+    "name": "Graphiti",
+    "url": "https://github.com/getzep/graphiti",
+    "use_case": "Validity-aware temporal knowledge graph",
+    "priority": "S++",
+    "license_note": "Apache-2.0",
+    "free_status": "Free"
+  },
+  {
+    "category": "Graph acceleration",
+    "name": "cuGraph",
+    "url": "https://github.com/rapidsai/cugraph",
+    "use_case": "GPU graph analytics",
+    "priority": "A",
+    "license_note": "Apache-2.0",
+    "free_status": "Free"
+  },
+  {
+    "category": "Online ML",
+    "name": "River",
+    "url": "https://github.com/online-ml/river",
+    "use_case": "Online learning and drift detection",
+    "priority": "S",
+    "license_note": "BSD-3-Clause",
+    "free_status": "Free"
+  },
+  {
+    "category": "Change points",
+    "name": "ruptures",
+    "url": "https://github.com/deepcharles/ruptures",
+    "use_case": "Time-series change-point detection",
+    "priority": "A+",
+    "license_note": "BSD",
+    "free_status": "Free"
+  },
+  {
+    "category": "Causal inference",
+    "name": "Tigramite",
+    "url": "https://github.com/jakobrunge/tigramite",
+    "use_case": "Causal discovery from multivariate time series",
+    "priority": "A+",
+    "license_note": "GPL-3.0",
+    "free_status": "Free"
+  },
+  {
+    "category": "Causal inference",
+    "name": "DoWhy",
+    "url": "https://github.com/py-why/dowhy",
+    "use_case": "Counterfactual/intervention causal analysis",
+    "priority": "A+",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Backtesting",
+    "name": "Qlib",
+    "url": "https://github.com/microsoft/qlib",
+    "use_case": "Quant research/backtesting framework",
+    "priority": "S",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Market data",
+    "name": "OpenBB",
+    "url": "https://github.com/OpenBB-finance/OpenBB",
+    "use_case": "Unified financial-data tooling",
+    "priority": "A+",
+    "license_note": "Check provider/license terms",
+    "free_status": "Core free"
+  },
+  {
+    "category": "Power model",
+    "name": "PyPSA",
+    "url": "https://github.com/PyPSA/PyPSA",
+    "use_case": "Power-system optimization and capacity constraints",
+    "priority": "A+",
+    "license_note": "MIT",
+    "free_status": "Free"
+  },
+  {
+    "category": "Power data",
+    "name": "gridstatus",
+    "url": "https://github.com/gridstatus/gridstatus",
+    "use_case": "ISO/RTO electricity price/load/generation access",
+    "priority": "A+",
+    "license_note": "BSD-3-Clause",
+    "free_status": "Free"
+  },
+  {
+    "category": "Input-output",
+    "name": "pymrio",
+    "url": "https://github.com/IndEcol/pymrio",
+    "use_case": "Global multi-regional input-output dependency analysis",
+    "priority": "A",
+    "license_note": "GPL",
+    "free_status": "Free"
+  },
+  {
+    "category": "Input-output",
+    "name": "leontief",
+    "url": "https://github.com/andenick/leontief",
+    "use_case": "BEA input-output multipliers",
+    "priority": "A",
+    "license_note": "Verify",
+    "free_status": "Free"
+  },
+  {
+    "category": "Social stream",
+    "name": "Hacker News API",
+    "url": "https://github.com/HackerNews/API",
+    "use_case": "Official HN Firebase API docs",
+    "priority": "A",
+    "license_note": "Public API",
+    "free_status": "Free"
+  }
+]

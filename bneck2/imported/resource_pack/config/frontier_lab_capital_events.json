@@ -1,0 +1,222 @@
+[
+  {
+    "date": "2026-01-09",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "SB Energy",
+    "event_type": "Strategic investment + infrastructure",
+    "source_url": "https://openai.com/index/stargate-sb-energy-partnership/",
+    "observable": "$1B combined investment; 1.2 GW data-center lease",
+    "bottleneck_interpretation": "Power/sites/long-duration infrastructure are binding",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-01-14",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Cerebras",
+    "event_type": "Compute capacity partnership",
+    "source_url": "https://openai.com/index/cerebras-partnership/",
+    "observable": "750 MW low-latency compute through 2028",
+    "bottleneck_interpretation": "Latency-sensitive inference and accelerator diversification matter",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-02-27",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Amazon/NVIDIA/SoftBank",
+    "event_type": "Financing + strategic compute",
+    "source_url": "https://openai.com/index/scaling-ai-for-everyone/",
+    "observable": "$110B new investment announced; strategic compute relationships",
+    "bottleneck_interpretation": "Capital intensity and diversified compute remain strategic",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-03-09",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Promptfoo",
+    "event_type": "Acquisition",
+    "source_url": "https://openai.com/index/openai-to-acquire-promptfoo/",
+    "observable": "Agentic security testing/evaluation",
+    "bottleneck_interpretation": "Agent security/evaluation becomes a deployment constraint",
+    "signal_strength": "Medium"
+  },
+  {
+    "date": "2026-03-19",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Astral",
+    "event_type": "Acquisition",
+    "source_url": "https://openai.com/index/openai-to-acquire-astral/",
+    "observable": "Developer tooling around uv/Ruff/ty joins Codex",
+    "bottleneck_interpretation": "Execution/toolchain bottlenecks around coding agents",
+    "signal_strength": "Medium"
+  },
+  {
+    "date": "2026-04-29",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Stargate",
+    "event_type": "Infrastructure expansion",
+    "source_url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/",
+    "observable": ">10 GW secured U.S. AI infrastructure milestone stated",
+    "bottleneck_interpretation": "Power/land/interconnection/data-center buildout are first-class constraints",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-06-11",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Ona",
+    "event_type": "Acquisition",
+    "source_url": "https://openai.com/index/openai-to-acquire-ona/",
+    "observable": "Secure cloud execution/orchestration for long-running Codex agents",
+    "bottleneck_interpretation": "Persistent agent execution matters as models become agentic",
+    "signal_strength": "Medium"
+  },
+  {
+    "date": "2026-06-24",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Broadcom",
+    "event_type": "Custom inference silicon",
+    "source_url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/",
+    "observable": "Jalape\u00f1o inference chip/platform",
+    "bottleneck_interpretation": "Frontier labs actively reduce dependence on generic accelerator economics",
+    "signal_strength": "Very high"
+  },
+  {
+    "date": "2026",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Deployment Company",
+    "event_type": "Majority-controlled deployment vehicle",
+    "source_url": "https://openai.com/index/openai-launches-the-deployment-company/",
+    "observable": "Initial investment >$4B to scale/acquire deployment firms",
+    "bottleneck_interpretation": "Deployment becomes a bottleneck after intelligence",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-04-06",
+    "frontier_actor": "Anthropic",
+    "counterparty_or_target": "Google/Broadcom",
+    "event_type": "Compute capacity",
+    "source_url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+    "observable": "Multiple GW TPU capacity starting 2027; multi-platform stack",
+    "bottleneck_interpretation": "Frontier labs deliberately diversify accelerator architectures",
+    "signal_strength": "Very high"
+  },
+  {
+    "date": "2026",
+    "frontier_actor": "Anthropic",
+    "counterparty_or_target": "Micron/Samsung/SK hynix",
+    "event_type": "Strategic financing/supplier alignment",
+    "source_url": "https://www.anthropic.com/news/series-h",
+    "observable": "Memory suppliers participate alongside infrastructure commitments",
+    "bottleneck_interpretation": "Memory supply is strategic enough for direct alignment",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-04-10",
+    "frontier_actor": "Anthropic",
+    "counterparty_or_target": "CoreWeave",
+    "event_type": "Multi-year compute agreement",
+    "source_url": "https://investors.coreweave.com/news/news-details/2026/CoreWeave-Announces-Multi-Year-Agreement-With-Anthropic/",
+    "observable": "Multi-year capacity agreement",
+    "bottleneck_interpretation": "Compute remains binding despite architecture diversification",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-02-02",
+    "frontier_actor": "xAI",
+    "counterparty_or_target": "SpaceX",
+    "event_type": "Acquisition/combination",
+    "source_url": "https://x.ai/news/xai-joins-spacex",
+    "observable": "SpaceX acquired xAI",
+    "bottleneck_interpretation": "AI merges with communications/physical infrastructure",
+    "signal_strength": "Medium"
+  },
+  {
+    "date": "2026-01-06",
+    "frontier_actor": "xAI",
+    "counterparty_or_target": "NVIDIA/Cisco + investors",
+    "event_type": "Series E",
+    "source_url": "https://x.ai/news/series-e",
+    "observable": "$20B Series E; strategic NVIDIA/Cisco; >1M H100-equivalent compute claimed",
+    "bottleneck_interpretation": "Compute/network capacity remains central to frontier scaling",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2025-06-12",
+    "frontier_actor": "Meta",
+    "counterparty_or_target": "Scale AI",
+    "event_type": "Strategic investment",
+    "source_url": "https://scale.com/blog/scale-ai-announces-next-phase-of-company-evolution",
+    "observable": "Scale valued >$29B; Alexandr Wang joined Meta",
+    "bottleneck_interpretation": "Data/evaluation/frontier research leadership treated as strategic",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-09-10",
+    "frontier_actor": "Normal Computing",
+    "counterparty_or_target": "CN-series thermodynamic compute",
+    "event_type": "Technical benchmark/tapeout watch",
+    "source_url": "https://normalcomputing.com/blog",
+    "observable": "Prototype/chip work targets inference efficiency and memory-bandwidth limits",
+    "bottleneck_interpretation": "Potential accelerator digger; require external scale proof before kill",
+    "signal_strength": "Watch"
+  },
+  {
+    "date": "2026-09-10",
+    "frontier_actor": "Extropic",
+    "counterparty_or_target": "Probabilistic/thermodynamic compute",
+    "event_type": "Technical milestone watch",
+    "source_url": "https://extropic.ai/writing",
+    "observable": "Experimental probabilistic compute roadmap",
+    "bottleneck_interpretation": "Potential energy/accelerator digger; early evidence, not kill trigger",
+    "signal_strength": "Watch"
+  },
+  {
+    "date": "2026-02-27",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Amazon/AWS Trainium",
+    "event_type": "Expanded strategic compute agreement",
+    "source_url": "https://openai.com/index/amazon-partnership/",
+    "observable": "OpenAI says expanded existing $38B agreement by $100B over 8 years and committed to ~2 GW Trainium capacity",
+    "bottleneck_interpretation": "Purpose-built silicon diversification is a revealed bet that workload-specific compute and memory bandwidth remain critical",
+    "signal_strength": "Very high"
+  },
+  {
+    "date": "2025-10-06",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "AMD",
+    "event_type": "Multi-generation GPU capacity",
+    "source_url": "https://openai.com/index/openai-amd-strategic-partnership/",
+    "observable": "Agreement to deploy 6 GW of AMD GPUs across multiple generations, beginning with MI450",
+    "bottleneck_interpretation": "OpenAI is intentionally building a multi-vendor accelerator portfolio rather than accepting NVIDIA as the only route",
+    "signal_strength": "Very high"
+  },
+  {
+    "date": "2026-09-09",
+    "frontier_actor": "OpenAI",
+    "counterparty_or_target": "Samsung/SK Hynix",
+    "event_type": "Next-generation chip + memory cooperation",
+    "source_url": "https://www.reuters.com/world/asia-pacific/openai-says-working-with-samsung-next-generation-chips-deepening-cooperation-2026-09-09/",
+    "observable": "OpenAI described next-generation chip cooperation with Samsung; Samsung and SK Hynix have memory-supply LOIs for Stargate",
+    "bottleneck_interpretation": "Frontier model knowledge is being pushed directly into silicon while memory supply is secured in parallel",
+    "signal_strength": "Very high"
+  },
+  {
+    "date": "2026-05-06",
+    "frontier_actor": "Anthropic",
+    "counterparty_or_target": "SpaceX",
+    "event_type": "Compute-capacity partnership",
+    "source_url": "https://www.anthropic.com/news/higher-limits-spacex",
+    "observable": "Anthropic says SpaceX partnership substantially increases compute capacity and enabled higher Claude limits",
+    "bottleneck_interpretation": "User-facing product limits still trace directly to physical compute capacity",
+    "signal_strength": "High"
+  },
+  {
+    "date": "2026-09-09",
+    "frontier_actor": "Google",
+    "counterparty_or_target": "Finland/Fortum",
+    "event_type": "AI infrastructure + nuclear power",
+    "source_url": "https://www.reuters.com/business/media-telecom/google-invest-15-billion-ai-infrastructure-finland-2026-09-09/",
+    "observable": "\u20ac13B AI-infrastructure program plus 22-year nuclear-power agreement with Fortum",
+    "bottleneck_interpretation": "Long-duration power, grid and geography remain constraints worth locking years ahead",
+    "signal_strength": "Very high"
+  }
+]

@@ -1,0 +1,181 @@
+"""bneck2 migration tests — severity, velocity, cross-world X, release,
+catalytic hazards, derivatives, alpha_v2, consistency, transfer tiers."""
+import sys
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from bneck2 import consistency as CY
+from bneck2 import migration as M
+
+
+class TestSeverity(unittest.TestCase):
+    NODE = {"id": "memory_hbm", "revenue_purity": 0.8, "td_years": 3.0}
+
+    def test_formula(self):
+        s = M.severity(self.NODE, {"demand_growth": 2.0})
+        # 2.0*0.8*0.3*(0.5+0.25)/0.5 = 0.72
+        self.assertAlmostEqual(s["B"], 0.72, places=3)
+        self.assertTrue(s["permission_estimated"])
+
+    def test_permission_prior(self):
+        s = M.severity({"id": "power", "revenue_purity": 0.5, "td_years": 10.0})
+        self.assertEqual(s["permission"], 0.85)
+
+    def test_explicit_field_not_estimated(self):
+        s = M.severity({"id": "x", "permission_friction": 0.9,
+                        "revenue_purity": 0.5, "td_years": 5.0})
+        self.assertFalse(s["permission_estimated"])
+
+
+class TestVelocity(unittest.TestCase):
+    def test_needs_two_points(self):
+        self.assertEqual(M.velocity("n", [])["n"], 0)
+
+    def test_growth_and_accel(self):
+        h = [{"node_id": "n", "B": 1.0, "ts": "2026-01-01T00:00:00Z"},
+             {"node_id": "n", "B": 2.0, "ts": "2026-07-01T00:00:00Z"},
+             {"node_id": "n", "B": 4.0, "ts": "2027-01-01T00:00:00Z"}]
+        v = M.velocity("n", h)
+        self.assertGreater(v["dB_dt"], 0)
+        self.assertGreater(v["accel"], 0)
+
+
+class TestCrossWorld(unittest.TestCase):
+    def test_exposure(self):
+        inc = {"id": "bpo", "survives": {"w1": 0.2, "w2": 1.0}}
+        worlds = [{"id": "w1", "p_you": 0.5}, {"id": "w2", "p_you": 0.5}]
+        x = M.cross_world_exposure(inc, worlds)
+        self.assertAlmostEqual(x["X"], 0.4)
+
+
+class TestRelease(unittest.TestCase):
+    def test_laplace_no_data(self):
+        r = M.release_probability("n", [])
+        self.assertEqual(r["P_release"], 0.5)
+
+    def test_supply_only(self):
+        obs = [{"node_id": "n", "signal": "capacity adds",
+                "measured": "cap +20%", "verdict": "TRIGGERED"}]
+        r = M.release_probability("n", obs)
+        self.assertGreater(r["P_release"], 0.5)
+
+
+class TestCatalytic(unittest.TestCase):
+    def test_hazard_update(self):
+        self.assertAlmostEqual(
+            M.hazard_update(0.1, [{"strength": 1.0, "event": 1.0}]), 0.2)
+
+    def test_catalytic_filter(self):
+        g = {"edges": [{"relation": "DEPENDS_ON"}, {"relation": "CATALYZES"}]}
+        self.assertEqual(len(M.catalytic_edges(g)), 1)
+
+
+class TestDerivative(unittest.TestCase):
+    G = {"edges": [
+        {"source": "accelerators", "target": "memory_hbm",
+         "relation": "DEPENDS_ON"},
+        {"source": "memory_hbm", "target": "memory_dram",
+         "relation": "CASCADE"}]}
+
+    def test_dependents_and_unlocks(self):
+        d = M.bottleneck_derivative("memory_hbm", self.G)
+        by = {r["node"]: r["via"] for r in d}
+        self.assertEqual(by["accelerators"], "dependent-surge")
+        self.assertEqual(by["memory_dram"], "cascade-unlock")
+
+
+class TestAlphaV2(unittest.TestCase):
+    def test_master_equation(self):
+        self.assertAlmostEqual(M.alpha_v2(0.5, 1e9, 0.4, 0.7, 0.8, 0.3),
+                               0.5 * 1e9 * 0.4 * 0.7 * 0.8 - 0.3)
+
+
+class TestConsistency(unittest.TestCase):
+    DOC = {"worlds": [{"id": "w1", "p_you": 0.1, "p_market": 0.8}],
+             "incumbents": [{"id": "bpo", "survives": {"w1": 0.1},
+                             "market_survival_p": 0.9}]}
+
+    def test_finds_contradiction(self):
+        rows = CY.find_inconsistencies(self.DOC)
+        self.assertEqual(len(rows), 1)
+        self.assertAlmostEqual(rows[0]["score"], 0.8 * 0.8, places=3)
+
+    def test_render(self):
+        self.assertIn("bpo", CY.render(CY.find_inconsistencies(self.DOC)))
+
+    def test_quiet_when_consistent(self):
+        doc = {"worlds": [{"id": "w1", "p_you": 0.8, "p_market": 0.8}],
+               "incumbents": [{"id": "b", "survives": {"w1": 0.9},
+                               "market_survival_p": 0.9}]}
+        self.assertEqual(CY.find_inconsistencies(doc), [])
+
+
+class TestTransfer(unittest.TestCase):
+    def test_benchmarks_low(self):
+        self.assertLess(M.transfer_weight("benchmark"),
+                        M.transfer_weight("verified_cashflow"))
+        self.assertEqual(M.transfer_weight("unknown-kind"), 0.5)
+
+
+class TestGoatedPrimitives(unittest.TestCase):
+    def test_deliverable_mw(self):
+        d = M.deliverable_mw(5000.0, {"site": 1.0, "interconnect": 0.5,
+                                      "transformer": 0.8, "generation": 1.0,
+                                      "permit": 0.9})
+        self.assertAlmostEqual(d["deliverable_mw"], 5000 * 0.36)
+        self.assertEqual(d["estimated_legs"], [])
+
+    def test_deliverable_flags_missing(self):
+        d = M.deliverable_mw(100.0, {})
+        self.assertEqual(len(d["estimated_legs"]), 5)
+
+    def test_surprise_moves_toward_evidence(self):
+        up = M.surprise_update(0.5, 2.0, 1.0)
+        self.assertGreater(up["posterior"], 0.5)
+        flat = M.surprise_update(0.5, 2.0, 0.0)
+        self.assertAlmostEqual(flat["posterior"], 0.5)
+
+    def test_cliff(self):
+        self.assertTrue(M.cliff_proximity("assay_sample_usd", 0.5)["crossed"])
+        self.assertFalse(M.cliff_proximity("assay_sample_usd", 50.0)["crossed"])
+        self.assertIsNone(M.cliff_proximity("nope", 1.0)["proximity"])
+
+    def test_duration_mismatch(self):
+        self.assertEqual(
+            M.duration_mismatch(6.0, 2.0)["verdict"], "SHORT_CANDIDATE")
+        self.assertEqual(M.duration_mismatch(6.0, None)["verdict"],
+                         "INSUFFICIENT")
+        self.assertEqual(M.tech_half_life(4.0), 2.0)
+
+
+class TestAtoms(unittest.TestCase):
+    def test_universe_loads(self):
+        from bneck2 import atoms as A
+        cos = A.load_universe()
+        self.assertGreaterEqual(len(cos), 10)
+        self.assertTrue(all(c.get("ticker") and c.get("nodes") for c in cos))
+
+    def test_small_critical_outranks_giant(self):
+        from bneck2 import atoms as A
+        cos = [{"ticker": "LPKF-like", "layer": "t", "nodes": ["n1"],
+                "rev_usd_m": 125},
+               {"ticker": "GIANT", "layer": "t", "nodes": ["n1"],
+                "rev_usd_m": 100000}]
+        rows = A.screen(cos, severity_by_node={"n1": 1.0})
+        self.assertEqual(rows[0]["ticker"], "LPKF-like")
+
+    def test_breadth_bonus(self):
+        from bneck2 import atoms as A
+        one = {"ticker": "A", "layer": "t", "nodes": ["n1"], "rev_usd_m": 500}
+        two = {"ticker": "B", "layer": "t", "nodes": ["n1", "n2"],
+               "rev_usd_m": 500}
+        sev = {"n1": 1.0, "n2": 1.0}
+        self.assertGreater(A.convexity(two, sev)["convexity"],
+                           A.convexity(one, sev)["convexity"])
+
+
+if __name__ == "__main__":
+    unittest.main()

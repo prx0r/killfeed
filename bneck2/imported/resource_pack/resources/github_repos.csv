@@ -1,0 +1,61 @@
+category,name,url,use_case,priority,license_note,free_status
+Core radar,AI Release Radar,https://github.com/Beltran12138/ai-release-radar,"Pre-announcement model signals from GitHub, HF, arXiv, Reddit/X and Polymarket",S,MIT per README,Free
+Bottleneck mapping,ProphetMap,https://github.com/Beltran12138/prophetmap,"Physical AI bottleneck layers, falsifiers, pricing and bottleneck-relay investing",S++,MIT,Free
+Bottleneck mapping,Keystone,https://github.com/Skeeter-spec/keystone,Evidence-backed industrial chokepoint and keystone-firm maps,S++,AGPL-3.0,Free
+Supply chain,Supply Chain Intelligence,https://github.com/eugenehp/supplychain,"Reverse-traces AI accelerators through foundry, HBM, OSAT, EDA, equipment and materials",S++,Verify non-commercial terms,Free for research
+Bottleneck quant,CHOKEPOINT,https://github.com/atharvahirulkar/chokepoint,Counterfactual supplier removal and system-coverage-collapse scoring,S++,Verify,Free
+Semiconductor graph,Chip Sense,https://github.com/aminalav/chip-sense,"Semiconductor firms, fabs, supplier arcs, trade flows and stress scenarios",S+,Verify,Free
+Semiconductor graph,Silicon Stack,https://github.com/sflans99/silicon-stack,Large semiconductor company/material/dependency graph,S+,Verify,Free
+Memory graph,Memory Atlas,https://github.com/upamanyuacharya/memory-atlas,HBM/CXL/photonics/memory-wall dependency atlas,S+,Verify,Free
+AI supply chain,AI Supply Chain Research,https://github.com/YichengYang-Ethan/ai-supply-chain-research,Cross-sector AI supply chain and bottleneck-relay research,S+,Verify,Free
+SEC graph,alphasig,https://github.com/sushaan-k/alphasig,SEC-derived structural dependency graph with timestamped evidence,S,Verify,Free
+Knowledge graph,TWSE-KG,https://github.com/tunglich/TWSE-KG,"Supply graph, centrality, propagation and backtesting",S,Proprietary notice; research reference only,Public code
+Supply chain,Taiwan Coverage,https://github.com/Timeverse/My-TW-Coverage,Taiwan company and supply-chain mappings,S,Verify,Free
+SEC relation extraction,Stock Relation,https://github.com/supat-roong/stock-relation,SEC filings to supplier/customer relationship graph,A+,Verify,Free
+SEC GraphRAG,SEC Graph,https://github.com/Jumade/sec-graph,GraphRAG over 10-K/10-Q/8-K for indirect dependencies,A+,Verify,Free
+Disruption,DisruptIQ,https://github.com/Sakshi3027/disruptiq,News disruption classification and graph risk propagation,A,Verify,Free
+Semiconductor quant,Semiconductor AI Analysis,https://github.com/navyawalia23-bit/Semiconductor-AI-Analysis,NetworkX semiconductor chokepoint centrality,A,Verify,Free
+Research radar,arXiv Trend Radar,https://github.com/meelod/arxiv-trend-radar,Emerging research clusters and research-industry mismatches,S+,Verify,Free
+Tech scouting,Tech Scouting Agent,https://github.com/unicodeveloper/tech-scouting-agent,"Patent velocity, citation acceleration, government-grant flow",S+,Verify,Free
+Research graph,Radar,https://github.com/JeffMboya/radar,arXiv research digest with semantic dependency graph extraction,A+,Verify,Free
+Trend radar,Idea Radar,https://github.com/DanieleGiovanardi2408/idea-radar,Momentum radar across GitHub/HF/arXiv/HN/npm/RSS,A,Verify,Free
+Open-source trends,Agents Radar,https://github.com/duanyytop/agents-radar,Daily AI open-source trend monitoring,A,Verify,Free
+Venture signals,VC Signals,https://github.com/abhishek255/vc-signals,Public chatter to weekly theme/company radar,A,Verify,Free
+Prediction markets,Prediction Market Analysis,https://github.com/Jon-Becker/prediction-market-analysis,Polymarket/Kalshi markets and trades dataset for calibration,S++,Verify data/license terms,Free/public
+Prediction markets,PMXT,https://github.com/pmxt-dev/pmxt,Unified self-hostable API across prediction markets,S+,MIT,Free
+Prediction markets,Pytheum,https://github.com/pytheum/pytheum,Settlement-verified cross-venue market equivalence,S+,MIT,Free
+Prediction markets,AgentTrader,https://github.com/finnfujimura/agenttrader,Research/backtest/paper-trade prediction-market agents,A+,Verify,Free
+Prediction markets,Kalshi Price Data,https://github.com/vcorp-dev/kalshi-price-data,Kalshi live prices/order books/historical integration,A,Verify,Free code
+Prediction markets,Kalshi MCP Server,https://github.com/cejor6/kalshi-mcp-server,Self-hosted Kalshi MCP with WebSocket data,A,Verify,Free code
+OSINT,World Monitor,https://github.com/deco31416/worldmonitor,Large real-time OSINT dashboard and cross-stream correlation,A+,AGPL/commercial-use caveats,Free for permitted use
+News graph,NewsFresh,https://github.com/krishjag/newsfresh,GDELT-based LLM alerting from frequent KG updates,A,Verify,Free
+News graph,GDELT Pulse,https://github.com/UnbubbleHub/gdelt-pulse,"Continuous GDELT ingest, dedupe, embeddings, clustering",A,Verify,Free
+News graph,GDELT GitHub,https://github.com/gdelt/gdelt.github.io,GDELT project resources,A,Verify assets,Free
+Hiring,Jobseek,https://github.com/colophon-group/jobseek,Tracks thousands of company career pages; hiring changes as signals,S,MIT code; dataset terms vary,Free/self-host
+Hiring,JobScout,https://github.com/fikaventures/jobscout,Hiring-velocity monitor and alerts,A+,Verify,Free
+SEC,EdgarTools,https://github.com/dgunning/edgartools,10-K/10-Q/8-K/Form 3/4/5/13F and XBRL,S++,MIT,Free
+SEC,sec-cli,https://github.com/tianrking/sec-cli,CLI including normalized Form 4 insider fields,A+,Verify,Free
+Market/filings,Equibles,https://github.com/daniel3303/Equibles,Agent-friendly SEC/13F/insider/economic data toolkit,A+,Verify,Free code
+SEC live,Bellingcat EDGAR,https://github.com/bellingcat/EDGAR,Live SEC RSS/ticker monitoring,S,Verify,Free
+SEC parsing,pibou-filings,https://github.com/Pierre-Bouquet/pibou-filings,Large-scale filing parsing incl. Section 16 transactions,A,Verify,Free
+Fund holdings,Public US Funds Data,https://github.com/global-capital-allocation-project/public-US-funds-data,N-PORT parser/pipeline,A,Verify,Free
+Fund holdings,13F Tracker,https://github.com/Sunny-1991/13F-Tracker,Institutional holdings tracking,A,Verify,Free
+Patents,Patents AI Assistant,https://github.com/yorkeccak/patents,"USPTO/EPO patent search, FTO, citations, landscapes, federal-spend linkage",S+,Verify,Free code
+Patents,WIPO Analytics,https://github.com/wipo-analytics,Patent analytics notebooks/workshops,S,WIPO repository terms,Free
+Government spending,USAspending MCP,https://github.com/agilesix/usaspending-mcp-nextjs,MCP for U.S. federal awards/contracts,A+,Verify,Free
+Government spending,USAspending ORM,https://github.com/planetary-society/usaspending-orm,Typed Python access to USAspending,A,Verify,Free
+Government spending,USAspending API,https://github.com/fedspendingtransparency/usaspending-api,Official federal spending API codebase,A,Government repo,Free
+Graph analysis,NetworkX,https://github.com/networkx/networkx,"Centrality, articulation, cuts, flows, node-removal simulations",S++,BSD,Free
+Temporal KG,Graphiti,https://github.com/getzep/graphiti,Validity-aware temporal knowledge graph,S++,Apache-2.0,Free
+Graph acceleration,cuGraph,https://github.com/rapidsai/cugraph,GPU graph analytics,A,Apache-2.0,Free
+Online ML,River,https://github.com/online-ml/river,Online learning and drift detection,S,BSD-3-Clause,Free
+Change points,ruptures,https://github.com/deepcharles/ruptures,Time-series change-point detection,A+,BSD,Free
+Causal inference,Tigramite,https://github.com/jakobrunge/tigramite,Causal discovery from multivariate time series,A+,GPL-3.0,Free
+Causal inference,DoWhy,https://github.com/py-why/dowhy,Counterfactual/intervention causal analysis,A+,MIT,Free
+Backtesting,Qlib,https://github.com/microsoft/qlib,Quant research/backtesting framework,S,MIT,Free
+Market data,OpenBB,https://github.com/OpenBB-finance/OpenBB,Unified financial-data tooling,A+,Check provider/license terms,Core free
+Power model,PyPSA,https://github.com/PyPSA/PyPSA,Power-system optimization and capacity constraints,A+,MIT,Free
+Power data,gridstatus,https://github.com/gridstatus/gridstatus,ISO/RTO electricity price/load/generation access,A+,BSD-3-Clause,Free
+Input-output,pymrio,https://github.com/IndEcol/pymrio,Global multi-regional input-output dependency analysis,A,GPL,Free
+Input-output,leontief,https://github.com/andenick/leontief,BEA input-output multipliers,A,Verify,Free
+Social stream,Hacker News API,https://github.com/HackerNews/API,Official HN Firebase API docs,A,Public API,Free

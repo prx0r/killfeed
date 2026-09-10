@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Temporal Dependency Edge",
+  "type": "object",
+  "required": [
+    "source",
+    "target",
+    "relation",
+    "confidence",
+    "valid_from"
+  ],
+  "properties": {
+    "source": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "REQUIRES",
+        "ENABLES",
+        "SUBSTITUTES",
+        "RELIEVED_BY",
+        "KILLED_BY",
+        "MANUFACTURED_BY",
+        "SUPPLIED_BY",
+        "PATENT_COVERED_BY",
+        "CONTROLLED_BY",
+        "LICENSED_TO",
+        "REGULATED_BY",
+        "REQUIRES_APPROVAL_FROM",
+        "REQUIRES_SITE",
+        "REQUIRES_TIME"
+      ]
+    },
+    "amount": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "capacity": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "utilization": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "lead_time_days": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "substitutability": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "valid_from": {
+      "type": "string"
+    },
+    "valid_to": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

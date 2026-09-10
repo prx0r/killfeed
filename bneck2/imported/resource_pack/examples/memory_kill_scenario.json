@@ -1,0 +1,39 @@
+{
+  "scenario": "HBM dependency weakens after architecture breakthrough",
+  "starting_edge": {
+    "source": "frontier_inference",
+    "target": "HBM_bandwidth",
+    "relation": "REQUIRES",
+    "confidence": 0.92
+  },
+  "signals": [
+    {
+      "source_type": "github",
+      "evidence_tier": "C",
+      "claim": "multiple independent implementations reduce external-memory pressure"
+    },
+    {
+      "source_type": "paper",
+      "evidence_tier": "C",
+      "claim": "research convergence plus reproducible benchmark"
+    },
+    {
+      "source_type": "prediction_market",
+      "evidence_tier": "D",
+      "claim": "market reprices architecture/release event"
+    },
+    {
+      "source_type": "benchmark",
+      "evidence_tier": "A",
+      "claim": "same relevant capability with materially less HBM at realistic economics"
+    }
+  ],
+  "propagation": [
+    "HBM suppliers",
+    "HBM-specific equipment",
+    "advanced packaging",
+    "substrates",
+    "DRAM wafer capacity"
+  ],
+  "next_step": "Apply Jevons correction, then recompute the next binding node."
+}

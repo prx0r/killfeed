@@ -1,0 +1,446 @@
+{
+ "edges": [
+  {
+   "dst": "memory_hbm",
+   "kind": "depends_on",
+   "src": "accelerators"
+  },
+  {
+   "dst": "memory_dram",
+   "kind": "cascade",
+   "note": "HBM conversion cannibalizes conventional DRAM capacity",
+   "src": "memory_hbm"
+  },
+  {
+   "dst": "storage",
+   "kind": "cascade",
+   "note": "agents + generated data pull enterprise NAND/SSD/HDD",
+   "src": "memory_dram"
+  },
+  {
+   "dst": "packaging",
+   "kind": "depends_on",
+   "src": "accelerators"
+  },
+  {
+   "dst": "optical_io",
+   "kind": "depends_on",
+   "src": "packaging"
+  },
+  {
+   "dst": "power",
+   "kind": "depends_on",
+   "src": "accelerators"
+  },
+  {
+   "dst": "reducers",
+   "kind": "depends_on",
+   "src": "motors"
+  },
+  {
+   "dst": "encoders",
+   "kind": "depends_on",
+   "src": "reducers"
+  },
+  {
+   "dst": "bearings",
+   "kind": "depends_on",
+   "src": "reducers"
+  },
+  {
+   "dst": "torque_sensing",
+   "kind": "depends_on",
+   "src": "encoders"
+  },
+  {
+   "dst": "experimentation",
+   "kind": "depends_on",
+   "src": "accelerators"
+  }
+ ],
+ "name": "bottleneck graph v1 (2026-09-10)",
+ "nodes": [
+  {
+   "branch": "compute",
+   "crowdedness": 0.9,
+   "depends_on": [],
+   "evidence": [
+    "Frontier model training/inference demand; NVDA dominant",
+    "Austin Lyons: inference competition now HBM-throughput vs SRAM-latency",
+    "Extropic: X0 prototype proven, Z1 (269k pbits, <1W) early access 2027, $75M CHIPS LOI (non-binding, Jul 2026); credible digger candidate, pre-revenue"
+   ],
+   "id": "accelerators",
+   "kill_signals": [
+    "10x inference-efficiency step (new architecture)",
+    "Thermodynamic / optical compute at scale"
+   ],
+   "label": "AI accelerators (compute)",
+   "prevalence": 0.9,
+   "relieved_by": [
+    "inference efficiency breakthroughs",
+    "thermodynamic computing"
+   ],
+   "status": "binding",
+   "tickers": [
+    "NVDA"
+   ],
+   "precedents": [
+    "fiber_2000",
+    "sun_2000",
+    "crypto_gpu_2018"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.8,
+   "depends_on": [
+    "accelerators"
+   ],
+   "evidence": [
+    "HBM demand pulls capacity from DRAM; tight into 2027+",
+    "DRAM ETF (Roundhill): first memory ETF, ~$26B AUM by Jun 2026, +156% since inception",
+    "SK Hynix ~$1.3T cap on AI memory demand"
+   ],
+   "id": "memory_hbm",
+   "kill_signals": [
+    "HBM price declines for 2 consecutive quarters",
+    "Major fab overbuild announcements",
+    "KV-cache-light architectures at frontier"
+   ],
+   "label": "HBM / high-bandwidth memory",
+   "prevalence": 0.85,
+   "relieved_by": [
+    "optical compute",
+    "compute-in-memory",
+    "retrieval-over-parameters architectures",
+    "HBM capacity wave"
+   ],
+   "status": "binding",
+   "tickers": [
+    "MU",
+    "DRAM"
+   ],
+   "precedents": [
+    "solar_poly_2008",
+    "lithium_2022",
+    "dram_2019",
+    "sun_2000"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.75,
+   "depends_on": [
+    "memory_hbm"
+   ],
+   "evidence": [
+    "HBM conversion cannibalizes conventional DRAM; phone prices rising (Verge 2026)",
+    "Roundhill deck: HBM -> DRAM -> NAND cascade"
+   ],
+   "id": "memory_dram",
+   "kill_signals": [
+    "DRAM spot price falling + inventory build",
+    "Smartphone/PC demand contraction"
+   ],
+   "label": "Conventional DRAM (conversion cascade)",
+   "prevalence": 0.8,
+   "relieved_by": [
+    "end of HBM conversion wave",
+    "demand destruction in consumer electronics"
+   ],
+   "status": "binding",
+   "tickers": [
+    "MU",
+    "DRAM"
+   ],
+   "precedents": [
+    "solar_poly_2008",
+    "lithium_2022",
+    "dram_2019",
+    "hdd_consolidation"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.5,
+   "depends_on": [
+    "memory_dram"
+   ],
+   "evidence": [
+    "Roundhill cascade: more inference/agents -> more stored data"
+   ],
+   "id": "storage",
+   "kill_signals": [
+    "Enterprise SSD destocking",
+    "NAND price collapse"
+   ],
+   "label": "Enterprise NAND / SSD / HDD",
+   "prevalence": 0.65,
+   "relieved_by": [
+    "storage-class-memory breakthrough",
+    "data-retention regulation / pruning norms"
+   ],
+   "status": "binding",
+   "tickers": [
+    "DRAM"
+   ],
+   "precedents": [
+    "lithium_2022",
+    "dram_2019",
+    "hdd_consolidation"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.3,
+   "depends_on": [
+    "accelerators"
+   ],
+   "evidence": [
+    "Soitec: 828M -> 5.1B on Photonics-SOI; guidance raised on CPO demand",
+    "LPKF: glass-interposer TAM 1.7B by 2030, first capacity orders",
+    "SUSS: record 473.7M order book, hybrid-bonding center"
+   ],
+   "id": "packaging",
+   "kill_signals": [
+    "Glass-interposer qualification failures at scale",
+    "CoWoS capacity glut"
+   ],
+   "label": "Advanced packaging / glass interposers",
+   "prevalence": 0.7,
+   "relieved_by": [
+    "monolithic 3D integration leapfrog"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "LPK",
+    "SMHN",
+    "SOI"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.4,
+   "depends_on": [
+    "packaging"
+   ],
+   "evidence": [
+    "Moving bits costs more than manipulating bits (Lightmatter thesis)",
+    "Soitec Photonics-SOI explosive demand"
+   ],
+   "id": "optical_io",
+   "kill_signals": [
+    "Copper interconnect efficiency surprise (linear-drive breakthroughs)",
+    "CPO timeline slips past 2028"
+   ],
+   "label": "Optical interconnect / CPO",
+   "prevalence": 0.6,
+   "relieved_by": [
+    "copper parity surprises"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "COHR",
+    "LITE",
+    "SOI"
+   ],
+   "precedents": [
+    "fiber_2000"
+   ]
+  },
+  {
+   "branch": "compute",
+   "crowdedness": 0.35,
+   "depends_on": [
+    "accelerators"
+   ],
+   "evidence": [
+    "Crusoe/Redwood: solar + second-life batteries, 99.2% availability",
+    "ALNT data-center power quality: $57.1M TTM, +69%",
+    "POWI 2200V GaN for AI datacenters + PV + HVDC"
+   ],
+   "id": "power",
+   "kill_signals": [
+    "Datacenter capex cuts",
+    "Grid-interconnect queue clearing (removes BYO-power premium)",
+    "Perovskite tandem >35% at scale + storage cost collapse"
+   ],
+   "label": "Power conversion / power quality",
+   "prevalence": 0.65,
+   "relieved_by": [
+    "grid abundance (fusion / fission scale-up)",
+    "radical efficiency in compute",
+    "radical PV (50%+ tandem, space-based solar)"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "POWI",
+    "ALNT"
+   ]
+  },
+  {
+   "branch": "embodiment",
+   "crowdedness": 0.7,
+   "depends_on": [],
+   "evidence": [
+    "ALNT Q2: $153.8M rev +10%, record 34.9% GM, orders +49%, book-to-bill 1.31x",
+    "ALNT robot-joint stack: frameless torque motor + zero-backlash gear + absolute encoder"
+   ],
+   "id": "motors",
+   "kill_signals": [
+    "Humanoid shipment guidance cuts",
+    "Direct-drive torque-density breakthrough"
+   ],
+   "label": "Precision motors + drives",
+   "prevalence": 0.65,
+   "relieved_by": [
+    "direct-drive high-torque-density motors"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "ALNT"
+   ],
+   "precedents": [
+    "ddd_2014"
+   ]
+  },
+  {
+   "branch": "embodiment",
+   "crowdedness": 0.3,
+   "depends_on": [
+    "motors"
+   ],
+   "evidence": [
+    "TKR Industrial Motion Q2: $453.9M +14.6%, margin 18.3% -> 23.3%",
+    "SPINEA: only EU cycloidal producer covering all 6 small-robot axes",
+    "20-40+ joints per humanoid; inference cost cuts do nothing for backlash"
+   ],
+   "id": "reducers",
+   "kill_signals": [
+    "Tesla Bot / Figure shipment delays",
+    "Harmonic-drive price collapse (China oversupply)",
+    "Soft-robotics substitution"
+   ],
+   "label": "Precision reducers (harmonic/cycloidal)",
+   "prevalence": 0.7,
+   "relieved_by": [
+    "direct-drive motors",
+    "soft robotics",
+    "humanoid demand failure"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "TKR",
+    "ALNT"
+   ],
+   "precedents": [
+    "molycorp_2011"
+   ]
+  },
+  {
+   "branch": "embodiment",
+   "crowdedness": 0.55,
+   "depends_on": [
+    "reducers"
+   ],
+   "evidence": [
+    "NOVT Celera: 1.2nm optical encoder resolution; Motion Stack (motor+encoder+force+drive)",
+    "NOVT AET: $136.2M at 52.6% gross margin",
+    "Priced: ~5.5x sales, ~38x forward earnings"
+   ],
+   "id": "encoders",
+   "kill_signals": [
+    "Vision-only proprioception at precision",
+    "Sensorless learned motor control"
+   ],
+   "label": "Precision encoders + torque sensing",
+   "prevalence": 0.65,
+   "relieved_by": [
+    "sensorless control via learned models",
+    "vision-only proprioception"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "NOVT",
+    "ALNT"
+   ]
+  },
+  {
+   "branch": "embodiment",
+   "crowdedness": 0.3,
+   "depends_on": [
+    "reducers"
+   ],
+   "evidence": [
+    "TKR bearings + Rollon 7th-axis linear motion inside humanoid architecture"
+   ],
+   "id": "bearings",
+   "kill_signals": [
+    "Humanoid demand failure (shared with reducers)"
+   ],
+   "label": "Precision bearings + linear motion",
+   "prevalence": 0.55,
+   "relieved_by": [
+    "magnetic/air bearings at cost"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "TKR"
+   ],
+   "precedents": [
+    "molycorp_2011"
+   ]
+  },
+  {
+   "branch": "embodiment",
+   "crowdedness": 0.6,
+   "depends_on": [
+    "encoders"
+   ],
+   "evidence": [
+    "Force/torque feedback required per joint for contact-rich tasks",
+    "NOVT Motion Stack bundles sensing with drives"
+   ],
+   "id": "torque_sensing",
+   "kill_signals": [
+    "Learned contact models replacing direct sensing"
+   ],
+   "label": "Force/torque sensing + control",
+   "prevalence": 0.5,
+   "relieved_by": [
+    "learned contact estimation"
+   ],
+   "status": "emerging",
+   "tickers": [
+    "NOVT"
+   ],
+   "precedents": [
+    "ddd_2014"
+   ]
+  },
+  {
+   "branch": "validation",
+   "crowdedness": 0.45,
+   "depends_on": [
+    "accelerators"
+   ],
+   "evidence": [
+    "NVIDIA+Thermo Fisher Jan 2026: autonomous labs, biology data factories",
+    "OpenAI+Thermo Fisher 2025 drug-development workflows",
+    "R = H x E x I: E and I are the physical bottlenecks"
+   ],
+   "id": "experimentation",
+   "kill_signals": [
+    "Autonomous-lab throughput flat for 2 years despite model gains"
+   ],
+   "label": "Automated experimentation / measurement",
+   "prevalence": 0.75,
+   "relieved_by": [
+    "fully predictive biology (no wet validation needed) \u2014 unlikely this decade"
+   ],
+   "status": "binding",
+   "tickers": []
+  }
+ ],
+ "thesis": "AI makes cognition/design cheaper; value migrates to the hardest-to-scale physical resource. Track n and rotate to n+1 before the ETF exists."
+}

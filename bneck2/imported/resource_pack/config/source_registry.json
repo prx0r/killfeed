@@ -1,0 +1,713 @@
+[
+  {
+    "category": "Corporate filings",
+    "name": "SEC Developer Resources",
+    "url": "https://www.sec.gov/about/developer-resources",
+    "data": "Submissions, filings, XBRL, company facts",
+    "latency": "seconds-minutes",
+    "access": "Free/no key",
+    "signal_type": "hard evidence"
+  },
+  {
+    "category": "Corporate filings",
+    "name": "SEC EDGAR APIs",
+    "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+    "data": "Company submissions and XBRL JSON",
+    "latency": "seconds-minutes",
+    "access": "Free/no key; identify User-Agent",
+    "signal_type": "hard evidence"
+  },
+  {
+    "category": "Corporate filings",
+    "name": "SEC Markets Data Library",
+    "url": "https://www.sec.gov/data-research/sec-markets-data",
+    "data": "Insiders, funds and market datasets",
+    "latency": "daily-quarterly",
+    "access": "Free",
+    "signal_type": "hard evidence"
+  },
+  {
+    "category": "Institutional holdings",
+    "name": "SEC Form 13F datasets",
+    "url": "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+    "data": "Institutional holdings",
+    "latency": "quarterly",
+    "access": "Free",
+    "signal_type": "capital allocation"
+  },
+  {
+    "category": "Fund holdings",
+    "name": "SEC Form N-PORT datasets",
+    "url": "https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets",
+    "data": "Registered fund portfolios",
+    "latency": "monthly/public cadence varies",
+    "access": "Free",
+    "signal_type": "capital allocation"
+  },
+  {
+    "category": "Private funding",
+    "name": "SEC Form D",
+    "url": "https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/what-form-d",
+    "data": "Exempt private offerings",
+    "latency": "event-driven",
+    "access": "Free via EDGAR",
+    "signal_type": "capital allocation"
+  },
+  {
+    "category": "Market plumbing",
+    "name": "SEC fails-to-deliver",
+    "url": "https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data",
+    "data": "Fails-to-deliver raw data",
+    "latency": "semi-monthly",
+    "access": "Free",
+    "signal_type": "market state"
+  },
+  {
+    "category": "Prediction market",
+    "name": "Polymarket Gamma API",
+    "url": "https://gamma-api.polymarket.com",
+    "data": "Market discovery/metadata",
+    "latency": "near-real-time",
+    "access": "Public reads",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Prediction market",
+    "name": "Polymarket CLOB API",
+    "url": "https://clob.polymarket.com",
+    "data": "Prices/orderbooks/trades",
+    "latency": "real-time",
+    "access": "Public reads; trading auth differs",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Prediction market",
+    "name": "Polymarket Docs",
+    "url": "https://docs.polymarket.com",
+    "data": "API/WebSocket docs",
+    "latency": "n/a",
+    "access": "Free",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Prediction market",
+    "name": "Kalshi Docs",
+    "url": "https://docs.kalshi.com",
+    "data": "Markets/trades/orderbook/WebSocket",
+    "latency": "real-time",
+    "access": "Read access varies",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Forecasting",
+    "name": "Metaculus API",
+    "url": "https://www.metaculus.com/api/",
+    "data": "Forecast questions/community probabilities",
+    "latency": "variable",
+    "access": "Auth/terms apply",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Forecasting",
+    "name": "Manifold Docs/API",
+    "url": "https://docs.manifold.markets/",
+    "data": "Prediction market data",
+    "latency": "real-time",
+    "access": "Many public GETs; terms apply",
+    "signal_type": "belief consensus"
+  },
+  {
+    "category": "Research",
+    "name": "OpenAlex API",
+    "url": "https://help.openalex.org/api/",
+    "data": "Works/authors/institutions/topics/funders/citations",
+    "latency": "daily-ish",
+    "access": "Free basic; key increases budget",
+    "signal_type": "research velocity"
+  },
+  {
+    "category": "Research",
+    "name": "Semantic Scholar API",
+    "url": "https://api.semanticscholar.org/api-docs",
+    "data": "Papers/citations/authors",
+    "latency": "daily-ish",
+    "access": "Free API",
+    "signal_type": "research velocity"
+  },
+  {
+    "category": "Research",
+    "name": "Crossref REST API",
+    "url": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+    "data": "Scholarly metadata/DOIs/funders",
+    "latency": "continuous",
+    "access": "Free/public",
+    "signal_type": "research metadata"
+  },
+  {
+    "category": "Preprints",
+    "name": "bioRxiv/medRxiv API",
+    "url": "https://api.biorxiv.org/",
+    "data": "Biology/medical preprints",
+    "latency": "daily",
+    "access": "Free/public",
+    "signal_type": "research velocity"
+  },
+  {
+    "category": "Clinical",
+    "name": "ClinicalTrials.gov API",
+    "url": "https://clinicaltrials.gov/data-api/api",
+    "data": "Trials/sponsors/status/outcomes",
+    "latency": "daily weekdays",
+    "access": "Free/public",
+    "signal_type": "physical validation"
+  },
+  {
+    "category": "Regulatory biology",
+    "name": "openFDA APIs",
+    "url": "https://open.fda.gov/apis/",
+    "data": "Drug/device/event/recall datasets",
+    "latency": "varies",
+    "access": "Free; key raises limits",
+    "signal_type": "regulatory state"
+  },
+  {
+    "category": "Models/code",
+    "name": "Hugging Face Hub API",
+    "url": "https://huggingface.co/docs/hub/api",
+    "data": "Models/datasets/spaces/activity",
+    "latency": "near-real-time",
+    "access": "Public + token options",
+    "signal_type": "implementation evidence"
+  },
+  {
+    "category": "Code",
+    "name": "GitHub Events API",
+    "url": "https://docs.github.com/en/rest/activity/events",
+    "data": "Public GitHub activity",
+    "latency": "minutes-hours",
+    "access": "Free limits/token improves",
+    "signal_type": "implementation evidence"
+  },
+  {
+    "category": "Code history",
+    "name": "GH Archive",
+    "url": "https://www.gharchive.org/",
+    "data": "Historical public GitHub event archive",
+    "latency": "hourly",
+    "access": "Free public files/BigQuery",
+    "signal_type": "backtest evidence"
+  },
+  {
+    "category": "Social",
+    "name": "Hacker News API",
+    "url": "https://github.com/HackerNews/API",
+    "data": "HN stories/comments/users",
+    "latency": "real-time",
+    "access": "Free/public",
+    "signal_type": "expert/community"
+  },
+  {
+    "category": "Social",
+    "name": "Bluesky Jetstream",
+    "url": "https://bsky.network/docs/jetstream-sdk/",
+    "data": "Live/replayable Bluesky events",
+    "latency": "real-time",
+    "access": "Free/public infra; terms apply",
+    "signal_type": "expert/community"
+  },
+  {
+    "category": "Patents",
+    "name": "USPTO Open Data Portal API",
+    "url": "https://data.uspto.gov/apis/getting-started",
+    "data": "U.S. patent/publication data",
+    "latency": "daily/weekly",
+    "access": "Free account/login",
+    "signal_type": "IP state"
+  },
+  {
+    "category": "Patents",
+    "name": "EPO Developers / OPS",
+    "url": "https://developers.epo.org/",
+    "data": "Worldwide bibliographic/family/legal-status patent data",
+    "latency": "near-current",
+    "access": "Free registration/limits",
+    "signal_type": "IP state"
+  },
+  {
+    "category": "Patents",
+    "name": "EPO Web Services",
+    "url": "https://www.epo.org/en/searching-for-patents/data/web-services",
+    "data": "Patent web-service overview",
+    "latency": "near-current",
+    "access": "Registration/limits",
+    "signal_type": "IP state"
+  },
+  {
+    "category": "Patents",
+    "name": "Google Patents",
+    "url": "https://patents.google.com/",
+    "data": "Full-text patent/family/citation search",
+    "latency": "current",
+    "access": "Free web",
+    "signal_type": "IP research"
+  },
+  {
+    "category": "Companies",
+    "name": "Companies House API",
+    "url": "https://developer.company-information.service.gov.uk/",
+    "data": "UK company/officer/filing data",
+    "latency": "real-time",
+    "access": "Free API key",
+    "signal_type": "corporate state"
+  },
+  {
+    "category": "Gov spending",
+    "name": "USAspending API",
+    "url": "https://api.usaspending.gov/",
+    "data": "Contracts/grants/recipients/agencies",
+    "latency": "daily-ish",
+    "access": "Free/no auth currently",
+    "signal_type": "government revealed preference"
+  },
+  {
+    "category": "Gov spending",
+    "name": "USAspending endpoints",
+    "url": "https://api.usaspending.gov/docs/endpoints",
+    "data": "Official endpoint docs",
+    "latency": "n/a",
+    "access": "Free",
+    "signal_type": "government revealed preference"
+  },
+  {
+    "category": "Procurement",
+    "name": "SAM.gov Opportunities",
+    "url": "https://sam.gov/opportunities",
+    "data": "Federal contract opportunities",
+    "latency": "daily",
+    "access": "Search public; API key for API",
+    "signal_type": "demand signal"
+  },
+  {
+    "category": "Grants",
+    "name": "Grants.gov API",
+    "url": "https://grants.gov/api",
+    "data": "Federal grant opportunities",
+    "latency": "daily",
+    "access": "Keyless search/fetch available",
+    "signal_type": "research funding"
+  },
+  {
+    "category": "Grants",
+    "name": "NIH RePORTER API",
+    "url": "https://api.reporter.nih.gov/",
+    "data": "NIH projects/investigators/institutions",
+    "latency": "periodic",
+    "access": "Free/public",
+    "signal_type": "research funding"
+  },
+  {
+    "category": "Grants",
+    "name": "NSF Awards API",
+    "url": "https://resources.research.gov/common/webapi/awardapisearch-v1.htm",
+    "data": "NSF awards and abstracts",
+    "latency": "periodic",
+    "access": "Free/public",
+    "signal_type": "research funding"
+  },
+  {
+    "category": "Space tech",
+    "name": "NASA TechPort API",
+    "url": "https://techport.nasa.gov/help/api",
+    "data": "NASA technology projects/maturity/funding",
+    "latency": "periodic",
+    "access": "Session/API requirements",
+    "signal_type": "technology state"
+  },
+  {
+    "category": "Small business R&D",
+    "name": "SBIR/STTR Data",
+    "url": "https://www.sbir.gov/data-resources",
+    "data": "Federal SBIR/STTR awards downloads",
+    "latency": "monthly",
+    "access": "Free downloads",
+    "signal_type": "research funding"
+  },
+  {
+    "category": "Small business R&D",
+    "name": "SBIR/STTR API",
+    "url": "https://www.sbir.gov/api",
+    "data": "SBIR/STTR API",
+    "latency": "variable",
+    "access": "May be under maintenance; downloads fallback",
+    "signal_type": "research funding"
+  },
+  {
+    "category": "Legislation",
+    "name": "Congress.gov API",
+    "url": "https://api.congress.gov/",
+    "data": "Bills/committees/actions/nominations",
+    "latency": "daily",
+    "access": "Free api.data.gov key",
+    "signal_type": "legal bottleneck"
+  },
+  {
+    "category": "Government docs",
+    "name": "GovInfo Developers",
+    "url": "https://www.govinfo.gov/developers",
+    "data": "Official federal publications/API",
+    "latency": "daily",
+    "access": "Free api.data.gov key",
+    "signal_type": "legal/policy evidence"
+  },
+  {
+    "category": "Regulation",
+    "name": "Federal Register API",
+    "url": "https://www.federalregister.gov/developers/documentation/api/v1",
+    "data": "Rules/notices/proposed rules",
+    "latency": "near-real-time",
+    "access": "Free/no key",
+    "signal_type": "regulatory state"
+  },
+  {
+    "category": "Export controls",
+    "name": "BIS Export Administration Regulations",
+    "url": "https://www.bis.gov/regulations/ear",
+    "data": "Advanced-compute/export-control rules/ECCNs",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "regulatory bottleneck"
+  },
+  {
+    "category": "Macro",
+    "name": "FRED API",
+    "url": "https://fred.stlouisfed.org/docs/api/fred/",
+    "data": "Rates/commodities/industrial series",
+    "latency": "daily-monthly",
+    "access": "Free key",
+    "signal_type": "macro/price"
+  },
+  {
+    "category": "Energy",
+    "name": "EIA Open Data",
+    "url": "https://www.eia.gov/opendata/",
+    "data": "Generation/demand/capacity/fuels",
+    "latency": "hourly-monthly",
+    "access": "Free API key",
+    "signal_type": "physical bottleneck"
+  },
+  {
+    "category": "Input-output",
+    "name": "BEA API",
+    "url": "https://apps.bea.gov/api/signup/",
+    "data": "Industry input-output/direct/total requirements",
+    "latency": "annual/periodic",
+    "access": "Free key",
+    "signal_type": "dependency graph"
+  },
+  {
+    "category": "Global input-output",
+    "name": "OECD ICIO",
+    "url": "https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html",
+    "data": "Inter-country production/trade dependency matrices",
+    "latency": "periodic",
+    "access": "Free downloads",
+    "signal_type": "dependency graph"
+  },
+  {
+    "category": "Input-output",
+    "name": "OECD Input-Output Tables",
+    "url": "https://www.oecd.org/en/data/datasets/input-output-tables.html",
+    "data": "Domestic industry interdependencies",
+    "latency": "periodic",
+    "access": "Free downloads",
+    "signal_type": "dependency graph"
+  },
+  {
+    "category": "Trade",
+    "name": "UN Comtrade API Docs",
+    "url": "https://uncomtrade.org/docs/un-comtrade-api/",
+    "data": "Global product-level trade flows",
+    "latency": "monthly/annual",
+    "access": "Free tier",
+    "signal_type": "supply concentration"
+  },
+  {
+    "category": "Trade",
+    "name": "UN Comtrade Developer",
+    "url": "https://comtradedeveloper.un.org/",
+    "data": "Comtrade API portal",
+    "latency": "monthly/annual",
+    "access": "Free/subscription tiers",
+    "signal_type": "supply concentration"
+  },
+  {
+    "category": "Trade",
+    "name": "U.S. Census International Trade API",
+    "url": "https://www.census.gov/data/developers/data-sets/international-trade.html",
+    "data": "Detailed HS trade/ports/states",
+    "latency": "monthly",
+    "access": "Free API key",
+    "signal_type": "supply concentration"
+  },
+  {
+    "category": "Labor",
+    "name": "BLS Public Data API",
+    "url": "https://www.bls.gov/developers/",
+    "data": "Employment/wages/productivity/prices",
+    "latency": "monthly",
+    "access": "v1 no registration; v2 higher limits",
+    "signal_type": "labor bottleneck"
+  },
+  {
+    "category": "Minerals",
+    "name": "USGS NMIC Tools",
+    "url": "https://www.usgs.gov/centers/national-minerals-information-center/tools",
+    "data": "Mineral production/reserves/statistics",
+    "latency": "monthly/annual",
+    "access": "Free",
+    "signal_type": "material bottleneck"
+  },
+  {
+    "category": "Technical reports",
+    "name": "OSTI",
+    "url": "https://www.osti.gov/",
+    "data": "DOE-sponsored papers/reports/data",
+    "latency": "continuous",
+    "access": "Free",
+    "signal_type": "hard technical evidence"
+  },
+  {
+    "category": "Standards",
+    "name": "NIST Publications",
+    "url": "https://www.nist.gov/publications",
+    "data": "Standards/research/measurement reports",
+    "latency": "continuous",
+    "access": "Free",
+    "signal_type": "standards bottleneck"
+  },
+  {
+    "category": "Antitrust",
+    "name": "FTC Press Releases",
+    "url": "https://www.ftc.gov/news-events/news/press-releases",
+    "data": "M&A/competition enforcement",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "legal state"
+  },
+  {
+    "category": "Antitrust",
+    "name": "DOJ Antitrust Press Releases",
+    "url": "https://www.justice.gov/atr/press-releases",
+    "data": "Antitrust actions",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "legal state"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "OpenAI News",
+    "url": "https://openai.com/news/",
+    "data": "Acquisitions/partnerships/compute/power commitments",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "revealed preference"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "OpenAI Research",
+    "url": "https://openai.com/research/",
+    "data": "Capability and systems research",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Anthropic News",
+    "url": "https://www.anthropic.com/news",
+    "data": "Compute/supplier/acquisition/financing announcements",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "revealed preference"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Anthropic Research",
+    "url": "https://www.anthropic.com/research",
+    "data": "Research/capability signals",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Google DeepMind Blog",
+    "url": "https://deepmind.google/discover/blog/",
+    "data": "Capabilities/research/deployment",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Google DeepMind Research",
+    "url": "https://deepmind.google/research/",
+    "data": "Frontier research",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Meta AI Blog",
+    "url": "https://ai.meta.com/blog/",
+    "data": "Models/research/hardware/product signals",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "Meta AI Research",
+    "url": "https://ai.meta.com/research/",
+    "data": "Research/capability signals",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "frontier capability"
+  },
+  {
+    "category": "Frontier lab",
+    "name": "xAI News",
+    "url": "https://x.ai/news",
+    "data": "Model/funding/infrastructure/corporate events",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "revealed preference"
+  },
+  {
+    "category": "Digger",
+    "name": "Normal Computing Research",
+    "url": "https://normalcomputing.com/research",
+    "data": "Thermodynamic/inference hardware research",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "digger evidence"
+  },
+  {
+    "category": "Digger",
+    "name": "Normal Computing Blog",
+    "url": "https://normalcomputing.com/blog",
+    "data": "Chip/tapeout/benchmark claims",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "digger evidence"
+  },
+  {
+    "category": "Digger",
+    "name": "Extropic Writing",
+    "url": "https://extropic.ai/writing",
+    "data": "Probabilistic/thermodynamic compute milestones",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "digger evidence"
+  },
+  {
+    "category": "Digger",
+    "name": "General Compute Whitepaper",
+    "url": "https://www.generalcompute.com/whitepaper",
+    "data": "Specialized-inference architecture thesis",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "digger evidence"
+  },
+  {
+    "category": "Economic maps",
+    "name": "Our World in Data",
+    "url": "https://ourworldindata.org/",
+    "data": "Energy/technology/economic time series",
+    "latency": "varies",
+    "access": "Free; license varies by dataset",
+    "signal_type": "context"
+  },
+  {
+    "category": "Commodities",
+    "name": "World Bank Commodity Markets",
+    "url": "https://www.worldbank.org/en/research/commodity-markets",
+    "data": "Commodity prices and outlooks",
+    "latency": "monthly",
+    "access": "Free",
+    "signal_type": "physical price"
+  },
+  {
+    "category": "Trade",
+    "name": "World Bank WITS",
+    "url": "https://wits.worldbank.org/",
+    "data": "Trade/tariff data",
+    "latency": "periodic",
+    "access": "Free registration for some functions",
+    "signal_type": "trade dependency"
+  },
+  {
+    "category": "Supply chain risk",
+    "name": "OFAC Sanctions Search",
+    "url": "https://sanctionssearch.ofac.treas.gov/",
+    "data": "Sanctions/entity restrictions",
+    "latency": "event-driven",
+    "access": "Free",
+    "signal_type": "legal bottleneck"
+  },
+  {
+    "category": "Export controls",
+    "name": "Federal eRulemaking Regulations.gov API/info",
+    "url": "https://open.gsa.gov/api/regulationsgov/",
+    "data": "Rulemaking/dockets/comments",
+    "latency": "event-driven",
+    "access": "Free api.data.gov key",
+    "signal_type": "regulatory state"
+  },
+  {
+    "category": "Corporate jobs",
+    "name": "Greenhouse Job Board API",
+    "url": "https://developers.greenhouse.io/job-board.html",
+    "data": "Public job postings for many frontier/supplier companies",
+    "latency": "near-real-time",
+    "access": "Public GETs",
+    "signal_type": "hiring signal"
+  },
+  {
+    "category": "Corporate jobs",
+    "name": "Lever Postings API",
+    "url": "https://github.com/lever/postings-api",
+    "data": "Public Lever career postings",
+    "latency": "near-real-time",
+    "access": "Free/public reads",
+    "signal_type": "hiring signal"
+  },
+  {
+    "category": "Markets",
+    "name": "NASDAQ Data Link",
+    "url": "https://data.nasdaq.com/",
+    "data": "Market/economic datasets",
+    "latency": "varies",
+    "access": "Some free, many paid",
+    "signal_type": "market state"
+  },
+  {
+    "category": "Economics",
+    "name": "IMF Data API/portal",
+    "url": "https://www.imf.org/en/Data",
+    "data": "Macro/country data",
+    "latency": "periodic",
+    "access": "Free",
+    "signal_type": "macro"
+  },
+  {
+    "category": "Shipping/trade",
+    "name": "UNCTADstat",
+    "url": "https://unctadstat.unctad.org/",
+    "data": "Trade/shipping/economic data",
+    "latency": "periodic",
+    "access": "Free",
+    "signal_type": "logistics bottleneck"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dependency Node",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "security_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "minimum_physical_latency_days": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

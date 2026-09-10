@@ -1,0 +1,1611 @@
+{
+  "ok": [
+    "2026-what-lives-a-meta-analysis-of-diverse-opinions-on-the-defini",
+    "2026-transcriptional-profiling-of-planarian-regeneration-habituat",
+    "2026-training-ecosystems-a-computational-approach-to-uncovering-l",
+    "2026-top-down-perspectives-on-cell-membrane-potential-and-protein",
+    "2026-the-causally-emergent-alignment-hypothesis-causal-emergence",
+    "2026-mind-everywhere-a-framework-for-conceptualizing-goal-directe",
+    "2026-membrane-voltage-and-connexin-expression-work-together-to-en",
+    "2026-living-multicellular-systems-induce-decodable-spatial-patter",
+    "2026-large-language-models-as-a-cognitive-virus",
+    "2026-language-game-talking-to-non-human-systems",
+    "2026-ionic-exposure-history-shapes-inner-nuclear-membrane-voltage",
+    "2026-intelligence-from-learnable-novelty",
+    "2026-ingressing-patterns-of-life",
+    "2026-homeostatic-feedback-model-of-energy-metabolism-with-adaptiv",
+    "2026-defining-life-a-conversation",
+    "2026-cognition-spaces-natural-artificial-and-hybrid",
+    "2026-causal-architecture-dynamics-prior-to-arrival-of-self-replic",
+    "2026-brainca-brain-inspired-neural-cellular-automata-and-applicat",
+    "2026-bootstrapping-life-inspired-machine-intelligence-the-biologi",
+    "2026-behavioral-physiological-and-transcriptional-mechanisms-of-m",
+    "2026-a-platform-for-automated-training-of-mammalian-cell-physiolo",
+    "2026-a-little-rank-goes-a-long-way-random-scaffolds-with-lora-ada",
+    "2025-zapgpt-free-form-language-prompting-for-simulated-cellular-c",
+    "2025-what-does-evolution-make-learning-in-living-lineages-and-mac",
+    "2025-what-lives-a-meta-analysis-of-diverse-opinions-on-the-defini",
+    "2025-universal-multilayer-network-embedding-reveals-a-causal-link",
+    "2025-topological-constraints-on-self-organisation-in-locally-inte",
+    "2025-the-neural-crest-as-a-bioelectric-rosetta-stone-translating",
+    "2025-the-role-of-bioelectrical-patterns-in-regulative-morphogenes",
+    "2025-the-hijacker-s-guide-to-biological-systems-manipulation-by-s",
+    "2025-the-bioelectrics-of-immortality-and-mortality-in-cold-sensit",
+    "2025-temporal-depth-in-a-coherent-self-and-in-depersonalization-t",
+    "2025-technological-approach-to-mind-everywhere-a-framework-for-co",
+    "2025-targeting-ion-channel-dysregulation-in-colorectal-cancer-ide",
+    "2025-selves-as-perspectives-from-biological-life-to-superintellig",
+    "2025-self-organizing-neural-networks-in-novel-moving-bodies-anato",
+    "2025-scale-free-niche-construction-expanding-agent-microenvironme",
+    "2025-reversals-of-bodies-brains-and-behavior-quantitative-analysi",
+    "2025-revealing-non-trivial-information-structures-in-aneural-biol",
+    "2025-open-questions-about-time-and-self-reference-in-living-syste",
+    "2025-oncomorphic-neural-agent-populations-for-resource-limited-se",
+    "2025-neuroevolution-of-decentralized-decision-making-in-n-bead-sw",
+    "2025-morphological-computational-capacity-of-physarum-polycephalu",
+    "2025-machines-all-the-way-up-and-cognition-all-the-way-down-updat",
+    "2025-ingressing-minds-causal-patterns-beyond-genetics-and-environ",
+    "2025-heuristically-adaptive-diffusion-model-evolutionary-strategy",
+    "2025-have-you-tried-switching-it-off-and-on-again-mechanisms-and",
+    "2025-giving-simulated-cells-a-voice-evolving-prompt-to-interventi",
+    "2025-free-lunch-low-cost-intelligence-through-pattern-guided-expl",
+    "2025-field-mediated-bioelectric-basis-of-morphogenetic-prepattern",
+    "2025-extending-iterated-spatialized-prisoner-s-dilemma-to-underst",
+    "2025-extending-iterated-spatialized-prisoners-dilemma-to-understa",
+    "2025-exploring-the-role-of-large-language-models-in-the-scientifi",
+    "2025-equilibrium-flow-from-snapshots-to-dynamics",
+    "2025-diverse-intelligence-an-essential-field-for-questions-of-ai",
+    "2025-diffusion-models-are-evolutionary-algorithms",
+    "2025-delusions-by-design-how-everyday-ais-might-be-fuelling-psych",
+    "2025-cognition-all-the-way-down-2-0-neuroscience-beyond-neurons-i",
+    "2025-chess-as-a-model-of-collective-intelligence-analyzing-a-dist",
+    "2025-brains-and-where-else-mapping-theories-of-consciousness-to-u",
+    "2025-basal-xenobot-transcriptomics-reveals-changes-and-novel-cont",
+    "2025-atavistic-genetic-expression-dissociation-aged-during-aging",
+    "2025-associative-conditioning-in-gene-regulatory-network-models-i",
+    "2025-ai-enabled-drug-prediction-and-gene-network-analysis-reveal",
+    "2025-ai-guided-resetting-of-memories-in-gene-regulatory-network-m",
+    "2024-xenobot-transcriptomics-gene-expression-changes-in-wild-type",
+    "2024-universal-multilayer-network-embedding-reveals-a-causal-link",
+    "2024-uncertainty-minimization-and-pattern-recognition-in-volvox-c",
+    "2024-the-multiscale-wisdom-of-the-body-collective-intelligence-as",
+    "2024-the-morphological-behavioral-and-transcriptomic-life-cycle-o",
+    "2024-temporal-depth-in-a-coherent-self-and-in-depersonalization-t",
+    "2024-stress-sharing-as-cognitive-glue-for-collective-intelligence",
+    "2024-self-improvising-memories-a-perspective-on-memories-as-agent",
+    "2024-robustness-of-the-mind-body-interface-case-studies-of-unconv",
+    "2024-revealing-non-trivial-information-structures-in-aneural-biol",
+    "2024-optical-estimation-of-bioelectric-patterns-in-living-embryos",
+    "2024-open-problems-in-synthetic-multicellularity",
+    "2024-neuroevolution-of-decentralized-decision-making-in-n-bead-sw",
+    "2024-multicellular-adaptation-to-electrophysiological-perturbatio",
+    "2024-life-its-origin-and-its-distribution-a-perspective-from-the",
+    "2024-identification-of-brain-like-functional-information-architec",
+    "2024-harnessing-the-analog-computing-power-of-regulatory-networks",
+    "2024-evolutionary-implications-of-multi-scale-intelligence",
+    "2024-emergent-collective-reproduction-via-evolving-neuronal-flock",
+    "2024-embryos-assist-morphogenesis-of-others-through-calcium-and-a",
+    "2024-disgust-as-a-primary-emotional-system-and-its-clinical-relev",
+    "2024-discussions-of-machine-versus-living-intelligence-need-more",
+    "2024-diffusion-models-are-evolutionary-algorithms",
+    "2024-collective-intelligence-a-unifying-concept-for-integrating-b",
+    "2024-cognitive-glues-are-shared-models-of-relative-scarcities-the",
+    "2024-bioelectric-pharmacology-of-cancer-a-meta-analysis-of-ion-ch",
+    "2024-bioelectric-characterization-of-senescing-human-keratinocyte",
+    "2024-bio-inspired-ai-integrating-biological-complexity-into-artif",
+    "2024-associative-conditioning-in-gene-regulatory-network-models-i",
+    "2024-an-ability-to-respond-begins-with-inner-alignment-how-phase",
+    "2024-aging-as-a-loss-of-morphostatic-information-a-developmental",
+    "2024-ai-a-bridge-toward-diverse-intelligence-and-humanity-s-futur",
+    "2024-ai-driven-automated-discovery-tools-reveal-diverse-behaviora",
+    "2023-towards-an-ethics-of-autopoietic-technology-stress-care-and",
+    "2023-the-nonlinearity-of-regulation-in-biological-networks",
+    "2023-the-multiple-realizability-of-sentience-in-living-systems-an",
+    "2023-the-brain-is-not-mental-coupling-neuronal-and-immune-cellula",
+    "2023-synthetic-morphology-with-agential-materials",
+    "2023-sbmltoodejax-efficient-simulation-and-optimization-of-ode-sb",
+    "2023-programmable-delivery-of-fluoxetine-via-wearable-bioelectron",
+    "2023-nested-selves-self-organisation-and-shared-markov-blankets-i",
+    "2023-multiple-ways-to-implement-and-infer-sentience-commentary-on",
+    "2023-morphoceuticals-perspectives-for-discovery-of-drugs-targetin",
+    "2023-machine-learning-for-hypothesis-generation-in-biology-and-me",
+    "2023-information-integration-during-bioelectric-regulation-of-mor",
+    "2023-identification-of-a-pharmaceutical-biostasis-inducer-that-sl",
+    "2023-embryos-assist-each-other-s-morphogenesis-calcium-and-atp-si",
+    "2023-darwin-s-agential-materials-evolutionary-implications-of-mul",
+    "2023-control-flow-in-active-inference-systems-part-ii-tensor-netw",
+    "2023-control-flow-in-active-inference-systems-part-i-classical-an",
+    "2023-control-flow-in-active-inference-systems",
+    "2023-closing-the-loop-on-morphogenesis-a-mathematical-model-of-mo",
+    "2023-classical-sorting-algorithms-as-a-model-of-morphogenesis-sel",
+    "2023-bioelectric-networks-the-cognitive-glue-enabling-evolutionar",
+    "2023-aging-as-a-morphostasis-defect-a-developmental-bioelectricit",
+    "2023-ai-driven-automated-discovery-tools-reveal-diverse-behaviora",
+    "2022-when-left-does-not-seem-right-epigenetic-and-bioelectric-dif",
+    "2022-there-s-plenty-of-room-right-here-biological-systems-as-evol",
+    "2022-the-scaling-of-goals-via-homeostasis-an-evolutionary-simulat",
+    "2022-the-nonlinearity-of-regulation-in-biological-networks",
+    "2022-the-free-energy-principle-induces-neuromorphic-development",
+    "2022-the-brain-is-not-mental-coupling-neuronal-and-immune-cellula",
+    "2022-technological-approach-to-mind-everywhere-an-experimentally",
+    "2022-synthetic-morphology-via-active-and-agential-matter",
+    "2022-studying-protista-wbr-and-repair-using-physarum-polycephalum",
+    "2022-regulative-development-as-a-model-for-origin-of-life-and-art",
+    "2022-on-chip-on-demand-delivery-of-k-for-in-vitro-bioelectronics",
+    "2022-neurons-as-hierarchies-of-quantum-reference-frames",
+    "2022-motile-living-biobots-self-construct-from-adult-human-somati",
+    "2022-morphoceuticals-perspectives-for-discovery-of-drugs-targetin",
+    "2022-modular-cognition",
+    "2022-memory-via-temporal-delays-in-weightless-spiking-neural-netw",
+    "2022-impact-of-membrane-voltage-on-formation-and-stability-of-hum",
+    "2022-generalizing-frameworks-for-sentience-beyond-natural-species",
+    "2022-exploring-the-behavior-of-bioelectric-circuits-using-evoluti",
+    "2022-design-for-an-individual-connectionist-approaches-to-the-evo",
+    "2022-competency-of-the-developmental-layer-alters-evolutionary-dy",
+    "2022-competency-in-navigating-arbitrary-spaces-intelligence-as-an",
+    "2022-collective-intelligence-of-morphogenesis-as-a-teleonomic-pro",
+    "2022-closing-the-loop-on-morphogenesis-a-mathematical-model-of-mo",
+    "2022-cellular-signaling-pathways-as-plastic-proto-cognitive-syste",
+    "2022-biological-underpinnings-for-lifelong-learning-machines",
+    "2022-biological-robots-perspectives-on-an-emerging-interdisciplin",
+    "2022-active-inference-morphogenesis-and-computational-psychiatry",
+    "2021-unmixing-octopus-camouflage-by-multispectral-mapping-of-octo",
+    "2021-unlimited-plasticity-of-embodied-cognitive-subjects-a-new-pl",
+    "2021-technological-approach-to-mind-everywhere-tame-an-experiment",
+    "2021-stability-and-robustness-properties-of-bioelectric-networks",
+    "2021-self-organising-textures-neural-cellular-automata-model-of-p",
+    "2021-scale-invariant-robot-behavior-with-fractals",
+    "2021-scale-invariant-robot-behavior-with-fractals",
+    "2021-rewiring-endogenous-bioelectric-circuits-in-the-xenopus-laev",
+    "2021-potassium-channel-driven-bioelectric-signaling-regulates-met",
+    "2021-physarum-polycephalum-establishing-an-assay-for-testing-deci",
+    "2021-new-clues-about-the-origins-of-biological-intelligence",
+    "2021-metabolic-limits-on-classical-information-processing-by-biol",
+    "2021-living-things-are-not-20th-century-machines-updating-mechani",
+    "2021-formation-and-spontaneous-long-term-repatterning-of-headless",
+    "2021-epigenetic-control-of-myeloid-cells-behavior-by-histone-deac",
+    "2021-enhancers-of-host-immune-tolerance-to-bacterial-infection-di",
+    "2021-editorial-interplay-between-ion-channels-the-nervous-system",
+    "2021-bioelectric-signaling-reprogrammable-circuits-underlying-emb",
+    "2021-beyond-neurons-long-distance-communication-in-development-an",
+    "2021-adversarial-reprogramming-of-neural-cellular-automata-a-robu",
+    "2020-turing-like-patterns-can-arise-from-purely-bioelectric-mecha",
+    "2020-sertraline-induces-dna-damage-and-cellular-toxicity-in-droso",
+    "2020-self-classifying-mnist-digits-achieving-distributed-coordina",
+    "2020-scalable-sim-to-real-transfer-of-soft-robot-designs",
+    "2020-scalable-sim-to-real-transfer-of-soft-robot-designs",
+    "2020-s-adenosylhomocysteine-hydrolase-regulates-anterior-patterni",
+    "2020-revisiting-burr-and-northrop-s-the-electro-dynamic-theory-of",
+    "2020-optogenetically-induced-cellular-habituation-in-non-neuronal",
+    "2020-mechanosensation-mediates-long-range-spatial-decision-making",
+    "2020-how-to-understand-cells-tissues-and-organisms-as-agents-with",
+    "2020-how-groups-of-cells-cooperate-to-build-organs-and-organisms",
+    "2020-hcn2-channel-induced-rescue-of-brain-teratogenesis-via-local",
+    "2020-formin-an-opinion",
+    "2020-eya2-promotes-cell-cycle-progression-by-regulating-dna-damag",
+    "2020-evolution-leads-to-emergence-an-analysis-of-protein-interact",
+    "2020-epigenetic-immune-modulation-by-histone-deacetylase-activity",
+    "2020-does-evolution-have-a-target-morphology",
+    "2020-defined-extracellular-ionic-solutions-to-study-and-manipulat",
+    "2020-bioelectronic-control-of-chloride-ions-and-concentration-wit",
+    "2020-bioelectricity-a-quick-reminder-of-a-fast-advancing-discipli",
+    "2020-applications-and-ethics-of-computer-designed-organisms",
+    "2020-an-in-vivo-brain-bacteria-interface-the-developing-brain-as",
+    "2019-von-willebrand-factor-d-and-egf-domains-is-an-evolutionarily",
+    "2019-the-computational-boundary-of-a-self-developmental-bioelectr",
+    "2019-reverse-engineering-growth-and-form-in-heidelberg",
+    "2019-neural-control-of-body-plan-axis-in-regenerating-planaria",
+    "2019-nervous-system-and-tissue-polarity-dynamically-adapt-to-new",
+    "2019-modeling-somatic-computation-with-non-neural-bioelectric-net",
+    "2019-interdisciplinary-approach-needed-to-crack-morphogenesis",
+    "2019-automated-shapeshifting-for-function-recovery-in-damaged-rob",
+    "2019-automated-shapeshifting-for-function-recovery-in-damaged-rob",
+    "2019-a-flow-through-device-for-simultaneous-dielectrophoretic-cel",
+    "2019-a-comprehensive-conceptual-and-computational-dynamics-framew",
+    "2019-a-call-for-a-better-understanding-of-causation-in-cell-biolo",
+    "2018-perspective-the-promise-of-multi-cellular-engineered-living",
+    "2018-introducing-simulated-stem-cells-into-a-bio-inspired-cell-ce",
+    "2018-inform-a-toolkit-for-information-theoretic-analysis-of-compl",
+    "2018-inform-efficient-information-theoretic-analysis-of-collectiv",
+    "2018-hcn2-rescues-brain-defects-by-enforcing-endogenous-voltage-p",
+    "2018-cellular-migration-may-exhibit-intrinsic-left-right-asymmetr",
+    "2018-are-planaria-individuals-what-regenerative-biology-is-tellin",
+    "2018-activating-pax-gene-family-paralogs-to-complement-pax5-leuke",
+    "2018-a-computational-framework-for-autonomous-self-repair-systems",
+    "2017-the-brain-is-required-for-normal-muscle-and-nerve-patterning",
+    "2017-serotonergic-stimulation-induces-nerve-growth-and-promotes-v",
+    "2017-reversals-of-bodies-brains-and-behavior-quantitative-analysi",
+    "2017-microfluidic-platform-to-study-intercellular-connectivity-th",
+    "2017-ion-channel-and-neurotransmitter-modulators-as-electroceutic",
+    "2017-effects-of-ivermectin-exposure-on-regeneration-of-d-dorotoce",
+    "2017-discovering-novel-phenotypes-with-automatically-inferred-dyn",
+    "2017-cancer-as-a-disorder-of-patterning-information-computational",
+    "2017-bioelectric-regulation-of-innate-immune-system-function-in-r",
+    "2016-towards-a-physarum-learning-chip",
+    "2016-on-having-no-head-cognition-throughout-biological-systems",
+    "2016-mocha-molecular-characterization-of-unknown-pathways",
+    "2016-exploring-instructive-physiological-signaling-with-the-bioel",
+    "2016-dynamic-structure-discovery-and-repair-for-3d-cell-assemblag",
+    "2016-computational-discovery-and-in-vivo-validation-of-hnf4-as-a",
+    "2016-color-and-intensity-discrimination-in-xenopus-laevis-tadpole",
+    "2016-bioelectric-modulation-of-macrophage-polarization",
+    "2016-artificial-neural-networks-as-models-of-robustness-in-develo",
+    "2016-a-tunable-silk-hydrogel-device-for-studying-limb-regeneratio",
+    "2015-on-a-model-of-pattern-recognition-based-on-cell-memory",
+    "2015-long-range-gap-junctional-signaling-controls-oncogene-mediat",
+    "2015-inferring-regulatory-networks-from-experimental-morphologica",
+    "2015-gap-junctional-blockade-stochastically-induces-different-spe",
+    "2015-comparison-of-the-depolarization-response-of-human-mesenchym",
+    "2015-automatic-neuron-segmentation-and-neural-network-analysis-me",
+    "2015-a-novel-method-for-inducing-nerve-growth-via-modulation-of-h",
+    "2015-a-conceptual-model-of-morphogenesis-and-regeneration",
+    "2014-v-atpase-maintains-neural-stem-cells-in-the-developing-mouse",
+    "2014-transmembrane-voltage-potential-of-somatic-cells-controls-on",
+    "2014-design-of-a-flexible-component-gathering-algorithm-forconver",
+    "2014-depolarization-of-cellular-resting-membrane-potential-promot",
+    "2014-bioelectrical-mechanisms-for-programming-growth-and-form-tam",
+    "2013-endogenous-voltage-potentials-and-the-microenvironment-bioel",
+    "2013-endogenous-voltage-gradients-as-mediators-of-cell-cell-commu",
+    "2013-depolarization-alters-phenotype-maintains-plasticity-of-pred",
+    "2013-bioelectrical-signaling-has-rich-history",
+    "2013-bioelectric-modulation-of-wound-healing-in-a-3d-in-vitro-mod",
+    "2012-transmembrane-voltage-potential-controls-embryonic-eye-patte",
+    "2012-resting-potential-oncogene-induced-tumorigenesis-and-metasta",
+    "2012-modeling-planarian-regeneration-a-primer-for-reverse-enginee",
+    "2012-low-frequency-vibrations-induce-malformations-in-two-aquatic",
+    "2012-inhibition-of-planar-cell-polarity-extends-neural-growth-dur",
+    "2011-the-h-vacuolar-atpase-maintains-neural-stem-cells-in-the-dev",
+    "2011-patterned-femtosecond-laser-ablation-of-xenopus-laevis-melan",
+    "2011-low-frequency-vibrations-disrupt-left-right-patterning-in-th",
+    "2011-long-distance-signals-are-required-for-morphogenesis-of-the",
+    "2011-histone-deacetylase-activity-is-necessary-for-left-right-pat",
+    "2011-hdac-activity-is-required-during-xenopus-tail-regeneration",
+    "2010-the-atp-sensitive-k-channel-katp-controls-early-left-right-p",
+    "2010-biodome-regenerative-sleeve-for-biochemical-and-biophysical",
+    "2010-a-second-generation-device-for-automated-training-and-quanti",
+    "2009-role-of-membrane-potential-in-the-regulation-of-cell-prolife",
+    "2009-regeneration-recent-advances-major-puzzles-and-biomedical-op",
+    "2009-perspectives-and-open-problems-in-the-early-phases-of-left-r",
+    "2009-molecular-mechanisms-establishing-consistent-left-right-asym",
+    "2009-is-left-right-asymmetry-a-form-of-planar-cell-polarity",
+    "2009-errors-of-geometry-regeneration-in-a-broader-perspective",
+    "2009-bioelectric-mechanisms-in-regeneration-unique-aspects-and-fu",
+    "2008-what-s-left-in-asymmetry",
+    "2008-planarian-pten-homologs-regulate-stem-cells-and-regeneration",
+    "2008-membrane-potential-controls-adipogenic-and-osteogenic-differ",
+    "2008-kcnq1-and-kcne1-k-channel-components-are-involved-in-early-l",
+    "2007-left-right-patterning-from-the-inside-out-widespread-evidenc",
+    "2007-large-scale-biophysics-ion-flows-and-regeneration",
+    "2007-h-k-atpase-protein-localization-and-kir4-1-function-reveal-c",
+    "2007-gap-junctions-provide-new-links-in-left-right-patterning",
+    "2007-gap-junctional-communication-in-morphogenesis",
+    "2007-establishing-and-maintaining-a-xenopus-laevis-colony-for-res",
+    "2006-of-minds-and-embryos-left-right-asymmetry-and-the-serotonerg",
+    "2006-mathematical-model-of-morphogen-electrophoresis-through-gap",
+    "2006-ion-flow-regulates-left-right-asymmetry-in-sea-urchin-develo",
+    "2006-inverse-drug-screens-a-rapid-and-inexpensive-method-for-impl",
+    "2006-evidence-for-the-regulation-of-left-right-asymmetry-in-ciona",
+    "2006-automated-analysis-of-behavior-a-computer-controlled-system",
+    "2005-xenopus-trpn1-nompc-localizes-to-microtubule-based-cilia-in",
+    "2005-serotonin-transporter-function-is-an-early-step-in-left-righ",
+    "2005-localization-and-loss-of-function-implicates-ciliary-protein",
+    "2005-left-right-asymmetry-in-embryonic-development-a-comprehensiv",
+    "2005-eye-regeneration-assay-reveals-an-invariant-functional-left",
+    "2005-characterization-of-innexin-gene-expression-and-functional-r",
+    "2005-bmp-3-is-a-novel-inhibitor-of-both-activin-and-bmp-4-signali",
+    "2005-asymmetric-expression-of-syndecan-2-in-early-chick-embryogen",
+    "2004-the-embryonic-origins-of-left-right-asymmetry",
+    "2004-early-patterning-of-the-left-right-axis",
+    "2004-a-novel-immunohistochemical-method-for-evaluation-of-antibod",
+    "2003-motor-protein-control-of-ion-flux-is-an-early-step-in-embryo",
+    "2003-fusicoccin-signaling-reveals-14-3-3-protein-function-as-a-no",
+    "2003-bioelectromagnetics-in-morphogenesis",
+    "2002-katp-channel-activity-is-required-for-hatching-in-xenopus-em",
+    "2002-isolation-and-community-a-review-of-the-role-of-gap-junction",
+    "2002-early-embryonic-expression-of-ion-channels-and-pumps-in-chic",
+    "2002-asymmetries-in-h-k-atpase-and-cell-membrane-potentials-compr",
+    "2001-left-right-asymmetry-determination-in-vertebrates",
+    "2001-asymmetry-of-body-and-brain-embryological-and-twin-studies",
+    "2000-expression-of-connexin-30-in-xenopus-embryos-and-its-involve",
+    "1999-twinning-and-embryonic-left-right-asymmetry",
+    "1999-left-right-asymmetry-in-animal-embryogenesis",
+    "1999-cerberus-regulates-left-right-asymmetry-of-the-embryonic-hea",
+    "1998-the-roles-of-activin-and-follistatin-signaling-in-chick-gast",
+    "1998-the-compulsion-of-chirality-toward-an-understanding-of-left",
+    "1998-gap-junctions-are-involved-in-the-early-generation-of-left-r",
+    "1998-evolutionary-conservation-of-mechanisms-upstream-of-asymmetr",
+    "1997-two-molecular-models-of-initial-left-right-asymmetry-generat",
+    "1997-left-right-patterning-signals-and-the-independent-regulation",
+    "1997-left-right-asymmetry-in-vertebrate-embryogenesis",
+    "1997-applied-dc-magnetic-fields-cause-alterations-in-the-time-of",
+    "1996-laterality-defects-in-conjoined-twins",
+    "1995-use-of-genetic-algorithms-to-solve-biomedical-problems",
+    "1995-locating-putative-protein-signal-sequences",
+    "1995-applied-ac-and-dc-magnetic-fields-cause-alterations-in-the-m",
+    "1994-discontinuous-and-alternate-q-system-fractals",
+    "1993-current-and-potential-applications-of-bioelectromagnetics-in",
+    "1985-creating-graphics-with-mathematical-functions"
+  ],
+  "failed": [
+    {
+      "id": "2026-world-models-artificial-general-intelligence-and-the-hard-pr",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-topological-constraints-on-self-organization-in-locally-inte",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-the-artificial-experimentalist-discovery-and-control-of-self",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-remapping-and-navigation-of-an-embedding-space-via-error-min",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-neural-cellular-automata-applications-to-biology-and-beyond",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-multi-scale-longevity-defeating-aging-from-cells-to-embodied",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-machines-all-the-way-up-and-cognition-all-the-way-down-updat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-meb-from-development-to-cognitive-glue-my-journey-in-bioelec",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-lifetime-imaging-reveals-long-distance-non-neural-bioelectri",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-ingressing-minds-causal-non-physical-patterns-in-form-natura",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-heuristically-adaptive-diffusion-model-evolutionary-strategy",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-from-cancer-to-ai-alignment-tackling-externalities-through-h",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-engineered-living-systems-with-self-organizing-neural-networ",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-cognitive-glues-are-shared-models-of-relative-scarcities-the",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-cognitive-offloading-is-a-cognitive-universal",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-brains-and-where-else-mapping-theories-of-consciousness-to-u",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-brainca-brain-inspired-neural-cellular-automata-and-applicat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-bioelectrical-regionalization-of-multicellular-aggregates-by",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-bioelectrical-interfaces-beyond-excitable-cells-cancer-aging",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-alignment-is-to-a-virtual-governor-a-theory-of-coordination",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-agnosiophobia-in-a-virtual-agent-behavior-and-dynamical-arch",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-diverse-intelligences-the-space-of-possible-minds-commentary",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-what-does-evolution-make-learning-in-living-lineages-and-mac",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-uncertainty-minimization-and-pattern-recognition-in-volvox-c",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-the-morphological-behavioral-and-transcriptomic-lifecycle-of",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-the-bioelectrics-of-immortality-and-mortality-in-cold-sensit",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-sustained-serotonergic-stimulation-platform-for-peripheral-a",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-new-insights-in-the-gut-brain-axis-the-role-of-bioelectrical",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-life-its-origin-and-its-distribution-a-perspective-from-the",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-identification-of-brain-like-complex-information-architectur",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-harnessing-the-analog-computing-power-of-regulatory-networks",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-giving-simulated-cells-a-voice-evolving-prompt-to-interventi",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-field-mediated-bioelectric-basis-of-morphogenetic-prepattern",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-evolution-by-natural-induction-ii-further-interactions-with",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-evolution-by-natural-induction",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-electrical-impedance-correlated-to-flow-rate-in-elastomeric",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-cases-of-unconventional-information-flow-across-the-mind-bod",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-bioelectricity-a-buzzing-field-going-places",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-bioelectricity-is-a-universal-multifaced-signaling-cue-in-li",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-bioelectric-characterization-of-senescing-human-keratinocyte",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-bidirectional-communication-between-xenobot-cultures-toward",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-atavistic-genetic-expression-dissociation-aged-during-aging",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-artificial-intelligences-a-bridge-toward-diverse-intelligenc",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-aging-as-a-loss-of-goal-directedness-an-evolutionary-simulat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-a-microfluidic-sucrose-gap-device-for-electrical-measurement",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-bioelectricity-in-development-regeneration-and-cancers-cell",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-unraveling-the-enigma-of-organismal-death-insights-implicati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-toward-a-nomenclature-consensus-for-diverse-intelligent-syst",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-the-energetics-of-cellular-life-transitions",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-the-role-of-bioelectrical-patterns-in-regulative-morphogenes",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-the-multiscale-wisdom-of-the-body-collective-intelligence-as",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-stress-sharing-as-cognitive-glue-for-collective-intelligence",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-snakes-and-ladders-in-the-evolution-of-language",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-self-improvising-memory-a-perspective-on-memories-as-agentia",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-self-amputating-and-interfusing-machines",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-requirements-for-self-organization",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-programmable-delivery-of-fluoxetine-via-wearable-bioelectron",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-principled-limitations-on-self-representation-for-generic-ph",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-potential-shortcomings-of-genomic-database-the-case-of-nav1",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-oscillatory-phenomena-in-electrophysiological-networks-the-c",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-natural-induction-spontaneous-adaptive-organisation-without",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-machine-learning-for-hypothesis-generation-in-biology-and-me",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-from-reinforcement-learning-to-agency-frameworks-for-underst",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-evolutionary-implications-of-self-assembling-cybernetic-mate",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-electroceuticals-emerging-applications-beyond-the-nervous-sy",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-daniel-c-dennett-1942-2024-philosopher-and-science-advocate",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-classical-sorting-algorithms-as-a-model-of-morphogenesis-sel",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-charging-ahead-examining-the-future-therapeutic-potential-of",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-aging-as-a-loss-of-goal-directedness-an-evolutionary-simulat",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2024-a-pro-reparative-bioelectronic-device-for-controlled-deliver",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-transplantation-of-fragments-from-different-planaria-a-bioel",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-there-s-plenty-of-room-right-here-biological-systems-as-evol",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-the-scaling-of-goals-via-homeostasis-an-evolutionary-simulat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-the-collective-intelligence-of-evolution-and-development",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-the-yin-and-yang-of-breast-cancer-ion-channels-as-determinan",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-the-yin-and-yang-of-breast-cancer-ion-channels-as-determinan",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-searching-in-the-dark-evolving-biobot-swarm-compositions-to",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-regulative-development-as-a-model-for-origin-of-life-and-art",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-optimization-of-oligomer-stamping-technique-for-normally-clo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-nested-selves-self-organization-and-shared-markov-blankets-i",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-motile-living-biobots-self-construct-from-adult-human-somati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-making-and-breaking-symmetries-in-mind-and-life",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-long-range-communication-via-gap-junctions-and-stress-in-pla",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-learning-in-transcriptional-network-models-computational-dis",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-information-integration-during-bioelectric-regulation-of-mor",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-future-medicine-from-molecular-pathways-to-the-collective-in",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-endless-forms-most-beautiful-2-0-teleonomy-and-the-bioengine",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-correcting-instructive-electric-potential-patterns-in-multic",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-collective-intelligence-of-morphogenesis-as-a-teleonomic-pro",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-cellular-signaling-pathways-as-plastic-proto-cognitive-syste",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-cellular-competency-during-development-alters-evolutionary-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-cellular-competency-during-development-alters-evolutionary-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-cancer-s-unique-bioelectric-properties-from-cells-to-body-wi",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-biological-robots-perspectives-on-an-emerging-interdisciplin",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-bioelectricity-a-multifaceted-discipline-and-a-multifaceted",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-bioelectricity-of-non-excitable-cells-and-multicellular-patt",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-target-agnostic-discovery-of-rett-syndrome-therapeutics-by-c",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2022-screening-biophysical-sensors-and-actuators-that-influence-w",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-screening-biophysical-sensors-and-neurite-outgrowth-actuator",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-potassium-channel-driven-bioelectric-signalling-regulates-me",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-neurons-as-hierarchies-of-quantum-reference-frames",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-multi-scale-chimerism-an-experimental-window-on-the-algorith",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-minimal-developmental-computation-a-causal-network-approach",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-metacognition-as-a-consequence-of-competing-evolutionary-tim",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-ion-channel-drugs-suppress-cancer-phenotype-in-ng108-15-and",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-information-theory-as-an-experimental-tool-for-integrating-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-information-theory-as-an-experimental-tool-for-integrating-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-hcn2-channel-induced-rescue-of-brain-eye-heart-and-gut-terat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-exploring-the-behavior-of-bioelectric-circuits-using-evoluti",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-enhancers-of-host-immune-tolerance-to-bacterial-infection-di",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-competition-for-finite-resources-as-coordination-mechanism-f",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-competency-in-navigating-arbitrary-spaces-as-an-invariant-fo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-biology-buddhism-and-ai-care-as-the-driver-of-intelligence",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-bioelectricity-from-endogenous-mechanisms-to-opportunities-i",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-bioelectricity-an-update",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-another-leap-forward-for-bioelectricity",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-adversarial-takeover-of-neural-cellular-automata",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-acute-multidrug-delivery-via-a-wearable-bioreactor-facilitat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-a-free-energy-principle-for-generic-quantum-systems",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-a-computational-approach-to-explaining-bioelectrically-induc",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-uncovering-cognitive-similarities-and-differences-conservati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-synthetic-living-machines-a-new-window-on-life",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-shape-changing-robots-bioinspiration-simulation-and-physical",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-reframing-cognition-getting-down-to-biological-basics",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-morphology-changes-induced-by-intercellular-gap-junction-blo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-minimal-physicalism-as-a-scale-free-substrate-for-cognition",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-mechanosensation-mediates-long-range-spatial-decision-making",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-life-death-and-self-fundamental-questions-of-primitive-cogni",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-learning-and-synaptic-plasticity-in-3d-bioengineered-neural",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-kinematic-self-replication-in-reconfigurable-organisms",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-inducing-vertebrate-limb-regeneration-a-review-of-past-advan",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-gene-regulatory-networks-exhibit-several-kinds-of-memory-qua",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-evolution-and-emergence-higher-order-information-structure-i",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-cell-systems-bioelectricity-how-different-intercellular-gap",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-bistability-of-somatic-pattern-memories-stochastic-outcomes",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-bioelectricity-is-the-bridge-where-cancer-meets-neuroscience",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-bioelectrical-approaches-to-cancer-as-a-problem-of-the-scali",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-behaviorist-approaches-to-investigating-memory-and-learning",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-a-cellular-platform-for-the-development-of-synthetic-living",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-a-meta-analysis-of-bioelectric-data-in-cancer-embryogenesis",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2021-a-comprehensive-conceptual-and-computational-dynamics-framew",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-von-willebrand-factor-d-and-egf-domains-is-an-evolutionarily",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-why-isn-t-sex-optional-stem-cell-competition-loss-of-regener",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-toward-decoding-bioelectric-events-in-xenopus-embryogenesis",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-the-biophysics-of-regenerative-repair-suggests-new-perspecti",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-scale-free-biology-integrating-evolutionary-and-developmenta",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-richard-borgens-1946-2019",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-regulation-of-axial-and-head-patterning-during-planarian-reg",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-precise-control-of-ion-channel-and-gap-junction-expression-i",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2020-post-ssri-sexual-dysfunction-a-bioelectric-mechanism",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-opinion-use-the-pandemic-to-expand-the-lab-to-the-home",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2020-on-the-coupling-of-mechanics-with-bioelectricity-and-its-rol",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-nervous-system-and-tissue-polarity-dynamically-adapt-to-new",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-morphological-coordination-a-common-ancestral-function-unify",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-morphogenesis-as-bayesian-inference-a-variational-approach-t",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-machine-learning-driven-bioelectronics-for-closed-loop-contr",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-interferon-gamma-stimulated-murine-macrophages-in-vitro-impa",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-integrating-variational-approaches-to-pattern-formation-into",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-how-do-living-systems-create-meaning",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-extra-genomic-instructive-influences-in-morphogenesis-a-revi",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-emergence-of-informative-higher-scales-in-biological-systems",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-editorial-inaugural-issue",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-does-regeneration-recapitulate-phylogeny",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-competitive-and-coordinative-interactions-between-body-parts",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-community-effects-allow-bioelectrical-reprogramming-of-cell",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-bioelectrical-model-of-head-tail-patterning-based-on-cell-io",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-bioelectrical-coupling-of-single-cell-states-in-multicellula",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-assessment-of-enrichment-of-human-mesenchymal-stem-cells-bas",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-a-scalable-pipeline-for-designing-reconfigurable-organisms",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2020-a-3d-tissue-model-of-traumatic-brain-injury-with-excitotoxic",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-the-role-of-early-bioelectric-signals-in-the-regeneration-of",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-the-cognitive-lens-a-primer-on-conceptual-tools-for-analysin",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-the-bioelectricity-revolution-a-discussion-among-the-foundin",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-synchronization-of-bioelectric-oscillations-in-networks-of-n",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-somatic-multicellularity-as-a-satisficing-solution-to-the-pr",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-selective-serotonin-reuptake-inhibitor-use-during-pregnancy",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-regenerative-adaptation-to-electrochemical-perturbation-in-p",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-planarian-regeneration-as-a-model-of-anatomical-homeostasis",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-on-the-generalization-of-habituation-how-discrete-biological",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-membrane-potential-depolarization-alters-calcium-flux-and-ph",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-managing-ideas-people-and-projects-organizational-tools-and",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-live-imaging-of-intracellular-ph-in-planarians-using-the-rat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-l-type-voltage-gated-ca2-channel-cav1-2-regulates-chondrogen",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-hyperosmolar-potassium-inhibits-myofibroblast-conversion-and",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-from-non-excitable-single-cell-to-multicellular-bioelectrica",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-endogenous-bioelectrics-in-development-cancer-and-regenerati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-effects-of-ivermectin-exposure-on-regeneration-of-d-dorotoce",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-eden-electroceutical-design-environment-ion-channel-tissue-e",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-eden-electroceutical-design-environment-an-ion-channel-datab",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-bioelectrical-controls-of-morphogenesis-from-ancient-mechani",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2019-bioelectric-control-of-metastasis-in-solid-tumors",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-the-bioelectric-code-an-ancient-computational-medium-for-dyn",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-the-bacterial-metabolite-indole-inhibits-regeneration-of-the",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-the-body-electric-2-0-recent-advances-in-developmental-bioel",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-slime-mould-the-fundamental-mechanisms-of-biological-cogniti",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-pattern-regeneration-in-coupled-networks",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-niclosamide-rescues-microcephaly-in-a-humanized-in-vivo-mode",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-multiscale-memory-and-bioelectric-error-correction-in-the-cy",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-modeling-cell-migration-in-a-simulated-bioelectrical-signali",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-ivermectin-promotes-peripheral-nerve-regeneration-during-wou",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-inverse-drug-screening-of-bioelectric-signaling-and-neurotra",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-from-physics-to-pattern-uncovering-pattern-formation-in-tiss",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-embodying-markov-blankets-comment-on-answering-schr-dinger-s",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-cross-limb-communication-during-xenopus-hind-limb-regenerati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-brief-local-application-of-progesterone-via-a-wearable-biore",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-booting-up-the-organism-during-development-pre-behavioral-fu",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-bioelectrical-coupling-in-multicellular-domains-regulated-by",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-bioelectrical-control-of-positional-information-in-developme",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2018-avian-models-and-the-study-of-invariant-asymmetry-how-the-ch",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2017-space-travel-has-effects-on-planarian-regeneration-that-cann",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-repeated-removal-of-developing-limb-buds-permanently-reduces",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-planarian-regeneration-in-space-persistent-anatomical-behavi",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-modeling-regenerative-processes-with-membrane-computing",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-long-term-stochastic-editing-of-regenerative-anatomy-via-tar",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-investigating-the-effects-of-noise-on-a-cell-to-cell-communi",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2017-ik-channel-activation-increases-tumor-growth-and-induces-dif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2017-hcn4-ion-channel-function-is-required-for-early-events-that",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-gap-junctional-signaling-in-pattern-regulation-physiological",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-endogenous-bioelectric-signaling-networks-exploiting-voltage",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-coordinating-heart-morphogenesis-a-novel-role-for-hyperpolar",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-bioelectric-signaling-in-regeneration-mechanisms-of-ionic-co",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-bioelectric-gene-and-reaction-networks-computational-modelin",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2017-a-computational-model-of-planarian-regeneration",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-vertically-and-horizontally-transmitted-memories-the-fading",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-use-of-genetically-encoded-light-gated-ion-translocators-to",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2016-top-down-models-in-biology-explanation-and-control-of-comple",
+      "reason": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "id": "2016-telocytes-in-their-context-with-other-intercellular-communic",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-physiological-controls-of-large-scale-patterning-in-planaria",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-physiological-inputs-regulate-species-specific-anatomy-durin",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-on-chirality-of-slime-mould",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-neurotransmitter-signaling-pathways-required-for-normal-deve",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-introduction-to-provocative-questions-in-left-right-asymmetr",
+      "reason": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "id": "2016-genome-wide-analysis-reveals-conserved-transcriptional-respo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-from-cytoskeletal-dynamics-to-organ-asymmetry-a-nonlinear-re",
+      "reason": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "id": "2016-formin-is-associated-with-left-right-asymmetry-in-the-pond-s",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-conserved-roles-for-cytoskeletal-components-in-determining-l",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-bioelectric-signaling-via-potassium-channels-a-mechanism-for",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2016-a-level-set-approach-to-simulating-xenopus-laevis-tail-regen",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-the-stability-of-memories-during-brain-remodeling-a-perspect",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-target-morphology-and-cell-memory-a-model-of-regenerative-pa",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-serotonergic-regulation-of-melanocyte-conversion-a-bioelectr",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-selective-depolarization-of-transmembrane-potential-alters-m",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2015-re-membering-the-body-applications-of-computational-neurosci",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-membrane-potential-depolarization-causes-alterations-in-neur",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-local-and-long-range-endogenous-resting-potential-gradients",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2015-knowing-one-s-place-a-free-energy-approach-to-pattern-regula",
+      "reason": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "id": "2015-h-k-atpase-activity-is-required-for-biomineralization-in-sea",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-endogenous-gradients-of-resting-potential-instructively-patt",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2015-bioelectric-memory-modeling-resting-potential-bistability-in",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2014-optogenetics-in-developmental-biology-using-light-to-control",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2014-optogenetic-control-of-apoptosis-in-targeted-tissues-of-xeno",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-molecular-bioelectricity-how-endogenous-voltage-potentials-c",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-limbform-a-functional-ontology-based-database-of-limb-regene",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-left-right-patterning-in-xenopus-conjoined-twin-embryos-requ",
+      "reason": "<urlopen error [Errno -2] Name or service not known>"
+    },
+    {
+      "id": "2014-fishing-on-chips-up-and-coming-technological-advances-in-ana",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-endogenous-bioelectrical-networks-store-non-genetic-patterni",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-endogenous-bioelectric-cues-as-morphogenetic-signals-in-vivo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-alteration-of-bioelectrically-controlled-processes-in-the-em",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2014-a-linear-encoding-model-explains-the-variability-of-the-targ",
+      "reason": "<urlopen error [Errno 111] Connection refused>"
+    },
+    {
+      "id": "2014-a-bioinformatics-expert-system-linking-functional-data-to-an",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-transmembrane-voltage-potential-is-an-essential-cellular-par",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-towards-a-bioinformatics-of-patterning-a-computational-appro",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2013-stem-cells-and-ion-channels",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-serotonin-has-early-cilia-independent-roles-in-xenopus-left",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-reprogramming-cells-and-tissue-patterning-via-bioelectrical",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-rab-gtpases-are-required-for-early-orientation-of-the-left-r",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-planform-an-application-and-database-of-graph-encoded-planar",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-light-activation-of-the-archaerhodopsin-h-pump-reverses-age",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-light-activated-serotonin-for-exploring-its-action-in-biolog",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-it-s-never-too-early-to-get-it-right-a-conserved-role-for-th",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-inversion-of-left-right-asymmetry-alters-performance-of-xeno",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-humane-anesthesia-and-pain-management-in-amphibian-limb-surg",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-ectopic-eyes-outside-the-head-in-xenopus-tadpoles-provide-se",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-cracking-the-bioelectric-code-probing-endogenous-ionic-contr",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-bioelectric-signaling-regulates-head-and-organ-size-during-p",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-an-automated-training-paradigm-reveals-long-term-memory-in-p",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2013-a-unified-model-for-left-right-asymmetry-comparison-and-synt",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-transducing-bioelectrical-signals-into-epigenetic-pathways-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-regulation-of-cell-behavior-and-tissue-patterning-by-bioelec",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-polarity-proteins-are-required-for-left-right-axis-orientati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-photoconversion-for-tracking-the-dynamics-of-cell-movement-i",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-normalized-shape-and-location-of-perturbed-craniofacial-stru",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-neurally-derived-tissues-in-xenopus-laevis-embryos-exhibit-a",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-morphogenetic-fields-in-embryogenesis-regeneration-and-cance",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-molecular-bioelectricity-in-developmental-biology-new-tools",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-measuring-resting-membrane-potential-using-the-fluorescent-v",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-measuring-resting-membrane-potential-using-the-fluorescent-v",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-general-principles-for-measuring-resting-membrane-potential",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-early-nonciliary-role-for-microtubule-proteins-in-left-right",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-aversive-training-methods-in-xenopus-laevis-general-principl",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2012-a-versatile-protocol-for-mrna-electroporation-of-xenopus-lae",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2011-transmembrane-potential-of-glycl-expressing-instructor-cells",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2011-the-wisdom-of-the-body-future-techniques-and-approaches-to-m",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2011-a-chemical-genetics-approach-reveals-h-k-atpase-mediated-mem",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2010-long-range-neural-and-gap-junction-protein-mediated-cues-con",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2010-induction-of-vertebrate-regeneration-by-a-transient-sodium-c",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2010-high-throughput-xenopus-laevis-immunohistochemistry-using-ag",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2010-far-from-solved-a-perspective-on-what-we-know-about-early-me",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2010-consistent-left-right-asymmetry-cannot-be-established-by-lat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2009-particle-tracking-model-of-electrophoretic-morphogen-movemen",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2009-left-right-asymmetry-in-the-chick-embryo-requires-core-plana",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2009-bioelectric-controls-of-cell-proliferation-ion-channels-memb",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-tail-regeneration-in-xenopus-laevis-as-a-model-for-understan",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-planarians-a-versatile-and-powerful-model-system-for-molecul",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-modulation-of-potassium-channel-confers-a-hyperproliferative",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-live-imaging-of-planarian-membrane-potential-using-dibac4-3",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-gene-knockdown-in-planarians-using-rna-interference",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2008-establishing-and-maintaining-a-colony-of-planarians",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2007-smedxin-11-is-a-planarian-stem-cell-gap-junction-gene-requir",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2007-what-lies-at-the-interface-of-regenerative-medicine-and-deve",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2007-h-pump-dependent-changes-in-membrane-voltage-are-an-early-me",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2007-apoptosis-is-required-during-early-stages-of-tail-regenerati",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2006-is-the-early-left-right-axis-like-a-plant-a-kidney-or-a-neur",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2006-early-h-v-atpase-dependent-proton-flux-is-necessary-for-cons",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2005-serotonin-signaling-is-a-very-early-step-in-patterning-of-th",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1999-gap-junction-mediated-transfer-of-left-right-patterning-sign",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1998-left-right-asymmetry-and-the-chick-embryo",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1995-the-evolution-of-understanding-a-genetic-algorithm-model-of",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1995-a-molecular-pathway-determining-left-right-asymmetry-in-chic",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "1994-a-julia-set-model-of-field-directed-morphogenesis-developmen",
+      "reason": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+ "diggers": [
+  {
+   "evidence": [
+    {
+     "rung": "SILICON",
+     "url": "https://normalcomputing.com (CN101 tapeout Aug 2025)"
+    },
+    {
+     "rung": "PEER_REVIEW",
+     "url": "https://arxiv.org/pdf/2608.00754 + Hot Chips 2026"
+    }
+   ],
+   "kind": "substrate",
+   "name": "Normal Computing CN101",
+   "note": "MNIST/CIFAR generative demos, 62x fewer cycles on unrolled generation; up-to-1000x claims on targeted workloads only. No frontier head-to-head vs Nvidia.",
+   "rung": "PEER_REVIEW",
+   "targets_edge": "frontier-inference->HBM",
+   "bar": [
+    "independent relevant benchmark",
+    "system-scale throughput/$ and perf/W",
+    "manufacturing/yield path"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "rung": "SILICON",
+     "url": "https://extropic.ai (X0 prototype proven)"
+    }
+   ],
+   "kind": "substrate",
+   "name": "Extropic Z1 TSU",
+   "note": "269k pbits, <1W; Z1 early access 2027; $75M CHIPS LOI non-binding. npj paper: 10,000x est. on Fashion-MNIST sampling (model+measurement, not deployment).",
+   "rung": "SILICON",
+   "targets_edge": "frontier-inference->accelerators",
+   "bar": [
+    "shipping silicon",
+    "external gen-AI benchmark",
+    "scale/programmability",
+    "cost/yield"
+   ]
+  },
+  {
+   "evidence": [
+    {
+     "rung": "PEER_REVIEW",
+     "url": "https://github.com/Intelligent-Internet/Qwen3.8-Inference-MetaZenith"
+    }
+   ],
+   "kind": "efficiency-software",
+   "name": "Qwen3.8 TurboQuant/MTP serving stack",
+   "note": "Implementation-level memory-bandwidth attack (4-bit KV, speculative decoding, 262k context on 1x5090). Efficiency, not substrate \u2014 Jevons-relevant.",
+   "rung": "PEER_REVIEW",
+   "targets_edge": "frontier-inference->HBM"
+  },
+  {
+   "name": "Cerebras",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Wafer-scale architecture changes memory/interconnect topology",
+   "research": "https://www.cerebras.ai/",
+   "bar": [
+    "normalized economics",
+    "deployment growth",
+    "software portability"
+   ]
+  },
+  {
+   "name": "Groq",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Inference-specific architecture and deterministic scheduling",
+   "research": "https://groq.com/",
+   "bar": [
+    "unit economics at scale",
+    "capacity growth",
+    "model breadth"
+   ]
+  },
+  {
+   "name": "Etched",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Transformer-specific ASIC; specialization can reprice generic GPU rents",
+   "research": "https://www.etched.com/",
+   "bar": [
+    "shipping hardware",
+    "independent perf/$",
+    "architecture persistence"
+   ]
+  },
+  {
+   "name": "Lightmatter",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Photonic interconnect/compute targets bandwidth and power",
+   "research": "https://lightmatter.co/",
+   "bar": [
+    "volume deployment",
+    "reliability/yield",
+    "system economics"
+   ]
+  },
+  {
+   "name": "Ayar Labs",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Optical I/O attacks electrical interconnect bandwidth/power",
+   "research": "https://ayarlabs.com/",
+   "bar": [
+    "high-volume deployment",
+    "package economics"
+   ]
+  },
+  {
+   "name": "d-Matrix",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Memory-centric inference architecture attacks data movement cost",
+   "research": "https://www.d-matrix.ai/",
+   "bar": [
+    "production workloads",
+    "system-scale perf/$",
+    "software adoption"
+   ]
+  },
+  {
+   "name": "SambaNova",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Alternative dataflow architecture/full stack",
+   "research": "https://sambanova.ai/",
+   "bar": [
+    "competitive economics",
+    "customer retention",
+    "scale"
+   ]
+  },
+  {
+   "name": "Tenstorrent",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Alternative compute architecture and IP/licensing",
+   "research": "https://tenstorrent.com/",
+   "bar": [
+    "production adoption",
+    "software maturity",
+    "perf/$"
+   ]
+  },
+  {
+   "name": "General Compute",
+   "kind": "substrate",
+   "targets_edge": "",
+   "rung": "CLAIM",
+   "note": "Tracks fragmentation toward workload-specialized inference silicon",
+   "research": "https://www.generalcompute.com/",
+   "bar": [
+    "hardware evidence",
+    "shipping product",
+    "external benchmarks"
+   ]
+  }
+ ],
+ "note": "Experimental diggers\u7684\u7b2c\u4e00 feed. Rungs advance on evidence URLs only. Nothing here is L4+.",
+ "updated": "2026-09-10"
+}

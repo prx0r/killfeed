@@ -1,0 +1,177 @@
+[
+  {
+    "path": "FULL_DIRECTORY.md",
+    "bytes": 20334,
+    "sha256": "5e1da0cb0b1a6cd1858f2dee972764a0197dd89b4fddb65912da39895aac9981"
+  },
+  {
+    "path": "LICENSE_NOTES.md",
+    "bytes": 752,
+    "sha256": "813284101e8cb732f6369ff4aab5c1c9e2a024003d0bebd8d0cb38628dba8b1c"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3892,
+    "sha256": "42337ba4b447d088b91c4aacd20b5d56329e2e2cec667d9a02d1d41c5d49097c"
+  },
+  {
+    "path": "collectors/README.md",
+    "bytes": 393,
+    "sha256": "397ed498129bdad063e45c564f8aa84f25fea976d318ee98db8f2a4f547f2ec7"
+  },
+  {
+    "path": "collectors/github_repo_events.py",
+    "bytes": 619,
+    "sha256": "534d14c0cbf955974671b4a0c135294974ba4430e97fee7393cc189f53580137"
+  },
+  {
+    "path": "collectors/grants_search.py",
+    "bytes": 346,
+    "sha256": "c15c8b3c42ae1e5b1eebda94743c4fe321848a98438859b3a3460ecc851fd9ab"
+  },
+  {
+    "path": "collectors/openalex_search.py",
+    "bytes": 501,
+    "sha256": "208f30cf5ec9c25c665373b62afd677c688ab13bab20c3ae5eccfc59a622dda8"
+  },
+  {
+    "path": "collectors/polymarket_gamma.py",
+    "bytes": 528,
+    "sha256": "d5d7f6e7fbbd02fb719a18a644aa97e78dac6f1fc2c1567c8dfd9216d9cec298"
+  },
+  {
+    "path": "collectors/sec_submissions.py",
+    "bytes": 382,
+    "sha256": "b731d90853a290fff25c6bde9aabad8b51bd880b456e7abb9e328535b3f470d1"
+  },
+  {
+    "path": "collectors/usaspending_search.py",
+    "bytes": 435,
+    "sha256": "fab23f3754b8734f847b9db49f8a2293f6aea2e6cbbd9aa5bbc7476ff30d014d"
+  },
+  {
+    "path": "config/bottleneck_relations.json",
+    "bytes": 613,
+    "sha256": "e4d053dbcee45a329c6a3d288f26280000bde2b66e1b0e4a3057741a64667d90"
+  },
+  {
+    "path": "config/frontier_lab_capital_events.json",
+    "bytes": 10283,
+    "sha256": "e297608fcf293a6736ddbec7c4710909b5f9ae6dd0f54883f6fb1396e1fd9507"
+  },
+  {
+    "path": "config/github_repo_registry.json",
+    "bytes": 16619,
+    "sha256": "ef416c6bd62cc14b359bce40e6ce859c2fe955da9d321de1e08cd9ea3629442a"
+  },
+  {
+    "path": "config/source_registry.json",
+    "bytes": 21802,
+    "sha256": "39d350538188dc7a71742b5db8960e09df9e13a1a7e39b3eaa90c034be636061"
+  },
+  {
+    "path": "examples/memory_kill_scenario.json",
+    "bytes": 1066,
+    "sha256": "bbe4c9ce56d5774882984a025dc2ca67345901d8f74cf1b71096d09501b354da"
+  },
+  {
+    "path": "models/executive_capital_osint.md",
+    "bytes": 1315,
+    "sha256": "f79e38d3c3422c3c1fddbe8fb77446291f6cfe57974f2fcd81bd087e6be0d438"
+  },
+  {
+    "path": "models/frontier_lab_revealed_preference.md",
+    "bytes": 2098,
+    "sha256": "0ad4fc4f38963ca87788ccdfd2adc47619d285dc9e3f619aed3d88061b274eb8"
+  },
+  {
+    "path": "models/proof_ladder.md",
+    "bytes": 1244,
+    "sha256": "7690e736f9eaa511692bf58c0984d337ce5adeb4596b0a5c41401eb2922e8d77"
+  },
+  {
+    "path": "models/scoring.md",
+    "bytes": 1532,
+    "sha256": "e506c2df9f1c8406aec513c73f08d6cc5c9251158dad84314fb776f74ee0310a"
+  },
+  {
+    "path": "models/source_weighting.md",
+    "bytes": 889,
+    "sha256": "3370e1512fab5de2a7da9881e0f78ccda6c82d325685769f984a0bb1da3f936d"
+  },
+  {
+    "path": "pipeline/architecture.md",
+    "bytes": 1258,
+    "sha256": "75912f972f989e34f0dca1c78a4680b39dad644a760cc19b46e63293d06cf13e"
+  },
+  {
+    "path": "pipeline/build_order.md",
+    "bytes": 1075,
+    "sha256": "f268897aabb33f60051400ad234cd4e2d9921d7e2abff39fc40b677f2c80983c"
+  },
+  {
+    "path": "pipeline/event_types.md",
+    "bytes": 754,
+    "sha256": "af832833ffc4cb74633a2b9c22ea6ff202d680c075b09804adf9e4177389b62f"
+  },
+  {
+    "path": "pipeline/storage_layout.md",
+    "bytes": 695,
+    "sha256": "77fe349bebcbddac59807253b6d2df4f83657ac3525d24d0b4d7f7ce0110f52a"
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 15,
+    "sha256": "99973daa3fb906f74caec62f16ab2abc2a3ab738bcb3022b86a434557a76156a"
+  },
+  {
+    "path": "resources/data_sources.csv",
+    "bytes": 11824,
+    "sha256": "7e0f2a388327daa642f163eaa55935ba4672ea4b884ae479f9f5550b919cbafc"
+  },
+  {
+    "path": "resources/digger_watchlist.json",
+    "bytes": 3065,
+    "sha256": "c084ec432fb7a3d750115a1401246ec26868cc8730df0e24801597522bb1e6ca"
+  },
+  {
+    "path": "resources/frontier_lab_watch.csv",
+    "bytes": 5889,
+    "sha256": "67a2a72e7ea488f0366abc1d17e4bc4111b61e6fa38ab01c460a8cc6d9753e25"
+  },
+  {
+    "path": "resources/github_repos.csv",
+    "bytes": 8417,
+    "sha256": "357750332830fad0a9cbf2e3dd115ff4ebcda92bd35322408999a9a8865c6b86"
+  },
+  {
+    "path": "schemas/edge_schema.json",
+    "bytes": 1513,
+    "sha256": "6cbc804a5214c0cf735f23619eca5686500f79e26db5a04f30d8c88705ee37fe"
+  },
+  {
+    "path": "schemas/node_schema.json",
+    "bytes": 706,
+    "sha256": "c055e1f7dacffd57442fbc4fc7e0bdc4b29aaa94334aa6bc1482ef16a4458034"
+  },
+  {
+    "path": "schemas/signal_schema.json",
+    "bytes": 2068,
+    "sha256": "a6b57fa22af2248a9fd7442cd75b674ccd03d7f1c5ad7e495a7fbd64633c67b6"
+  },
+  {
+    "path": "scripts/clone_selected_repos.sh",
+    "bytes": 719,
+    "sha256": "843b1124b8e88cbe1ae634b3d2ae26f8f102bd89f435366faf9b34fd62d607f7"
+  },
+  {
+    "path": "watchlists/frontier_labs.json",
+    "bytes": 2336,
+    "sha256": "d49e172da5cadc80065cb539c9df9181f74fb3b789a27ba3388f66a4420ae98f"
+  },
+  {
+    "path": "watchlists/high_signal_queries.md",
+    "bytes": 2006,
+    "sha256": "a4c5c38cab907cc92d635d2244cba0013cabaf4cfbe697ebcce7b04473133881"
+  }
+]

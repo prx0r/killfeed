@@ -1,0 +1,80 @@
+category,name,url,data,latency,access,signal_type
+Corporate filings,SEC Developer Resources,https://www.sec.gov/about/developer-resources,"Submissions, filings, XBRL, company facts",seconds-minutes,Free/no key,hard evidence
+Corporate filings,SEC EDGAR APIs,https://www.sec.gov/search-filings/edgar-application-programming-interfaces,Company submissions and XBRL JSON,seconds-minutes,Free/no key; identify User-Agent,hard evidence
+Corporate filings,SEC Markets Data Library,https://www.sec.gov/data-research/sec-markets-data,"Insiders, funds and market datasets",daily-quarterly,Free,hard evidence
+Institutional holdings,SEC Form 13F datasets,https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets,Institutional holdings,quarterly,Free,capital allocation
+Fund holdings,SEC Form N-PORT datasets,https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets,Registered fund portfolios,monthly/public cadence varies,Free,capital allocation
+Private funding,SEC Form D,https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/what-form-d,Exempt private offerings,event-driven,Free via EDGAR,capital allocation
+Market plumbing,SEC fails-to-deliver,https://www.sec.gov/data-research/sec-markets-data/fails-deliver-data,Fails-to-deliver raw data,semi-monthly,Free,market state
+Prediction market,Polymarket Gamma API,https://gamma-api.polymarket.com,Market discovery/metadata,near-real-time,Public reads,belief consensus
+Prediction market,Polymarket CLOB API,https://clob.polymarket.com,Prices/orderbooks/trades,real-time,Public reads; trading auth differs,belief consensus
+Prediction market,Polymarket Docs,https://docs.polymarket.com,API/WebSocket docs,n/a,Free,belief consensus
+Prediction market,Kalshi Docs,https://docs.kalshi.com,Markets/trades/orderbook/WebSocket,real-time,Read access varies,belief consensus
+Forecasting,Metaculus API,https://www.metaculus.com/api/,Forecast questions/community probabilities,variable,Auth/terms apply,belief consensus
+Forecasting,Manifold Docs/API,https://docs.manifold.markets/,Prediction market data,real-time,Many public GETs; terms apply,belief consensus
+Research,OpenAlex API,https://help.openalex.org/api/,Works/authors/institutions/topics/funders/citations,daily-ish,Free basic; key increases budget,research velocity
+Research,Semantic Scholar API,https://api.semanticscholar.org/api-docs,Papers/citations/authors,daily-ish,Free API,research velocity
+Research,Crossref REST API,https://www.crossref.org/documentation/retrieve-metadata/rest-api/,Scholarly metadata/DOIs/funders,continuous,Free/public,research metadata
+Preprints,bioRxiv/medRxiv API,https://api.biorxiv.org/,Biology/medical preprints,daily,Free/public,research velocity
+Clinical,ClinicalTrials.gov API,https://clinicaltrials.gov/data-api/api,Trials/sponsors/status/outcomes,daily weekdays,Free/public,physical validation
+Regulatory biology,openFDA APIs,https://open.fda.gov/apis/,Drug/device/event/recall datasets,varies,Free; key raises limits,regulatory state
+Models/code,Hugging Face Hub API,https://huggingface.co/docs/hub/api,Models/datasets/spaces/activity,near-real-time,Public + token options,implementation evidence
+Code,GitHub Events API,https://docs.github.com/en/rest/activity/events,Public GitHub activity,minutes-hours,Free limits/token improves,implementation evidence
+Code history,GH Archive,https://www.gharchive.org/,Historical public GitHub event archive,hourly,Free public files/BigQuery,backtest evidence
+Social,Hacker News API,https://github.com/HackerNews/API,HN stories/comments/users,real-time,Free/public,expert/community
+Social,Bluesky Jetstream,https://bsky.network/docs/jetstream-sdk/,Live/replayable Bluesky events,real-time,Free/public infra; terms apply,expert/community
+Patents,USPTO Open Data Portal API,https://data.uspto.gov/apis/getting-started,U.S. patent/publication data,daily/weekly,Free account/login,IP state
+Patents,EPO Developers / OPS,https://developers.epo.org/,Worldwide bibliographic/family/legal-status patent data,near-current,Free registration/limits,IP state
+Patents,EPO Web Services,https://www.epo.org/en/searching-for-patents/data/web-services,Patent web-service overview,near-current,Registration/limits,IP state
+Patents,Google Patents,https://patents.google.com/,Full-text patent/family/citation search,current,Free web,IP research
+Companies,Companies House API,https://developer.company-information.service.gov.uk/,UK company/officer/filing data,real-time,Free API key,corporate state
+Gov spending,USAspending API,https://api.usaspending.gov/,Contracts/grants/recipients/agencies,daily-ish,Free/no auth currently,government revealed preference
+Gov spending,USAspending endpoints,https://api.usaspending.gov/docs/endpoints,Official endpoint docs,n/a,Free,government revealed preference
+Procurement,SAM.gov Opportunities,https://sam.gov/opportunities,Federal contract opportunities,daily,Search public; API key for API,demand signal
+Grants,Grants.gov API,https://grants.gov/api,Federal grant opportunities,daily,Keyless search/fetch available,research funding
+Grants,NIH RePORTER API,https://api.reporter.nih.gov/,NIH projects/investigators/institutions,periodic,Free/public,research funding
+Grants,NSF Awards API,https://resources.research.gov/common/webapi/awardapisearch-v1.htm,NSF awards and abstracts,periodic,Free/public,research funding
+Space tech,NASA TechPort API,https://techport.nasa.gov/help/api,NASA technology projects/maturity/funding,periodic,Session/API requirements,technology state
+Small business R&D,SBIR/STTR Data,https://www.sbir.gov/data-resources,Federal SBIR/STTR awards downloads,monthly,Free downloads,research funding
+Small business R&D,SBIR/STTR API,https://www.sbir.gov/api,SBIR/STTR API,variable,May be under maintenance; downloads fallback,research funding
+Legislation,Congress.gov API,https://api.congress.gov/,Bills/committees/actions/nominations,daily,Free api.data.gov key,legal bottleneck
+Government docs,GovInfo Developers,https://www.govinfo.gov/developers,Official federal publications/API,daily,Free api.data.gov key,legal/policy evidence
+Regulation,Federal Register API,https://www.federalregister.gov/developers/documentation/api/v1,Rules/notices/proposed rules,near-real-time,Free/no key,regulatory state
+Export controls,BIS Export Administration Regulations,https://www.bis.gov/regulations/ear,Advanced-compute/export-control rules/ECCNs,event-driven,Free,regulatory bottleneck
+Macro,FRED API,https://fred.stlouisfed.org/docs/api/fred/,Rates/commodities/industrial series,daily-monthly,Free key,macro/price
+Energy,EIA Open Data,https://www.eia.gov/opendata/,Generation/demand/capacity/fuels,hourly-monthly,Free API key,physical bottleneck
+Input-output,BEA API,https://apps.bea.gov/api/signup/,Industry input-output/direct/total requirements,annual/periodic,Free key,dependency graph
+Global input-output,OECD ICIO,https://www.oecd.org/en/data/datasets/inter-country-input-output-tables.html,Inter-country production/trade dependency matrices,periodic,Free downloads,dependency graph
+Input-output,OECD Input-Output Tables,https://www.oecd.org/en/data/datasets/input-output-tables.html,Domestic industry interdependencies,periodic,Free downloads,dependency graph
+Trade,UN Comtrade API Docs,https://uncomtrade.org/docs/un-comtrade-api/,Global product-level trade flows,monthly/annual,Free tier,supply concentration
+Trade,UN Comtrade Developer,https://comtradedeveloper.un.org/,Comtrade API portal,monthly/annual,Free/subscription tiers,supply concentration
+Trade,U.S. Census International Trade API,https://www.census.gov/data/developers/data-sets/international-trade.html,Detailed HS trade/ports/states,monthly,Free API key,supply concentration
+Labor,BLS Public Data API,https://www.bls.gov/developers/,Employment/wages/productivity/prices,monthly,v1 no registration; v2 higher limits,labor bottleneck
+Minerals,USGS NMIC Tools,https://www.usgs.gov/centers/national-minerals-information-center/tools,Mineral production/reserves/statistics,monthly/annual,Free,material bottleneck
+Technical reports,OSTI,https://www.osti.gov/,DOE-sponsored papers/reports/data,continuous,Free,hard technical evidence
+Standards,NIST Publications,https://www.nist.gov/publications,Standards/research/measurement reports,continuous,Free,standards bottleneck
+Antitrust,FTC Press Releases,https://www.ftc.gov/news-events/news/press-releases,M&A/competition enforcement,event-driven,Free,legal state
+Antitrust,DOJ Antitrust Press Releases,https://www.justice.gov/atr/press-releases,Antitrust actions,event-driven,Free,legal state
+Frontier lab,OpenAI News,https://openai.com/news/,Acquisitions/partnerships/compute/power commitments,event-driven,Free,revealed preference
+Frontier lab,OpenAI Research,https://openai.com/research/,Capability and systems research,event-driven,Free,frontier capability
+Frontier lab,Anthropic News,https://www.anthropic.com/news,Compute/supplier/acquisition/financing announcements,event-driven,Free,revealed preference
+Frontier lab,Anthropic Research,https://www.anthropic.com/research,Research/capability signals,event-driven,Free,frontier capability
+Frontier lab,Google DeepMind Blog,https://deepmind.google/discover/blog/,Capabilities/research/deployment,event-driven,Free,frontier capability
+Frontier lab,Google DeepMind Research,https://deepmind.google/research/,Frontier research,event-driven,Free,frontier capability
+Frontier lab,Meta AI Blog,https://ai.meta.com/blog/,Models/research/hardware/product signals,event-driven,Free,frontier capability
+Frontier lab,Meta AI Research,https://ai.meta.com/research/,Research/capability signals,event-driven,Free,frontier capability
+Frontier lab,xAI News,https://x.ai/news,Model/funding/infrastructure/corporate events,event-driven,Free,revealed preference
+Digger,Normal Computing Research,https://normalcomputing.com/research,Thermodynamic/inference hardware research,event-driven,Free,digger evidence
+Digger,Normal Computing Blog,https://normalcomputing.com/blog,Chip/tapeout/benchmark claims,event-driven,Free,digger evidence
+Digger,Extropic Writing,https://extropic.ai/writing,Probabilistic/thermodynamic compute milestones,event-driven,Free,digger evidence
+Digger,General Compute Whitepaper,https://www.generalcompute.com/whitepaper,Specialized-inference architecture thesis,event-driven,Free,digger evidence
+Economic maps,Our World in Data,https://ourworldindata.org/,Energy/technology/economic time series,varies,Free; license varies by dataset,context
+Commodities,World Bank Commodity Markets,https://www.worldbank.org/en/research/commodity-markets,Commodity prices and outlooks,monthly,Free,physical price
+Trade,World Bank WITS,https://wits.worldbank.org/,Trade/tariff data,periodic,Free registration for some functions,trade dependency
+Supply chain risk,OFAC Sanctions Search,https://sanctionssearch.ofac.treas.gov/,Sanctions/entity restrictions,event-driven,Free,legal bottleneck
+Export controls,Federal eRulemaking Regulations.gov API/info,https://open.gsa.gov/api/regulationsgov/,Rulemaking/dockets/comments,event-driven,Free api.data.gov key,regulatory state
+Corporate jobs,Greenhouse Job Board API,https://developers.greenhouse.io/job-board.html,Public job postings for many frontier/supplier companies,near-real-time,Public GETs,hiring signal
+Corporate jobs,Lever Postings API,https://github.com/lever/postings-api,Public Lever career postings,near-real-time,Free/public reads,hiring signal
+Markets,NASDAQ Data Link,https://data.nasdaq.com/,Market/economic datasets,varies,"Some free, many paid",market state
+Economics,IMF Data API/portal,https://www.imf.org/en/Data,Macro/country data,periodic,Free,macro
+Shipping/trade,UNCTADstat,https://unctadstat.unctad.org/,Trade/shipping/economic data,periodic,Free,logistics bottleneck

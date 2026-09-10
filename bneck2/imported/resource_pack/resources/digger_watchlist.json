@@ -1,0 +1,115 @@
+[
+  {
+    "name": "Normal Computing",
+    "url": "https://normalcomputing.com/",
+    "research": "https://normalcomputing.com/research",
+    "why": "Thermodynamic/stochastic compute; attacks inference energy and memory-wall economics",
+    "proof_needed": [
+      "independent relevant benchmark",
+      "system-scale throughput/$ and perf/W",
+      "manufacturing/yield path"
+    ]
+  },
+  {
+    "name": "Extropic",
+    "url": "https://extropic.ai/",
+    "research": "https://extropic.ai/writing",
+    "why": "Probabilistic thermodynamic compute; could change energy/accelerator dependency",
+    "proof_needed": [
+      "shipping silicon",
+      "external gen-AI benchmark",
+      "scale/programmability",
+      "cost/yield"
+    ]
+  },
+  {
+    "name": "Cerebras",
+    "url": "https://www.cerebras.ai/",
+    "why": "Wafer-scale architecture changes memory/interconnect topology",
+    "proof_needed": [
+      "normalized economics",
+      "deployment growth",
+      "software portability"
+    ]
+  },
+  {
+    "name": "Groq",
+    "url": "https://groq.com/",
+    "why": "Inference-specific architecture and deterministic scheduling",
+    "proof_needed": [
+      "unit economics at scale",
+      "capacity growth",
+      "model breadth"
+    ]
+  },
+  {
+    "name": "Etched",
+    "url": "https://www.etched.com/",
+    "why": "Transformer-specific ASIC; specialization can reprice generic GPU rents",
+    "proof_needed": [
+      "shipping hardware",
+      "independent perf/$",
+      "architecture persistence"
+    ]
+  },
+  {
+    "name": "Lightmatter",
+    "url": "https://lightmatter.co/",
+    "why": "Photonic interconnect/compute targets bandwidth and power",
+    "proof_needed": [
+      "volume deployment",
+      "reliability/yield",
+      "system economics"
+    ]
+  },
+  {
+    "name": "Ayar Labs",
+    "url": "https://ayarlabs.com/",
+    "why": "Optical I/O attacks electrical interconnect bandwidth/power",
+    "proof_needed": [
+      "high-volume deployment",
+      "package economics"
+    ]
+  },
+  {
+    "name": "d-Matrix",
+    "url": "https://www.d-matrix.ai/",
+    "why": "Memory-centric inference architecture attacks data movement cost",
+    "proof_needed": [
+      "production workloads",
+      "system-scale perf/$",
+      "software adoption"
+    ]
+  },
+  {
+    "name": "SambaNova",
+    "url": "https://sambanova.ai/",
+    "why": "Alternative dataflow architecture/full stack",
+    "proof_needed": [
+      "competitive economics",
+      "customer retention",
+      "scale"
+    ]
+  },
+  {
+    "name": "Tenstorrent",
+    "url": "https://tenstorrent.com/",
+    "why": "Alternative compute architecture and IP/licensing",
+    "proof_needed": [
+      "production adoption",
+      "software maturity",
+      "perf/$"
+    ]
+  },
+  {
+    "name": "General Compute",
+    "url": "https://www.generalcompute.com/",
+    "research": "https://www.generalcompute.com/whitepaper",
+    "why": "Tracks fragmentation toward workload-specialized inference silicon",
+    "proof_needed": [
+      "hardware evidence",
+      "shipping product",
+      "external benchmarks"
+    ]
+  }
+]

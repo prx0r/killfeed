@@ -1,0 +1,700 @@
+{
+  "oa_pdfs": [
+    "2026-what-lives-a-meta-analysis-of-diverse-opinions-on-the-defini",
+    "2026-transcriptional-profiling-of-planarian-regeneration-habituat",
+    "2026-top-down-perspectives-on-cell-membrane-potential-and-protein",
+    "2026-mind-everywhere-a-framework-for-conceptualizing-goal-directe",
+    "2026-membrane-voltage-and-connexin-expression-work-together-to-en",
+    "2026-living-multicellular-systems-induce-decodable-spatial-patter",
+    "2026-large-language-models-as-a-cognitive-virus",
+    "2026-behavioral-physiological-and-transcriptional-mechanisms-of-m",
+    "2026-a-platform-for-automated-training-of-mammalian-cell-physiolo",
+    "2025-zapgpt-free-form-language-prompting-for-simulated-cellular-c",
+    "2025-what-does-evolution-make-learning-in-living-lineages-and-mac",
+    "2025-universal-multilayer-network-embedding-reveals-a-causal-link",
+    "2025-the-bioelectrics-of-immortality-and-mortality-in-cold-sensit",
+    "2025-temporal-depth-in-a-coherent-self-and-in-depersonalization-t",
+    "2025-self-organizing-neural-networks-in-novel-moving-bodies-anato",
+    "2025-revealing-non-trivial-information-structures-in-aneural-biol",
+    "2025-morphological-computational-capacity-of-physarum-polycephalu",
+    "2025-heuristically-adaptive-diffusion-model-evolutionary-strategy",
+    "2025-field-mediated-bioelectric-basis-of-morphogenetic-prepattern",
+    "2025-exploring-the-role-of-large-language-models-in-the-scientifi",
+    "2025-equilibrium-flow-from-snapshots-to-dynamics",
+    "2025-cognition-all-the-way-down-2-0-neuroscience-beyond-neurons-i",
+    "2025-associative-conditioning-in-gene-regulatory-network-models-i",
+    "2025-ai-enabled-drug-prediction-and-gene-network-analysis-reveal",
+    "2024-universal-multilayer-network-embedding-reveals-a-causal-link",
+    "2024-stress-sharing-as-cognitive-glue-for-collective-intelligence",
+    "2024-self-improvising-memories-a-perspective-on-memories-as-agent",
+    "2024-open-problems-in-synthetic-multicellularity",
+    "2024-neuroevolution-of-decentralized-decision-making-in-n-bead-sw",
+    "2024-multicellular-adaptation-to-electrophysiological-perturbatio",
+    "2024-evolutionary-implications-of-multi-scale-intelligence",
+    "2024-emergent-collective-reproduction-via-evolving-neuronal-flock",
+    "2024-disgust-as-a-primary-emotional-system-and-its-clinical-relev",
+    "2024-diffusion-models-are-evolutionary-algorithms",
+    "2024-collective-intelligence-a-unifying-concept-for-integrating-b",
+    "2024-bioelectric-pharmacology-of-cancer-a-meta-analysis-of-ion-ch",
+    "2024-bio-inspired-ai-integrating-biological-complexity-into-artif",
+    "2024-associative-conditioning-in-gene-regulatory-network-models-i",
+    "2023-towards-an-ethics-of-autopoietic-technology-stress-care-and",
+    "2023-the-multiple-realizability-of-sentience-in-living-systems-an",
+    "2023-sbmltoodejax-efficient-simulation-and-optimization-of-ode-sb",
+    "2023-programmable-delivery-of-fluoxetine-via-wearable-bioelectron",
+    "2023-information-integration-during-bioelectric-regulation-of-mor",
+    "2023-identification-of-a-pharmaceutical-biostasis-inducer-that-sl",
+    "2023-embryos-assist-each-other-s-morphogenesis-calcium-and-atp-si",
+    "2023-darwin-s-agential-materials-evolutionary-implications-of-mul",
+    "2023-control-flow-in-active-inference-systems-part-ii-tensor-netw",
+    "2023-control-flow-in-active-inference-systems-part-i-classical-an",
+    "2023-control-flow-in-active-inference-systems",
+    "2023-classical-sorting-algorithms-as-a-model-of-morphogenesis-sel",
+    "2023-bioelectric-networks-the-cognitive-glue-enabling-evolutionar",
+    "2023-aging-as-a-morphostasis-defect-a-developmental-bioelectricit",
+    "2023-ai-driven-automated-discovery-tools-reveal-diverse-behaviora",
+    "2022-there-s-plenty-of-room-right-here-biological-systems-as-evol",
+    "2022-the-scaling-of-goals-via-homeostasis-an-evolutionary-simulat",
+    "2022-the-nonlinearity-of-regulation-in-biological-networks",
+    "2022-synthetic-morphology-via-active-and-agential-matter",
+    "2022-motile-living-biobots-self-construct-from-adult-human-somati",
+    "2022-memory-via-temporal-delays-in-weightless-spiking-neural-netw",
+    "2022-exploring-the-behavior-of-bioelectric-circuits-using-evoluti",
+    "2022-competency-of-the-developmental-layer-alters-evolutionary-dy",
+    "2022-closing-the-loop-on-morphogenesis-a-mathematical-model-of-mo",
+    "2022-cellular-signaling-pathways-as-plastic-proto-cognitive-syste",
+    "2022-biological-robots-perspectives-on-an-emerging-interdisciplin",
+    "2021-potassium-channel-driven-bioelectric-signaling-regulates-met",
+    "2021-physarum-polycephalum-establishing-an-assay-for-testing-deci",
+    "2021-formation-and-spontaneous-long-term-repatterning-of-headless",
+    "2021-enhancers-of-host-immune-tolerance-to-bacterial-infection-di",
+    "2020-turing-like-patterns-can-arise-from-purely-bioelectric-mecha",
+    "2020-s-adenosylhomocysteine-hydrolase-regulates-anterior-patterni",
+    "2020-mechanosensation-mediates-long-range-spatial-decision-making",
+    "2020-evolution-leads-to-emergence-an-analysis-of-protein-interact",
+    "2020-epigenetic-immune-modulation-by-histone-deacetylase-activity",
+    "2019-the-computational-boundary-of-a-self-developmental-bioelectr",
+    "2019-modeling-somatic-computation-with-non-neural-bioelectric-net"
+  ],
+  "oa_landing_only": [
+    {
+      "id": "2026-world-models-artificial-general-intelligence-and-the-hard-pr",
+      "url": "https://doi.org/10.1098/rsta.2024.0533"
+    },
+    {
+      "id": "2026-training-ecosystems-a-computational-approach-to-uncovering-l",
+      "url": "https://doi.org/10.48550/arxiv.2605.30109"
+    },
+    {
+      "id": "2026-topological-constraints-on-self-organization-in-locally-inte",
+      "url": "https://doi.org/10.1098/rsta.2025.0011"
+    },
+    {
+      "id": "2026-the-causally-emergent-alignment-hypothesis-causal-emergence",
+      "url": "https://doi.org/10.48550/arxiv.2605.06746"
+    },
+    {
+      "id": "2026-remapping-and-navigation-of-an-embedding-space-via-error-min",
+      "url": "https://doi.org/10.1016/j.plrev.2026.06.009"
+    },
+    {
+      "id": "2026-neural-cellular-automata-applications-to-biology-and-beyond",
+      "url": "https://doi.org/10.1016/j.plrev.2025.11.010"
+    },
+    {
+      "id": "2026-mind-everywhere-a-framework-for-conceptualizing-goal-directe",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13197194/"
+    },
+    {
+      "id": "2026-machines-all-the-way-up-and-cognition-all-the-way-down-updat",
+      "url": "https://doi.org/10.1016/j.semcdb.2026.103668"
+    },
+    {
+      "id": "2026-meb-from-development-to-cognitive-glue-my-journey-in-bioelec",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13332261/"
+    },
+    {
+      "id": "2026-lifetime-imaging-reveals-long-distance-non-neural-bioelectri",
+      "url": "https://doi.org/10.1016/j.ydbio.2026.08.001"
+    },
+    {
+      "id": "2026-language-game-talking-to-non-human-systems",
+      "url": "https://doi.org/10.48550/arxiv.2605.16321"
+    },
+    {
+      "id": "2026-ionic-exposure-history-shapes-inner-nuclear-membrane-voltage",
+      "url": "https://doi.org/10.64898/2026.06.23.733978"
+    },
+    {
+      "id": "2026-intelligence-from-learnable-novelty",
+      "url": "https://doi.org/10.48550/arxiv.2607.18433"
+    },
+    {
+      "id": "2026-homeostatic-feedback-model-of-energy-metabolism-with-adaptiv",
+      "url": "https://doi.org/10.64898/2026.05.07.721661"
+    },
+    {
+      "id": "2026-heuristically-adaptive-diffusion-model-evolutionary-strategy",
+      "url": "https://doi.org/10.1002/advs.202511537"
+    },
+    {
+      "id": "2026-from-cancer-to-ai-alignment-tackling-externalities-through-h",
+      "url": "https://doi.org/10.20944/preprints202604.0056.v1"
+    },
+    {
+      "id": "2026-defining-life-a-conversation",
+      "url": "https://works.swarthmore.edu/fac-biology/741"
+    },
+    {
+      "id": "2026-cognitive-glues-are-shared-models-of-relative-scarcities-the",
+      "url": "https://doi.org/10.1098/rsta.2024.0528"
+    },
+    {
+      "id": "2026-cognitive-offloading-is-a-cognitive-universal",
+      "url": "https://doi.org/10.20944/preprints202607.0507.v1"
+    },
+    {
+      "id": "2026-cognition-spaces-natural-artificial-and-hybrid",
+      "url": "https://doi.org/10.48550/arxiv.2601.12837"
+    },
+    {
+      "id": "2026-causal-architecture-dynamics-prior-to-arrival-of-self-replic",
+      "url": "https://doi.org/10.48550/arxiv.2607.28250"
+    },
+    {
+      "id": "2026-brains-and-where-else-mapping-theories-of-consciousness-to-u",
+      "url": "https://doi.org/10.1098/rsta.2025.0082"
+    },
+    {
+      "id": "2026-brainca-brain-inspired-neural-cellular-automata-and-applicat",
+      "url": "https://doi.org/10.48550/arxiv.2604.01932"
+    },
+    {
+      "id": "2026-bootstrapping-life-inspired-machine-intelligence-the-biologi",
+      "url": "https://doi.org/10.48550/arxiv.2602.08079"
+    },
+    {
+      "id": "2026-bioelectrical-regionalization-of-multicellular-aggregates-by",
+      "url": "https://doi.org/10.1063/5.0345058"
+    },
+    {
+      "id": "2026-bioelectrical-interfaces-beyond-excitable-cells-cancer-aging",
+      "url": "https://doi.org/10.1002/admi.202500999"
+    },
+    {
+      "id": "2026-alignment-is-to-a-virtual-governor-a-theory-of-coordination",
+      "url": "https://doi.org/10.20944/preprints202607.0220.v1"
+    },
+    {
+      "id": "2026-a-little-rank-goes-a-long-way-random-scaffolds-with-lora-ada",
+      "url": "https://doi.org/10.48550/arxiv.2604.08749"
+    },
+    {
+      "id": "2026-diverse-intelligences-the-space-of-possible-minds-commentary",
+      "url": "https://doi.org/10.7551/mitpress/15999.001.0001"
+    },
+    {
+      "id": "2025-what-does-evolution-make-learning-in-living-lineages-and-mac",
+      "url": "https://doi.org/10.1016/j.tig.2025.04.002"
+    },
+    {
+      "id": "2025-uncertainty-minimization-and-pattern-recognition-in-volvox-c",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11858792/"
+    },
+    {
+      "id": "2025-the-neural-crest-as-a-bioelectric-rosetta-stone-translating",
+      "url": "https://doi.org/10.31219/osf.io/ncx84_v1"
+    },
+    {
+      "id": "2025-the-role-of-bioelectrical-patterns-in-regulative-morphogenes",
+      "url": "https://doi.org/10.1109/tmbmc.2025.3575233"
+    },
+    {
+      "id": "2025-the-hijacker-s-guide-to-biological-systems-manipulation-by-s",
+      "url": "https://doi.org/10.31219/osf.io/behxt_v2"
+    },
+    {
+      "id": "2025-technological-approach-to-mind-everywhere-a-framework-for-co",
+      "url": "https://doi.org/10.31219/osf.io/gdvn8_v4"
+    },
+    {
+      "id": "2025-sustained-serotonergic-stimulation-platform-for-peripheral-a",
+      "url": "https://doi.org/10.1016/j.jhsg.2025.100811"
+    },
+    {
+      "id": "2025-selves-as-perspectives-from-biological-life-to-superintellig",
+      "url": "https://doi.org/10.31234/osf.io/s56zu_v1"
+    },
+    {
+      "id": "2025-scale-free-niche-construction-expanding-agent-microenvironme",
+      "url": "https://doi.org/10.31219/osf.io/ytg35_v1"
+    },
+    {
+      "id": "2025-reversals-of-bodies-brains-and-behavior-quantitative-analysi",
+      "url": "https://doi.org/10.1007/978-1-0716-4240-5_20"
+    },
+    {
+      "id": "2025-open-questions-about-time-and-self-reference-in-living-syste",
+      "url": "https://doi.org/10.48550/arxiv.2508.11423"
+    },
+    {
+      "id": "2025-oncomorphic-neural-agent-populations-for-resource-limited-se",
+      "url": "https://doi.org/10.48550/arxiv.2503.12743"
+    },
+    {
+      "id": "2025-new-insights-in-the-gut-brain-axis-the-role-of-bioelectrical",
+      "url": "https://doi.org/10.1016/j.cofs.2025.101353"
+    },
+    {
+      "id": "2025-neuroevolution-of-decentralized-decision-making-in-n-bead-sw",
+      "url": "https://doi.org/10.1038/s42005-025-02101-5"
+    },
+    {
+      "id": "2025-machines-all-the-way-up-and-cognition-all-the-way-down-updat",
+      "url": "https://doi.org/10.31219/osf.io/jwhr7_v2"
+    },
+    {
+      "id": "2025-life-its-origin-and-its-distribution-a-perspective-from-the",
+      "url": "https://doi.org/10.1080/19420889.2025.2466017"
+    },
+    {
+      "id": "2025-have-you-tried-switching-it-off-and-on-again-mechanisms-and",
+      "url": "https://doi.org/10.31234/osf.io/9krz8_v1"
+    },
+    {
+      "id": "2025-harnessing-the-analog-computing-power-of-regulatory-networks",
+      "url": "https://doi.org/10.1016/j.isci.2025.112536"
+    },
+    {
+      "id": "2025-giving-simulated-cells-a-voice-evolving-prompt-to-interventi",
+      "url": "https://doi.org/10.1145/3712255.3736398"
+    },
+    {
+      "id": "2025-giving-simulated-cells-a-voice-evolving-prompt-to-interventi",
+      "url": "https://doi.org/10.48550/arxiv.2505.02766"
+    },
+    {
+      "id": "2025-free-lunch-low-cost-intelligence-through-pattern-guided-expl",
+      "url": "https://doi.org/10.1109/icdl63968.2025.11204411"
+    },
+    {
+      "id": "2025-field-mediated-bioelectric-basis-of-morphogenetic-prepattern",
+      "url": "https://doi.org/10.1016/j.xcrp.2025.102865"
+    },
+    {
+      "id": "2025-extending-iterated-spatialized-prisoner-s-dilemma-to-underst",
+      "url": "https://doi.org/10.1109/tmbmc.2025.3562358"
+    },
+    {
+      "id": "2025-extending-iterated-spatialized-prisoners-dilemma-to-understa",
+      "url": "https://doi.org/10.31219/osf.io/kpzju_v2"
+    },
+    {
+      "id": "2025-evolution-by-natural-induction",
+      "url": "https://doi.org/10.1098/rsfs.2025.0025"
+    },
+    {
+      "id": "2025-electrical-impedance-correlated-to-flow-rate-in-elastomeric",
+      "url": "https://doi.org/10.1021/acsami.5c03769"
+    },
+    {
+      "id": "2025-diverse-intelligence-an-essential-field-for-questions-of-ai",
+      "url": "https://doi.org/10.31234/osf.io/st4vk_v1"
+    },
+    {
+      "id": "2025-chess-as-a-model-of-collective-intelligence-analyzing-a-dist",
+      "url": "https://doi.org/10.13133/2532-5876/18904"
+    },
+    {
+      "id": "2025-bioelectricity-a-buzzing-field-going-places",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12054603/"
+    },
+    {
+      "id": "2025-bioelectricity-is-a-universal-multifaced-signaling-cue-in-li",
+      "url": "https://doi.org/10.1016/j.plrev.2025.01.008"
+    },
+    {
+      "id": "2025-bioelectric-characterization-of-senescing-human-keratinocyte",
+      "url": "https://doi.org/10.1016/j.isci.2025.113275"
+    },
+    {
+      "id": "2025-bidirectional-communication-between-xenobot-cultures-toward",
+      "url": "https://doi.org/10.1162/isal.a.911"
+    },
+    {
+      "id": "2025-basal-xenobot-transcriptomics-reveals-changes-and-novel-cont",
+      "url": "https://doi.org/10.1038/s42003-025-08086-9"
+    },
+    {
+      "id": "2025-atavistic-genetic-expression-dissociation-aged-during-aging",
+      "url": "https://doi.org/10.31219/osf.io/smzc4_v1"
+    },
+    {
+      "id": "2025-atavistic-genetic-expression-dissociation-aged-during-aging",
+      "url": "https://doi.org/10.1111/acel.70305"
+    },
+    {
+      "id": "2025-ai-guided-resetting-of-memories-in-gene-regulatory-network-m",
+      "url": "https://doi.org/10.1101/2025.09.10.675114"
+    },
+    {
+      "id": "2025-a-microfluidic-sucrose-gap-device-for-electrical-measurement",
+      "url": "https://doi.org/10.1063/5.0224298"
+    },
+    {
+      "id": "2024-xenobot-transcriptomics-gene-expression-changes-in-wild-type",
+      "url": "https://doi.org/10.31219/osf.io/n2jre"
+    },
+    {
+      "id": "2024-unraveling-the-enigma-of-organismal-death-insights-implicati",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11460531"
+    },
+    {
+      "id": "2024-uncertainty-minimization-and-pattern-recognition-in-volvox-c",
+      "url": "https://doi.org/10.31219/osf.io/kdjtx"
+    },
+    {
+      "id": "2024-toward-a-nomenclature-consensus-for-diverse-intelligent-syst",
+      "url": "https://doi.org/10.1016/j.xinn.2024.100658"
+    },
+    {
+      "id": "2024-the-multiscale-wisdom-of-the-body-collective-intelligence-as",
+      "url": "https://doi.org/10.31219/osf.io/yq9xe"
+    },
+    {
+      "id": "2024-the-morphological-behavioral-and-transcriptomic-life-cycle-o",
+      "url": "https://doi.org/10.31219/osf.io/whm5u"
+    },
+    {
+      "id": "2024-the-role-of-bioelectrical-patterns-in-regulative-morphogenes",
+      "url": "https://doi.org/10.20944/preprints202408.2041.v1"
+    },
+    {
+      "id": "2024-temporal-depth-in-a-coherent-self-and-in-depersonalization-t",
+      "url": "https://doi.org/10.31219/osf.io/gjxhn"
+    },
+    {
+      "id": "2024-stress-sharing-as-cognitive-glue-for-collective-intelligence",
+      "url": "https://doi.org/10.1016/j.bbrc.2024.150396"
+    },
+    {
+      "id": "2024-snakes-and-ladders-in-the-evolution-of-language",
+      "url": "https://doi.org/10.1016/j.plrev.2024.04.007"
+    },
+    {
+      "id": "2024-robustness-of-the-mind-body-interface-case-studies-of-unconv",
+      "url": "https://doi.org/10.31219/osf.io/fqm7r"
+    },
+    {
+      "id": "2024-revealing-non-trivial-information-structures-in-aneural-biol",
+      "url": "https://doi.org/10.1101/2024.05.09.593467"
+    },
+    {
+      "id": "2024-requirements-for-self-organization",
+      "url": "https://doi.org/10.5281/zenodo.8416764"
+    },
+    {
+      "id": "2024-oscillatory-phenomena-in-electrophysiological-networks-the-c",
+      "url": "https://doi.org/10.1016/j.compbiomed.2024.108964"
+    },
+    {
+      "id": "2024-optical-estimation-of-bioelectric-patterns-in-living-embryos",
+      "url": "https://doi.org/10.1007/978-1-0716-3577-3_6"
+    },
+    {
+      "id": "2024-open-problems-in-synthetic-multicellularity",
+      "url": "https://doi.org/10.20944/preprints202407.1896.v1"
+    },
+    {
+      "id": "2024-life-its-origin-and-its-distribution-a-perspective-from-the",
+      "url": "https://doi.org/10.31234/osf.io/6smhc"
+    },
+    {
+      "id": "2024-identification-of-brain-like-functional-information-architec",
+      "url": "https://doi.org/10.1101/2024.12.05.627037"
+    },
+    {
+      "id": "2024-harnessing-the-analog-computing-power-of-regulatory-networks",
+      "url": "https://doi.org/10.31219/osf.io/tb5ys"
+    },
+    {
+      "id": "2024-evolutionary-implications-of-self-assembling-cybernetic-mate",
+      "url": "https://doi.org/10.3390/e26070532"
+    },
+    {
+      "id": "2024-discussions-of-machine-versus-living-intelligence-need-more",
+      "url": "https://doi.org/10.31219/osf.io/gz3km"
+    },
+    {
+      "id": "2024-cognitive-glues-are-shared-models-of-relative-scarcities-the",
+      "url": "https://doi.org/10.31219/osf.io/3fdya"
+    },
+    {
+      "id": "2024-bioelectric-characterization-of-senescing-human-keratinocyte",
+      "url": "https://doi.org/10.31219/osf.io/py86e_v2"
+    },
+    {
+      "id": "2024-an-ability-to-respond-begins-with-inner-alignment-how-phase",
+      "url": "https://doi.org/10.1101/2024.02.16.580248"
+    },
+    {
+      "id": "2024-ai-a-bridge-toward-diverse-intelligence-and-humanity-s-futur",
+      "url": "https://doi.org/10.31234/osf.io/ez263"
+    },
+    {
+      "id": "2024-a-pro-reparative-bioelectronic-device-for-controlled-deliver",
+      "url": "https://doi.org/10.1111/wrr.13191"
+    },
+    {
+      "id": "2023-searching-in-the-dark-evolving-biobot-swarm-compositions-to",
+      "url": "https://doi.org/10.1162/isal_a_00683"
+    },
+    {
+      "id": "2023-motile-living-biobots-self-construct-from-adult-human-somati",
+      "url": "https://doi.org/10.1002/advs.202303575"
+    },
+    {
+      "id": "2023-machine-learning-for-hypothesis-generation-in-biology-and-me",
+      "url": "https://doi.org/10.31219/osf.io/269e5"
+    },
+    {
+      "id": "2023-bioelectricity-of-non-excitable-cells-and-multicellular-patt",
+      "url": "https://doi.org/10.1016/j.physrep.2022.12.003"
+    },
+    {
+      "id": "2022-morphoceuticals-perspectives-for-discovery-of-drugs-targetin",
+      "url": "https://doi.org/10.31219/osf.io/7hxnp"
+    },
+    {
+      "id": "2021-self-organising-textures-neural-cellular-automata-model-of-p",
+      "url": "https://doi.org/10.23915/distill.00027.003"
+    },
+    {
+      "id": "2021-inducing-vertebrate-limb-regeneration-a-review-of-past-advan",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9121900"
+    },
+    {
+      "id": "2021-adversarial-reprogramming-of-neural-cellular-automata-a-robu",
+      "url": "https://doi.org/10.23915/distill.00027.004"
+    },
+    {
+      "id": "2020-self-classifying-mnist-digits-achieving-distributed-coordina",
+      "url": "https://doi.org/10.23915/distill.00027.002"
+    },
+    {
+      "id": "2013-endogenous-voltage-potentials-and-the-microenvironment-bioel",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4267524"
+    }
+  ],
+  "closed": [],
+  "failed": [
+    {
+      "id": "2026-the-artificial-experimentalist-discovery-and-control-of-self",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2026-multi-scale-longevity-defeating-aging-from-cells-to-embodied",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-ingressing-minds-causal-non-physical-patterns-in-form-natura",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2026-engineered-living-systems-with-self-organizing-neural-networ",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2026-brainca-brain-inspired-neural-cellular-automata-and-applicat",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2026-agnosiophobia-in-a-virtual-agent-behavior-and-dynamical-arch",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-what-lives-a-meta-analysis-of-diverse-opinions-on-the-defini",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-topological-constraints-on-self-organisation-in-locally-inte",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-the-morphological-behavioral-and-transcriptomic-lifecycle-of",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-the-bioelectrics-of-immortality-and-mortality-in-cold-sensit",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-targeting-ion-channel-dysregulation-in-colorectal-cancer-ide",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2025-ingressing-minds-causal-patterns-beyond-genetics-and-environ",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-identification-of-brain-like-complex-information-architectur",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-evolution-by-natural-induction-ii-further-interactions-with",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-delusions-by-design-how-everyday-ais-might-be-fuelling-psych",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2025-cases-of-unconventional-information-flow-across-the-mind-bod",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-brains-and-where-else-mapping-theories-of-consciousness-to-u",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2025-artificial-intelligences-a-bridge-toward-diverse-intelligenc",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2025-aging-as-a-loss-of-goal-directedness-an-evolutionary-simulat",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-bioelectricity-in-development-regeneration-and-cancers-cell",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2024-the-energetics-of-cellular-life-transitions",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-the-multiscale-wisdom-of-the-body-collective-intelligence-as",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-self-improvising-memory-a-perspective-on-memories-as-agentia",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-self-amputating-and-interfusing-machines",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-potential-shortcomings-of-genomic-database-the-case-of-nav1",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2024-natural-induction-spontaneous-adaptive-organisation-without",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-daniel-c-dennett-1942-2024-philosopher-and-science-advocate",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-classical-sorting-algorithms-as-a-model-of-morphogenesis-sel",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2024-aging-as-a-loss-of-goal-directedness-an-evolutionary-simulat",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2023-the-collective-intelligence-of-evolution-and-development",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-the-yin-and-yang-of-breast-cancer-ion-channels-as-determinan",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-nested-selves-self-organization-and-shared-markov-blankets-i",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2023-nested-selves-self-organisation-and-shared-markov-blankets-i",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2023-cellular-competency-during-development-alters-evolutionary-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-the-brain-is-not-mental-coupling-neuronal-and-immune-cellula",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2022-target-agnostic-discovery-of-rett-syndrome-therapeutics-by-c",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2022-screening-biophysical-sensors-and-actuators-that-influence-w",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-regulative-development-as-a-model-for-origin-of-life-and-art",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2022-neurons-as-hierarchies-of-quantum-reference-frames",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2022-information-theory-as-an-experimental-tool-for-integrating-d",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "2022-competency-in-navigating-arbitrary-spaces-intelligence-as-an",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2022-collective-intelligence-of-morphogenesis-as-a-teleonomic-pro",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2022-active-inference-morphogenesis-and-computational-psychiatry",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2021-technological-approach-to-mind-everywhere-tame-an-experiment",
+      "reason": "oa url not pdf"
+    },
+    {
+      "id": "2021-metabolic-limits-on-classical-information-processing-by-biol",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2019-von-willebrand-factor-d-and-egf-domains-is-an-evolutionarily",
+      "reason": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "2019-nervous-system-and-tissue-polarity-dynamically-adapt-to-new",
+      "reason": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "2019-a-comprehensive-conceptual-and-computational-dynamics-framew",
+      "reason": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "2018-cellular-migration-may-exhibit-intrinsic-left-right-asymmetr",
+      "reason": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "2017-effects-of-ivermectin-exposure-on-regeneration-of-d-dorotoce",
+      "reason": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "id": "2016-computational-discovery-and-in-vivo-validation-of-hnf4-as-a",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "2012-measuring-resting-membrane-potential-using-the-fluorescent-v",
+      "reason": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+# SYSTEM SPEC — how everything connects (spec-first, msg 23)
+
+## 1. Asset inventory (2026-09-10)
+
+**Zips:** `/tmp/bneck-full.zip` 178KB (49 files), `/tmp/bneck2-full.zip`
+141KB + `bneck2/outbox/` copy. Engine+data+docs+messages only; clones
+excluded (URL manifest in `docs/RESOURCES.md`).
+
+**Repos:** stockify 454M (frozen fork core) · bneck 2.5G (engine v1 + 19
+clones + Levin corpus + msg archive) · bneck2 5.9G (v2 engine + 6 clones).
+
+**Data:** Levin metadata 675 entries/328KB + 118 PDFs (stockify);
+graph_v2 16 nodes/13 edges; precedents n=9; readings; worlds (6+2);
+deals 15 + commitments 11; diggers 3; FTO seed (IonQ); CEO ledger
+(2 known, 2 gaps); forecaster priors; x-thinkers roster.
+
+**Clones (22):** bneck/third_party = 19 (prophetmap→thrml, incl.
+ai-release-radar, Qwen-MetaZenith); bneck2/third_party = 6 (pmxt,
+graphiti, edgartools, arxiv-trend-radar, jobseek, patents-assistant).
+
+## 2. The seven graphs and their dependencies
+
+```
+corpus (genius attention) ──┐
+labs (revealed preference) ─┤
+collectors (SEC/GitHub/     ├─> belief (claims, 4 clocks, lineage)
+  OpenAlex/PM/USAspending) ─┘         |
+                           forecasters (Skill_i weights expert clock)
+                                      v
+physical dependency graph <── updater (Bayesian fusion, J_t milestones)
+   |  (nodes/temporal edges, Tk/Td, DESTROY/CONSTRAIN)
+   +── quant (conviction, regimes, RedundancyRisk, ShortConvexity)
+   +── criticality (N-1 removal: whose loss breaks most value)
+   +── jevons (SUBSTITUTION vs EXPANSION gate on every KILL)
+   +── patents/FTO (legal betweenness; tollbooth share)
+   +── worlds (P_you vs P_market -> Signal_company, obsolescence screen)
+                                      v
+                          status briefs (board / quant / belief / revealed)
+```
+
+Dependency rules:
+- Nothing downstream of corpus/labs/collectors runs without them; they
+  are the only writers to belief claims.
+- Edge weights change ONLY via updater.fuse (lineage-collapsed) or
+  milestone_event (J_t jumps, prefixed, auditable).
+- Kill-signals fire ONLY from kill_observations verdicts + digger L4+
+  (never from hype, never from single uncorroborated claims).
+- Shorts require: binding status + crowdedness>=0.7 + kill_ratio>0 +
+  Jevons=SUBSTITUTION. All four, no exceptions.
+- CEO ledger never mixes known/unknown; forecaster priors start n=0.
+
+## 3. All weightings in one place
+
+| Quantity | Formula | Lives in |
+|---|---|---|
+| conviction | 0.5·prev + 0.3·(1−crowd) + 0.2·evidence | graph.py |
+| short_score | crowded·(0.3+0.7·kill_ratio), binding only | graph.py |
+| LabSignal | log1p($)·irrev·spec·rel·dur | labs.py |
+| RedundancyRisk | P(agi)·P(deploy)·purity·lev·yrs (normalized) | quant.py |
+| ShortConvexity | redundancy·crowded/(1−crowded+0.2) | quant.py |
+| Criticality(v) | Σ dependents weight/depth (N-1) | graph.py |
+| Signal_company | Σ(P_you−P_market)·Impact·Duration | worlds.py |
+| Skill_i | Laplace-pooled calibration/lead/spec/novelty/indep | forecasters.py |
+| reliability | (hits+1)/(n+2), priors flagged n=0 | calibration.py |
+| fuse | log-odds pool, prior weight 1, roots only | updater.py |
+| jevons | residual=(1−gain)·elasticity; <1 SUBSTITUTION | jevons.py |
+| Tk/Td | Td·2≤Tk LONG-WINDOW; Tk≤2 CLOSING | quant.py |
+| scarcity scan | keyword hit on label+kill/destroy phrases; tickers from node | scarcity.py (PORTED_MAP ex-stockify detector) |
+| AttackIntensity | growth=recent2y/prior2y−1; HIGH needs growth≥1.0 AND total≥200 | killfeed.py |
+| AttackIntensity source | group_by=publication_year counts (NOT the 50-row sample page); ok=False → INCONCLUSIVE; label-derived queries + QUERY_OVERRIDES | collectors/openalex.py, killfeed.py |
+| SEC burst | Form4≥5 OR deal(8-K/13D/13G)≥2 per poll window | killfeed.py |
+| SEC cadence | per-ticker history (cap 30) → vs_base ratios in measured; verdict unchanged | killfeed.py, data/beliefs/sec_baselines.json |
+| PM venues | Polymarket Gamma + Kalshi open-events (keyword match), best book wins | collectors/polymarket.py, collectors/kalshi.py |
+| PM queries | topical overrides (AGI-2027, nuclear, robot…) — labels return noise | killfeed.py PM_QUERY_OVERRIDES |
+| pm reliability | high-liq 0.82 / mid 0.60 / low 0.50 (never p alone) | killfeed.py |
+| whale consensus | N+ wallets same outcome ≥$1k → WHALE_CONSENSUS signal (best-book mkt, 1 call) | collectors/polywhale.py (recipes ex-polytrack/polywhale) |
+| lab receipts | preregister → run → receipt → verdict; n<30 directional-only | bneck2/lab.py, experimentation/ (cg-flow) |
+| forward returns | Yahoo daily closes; close-to-close over N trading days | bneck2/prices.py history() |
+| fundamentals | XBRL companyfacts: rev TTM, growth, R&D intensity | collectors/sec_facts.py |
+| HN heat | stories≥10 & pts≥500 HIGH (saturation cross-check) | collectors/hn.py |
+| Manifold | 3rd pm venue, same tiers (triangulation) | collectors/manifold.py |
+| bioRxiv | preprint keyword counts per window | collectors/biorxiv.py |
+| HF heat | model/like counts per query (implementation) | collectors/hf.py |
+| SemScholar | 429-aware 2nd paper source (retry 0/2/8s, else OpenAlex carries) | collectors/semscholar.py |
+| lab RSS | OpenAI + DeepMind capability posts × node scan → lab_node joins | collectors/labs_rss.py |
+| connections | burst×drift, attack×narrative, whale×node, pm-spread, sev×price | bneck2/connect.py |
+| backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
+| oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
+| senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| obsolescence | −[ln Cit_t − ln Cit_{t−w}] on fixed external base | obsolescence.py (ex-kernel, exact Ma) |
+| implied p | min ‖Xp−y‖²+ridge‖p−prior‖² s.t. [0,1], projected-gradient | implied.py (ex-kernel ridge) |
+| backtest | per-date L/S quantiles, turnover-charged costs, Sharpe/maxDD | backtest.py (ex-kernel protocol) |
+| LabSignal tiebreak | irrev·spec·rel·dur orders $‑unknown ties (no fabrication) | labs.py |
+| scarcity B_i | induced·indisp·repl_norm·(0.5+0.5·perm)/(sub+eps); perm priors §5-6 | migration.py |
+| dB/dt, accel | severity velocity + 2nd diff across severity_history.jsonl | migration.py |
+| cross-world X | Σ_s P_you(s)·need_i(s), need=1−survival | migration.py |
+| P_release | Laplace supply-verdict rate (self-dug only, never arch kills) | migration.py |
+| catalytic | CATALYZES edges; h_B'=h_B·(1+Σ strength·event) | migration.py |
+| derivative | DEPENDS_ON dependents + CASCADE unlocks if relieved | migration.py |
+| alpha_v2 | gap·dCF·X·B·R − C (master eq, thesis §40) | migration.py |
+| transfer weight | benchmark 0.30 … verified_cashflow 1.00 (mineability-aware) | migration.py |
+| three clocks | t_capability/t_deployment/t_cashflow on claims (null till measured) | seed_claims.py |
+| inconsistency | gap·p_market(w) where market prices survival + killing world | consistency.py |
+| atoms convexity | mean(B)·(1+0.25·(breadth−1))/log10(rev)·(1−0.5·crowd) | atoms.py |
+| deliverable MW | announced·P(site)·P(ix)·P(xfmr)·P(gen)·P(permit), missing→0.5 flagged | migration.py |
+| surprise | logit⁻¹(logit(prior)+credibility·LLR_residual) | migration.py |
+| cliffs | proximity=current/threshold; robot $4/h, inference $0.03, assay $1 | migration.py |
+| duration mismatch | H_val−H_tech ≥2 → SHORT_CANDIDATE; missing → INSUFFICIENT | migration.py |
+
+## 4. Thinker roles → graph functions (msg 23)
+
+- Hypothesis generators (Levin, Bach, Walker, Mostaque): write world priors + DESTROY paths. Low initial clock weight, high novelty.
+- Experimental bets (Verdon, Normal, Cronin, Kagan, FinalSpark): advance digger ladder; their milestones are J_t candidates.
+- Change detectors (Raschka, D. Patel, Lambert): implementation evidence; highest evidence weight per claim.
+- Builders (Fei-Fei, Hassabis, Rodriques): embodiment/science-loop nodes; CONSTRAIN paths.
+- Allocators (Aschenbrenner, labs via deals): adversarial benchmark + revealed preference.
+- Instruments get low ontology weight, HIGH evidence weight. Never average roles together.
+
+## 5. Master loop (executable)
+
+New capability → old constraint disappears (updater stamps valid_to,
+opens successor edge) → activity explodes (prices/volume feed) →
+next scarce input exposed (criticality re-ranks) → capital floods
+(labs deals + commitments) → new technology attacks it (digger ladder
++ OpenAlex velocity) → scarcity migrates again (regime flips,
+dissolution board re-ranks). Loop output twice daily; kill-feed continuous.
+
+## 6. Build queue (in order)
+
+1. ~~Kill-observations writer wired to collectors~~ DONE 2026-09-10:
+   `bneck2/killfeed.py` + `scripts/killfeed.py` (SEC burst, OpenAlex attack,
+   pm clock → verdict rows; live collection best-effort, evaluation pure).
+2. ~~OpenAlex velocity per node~~ DONE 2026-09-10: AttackIntensity numbers.
+3. ~~pm clock~~ DONE 2026-09-10 (Gamma venue data; pmxt adapter still queued).
+4. edgartools-backed filing ingestion for backlog/language diffs.
+5. graphiti-style valid_from/valid_to enforcement on regime flip.
+6. ~~Backtest harness~~ DONE 2026-09-10 stdlib port (`bneck2/backtest.py`);
+   90-day live-brief accumulation still needed before it means anything.
+7. Rivera-style drift detection on regime time series (river, when pip exists).
+8. Kernel remainder: TechToken / convergence / patentomics / MIRAI /
+   supplychain (need embeddings + corpora; papers only for now).
+9. Queued from goated.md (need feeds not code): usage telemetry
+   (OpenRouter-style task×cashflow map), actor/reaction graph, reverse-DCF
+   pair mining, ResearcherAlpha (needs semantic novelty), geo layer
+   (company×site×permission), market-ensemble P_market.

@@ -1,0 +1,1 @@
+https://drmichaellevin.org/ is it possible for you to download ans scrape all his research so we have it all locally please do this and organise.. whats the easiest way to do this? like should we have it as json or when u downlaod rn what format do the papers come in

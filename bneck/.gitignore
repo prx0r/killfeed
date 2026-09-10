@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+.DS_Store
+.env
+.venv/
+data/prices.jsonl
+data/prices_latest.json
+third_party/

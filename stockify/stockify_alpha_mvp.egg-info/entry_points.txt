@@ -1,0 +1,3 @@
+[console_scripts]
+stockify = stockify.cli:main
+stockify-mcp = stockify.mcp_server:main

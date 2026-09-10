@@ -1,0 +1,33 @@
+{
+  "relations": [
+    "REQUIRES",
+    "ENABLES",
+    "SUBSTITUTES",
+    "RELIEVED_BY",
+    "KILLED_BY",
+    "MANUFACTURED_BY",
+    "SUPPLIED_BY",
+    "PATENT_COVERED_BY",
+    "CONTROLLED_BY",
+    "LICENSED_TO",
+    "REGULATED_BY",
+    "REQUIRES_APPROVAL_FROM",
+    "REQUIRES_SITE",
+    "REQUIRES_TIME"
+  ],
+  "constraint_classes": [
+    "knowledge",
+    "human_skill",
+    "compute_architecture",
+    "physical_resource",
+    "physical_process",
+    "elapsed_time",
+    "IP_rights",
+    "regulatory_permission",
+    "certification",
+    "site",
+    "grid_interconnection",
+    "export_control",
+    "trust"
+  ]
+}

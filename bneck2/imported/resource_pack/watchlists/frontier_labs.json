@@ -1,0 +1,91 @@
+[
+  {
+    "name": "OpenAI",
+    "news": "https://openai.com/news/",
+    "research": "https://openai.com/research/",
+    "github": "https://github.com/openai",
+    "careers": "https://openai.com/careers/",
+    "signals": [
+      "acquisitions",
+      "custom silicon",
+      "capacity reservations",
+      "power/data-center commitments",
+      "supplier agreements",
+      "security/tooling acquisitions"
+    ]
+  },
+  {
+    "name": "Anthropic",
+    "news": "https://www.anthropic.com/news",
+    "research": "https://www.anthropic.com/research",
+    "github": "https://github.com/anthropics",
+    "careers": "https://www.anthropic.com/careers",
+    "signals": [
+      "TPU/Trainium/GPU mix",
+      "memory supplier alignment",
+      "capacity agreements",
+      "acquisitions",
+      "hiring clusters"
+    ]
+  },
+  {
+    "name": "Google DeepMind",
+    "news": "https://deepmind.google/discover/blog/",
+    "research": "https://deepmind.google/research/",
+    "github": "https://github.com/google-deepmind",
+    "careers": "https://deepmind.google/careers/",
+    "signals": [
+      "TPU/model co-design",
+      "power/nuclear/data centers",
+      "robotics/science labs",
+      "research breakthroughs"
+    ]
+  },
+  {
+    "name": "Meta AI",
+    "news": "https://ai.meta.com/blog/",
+    "research": "https://ai.meta.com/research/",
+    "github": "https://github.com/facebookresearch",
+    "careers": "https://www.metacareers.com/",
+    "signals": [
+      "MTIA/custom silicon",
+      "data centers/power",
+      "data/evaluation",
+      "open model architecture",
+      "robotics/wearables"
+    ]
+  },
+  {
+    "name": "xAI",
+    "news": "https://x.ai/news",
+    "github": "https://github.com/xai-org",
+    "careers": "https://x.ai/careers",
+    "signals": [
+      "Colossus expansion",
+      "network/power",
+      "NVIDIA/Cisco",
+      "SpaceX integration",
+      "model releases"
+    ]
+  },
+  {
+    "name": "DeepSeek",
+    "github": "https://github.com/deepseek-ai",
+    "signals": [
+      "kernel/repo branches",
+      "model architecture",
+      "memory/communication kernels",
+      "open weights"
+    ]
+  },
+  {
+    "name": "Mistral AI",
+    "news": "https://mistral.ai/news",
+    "github": "https://github.com/mistralai",
+    "signals": [
+      "model efficiency",
+      "deployment stack",
+      "hardware partnerships"
+    ]
+  }
+]
