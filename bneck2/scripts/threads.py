@@ -14,7 +14,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-EXPECTED = {"unknowns_open": 4, "hyps_open": 4, "preds_open": 1}
+# hyps_open grew 4 -> 7 when lag searches were regraded EXPLORATORY
+# (counts as open by design). Update here if the ledger's open set changes.
+EXPECTED = {"unknowns_open": 4, "hyps_open": 7, "preds_open": 1}
 
 
 def counts() -> dict:

@@ -14,6 +14,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FAILED = []
+# NOTE: standalone runs append one real E006 receipt + run file (it IS a
+# real experiment run). The in-suite wrapper restores the logs; standalone
+# runs intentionally leave the trail.
 
 
 def check(name: str, cond: bool, detail: str = ""):
