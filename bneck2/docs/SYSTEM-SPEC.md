@@ -89,6 +89,9 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| sweep | full chain per ticker: SEC/insiders/holders/short/PM/whales/HN/EFTS/facts | scripts/sweep.py, docs/SWEEP-*.md |
+| nasdaq holders | 6k holders/ticker + accumulators + insider counts | collectors/nasdaq.py |
+| insider refs | canonical where-to-get-it per family | docs/INSIDER-REFERENCES.md |
 | universe | 30 tickers, Yahoo-verified (15 graph + 15 atoms) | predict.UNIVERSE |
 | CLOB depth | ±0.1 reliability on $1M depth / 0.2 spread | killfeed pm_reading |
 | kalshi momentum | 7d carry on top-3 liquid (INCONCLUSIVE n=2) | E034 |

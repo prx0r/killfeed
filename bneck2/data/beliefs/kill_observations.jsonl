@@ -682,3 +682,6 @@
 {"ts": "2026-09-10T06:51:59Z", "node_id": "export_controls", "signal": "sec-burst(Form4>=5,deal>=2)", "measured": "form4=0 deal=0 n=0", "threshold": "burst on either leg", "verdict": "NOT TRIGGERED", "source": "sec-edgar"}
 {"ts": "2026-09-10T06:51:59Z", "node_id": "export_controls", "signal": "openalex-attack(growth>=1.0,total>=200)", "measured": "growth=0.286 total=1286", "threshold": "HIGH needs growth AND mass", "verdict": "NOT TRIGGERED", "source": "openalex"}
 {"ts": "2026-09-10T06:51:59Z", "node_id": "export_controls", "signal": "pm-clock", "measured": "p=0.06 mid-liquidity polymarket rel=0.6: Will the DEFIANCE Act become law this year?", "threshold": "best-book read, never p alone", "verdict": "NOT TRIGGERED", "source": "polymarket"}
+{"ts": "2026-09-10T09:55:43Z", "node_id": "GOOGL", "signal": "sec-burst", "measured": "form4=19 deal=1 n=20", "threshold": "Form4>=5 or deal>=2", "verdict": "TRIGGERED", "source": "sec-edgar"}
+{"ts": "2026-09-10T09:55:43Z", "node_id": "GOOGL", "signal": "insider-tape", "measured": "buys=$0 sells=$-280,626,407", "threshold": "reads direction", "verdict": "NOT TRIGGERED", "source": "openinsider"}
+{"ts": "2026-09-10T09:55:43Z", "node_id": "GOOGL", "signal": "institutional-accumulation", "measured": "Vanguard Group Inc +2.4%", "threshold": ">=+2% single holder", "verdict": "TRIGGERED", "source": "nasdaq"}

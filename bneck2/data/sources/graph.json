@@ -27,6 +27,17 @@
    "note": "GET search-index; POST shape differs"
   },
   {
+   "id": "nasdaq",
+   "category": "holders",
+   "access": "keyless",
+   "status": "LIVE",
+   "collector": "collectors/nasdaq.py",
+   "consumers": [
+    "6k holders/ticker + accumulators + insider counts"
+   ],
+   "note": "13F-bulk workaround"
+  },
+  {
    "id": "sec_facts",
    "category": "fundamentals",
    "access": "keyless",
@@ -454,6 +465,10 @@
   {
    "from": "x",
    "to": "planned"
+  },
+  {
+   "from": "nasdaq",
+   "to": "connect"
   }
  ]
 }

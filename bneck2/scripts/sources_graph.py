@@ -22,6 +22,8 @@ NODES = [
      ["killfeed:sec-burst", "E001", "E010", "panel:f_burst"], ""),
     ("efts", "filings", "keyless", "LIVE", "collectors/efts.py",
      ["full-text filing search"], "GET search-index; POST shape differs"),
+    ("nasdaq", "holders", "keyless", "LIVE", "collectors/nasdaq.py",
+     ["6k holders/ticker + accumulators + insider counts"], "13F-bulk workaround"),
     ("sec_facts", "fundamentals", "keyless", "LIVE", "collectors/sec_facts.py",
      ["E012", "duration-mismatch"], "tag-rename aware"),
     ("openinsider", "insider", "keyless-http", "LIVE", "collectors/openinsider.py",
@@ -88,6 +90,7 @@ EDGES = [
     ("treasury", "experiments"), ("worldbank", "experiments"),
     ("house", "connect"), ("usaspending", "connect"), ("grants", "connect"),
     ("prices", "experiments"), ("prices", "backtest"), ("x", "planned"),
+    ("nasdaq", "connect"),
 ]
 
 

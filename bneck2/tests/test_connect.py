@@ -107,6 +107,25 @@ class TestNewVenues(unittest.TestCase):
         self.assertIn("CNMS", finra.VENUES)
 
 
+class TestSweep(unittest.TestCase):
+    def test_cik_map(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "sweep", str(ROOT / "scripts" / "sweep.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        for t in ("NVDA", "GOOGL", "AMD", "AVGO"):
+            self.assertIn(t, mod.CIKS)
+
+    def test_nasdaq_accumulators(self):
+        from collectors import nasdaq as NQ
+        rows = [{"owner": "A", "change_pct": 3.0},
+                {"owner": "B", "change_pct": 0.5}]
+        self.assertEqual(len(NQ.accumulators(rows)), 1)
+
+
 class TestSourceGraph(unittest.TestCase):
     def test_graph_valid(self):
         import sys
