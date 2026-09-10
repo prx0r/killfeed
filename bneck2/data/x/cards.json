@@ -1,0 +1,22 @@
+{
+ "InvestNorthwise": {
+  "n_calls": 6,
+  "n_outcomes": 18
+ },
+ "SemiAnalysis_": {
+  "n_calls": 3,
+  "n_outcomes": 12
+ },
+ "dnystedt": {
+  "n_calls": 36,
+  "n_outcomes": 192
+ },
+ "mingchikuo": {
+  "n_calls": 0,
+  "n_outcomes": 0
+ },
+ "trendforce": {
+  "n_calls": 3,
+  "n_outcomes": 6
+ }
+}

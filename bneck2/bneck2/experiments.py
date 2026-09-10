@@ -1007,6 +1007,34 @@ def e032_nvda_basket() -> tuple[dict, str, int]:
     return out, verdict, len(vals)
 
 
+def e033_x_calls() -> tuple[dict, str, int]:
+    """H-X-1: X directional calls beat always-long baseline."""
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-X-1", "X calls beat always-long",
+        "mean 5d abnormal (vs SPY-matched dates) > 0 with n>=50",
+        "mean <= 0 (calls add nothing)",
+        "data/x/x_outcomes.json (5 handles, 90d histories)")
+    import json as _j
+    fp = ROOT / "data" / "x" / "x_outcomes.json"
+    try:
+        rows = _j.loads(fp.read_text())
+    except (OSError, ValueError):
+        return {"note": "no outcomes; run scripts/x_backtest.py"}, "INCONCLUSIVE", 0
+    d5 = [r for r in rows if r["horizon"] == "d5"]
+    n = len(d5)
+    m = sum(r["ret"] for r in d5) / n if n else 0.0
+    by_h = {}
+    for r in d5:
+        by_h.setdefault(r["handle"], []).append(r["ret"])
+    by_h = {h: (len(v), round(sum(v) / len(v), 4)) for h, v in by_h.items()}
+    out = {"n": n, "mean_5d": round(m, 4), "by_handle": by_h,
+           "note": f"X calls 5d mean {m:+.2%} (n={n})"}
+    verdict = ("CONFIRMED" if n >= 50 and m > 0.005 else "REFUTED"
+               if n >= 50 else "INCONCLUSIVE")
+    return out, verdict, n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1040,6 +1068,7 @@ REGISTRY = {
     "E030": e030_deep_walkforward,
     "E031": e031_momentum_only,
     "E032": e032_nvda_basket,
+    "E033": e033_x_calls,
 }
 
 

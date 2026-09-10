@@ -236,7 +236,7 @@ class TestFocusedNames(unittest.TestCase):
     def test_registry_has_focus(self):
         from bneck2 import experiments as X
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
-                  "E024", "E025", "E026", "E027", "E028", "E032"):
+                  "E024", "E025", "E026", "E027", "E028", "E032", "E033"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
@@ -245,6 +245,17 @@ class TestFocusedNames(unittest.TestCase):
         self.assertIn("closes", h)
         if h["closes"]:
             self.assertIn("date", h["closes"][0])
+
+    def test_xextract_classify(self):
+        from bneck2 import xextract as XE
+        c = XE.classify("Long $NVDA into earnings, target $250")
+        self.assertEqual(c["direction"], "LONG")
+        self.assertIn("NVDA", c["tickers"])
+        c2 = XE.classify("nice weather today, markets closed")
+        self.assertEqual(c2["kind"], "COMMENTARY")
+        d = XE.density([{"text": "long NVDA", "isReply": False},
+                        {"text": "hello", "isReply": True}])
+        self.assertEqual(d["n"], 1)
 
     def test_beta_math(self):
         br = [0.01, -0.02, 0.03]

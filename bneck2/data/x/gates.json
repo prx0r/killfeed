@@ -1,0 +1,42 @@
+{
+ "SemiAnalysis_": {
+  "density": 0.2,
+  "n": 20
+ },
+ "dylan522p": {
+  "density": 0.05,
+  "n": 20
+ },
+ "dnystedt": {
+  "density": 0.35,
+  "n": 20
+ },
+ "QuiverQuant": {
+  "density": 0.2,
+  "n": 20
+ },
+ "trendforce": {
+  "density": 0.25,
+  "n": 20
+ },
+ "InvestNorthwise": {
+  "density": 0.35,
+  "n": 20
+ },
+ "mingchikuo": {
+  "density": 0.667,
+  "n": 3
+ },
+ "StockMKTNewz": {
+  "density": 0.05,
+  "n": 20
+ },
+ "capitol2iq": {
+  "density": 0.222,
+  "n": 9
+ },
+ "nvidia": {
+  "density": 0.05,
+  "n": 20
+ }
+}

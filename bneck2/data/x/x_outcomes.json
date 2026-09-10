@@ -1,0 +1,1598 @@
+[
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": 0.0037,
+  "spy_adj": 0.0037
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": 0.0086,
+  "spy_adj": -0.0035
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": 0.0352,
+  "spy_adj": 0.0231
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d1",
+  "ret": 0.0003,
+  "spy_adj": 0.0003
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d5",
+  "ret": -0.006,
+  "spy_adj": -0.0181
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d20",
+  "ret": 0.0205,
+  "spy_adj": 0.0084
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": -0.0704,
+  "spy_adj": -0.0704
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": -0.0853,
+  "spy_adj": -0.0844
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.1137,
+  "spy_adj": -0.1127
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": -0.0039,
+  "spy_adj": -0.0039
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": 0.0079,
+  "spy_adj": -0.0123
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": -0.0303,
+  "spy_adj": -0.0506
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": -0.0279,
+  "spy_adj": -0.0279
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": -0.0879,
+  "spy_adj": -0.0712
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": -0.1047,
+  "spy_adj": -0.088
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d1",
+  "ret": -0.0182,
+  "spy_adj": -0.0182
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d5",
+  "ret": -0.0487,
+  "spy_adj": -0.032
+ },
+ {
+  "handle": "InvestNorthwise",
+  "ticker": "MSFT",
+  "horizon": "d20",
+  "ret": 0.2388,
+  "spy_adj": 0.2555
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0329,
+  "spy_adj": 0.0329
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.1006,
+  "spy_adj": 0.0959
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": 0.1301,
+  "spy_adj": 0.1254
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "ARM",
+  "horizon": "d1",
+  "ret": 0.0814,
+  "spy_adj": 0.0814
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "ARM",
+  "horizon": "d5",
+  "ret": 0.1466,
+  "spy_adj": 0.1419
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "ARM",
+  "horizon": "d20",
+  "ret": 0.1142,
+  "spy_adj": 0.1094
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0145,
+  "spy_adj": 0.0145
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": -0.165,
+  "spy_adj": -0.155
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.1103,
+  "spy_adj": -0.1004
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": -0.0258,
+  "spy_adj": -0.0258
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": -0.0783,
+  "spy_adj": -0.0684
+ },
+ {
+  "handle": "SemiAnalysis_",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": -0.1555,
+  "spy_adj": -0.1456
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0182,
+  "spy_adj": 0.0182
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0212,
+  "spy_adj": 0.0253
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": 0.0986,
+  "spy_adj": 0.1027
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": -0.0183,
+  "spy_adj": -0.0183
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": -0.0471,
+  "spy_adj": -0.043
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": -0.073,
+  "spy_adj": -0.0689
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.0001,
+  "spy_adj": -0.0001
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": -0.0867,
+  "spy_adj": -0.0827
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": -0.1243,
+  "spy_adj": -0.1202
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0101,
+  "spy_adj": 0.0101
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0776,
+  "spy_adj": 0.0781
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": 0.0771,
+  "spy_adj": 0.0775
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.015,
+  "spy_adj": -0.015
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": -0.071,
+  "spy_adj": -0.0705
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": -0.1275,
+  "spy_adj": -0.127
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": -0.0002,
+  "spy_adj": -0.0002
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0343,
+  "spy_adj": 0.0348
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0376,
+  "spy_adj": 0.0381
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0101,
+  "spy_adj": 0.0101
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0776,
+  "spy_adj": 0.0781
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": 0.0771,
+  "spy_adj": 0.0775
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": -0.0209,
+  "spy_adj": -0.0209
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": -0.0603,
+  "spy_adj": -0.0599
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": -0.0759,
+  "spy_adj": -0.0755
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.015,
+  "spy_adj": -0.015
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": -0.071,
+  "spy_adj": -0.0705
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": -0.1275,
+  "spy_adj": -0.127
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": 0.0227,
+  "spy_adj": 0.0227
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0288,
+  "spy_adj": 0.0167
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0432,
+  "spy_adj": 0.0311
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0096,
+  "spy_adj": -0.0096
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0318,
+  "spy_adj": -0.044
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0427,
+  "spy_adj": -0.0548
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": 0.0227,
+  "spy_adj": 0.0227
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0288,
+  "spy_adj": 0.0167
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0432,
+  "spy_adj": 0.0311
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d1",
+  "ret": 0.0221,
+  "spy_adj": 0.0221
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d5",
+  "ret": 0.0134,
+  "spy_adj": 0.0013
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d20",
+  "ret": -0.1736,
+  "spy_adj": -0.1857
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d1",
+  "ret": 0.0253,
+  "spy_adj": 0.0253
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d5",
+  "ret": 0.0836,
+  "spy_adj": 0.0715
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d20",
+  "ret": -0.105,
+  "spy_adj": -0.1171
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d1",
+  "ret": 0.0182,
+  "spy_adj": 0.0182
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d5",
+  "ret": 0.1022,
+  "spy_adj": 0.09
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d20",
+  "ret": -0.0429,
+  "spy_adj": -0.055
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.015,
+  "spy_adj": 0.015
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0018,
+  "spy_adj": -0.0017
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.0518,
+  "spy_adj": -0.0553
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d1",
+  "ret": -0.0131,
+  "spy_adj": -0.0131
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d5",
+  "ret": 0.0203,
+  "spy_adj": 0.0168
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d20",
+  "ret": 0.0704,
+  "spy_adj": 0.0669
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": -0.0014,
+  "spy_adj": -0.0014
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": -0.0197,
+  "spy_adj": -0.0232
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": -0.0648,
+  "spy_adj": -0.0683
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0129,
+  "spy_adj": -0.0129
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0521,
+  "spy_adj": -0.0556
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0698,
+  "spy_adj": -0.0733
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": 0.0019,
+  "spy_adj": 0.0019
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": -0.0168,
+  "spy_adj": -0.0204
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": 0.0069,
+  "spy_adj": 0.0034
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.015,
+  "spy_adj": 0.015
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0018,
+  "spy_adj": -0.0017
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.0518,
+  "spy_adj": -0.0553
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": -0.001,
+  "spy_adj": -0.001
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0222,
+  "spy_adj": 0.0187
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0237,
+  "spy_adj": 0.0202
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d1",
+  "ret": 0.0101,
+  "spy_adj": 0.0101
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d5",
+  "ret": 0.0366,
+  "spy_adj": 0.0331
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d20",
+  "ret": 0.0036,
+  "spy_adj": 0.0001
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d1",
+  "ret": -0.0131,
+  "spy_adj": -0.0131
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d5",
+  "ret": 0.0203,
+  "spy_adj": 0.0168
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d20",
+  "ret": 0.0704,
+  "spy_adj": 0.0669
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": -0.0014,
+  "spy_adj": -0.0014
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": -0.0197,
+  "spy_adj": -0.0232
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": -0.0648,
+  "spy_adj": -0.0683
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0129,
+  "spy_adj": -0.0129
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0521,
+  "spy_adj": -0.0556
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0698,
+  "spy_adj": -0.0733
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": 0.0019,
+  "spy_adj": 0.0019
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": -0.0168,
+  "spy_adj": -0.0204
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": 0.0069,
+  "spy_adj": 0.0034
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0111,
+  "spy_adj": -0.0111
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": 0.0428,
+  "spy_adj": 0.0225
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": 0.0915,
+  "spy_adj": 0.0712
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d1",
+  "ret": -0.1084,
+  "spy_adj": -0.1084
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d5",
+  "ret": -0.0716,
+  "spy_adj": -0.0919
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d20",
+  "ret": 0.0164,
+  "spy_adj": -0.0039
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d1",
+  "ret": 0.0762,
+  "spy_adj": 0.0762
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d5",
+  "ret": 0.038,
+  "spy_adj": 0.0177
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d20",
+  "ret": 0.1558,
+  "spy_adj": 0.1355
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": 0.0458,
+  "spy_adj": 0.0458
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": 0.0107,
+  "spy_adj": -0.0244
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": -0.019,
+  "spy_adj": -0.0541
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": 0.0488,
+  "spy_adj": 0.0488
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0051,
+  "spy_adj": -0.0403
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0268,
+  "spy_adj": -0.0619
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": 0.0602,
+  "spy_adj": 0.0602
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": 0.0636,
+  "spy_adj": 0.0285
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": 0.0383,
+  "spy_adj": 0.0032
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d1",
+  "ret": 0.113,
+  "spy_adj": 0.113
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d5",
+  "ret": 0.2342,
+  "spy_adj": 0.179
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "INTC",
+  "horizon": "d20",
+  "ret": 0.0777,
+  "spy_adj": 0.0224
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d1",
+  "ret": 0.1836,
+  "spy_adj": 0.1836
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d5",
+  "ret": 0.2086,
+  "spy_adj": 0.1534
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "MU",
+  "horizon": "d20",
+  "ret": 0.2698,
+  "spy_adj": 0.2145
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": 0.0265,
+  "spy_adj": 0.0265
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.1537,
+  "spy_adj": 0.0984
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.1034,
+  "spy_adj": 0.0481
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d1",
+  "ret": -0.008,
+  "spy_adj": -0.008
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d5",
+  "ret": -0.0761,
+  "spy_adj": -0.0662
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d20",
+  "ret": -0.0264,
+  "spy_adj": -0.0165
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": -0.0098,
+  "spy_adj": -0.0098
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": -0.0744,
+  "spy_adj": -0.0704
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": 0.0453,
+  "spy_adj": 0.0493
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0138,
+  "spy_adj": -0.0138
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0722,
+  "spy_adj": -0.0682
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0227,
+  "spy_adj": -0.0187
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": -0.0032,
+  "spy_adj": -0.0032
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": -0.0805,
+  "spy_adj": -0.0764
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": -0.119,
+  "spy_adj": -0.115
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": -0.0103,
+  "spy_adj": -0.0103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0774,
+  "spy_adj": 0.0941
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.0358,
+  "spy_adj": -0.0191
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.0097,
+  "spy_adj": -0.0097
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": 0.0481,
+  "spy_adj": 0.0648
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": 0.1158,
+  "spy_adj": 0.1325
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": -0.0221,
+  "spy_adj": -0.0221
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0066,
+  "spy_adj": 0.0233
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0863,
+  "spy_adj": 0.103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": -0.0103,
+  "spy_adj": -0.0103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0774,
+  "spy_adj": 0.0941
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.0358,
+  "spy_adj": -0.0191
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.0097,
+  "spy_adj": -0.0097
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": 0.0481,
+  "spy_adj": 0.0648
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": 0.1158,
+  "spy_adj": 0.1325
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": -0.0221,
+  "spy_adj": -0.0221
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0066,
+  "spy_adj": 0.0233
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0863,
+  "spy_adj": 0.103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d1",
+  "ret": -0.0557,
+  "spy_adj": -0.0557
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d5",
+  "ret": 0.0033,
+  "spy_adj": 0.02
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d20",
+  "ret": -0.047,
+  "spy_adj": -0.0303
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d1",
+  "ret": -0.0302,
+  "spy_adj": -0.0302
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d5",
+  "ret": -0.0029,
+  "spy_adj": 0.0138
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d20",
+  "ret": -0.0456,
+  "spy_adj": -0.0289
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d1",
+  "ret": -0.0239,
+  "spy_adj": -0.0239
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d5",
+  "ret": -0.0037,
+  "spy_adj": 0.013
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d20",
+  "ret": 0.05,
+  "spy_adj": 0.0667
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": -0.0103,
+  "spy_adj": -0.0103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": 0.0774,
+  "spy_adj": 0.0941
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.0358,
+  "spy_adj": -0.0191
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": -0.0097,
+  "spy_adj": -0.0097
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": 0.0481,
+  "spy_adj": 0.0648
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": 0.1158,
+  "spy_adj": 0.1325
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": -0.0221,
+  "spy_adj": -0.0221
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": 0.0066,
+  "spy_adj": 0.0233
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0863,
+  "spy_adj": 0.103
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d1",
+  "ret": -0.0557,
+  "spy_adj": -0.0557
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d5",
+  "ret": 0.0033,
+  "spy_adj": 0.02
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d20",
+  "ret": -0.047,
+  "spy_adj": -0.0303
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d1",
+  "ret": -0.0302,
+  "spy_adj": -0.0302
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d5",
+  "ret": -0.0029,
+  "spy_adj": 0.0138
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "KLAC",
+  "horizon": "d20",
+  "ret": -0.0456,
+  "spy_adj": -0.0289
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d1",
+  "ret": -0.0239,
+  "spy_adj": -0.0239
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d5",
+  "ret": -0.0037,
+  "spy_adj": 0.013
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "LRCX",
+  "horizon": "d20",
+  "ret": 0.05,
+  "spy_adj": 0.0667
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d1",
+  "ret": -0.0444,
+  "spy_adj": -0.0444
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d5",
+  "ret": -0.0777,
+  "spy_adj": -0.0679
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "GOOGL",
+  "horizon": "d20",
+  "ret": -0.0738,
+  "spy_adj": -0.064
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": 0.0132,
+  "spy_adj": 0.0132
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": -0.0153,
+  "spy_adj": -0.0059
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": 0.0999,
+  "spy_adj": 0.1093
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": 0.0406,
+  "spy_adj": 0.0406
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": -0.0012,
+  "spy_adj": 0.0082
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0689,
+  "spy_adj": 0.0783
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d1",
+  "ret": -0.0028,
+  "spy_adj": -0.0028
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d5",
+  "ret": -0.0457,
+  "spy_adj": -0.0363
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "TSM",
+  "horizon": "d20",
+  "ret": -0.0074,
+  "spy_adj": 0.0021
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": 0.0257,
+  "spy_adj": 0.0257
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": -0.0577,
+  "spy_adj": -0.0482
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.1213,
+  "spy_adj": -0.1119
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d1",
+  "ret": 0.0406,
+  "spy_adj": 0.0406
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d5",
+  "ret": -0.0012,
+  "spy_adj": 0.0082
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "NVDA",
+  "horizon": "d20",
+  "ret": 0.0689,
+  "spy_adj": 0.0783
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d1",
+  "ret": 0.0353,
+  "spy_adj": 0.0353
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d5",
+  "ret": -0.0864,
+  "spy_adj": -0.0769
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMAT",
+  "horizon": "d20",
+  "ret": -0.0926,
+  "spy_adj": -0.0831
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d1",
+  "ret": 0.0007,
+  "spy_adj": 0.0007
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d5",
+  "ret": 0.0108,
+  "spy_adj": 0.0203
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AMZN",
+  "horizon": "d20",
+  "ret": 0.1245,
+  "spy_adj": 0.1339
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d1",
+  "ret": 0.0132,
+  "spy_adj": 0.0132
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d5",
+  "ret": -0.0153,
+  "spy_adj": -0.0059
+ },
+ {
+  "handle": "dnystedt",
+  "ticker": "AVGO",
+  "horizon": "d20",
+  "ret": 0.0999,
+  "spy_adj": 0.1093
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "META",
+  "horizon": "d1",
+  "ret": 0.0602,
+  "spy_adj": 0.0602
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "META",
+  "horizon": "d5",
+  "ret": 0.0636,
+  "spy_adj": 0.0285
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "META",
+  "horizon": "d20",
+  "ret": 0.0383,
+  "spy_adj": 0.0032
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "AMD",
+  "horizon": "d1",
+  "ret": -0.0329,
+  "spy_adj": -0.0329
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "AMD",
+  "horizon": "d5",
+  "ret": -0.1006,
+  "spy_adj": -0.1054
+ },
+ {
+  "handle": "trendforce",
+  "ticker": "AMD",
+  "horizon": "d20",
+  "ret": -0.1301,
+  "spy_adj": -0.1349
+ }
+]

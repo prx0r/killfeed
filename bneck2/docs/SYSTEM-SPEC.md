@@ -89,6 +89,8 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| X scout | gateway+ledger, recon gate, history, extractor, outcomes | xscout/xextract/x_backtest, E033 |
+| X verdict | 76 calls 5d +0.33% — below bar, REFUTED (dnystedt carries) | E033 |
 | deep panel | weekly 2y x6, point-in-time; FINRA tapes cached forever | build_deep_panel.py |
 | E029-E031 | deep screen (mom survives) → momentum-only +1.07 vs bh -1.60 | experiments |
 | divergence | insider buys into weakness beat strength-buys (E025 directional) | experiments |
