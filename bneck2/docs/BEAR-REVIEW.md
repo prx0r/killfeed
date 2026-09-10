@@ -7,8 +7,11 @@ accounts, threads ledger. Mined for patterns + coordination, not code theft.
 
 ## Balance (checked, not spent)
 
-GetXAPI pro_sub: **$0.325 remaining** ($5.54 used, 4548 reqs). Recon universe
-disjoint from ours (theirs crypto, ours semis) — zero re-pay risk overlap.
+GetXAPI pro_sub: **$34.83 spendable now** (`balance_total`: $34.50 plan
+credits expiring Oct 7 + $0.33 permanent wallet; $5.63 used, 4,643 reqs).
+At $0.001/call ≈ **~34,800 calls ≈ ~700k tweets**. Docs: 72 endpoints,
+no endpoint quotas, general throttling only. Recon universe disjoint from
+ours (theirs crypto, ours semis) — zero re-pay risk overlap.
 
 ## Patterns adopted (already match or now encoded)
 
