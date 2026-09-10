@@ -114,6 +114,8 @@ Dependency rules:
 | E051 | reflexivity via R&D REFUTED (rho=-0.00; validated +17% < unvalidated +51%) | experiments |
 | E052 | reflexivity via capex REFUTED (rho=+0.20 arrow real, trade loses +22%<+39%) | experiments |
 | E053 | step-obsolescence basket REFUTED (IGV +6.7% post-events; only DeepSeek dented) | experiments |
+| observation | OBSERVATION primitive; 9 families routed to edge/node fields | observation.py |
+| actors | 34-actor registry, seed-unverified, no spend yet | actor_registry.json |
 | CHGG | existence proof: -77% excess 1y post-ChatGPT; mechanism lives at names, not basket | exhibit |
 | fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |

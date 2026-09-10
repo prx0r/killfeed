@@ -294,6 +294,19 @@ class TestEdges(unittest.TestCase):
         cands = [c for c in cands if c["source"] != "TEST_A"]
         E.QUARANTINE.write_text(__import__("json").dumps(cands, indent=1))
 
+    def test_observation(self):
+        from bneck2 import observation as O
+        o = O.observe("HV_TRANSFORMER", "lead_time_mention", "120",
+                      "2026-08-01", "Eaton ER", 0.7)
+        r = O.route(o)
+        self.assertEqual(r["route"], "edge.supply.lead_time_months")
+        m = O.motion([dict(o, object="100"), dict(o, object="120")])
+        self.assertEqual(m["delta"], 20.0)
+        import json
+        reg = json.load(open("data/universe/actor_registry.json"))
+        self.assertGreaterEqual(len(reg["actors"]), 30)
+        self.assertEqual(reg["meta"]["status"], "seed-unverified")
+
     def test_fy_series(self):
         from bneck2 import experiments as X
         facts = {"facts": {"us-gaap": {"ResearchAndDevelopmentExpense": {
