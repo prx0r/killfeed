@@ -113,6 +113,7 @@ def node_queries(node: dict) -> dict:
 def ensure_cik_coverage(nodes: list[dict]) -> list[str]:
     """Tickers on graph nodes with no CIK entry -> unknowns ledger + return.
     Idempotent: skips subjects already open."""
+    known = {u.get("subject", "") for u in E.read_unknowns(open_only=False)}
     open_subjects = {u.get("subject", "") for u in E.read_unknowns()}
     missing: list[str] = []
     for n in nodes:
@@ -120,7 +121,7 @@ def ensure_cik_coverage(nodes: list[dict]) -> list[str]:
             if t and t not in CIK_MAP and t not in missing:
                 missing.append(t)
     for t in missing:
-        if f"SEC CIK for {t}" not in open_subjects:
+        if f"SEC CIK for {t}" not in known:
             E.add_unknown(subject=f"SEC CIK for {t}",
                           sought="10-digit CIK for submissions JSON polling",
                           searched="bneck2/killfeed.py CIK_MAP",

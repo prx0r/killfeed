@@ -83,7 +83,8 @@
    "sought": "10-digit CIK for submissions JSON polling",
    "searched": "bneck2/killfeed.py CIK_MAP",
    "would_close_it": "Form 4 / 8-K burst coverage for DRAM",
-   "status": "open"
+   "status": "closed",
+   "closed_by": "reaffirmed: non-US/placeholder, no SEC CIK exists"
   },
   {
    "id": "u-011",
@@ -91,7 +92,8 @@
    "sought": "10-digit CIK for submissions JSON polling",
    "searched": "bneck2/killfeed.py CIK_MAP",
    "would_close_it": "Form 4 / 8-K burst coverage for LPK",
-   "status": "open"
+   "status": "closed",
+   "closed_by": "reaffirmed: non-US/placeholder, no SEC CIK exists"
   },
   {
    "id": "u-012",
@@ -99,7 +101,8 @@
    "sought": "10-digit CIK for submissions JSON polling",
    "searched": "bneck2/killfeed.py CIK_MAP",
    "would_close_it": "Form 4 / 8-K burst coverage for SMHN",
-   "status": "open"
+   "status": "closed",
+   "closed_by": "reaffirmed: non-US/placeholder, no SEC CIK exists"
   },
   {
    "id": "u-013",
@@ -107,7 +110,8 @@
    "sought": "10-digit CIK for submissions JSON polling",
    "searched": "bneck2/killfeed.py CIK_MAP",
    "would_close_it": "Form 4 / 8-K burst coverage for SOI",
-   "status": "open"
+   "status": "closed",
+   "closed_by": "reaffirmed: non-US/placeholder, no SEC CIK exists"
   },
   {
    "id": "u-014",
@@ -115,7 +119,8 @@
    "sought": "10-digit CIK for submissions JSON polling",
    "searched": "bneck2/killfeed.py CIK_MAP",
    "would_close_it": "Form 4 / 8-K burst coverage for ALNT",
-   "status": "open"
+   "status": "closed",
+   "closed_by": "reaffirmed: non-US/placeholder, no SEC CIK exists"
   }
  ]
 }

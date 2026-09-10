@@ -57,6 +57,18 @@ class TestLab(unittest.TestCase):
         leg = LAB.possibility_ledger()
         self.assertEqual((leg["confirmed"], leg["refuted"], leg["open"]), (1, 1, 1))
 
+    def test_threads_counter_shape(self):
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "threads", str(ROOT / "scripts" / "threads.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        got = mod.counts()
+        self.assertIn("unknowns_open", got)
+        self.assertGreaterEqual(got["hyps_open"], 0)
+
     def test_predictions_resolve(self):
         from bneck2 import lab as LAB
         LAB.predict("v", "t", +1, "2026-01-01", note="past")
