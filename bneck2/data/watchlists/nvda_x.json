@@ -1,0 +1,14 @@
+{"accounts": [
+  {"handle": "SemiAnalysis_", "signal": "S+", "role": "rack/HBM/networking/ODM/BOM/supply constraints"},
+  {"handle": "dylan522p", "signal": "S+", "role": "component economics winners/losers"},
+  {"handle": "dnystedt", "signal": "S+", "role": "Taipei supply chain"},
+  {"handle": "QuiverQuant", "signal": "S+data", "role": "machine Form4/contracts/lobbying feed"},
+  {"handle": "trendforce", "signal": "S", "role": "memory forecasts"},
+  {"handle": "FoolAllTheTime", "signal": "S", "role": "2nd-order bottleneck chain"},
+  {"handle": "InvestNorthwise", "signal": "S-sleeper", "role": "physical sites/MW/cooling"},
+  {"handle": "theaustinlyons", "signal": "A+/S", "role": "inference architecture"},
+  {"handle": "mingchikuo", "signal": "A+", "role": "supplier checks (filter AI server)"},
+  {"handle": "StockMKTNewz", "signal": "A-latency", "role": "announcement trigger only"},
+  {"handle": "capitol2iq", "signal": "A-", "role": "policy positioning"},
+  {"handle": "nvidia", "signal": "primary", "role": "first-party announcements"}],
+  "meta": {"use": "interpretation/early-warning layer; needs X key (stockify X-engine). Until keyed: HN/RSS cover ~40% slow."}}

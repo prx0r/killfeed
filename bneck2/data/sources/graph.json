@@ -16,6 +16,17 @@
    "note": ""
   },
   {
+   "id": "efts",
+   "category": "filings",
+   "access": "keyless",
+   "status": "LIVE",
+   "collector": "collectors/efts.py",
+   "consumers": [
+    "full-text filing search"
+   ],
+   "note": "GET search-index; POST shape differs"
+  },
+  {
    "id": "sec_facts",
    "category": "fundamentals",
    "access": "keyless",

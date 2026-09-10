@@ -20,6 +20,8 @@ OUT = ROOT / "data" / "sources" / "graph.json"
 NODES = [
     ("sec", "filings", "keyless", "LIVE", "collectors/sec.py",
      ["killfeed:sec-burst", "E001", "E010", "panel:f_burst"], ""),
+    ("efts", "filings", "keyless", "LIVE", "collectors/efts.py",
+     ["full-text filing search"], "GET search-index; POST shape differs"),
     ("sec_facts", "fundamentals", "keyless", "LIVE", "collectors/sec_facts.py",
      ["E012", "duration-mismatch"], "tag-rename aware"),
     ("openinsider", "insider", "keyless-http", "LIVE", "collectors/openinsider.py",

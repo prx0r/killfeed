@@ -974,6 +974,39 @@ def e031_momentum_only() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if ok else "REFUTED"), len(hold)
 
 
+def e032_nvda_basket() -> tuple[dict, str, int]:
+    """H-NVDA-1b: NVDA 13F basket (equal-weight publics) vs SPY from 6/30."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-NVDA-1b", "NVDA-validated names drift up",
+        "13F public basket beats SPY from 2026-06-30 filing window",
+        "basket <= SPY (validation followed, not predictive)",
+        "hand-seeded 13F (XML host-blocked) + Yahoo")
+    import json as _j
+    doc = _j.loads((ROOT / "data" / "universe" / "nvda_13f_2026q2.json").read_text())
+    names = [p_ for p_ in doc["positions"] if p_.get("ticker")]
+    rets = {}
+    for p_ in names:
+        cl = {c["date"]: c["close"] for c in P.history(p_["ticker"], "6mo").get("closes", [])}
+        ds = sorted(cl)
+        i = next((k for k, d in enumerate(ds) if d >= "2026-06-30"), None)
+        if i is not None and ds:
+            j = len(ds) - 1
+            rets[p_["ticker"]] = round((cl[ds[j]] - cl[ds[i]]) / cl[ds[i]], 4)
+    sp = {c["date"]: c["close"] for c in P.history("SPY", "6mo").get("closes", [])}
+    sds = sorted(sp)
+    si = next((k for k, d in enumerate(sds) if d >= "2026-06-30"), None)
+    spy = round((sp[sds[-1]] - sp[sds[si]]) / sp[sds[si]], 4) if si is not None else None
+    vals = list(rets.values())
+    m = round(sum(vals) / len(vals), 4) if vals else None
+    out = {"basket": rets, "basket_mean": m, "spy": spy, "n": len(vals),
+           "note": f"13F basket {m} vs SPY {spy} since 6/30 (n={len(vals)})"}
+    verdict = ("CONFIRMED" if m is not None and spy is not None and m - spy >= 0.05
+               else "REFUTED" if m is not None and spy is not None else "INCONCLUSIVE")
+    return out, verdict, len(vals)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1006,6 +1039,7 @@ REGISTRY = {
     "E029": e029_deep_screen,
     "E030": e030_deep_walkforward,
     "E031": e031_momentum_only,
+    "E032": e032_nvda_basket,
 }
 
 
