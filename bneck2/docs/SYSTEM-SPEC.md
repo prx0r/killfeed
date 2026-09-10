@@ -89,6 +89,8 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| lead-lag | xcorr ±4w; SEC→price +4w/-0.32, price→HN +3w/0.69, HN→filings +4w/0.75 | leads.py, E021-E024 |
+| organism order | prices≈PM > whales > filings > HN echo > build > labs > research > permissions > macro | docs/ORGANISM.md |
 | source graph | 27 nodes (25 LIVE), validated both directions | scripts/sources_graph.py, data/sources/graph.json |
 | NVDA/OpenAI/BTC focus | insider buys=0 (all sells); BTC-NVDA rho 0.02 decoupled | E018-E020 |
 | BTC history | CoinGecko daily closes, cached | prices.crypto_history |

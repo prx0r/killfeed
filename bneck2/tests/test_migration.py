@@ -230,6 +230,26 @@ class TestFocusedNames(unittest.TestCase):
         self.assertAlmostEqual(beta, 2.0)
 
 
+class TestLeads(unittest.TestCase):
+    def test_xcorr_peak(self):
+        from bneck2 import leads as LD
+        x = [0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0]
+        y = [0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0]
+        ll = LD.lead_lag(x, y, max_lag=4)
+        self.assertEqual(ll["peak_lag"], 2)
+        self.assertGreater((ll["peak_r"] or 0), 0.5)
+
+    def test_insufficient(self):
+        from bneck2 import leads as LD
+        ll = LD.lead_lag([1.0], [1.0])
+        self.assertEqual(ll["verdict"], "INSUFFICIENT")
+
+    def test_bucketize(self):
+        from bneck2 import leads as LD
+        starts = ["2026-01-01", "2026-01-08", "2026-01-15"]
+        self.assertEqual(LD.bucketize(["2026-01-02", "2026-01-09", "2026-01-09"], starts), [1, 2, 0])
+
+
 class TestAcq(unittest.TestCase):
     def test_map_and_eligible(self):
         from bneck2 import acq as A

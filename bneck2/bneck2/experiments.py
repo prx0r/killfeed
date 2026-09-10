@@ -643,6 +643,75 @@ def e020_btc_pm_snapshot() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if hits / len(res) >= 0.7 else "REFUTED"), len(res)
 
 
+def e021_sec_leads_price() -> tuple[dict, str, int]:
+    """H-LEAD-1: SEC filings lead price moves (insiders file, then drift)."""
+    from bneck2 import lab as LAB
+    from bneck2 import leads as LD
+    LAB.preregister(
+        "H-LEAD-1", "filings lead prices",
+        "SEC-weekly xcorr peaks at lag>0 vs NVDA weekly returns",
+        "peak at lag<=0 (prices move first / sync noise)",
+        "NVDA submissions history + Yahoo weeklies, 17 windows")
+    starts, sec, _, rets = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
+    ll = LD.lead_lag(sec, rets)
+    out = {"windows": len(starts) - 1, "peak": ll,
+           "note": f"SEC->NVDA: {ll['verdict']}"}
+    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+
+
+def e022_hn_leads_price() -> tuple[dict, str, int]:
+    """H-LEAD-2: HN chatter leads price (narrative precedes repricing)."""
+    from bneck2 import lab as LAB
+    from bneck2 import leads as LD
+    LAB.preregister(
+        "H-LEAD-2", "chatter leads prices",
+        "HN-weekly xcorr peaks at lag>0 vs NVDA weekly returns",
+        "peak at lag<=0",
+        "HN Algolia date ranges + Yahoo weeklies, 17 windows")
+    starts, _, hn, rets = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
+    ll = LD.lead_lag(hn, rets)
+    out = {"windows": len(starts) - 1, "peak": ll,
+           "note": f"HN->NVDA: {ll['verdict']}"}
+    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+
+
+def e023_filings_vs_chatter() -> tuple[dict, str, int]:
+    """H-LEAD-3: filings vs chatter ordering (who moves first?)."""
+    from bneck2 import lab as LAB
+    from bneck2 import leads as LD
+    LAB.preregister(
+        "H-LEAD-3", "filings precede chatter",
+        "SEC-weekly xcorr peaks at lag>0 vs HN-weekly",
+        "peak at lag<=0 (chatter anticipates or syncs filings)",
+        "same 17-window panel, both series")
+    starts, sec, hn, _ = _weekly_panel_16w("NVDA", "1045810", "Nvidia")
+    ll = LD.lead_lag(sec, hn)
+    out = {"windows": len(starts) - 1, "peak": ll,
+           "note": f"SEC->HN: {ll['verdict']}"}
+    ok = ll["peak_lag"] is not None and ll["peak_lag"] > 0 and abs(ll["peak_r"] or 0) >= 0.3
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(starts) - 1
+
+
+def e024_pm_vs_x_order() -> tuple[dict, str, int]:
+    """H-LEAD-4 (structural, preregistered): PMs lead X narrative.
+
+    Mechanism: PM prices update on news in minutes (money at risk);
+    X threads develop over days (E022 shows HN lags price +3w, and PM
+    tracks news-prices faster than narrative). Test when X keyed:
+    for dated X claims, compare claim date vs PM price-move date.
+    """
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-LEAD-4", "prediction markets lead X narrative",
+        "median(PM-move-date minus X-claim-date) < -3 days on >=10 pairs",
+        "median >= -3 days (X anticipates or syncs)",
+        "PREREGISTERED ONLY: needs keyed X firehose (stockify X-engine)")
+    return {"note": "preregistered; blocked on X key funding",
+            "proxy_evidence": "E022 HN lags price +3w r=0.69"}, "INCONCLUSIVE", 0
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -664,6 +733,10 @@ REGISTRY = {
     "E018": e018_nvda_sell_drift,
     "E019": e019_btc_nvda_beta,
     "E020": e020_btc_pm_snapshot,
+    "E021": e021_sec_leads_price,
+    "E022": e022_hn_leads_price,
+    "E023": e023_filings_vs_chatter,
+    "E024": e024_pm_vs_x_order,
 }
 
 
@@ -689,5 +762,50 @@ def _acq_rows():
 
 
 
+
+
+
+
+def _weekly_panel_16w(ticker: str, cik: str, hn_query: str):
+    """16 weekly buckets ending last Friday: SEC counts, HN counts, returns."""
+    import datetime as _dt
+    from bneck2 import leads as LD
+    from bneck2 import prices as P
+    from bneck2 import predict as PD
+    from collectors import hn as HN
+    today = _dt.date.today()
+    fri = today - _dt.timedelta(days=(today.weekday() - 4) % 7)
+    starts = [(fri - _dt.timedelta(weeks=k)).isoformat() for k in range(16, -1, -1)]
+    doc = PD.submissions(cik)
+    fl = (doc.get("filings") or {}).get("recent") or {}
+    sec_dates = [d for f, d in zip(fl.get("form", []), fl.get("filingDate", []))
+                 if f in ("4", "8-K", "13D", "13G") and d]
+    sec = LD.bucketize(sec_dates, starts)
+    hn_counts = []
+    import calendar
+    for i in range(len(starts)):
+        lo = starts[i]
+        hi = (fri if i == len(starts) - 1 else None)
+        try:
+            import urllib.parse, urllib.request, json as _j
+            lo_ts = calendar.timegm(_dt.datetime.fromisoformat(lo).timetuple())
+            hi_s = (fri if i == len(starts) - 1 else
+                    _dt.date.fromisoformat(starts[i + 1])).isoformat()
+            hi_ts = calendar.timegm(_dt.datetime.fromisoformat(hi_s).timetuple())
+            url = ("https://hn.algolia.com/api/v1/search?" + urllib.parse.urlencode(
+                {"query": hn_query, "tags": "story",
+                 "numericFilters": f"created_at_i>{lo_ts},created_at_i<{hi_ts}",
+                 "hitsPerPage": 100}))
+            req = urllib.request.Request(url, headers={"User-Agent": "bneck"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                hn_counts.append(int(_j.loads(r.read().decode("utf-8", "replace")).get("nbHits", 0)))
+        except Exception:
+            hn_counts.append(0)
+    cl = {c["date"]: c["close"] for c in P.history(ticker, "6mo").get("closes", [])}
+    rets = []
+    for i in range(len(starts)):
+        w = [c for d, c in sorted(cl.items()) if starts[i] <= d < (starts[i + 1] if i + 1 < len(starts) else "9999")]
+        rets.append(round((w[-1] - w[0]) / w[0], 4) if len(w) >= 2 and w[0] else 0.0)
+    return starts, sec, hn_counts, rets
 
 
