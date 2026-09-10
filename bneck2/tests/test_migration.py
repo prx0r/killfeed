@@ -269,6 +269,27 @@ class TestReasonBandit(unittest.TestCase):
         self.assertTrue(all("check" in r for r in rows))
 
 
+class TestNvda(unittest.TestCase):
+    def test_size_bounds(self):
+        from bneck2 import nvda as NV
+        for mode in ("mom", "burst_fade", "short_fade", "combo",
+                     "buyhold3x", "buyhold1x"):
+            w = NV.size_rule({"mom_20": 0.2, "burst": 1.0, "short": 0.4,
+                              "hn": 3}, mode)
+            self.assertGreaterEqual(w, -1.0)
+            self.assertLessEqual(w, 3.0)
+
+    def test_paper_log(self):
+        import subprocess
+        r = subprocess.run(["python3", "scripts/paper.py"], capture_output=True,
+                           text=True, timeout=300)
+        self.assertEqual(r.returncode, 0, r.stderr[-500:])
+        import csv
+        rows = list(csv.DictReader(
+            open("data/paper/nvda.csv")))
+        self.assertGreaterEqual(len(rows), 1)
+
+
 class TestAdvise(unittest.TestCase):
     def test_confidence_map(self):
         from bneck2 import advise as AD
@@ -315,7 +336,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044"):
+                  "E042", "E043", "E044", "E045", "E046", "E047"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

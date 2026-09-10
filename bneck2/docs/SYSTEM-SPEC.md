@@ -100,6 +100,9 @@ Dependency rules:
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
 | advice | a=s·c, dust 0.10, sequences OPEN→FILLED→CLOSED | advise.py (NORTHSTAR-5) |
 | E044 | sized loses to full-size (map too timid — mutate it) | experiments |
+| E045 | short_fade Sharpe 0.82 beats 3x-bh 0.42 on NVDA test yr (return trails) | experiments |
+| E046 | rules do NOT generalize cross-sectionally (REFUTED) | experiments |
+| E047 | forward paper test, 90 days, logging daily | scripts/paper.py |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |
 | NVDA stack | X+SEC co-occurrence empty; solo +3.6% vs base +2.5% | E043 |

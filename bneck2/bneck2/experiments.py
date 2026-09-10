@@ -1506,6 +1506,233 @@ def e044_sized_vs_full() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if ok else "REFUTED"), len(by_date)
 
 
+def _nvda_weekly_bundle():
+    """Assemble 2y daily features for NVDA (cached where set)."""
+    import datetime as _dt
+    from bneck2 import nvda as NV
+    from bneck2 import prices as P
+    from collectors import finra as FIN
+    from collectors import hn as HN
+    from collectors import sec as S
+    import urllib.request as _u
+    import json as _j
+    closes = {c["date"]: c["close"] for c in P.history("NVDA", "2y").get("closes", [])}
+    today = max(closes)
+    start = (_dt.date.fromisoformat(today) - _dt.timedelta(days=730)).isoformat()
+    dates = sorted(d for d in closes if d >= start)
+    # SEC filings history (one fetch)
+    req = _u.Request(S.submissions_url("1045810"),
+                     headers={"User-Agent": "bneck research contact@localhost",
+                              "Accept": "application/json"})
+    with _u.urlopen(req, timeout=30) as r:
+        doc = _j.loads(r.read().decode("utf-8", "replace"))
+    fl = (doc.get("filings") or {}).get("recent") or {}
+    forms = [(f, d) for f, d in zip(fl.get("form", []), fl.get("filingDate", [])) if d]
+    # FINRA short history (cached tapes)
+    shorts = FIN.short_history(["NVDA"], dates)
+    # HN weekly counts (bounded: biweekly samples, forward-filled)
+    hn_by_date, last = {}, 0
+    for k, d in enumerate(dates):
+        if k % 10 == 0:
+            try:
+                import urllib.parse, calendar
+                lo_ts = calendar.timegm(_dt.datetime.fromisoformat(d).timetuple())
+                url = ("https://hn.algolia.com/api/v1/search?" + urllib.parse.urlencode(
+                    {"query": "Nvidia", "tags": "story",
+                     "numericFilters": f"created_at_i>{lo_ts - 14 * 86400},created_at_i<{lo_ts}",
+                     "hitsPerPage": 100}))
+                rq = _u.Request(url, headers={"User-Agent": "bneck"})
+                with _u.urlopen(rq, timeout=20) as r2:
+                    last = int(_j.loads(r2.read().decode("utf-8", "replace")).get("nbHits", 0))
+            except Exception:
+                pass
+        hn_by_date[d] = last
+    sec_by_date = {}
+    for d in dates:
+        win = [(f, fd) for f, fd in forms if fd and d >= fd >= _shift_days(d, -30)]
+        n4 = sum(1 for f, _ in win if f == "4")
+        dl = sum(1 for f, _ in win if f in ("8-K", "13D", "13G"))
+        sec_by_date[d] = {"burst": n4 / 5.0 + dl / 2.0}
+    feats = {}
+    # NOTE: features() takes precomputed dicts; build burst dict directly:
+    feats = {}
+    for d in dates:
+        past = sorted(x for x in closes if x <= d)
+        m20 = None
+        if len(past) > 20 and closes[past[-21]]:
+            m20 = (closes[past[-1]] - closes[past[-21]]) / closes[past[-21]]
+        feats[d] = {"mom_20": m20,
+                    "burst": sec_by_date[d]["burst"] if False else _burst_ratio(d, forms),
+                    "short": (shorts.get(d) or {}).get("NVDA"),
+                    "hn": hn_by_date.get(d, 0)}
+    return dates, closes, feats
+
+
+def _shift_days(d: str, n: int) -> str:
+    import datetime as _dt
+    y, m, dd = map(int, d.split("-"))
+    return (_dt.date(y, m, dd) + _dt.timedelta(days=n)).isoformat()
+
+
+def _burst_ratio(d: str, forms) -> float:
+    win = [f for f, fd in forms if fd and d >= fd >= _shift_days(d, -30)]
+    n4 = sum(1 for f in win if f == "4")
+    dl = sum(1 for f in win if f in ("8-K", "13D", "13G"))
+    return n4 / 5.0 + dl / 2.0
+
+
+def e045_nvda_alpha() -> tuple[dict, str, int]:
+    """H-NVDA-A: alt-signal sizing beats 3x buy-hold on NVDA test year."""
+    from bneck2 import lab as LAB
+    from bneck2 import nvda as NV
+    LAB.preregister(
+        "H-NVDA-A", "sized NVDA beats 3x buy-hold out-of-sample",
+        "test-year Sharpe(sized) > Sharpe(buyhold3x), train-tuned",
+        "sized <= buyhold3x (timing adds nothing on NVDA)",
+        "2y daily panel; train yr1, test yr2; 3x cap; 5bps costs")
+    dates, closes, feats = _nvda_weekly_bundle()
+    cut = dates[len(dates) * 2 // 3]
+    train = [d for d in dates if d < cut]
+    test = [d for d in dates if d >= cut]
+    # tune (pick best_alt) on TRAIN tail only, evaluate once on TEST
+    ttail = train[-len(train) // 3:]
+    tune = {}
+    for mode in ("mom", "burst_fade", "short_fade", "combo"):
+        tune[mode] = NV.run(ttail, closes, feats, mode)["sharpe"]
+    best_alt = max(tune, key=lambda m: tune[m])
+    out = {}
+    for mode in ("buyhold3x", "buyhold1x", "mom", "burst_fade",
+                 "short_fade", "combo"):
+        out[mode] = NV.run(test, closes, feats, mode)
+    res = {"modes": out, "best_alt": best_alt, "tune": tune,
+           "note": f"tuned {best_alt} on train-tail, test: "
+                   f"{best_alt} {out[best_alt]['sharpe']} vs "
+                   f"bh3x {out['buyhold3x']['sharpe']}"}
+    ok = out[best_alt]["sharpe"] > out["buyhold3x"]["sharpe"]
+    return res, ("CONFIRMED" if ok else "REFUTED"), len(test)
+
+
+def e046_rules_generalize() -> tuple[dict, str, int]:
+    """H-NVDA-B: NVDA-tuned rules (short_fade, burst_fade) generalize
+    to the atoms universe out-of-sample."""
+    import datetime as _dt
+    import json as _j
+    import urllib.request as _u
+    from bneck2 import lab as LAB
+    from bneck2 import nvda as NV
+    from bneck2 import prices as P
+    from collectors import finra as FIN
+    from collectors import sec as S
+    LAB.preregister(
+        "H-NVDA-B", "short_fade/burst_fade beat 3x buy-hold cross-sectionally",
+        "test-half Sharpe(rule) > Sharpe(buyhold3x) for a preregistered rule",
+        "rules fail outside NVDA (NVDA-specific fit)",
+        "17 atoms names; split by date; 3x cap; 5bps costs")
+    atoms = _j.load(open(ROOT / "data" / "universe" / "ai_atoms.json"))
+    names = ["NVDA"] + [a["ticker"] for a in atoms.get("companies", [])]
+    closes_all = {}
+    for t in names:
+        try:
+            cs = P.history(t, "2y").get("closes", [])
+            if len(cs) >= 300:
+                closes_all[t] = {c["date"]: c["close"] for c in cs}
+        except Exception:
+            pass
+    all_dates = sorted({d for m in closes_all.values() for d in m})
+    if len(all_dates) < 200:
+        return {"error": "thin panel"}, "INCONCLUSIVE", 0
+    shorts = FIN.short_history(list(closes_all), all_dates)
+    # SEC burst per ticker: use submissions dates where CIK known else skip
+    cik = {"NVDA": "1045810", "MSFT": "789019", "GOOGL": "1652044",
+           "META": "1326801", "AMZN": "1018724", "AAPL": "320193",
+           "TSM": "1046179", "AVGO": "1730168", "AMD": "2488",
+           "NFLX": "1065280", "CRM": "1108524", "ORCL": "1341439",
+           "PLTR": "1321655", "COIN": "1679788", "TSLA": "1318605",
+           "INTC": "50863", "IBM": "51143"}
+    bursts = {}
+    for t, c in cik.items():
+        if t not in closes_all:
+            continue
+        try:
+            req = _u.Request(S.submissions_url(c),
+                             headers={"User-Agent": "bneck research contact@localhost",
+                                      "Accept": "application/json"})
+            with _u.urlopen(req, timeout=30) as r:
+                doc = _j.loads(r.read().decode("utf-8", "replace"))
+            fl = (doc.get("filings") or {}).get("recent") or {}
+            forms = [(f, d) for f, d in zip(fl.get("form", []), fl.get("filingDate", [])) if d]
+            bursts[t] = forms
+        except Exception:
+            bursts[t] = []
+    feats_all = {}
+    for t, closes in closes_all.items():
+        forms = bursts.get(t, [])
+        for d in sorted(closes):
+            past = sorted(x for x in closes if x <= d)
+            m20 = None
+            if len(past) > 20 and closes[past[-21]]:
+                m20 = (closes[past[-1]] - closes[past[-21]]) / closes[past[-21]]
+            feats_all.setdefault(d, {})[t] = {
+                "mom_20": m20, "burst": _burst_ratio(d, forms),
+                "short": (shorts.get(d) or {}).get(t), "hn": 0}
+    cut = all_dates[len(all_dates) * 2 // 3]
+    test = [d for d in all_dates if d >= cut]
+    agg = {m: [] for m in ("buyhold3x", "buyhold1x", "short_fade", "burst_fade")}
+    for d in test:
+        row = feats_all.get(d, {})
+        for t, f in row.items():
+            closes = closes_all[t]
+            cl = sorted(x for x in closes if x <= d)
+            if not cl:
+                continue
+            # next close after d
+            fut = sorted(x for x in closes if x > d)
+            if not fut:
+                continue
+            r = (closes[fut[0]] - closes[d]) / closes[d] if closes[d] else 0.0
+            for m in agg:
+                w = NV.size_rule(f, m)
+                agg[m].append(w * r)  # costs ignored cross-sectionally (note)
+    import math as _m
+    out = {}
+    for m, rs in agg.items():
+        n = len(rs)
+        mu = sum(rs) / n
+        var = sum((x - mu) ** 2 for x in rs) / (n - 1)
+        sh = (mu * 252) / _m.sqrt(var * 252) if var > 0 else 0.0
+        tot = 1.0
+        for x in rs:
+            tot *= 1 + x / max(len(feats_all.get(test[0], {})), 1)
+        out[m] = {"sharpe": round(sh, 3), "n": n}
+    # preregistered rule = short_fade (NVDA-tuned winner)
+    ok = out["short_fade"]["sharpe"] > out["buyhold3x"]["sharpe"]
+    res = {"modes": out, "rule": "short_fade",
+           "note": f"short_fade {out['short_fade']['sharpe']} vs "
+                   f"bh3x {out['buyhold3x']['sharpe']} (costs excluded)"}
+    return res, ("CONFIRMED" if ok else "REFUTED"), len(test)
+
+
+def e047_forward_paper() -> tuple[dict, str, int]:
+    """H-NVDA-C: paper rules beat buy-hold over 90 forward days."""
+    import csv as _csv
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-NVDA-C", "paper timing beats buy-hold forward",
+        "eq_short or eq_burst > eq_bh1x at 90 rows",
+        "both trail buy-hold (timing adds nothing)",
+        "scripts/paper.py daily log; frozen rules")
+    f = ROOT / "data" / "paper" / "nvda.csv"
+    rows = list(_csv.DictReader(f.open())) if f.exists() else []
+    if len(rows) < 90:
+        return {"rows": len(rows), "last": rows[-1] if rows else None,
+                "note": f"{len(rows)}/90 days logged — resolves later"}, "INCONCLUSIVE", len(rows)
+    last = rows[-1]
+    win = (float(last["eq_short"]) > float(last["eq_bh1x"])
+           or float(last["eq_burst"]) > float(last["eq_bh1x"]))
+    return {"rows": len(rows), "last": last,
+            "note": f"short {last['eq_short']} burst {last['eq_burst']} vs bh {last['eq_bh1x']}"}, ("CONFIRMED" if win else "REFUTED"), len(rows)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1551,6 +1778,9 @@ REGISTRY = {
     "E042": e042_pm_ladder_calibration,
     "E043": e043_nvda_stack,
     "E044": e044_sized_vs_full,
+    "E045": e045_nvda_alpha,
+    "E046": e046_rules_generalize,
+    "E047": e047_forward_paper,
 }
 
 
@@ -1675,6 +1905,9 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
+
+
 
 
 
