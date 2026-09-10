@@ -232,6 +232,27 @@ class TestDeep(unittest.TestCase):
         self.assertTrue(callable(finra.short_file))
 
 
+class TestTournament(unittest.TestCase):
+    def test_round_deterministic(self):
+        import json
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "tournament", str(ROOT / "scripts" / "tournament.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        r1 = json.loads((ROOT / "data" / "tournament" / "r1" / "results.json").read_text())
+        r2 = json.loads((ROOT / "data" / "tournament" / "r1.1" / "results.json").read_text())
+        self.assertEqual(
+            [(s["id"], s["verdict"]) for s in r1["seeds"] if s["verdict"] == "PROMOTE"],
+            [("seed1.conv", "PROMOTE"), ("seed1.B", "PROMOTE")])
+        muts = json.loads((ROOT / "data" / "tournament" / "r1.1" / "mutations.json").read_text())
+        self.assertTrue(all("why" in m for m in muts))
+        kept = {s["id"] for s in r2["seeds"]}
+        self.assertTrue({"seed1.1.conv", "seed1.1.B"} <= kept)
+
+
 class TestReasonBandit(unittest.TestCase):
     def test_pick_and_record(self):
         from bneck2 import reason
