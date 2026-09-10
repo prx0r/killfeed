@@ -1451,6 +1451,61 @@ def e043_nvda_stack() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if ok else "REFUTED" if len(stack) >= 5 else "INCONCLUSIVE"), len(stack)
 
 
+def e044_sized_vs_full() -> tuple[dict, str, int]:
+    """H-SIZE-1: confidence sizing cuts tails without killing edge."""
+    from bneck2 import advise as AD
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-SIZE-1", "sizing beats full-size on risk-adjusted",
+        "sized Sharpe > full-size Sharpe AND sized maxDD shallower",
+        "sizing underperforms (confidence map wrong — mutate it)",
+        "biweekly panel; family confidences from receipts table")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("biwk-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    # family confidences (measured lower bounds, NORTHSTAR-5 table)
+    conf = {"f_mom_20": 0.2, "f_attack": 0.0, "f_burst": 0.0,
+            "f_hn": 0.0, "f_short": 0.0, "f_conv": 0.0, "f_B": 0.0}
+    sized, full, uni = [], [], []
+    by_date = {}
+    for r in rows:
+        by_date.setdefault(r["date"], []).append(r)
+    for d in sorted(by_date):
+        g = by_date[d]
+        for r in g:
+            s = r.get("f_mom_20") or 0.0
+            a = AD.advise(s, conf["f_mom_20"])
+            frac = a["fraction"] if a["action"] != "HOLD" else 0.0
+            sgn = 1.0 if s >= 0 else -1.0
+            sized.append({"date": d, "ticker": r["ticker"] + ":s",
+                          "score": sgn * frac, "forward_return": r["fwd_20"]})
+            full.append({"date": d, "ticker": r["ticker"] + ":f",
+                         "score": sgn * 1.0 if abs(s) > 0 else 0.0,
+                         "forward_return": r["fwd_20"]})
+            uni.append({"date": d, "ticker": r["ticker"] + ":u",
+                        "score": 1.0, "forward_return": r["fwd_20"]})
+
+    def _wf(rs):
+        ok = [dict(x, forward_return=x["forward_return"]) for x in rs]
+        _, st = BT.walk_forward(ok, quantile=0.25)
+        return st
+
+    ss, fs, us = _wf(sized), _wf(full), _wf(uni)
+    out = {"sized_sharpe": ss.get("sharpe"), "sized_dd": ss.get("max_drawdown"),
+           "full_sharpe": fs.get("sharpe"), "full_dd": fs.get("max_drawdown"),
+           "bh_sharpe": us.get("sharpe"),
+           "note": f"sized {ss.get('sharpe')}/{ss.get('max_drawdown')} vs "
+                   f"full {fs.get('sharpe')}/{fs.get('max_drawdown')} vs "
+                   f"bh {us.get('sharpe')}"}
+    ok = (ss.get("sharpe") is not None and fs.get("sharpe") is not None
+          and ss["sharpe"] > fs["sharpe"]
+          and (ss.get("max_drawdown") or 0) > (fs.get("max_drawdown") or 0))
+    return out, ("CONFIRMED" if ok else "REFUTED"), len(by_date)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1495,6 +1550,7 @@ REGISTRY = {
     "E041": e041_regime_split,
     "E042": e042_pm_ladder_calibration,
     "E043": e043_nvda_stack,
+    "E044": e044_sized_vs_full,
 }
 
 
@@ -1619,5 +1675,6 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 

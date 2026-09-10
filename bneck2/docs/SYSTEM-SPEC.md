@@ -98,6 +98,8 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| advice | a=s·c, dust 0.10, sequences OPEN→FILLED→CLOSED | advise.py (NORTHSTAR-5) |
+| E044 | sized loses to full-size (map too timid — mutate it) | experiments |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |
 | NVDA stack | X+SEC co-occurrence empty; solo +3.6% vs base +2.5% | E043 |

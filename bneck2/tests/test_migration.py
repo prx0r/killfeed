@@ -269,6 +269,32 @@ class TestReasonBandit(unittest.TestCase):
         self.assertTrue(all("check" in r for r in rows))
 
 
+class TestAdvise(unittest.TestCase):
+    def test_confidence_map(self):
+        from bneck2 import advise as AD
+        self.assertEqual(AD.confidence_from_lower(0.5), 0.0)
+        self.assertEqual(AD.confidence_from_lower(0.75), 1.0)
+        self.assertEqual(AD.confidence_from_lower(0.9), 1.0)
+
+    def test_dust_filter(self):
+        from bneck2 import advise as AD
+        self.assertEqual(AD.advise(0.5, 0.1)["action"], "HOLD")
+        a = AD.advise(-0.8, 0.5)
+        self.assertEqual((a["action"], a["fraction"]), ("SELL", 0.4))
+
+    def test_buyback(self):
+        from bneck2 import advise as AD
+        self.assertTrue(AD.buyback_trigger(100, 90, 0.5, -0.5)["rebuy"])
+        self.assertFalse(AD.buyback_trigger(100, 110, -0.5, -0.5)["rebuy"])
+
+    def test_sequence(self):
+        from bneck2 import advise as AD
+        s = AD.sequence_update(None, {"action": "SELL", "fraction": 0.6}, 100)
+        self.assertEqual(s["state"], "SHORT-WATCH")
+        s2 = AD.sequence_update(s, {"action": "HOLD", "fraction": 0.0}, 101)
+        self.assertEqual(len(s2["history"]), 2)
+
+
 class TestFocusedNames(unittest.TestCase):
     def test_kalshi_series_fields(self):
         from collectors import kalshi as KL
@@ -289,7 +315,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043"):
+                  "E042", "E043", "E044"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):
