@@ -2122,6 +2122,67 @@ def e052_capex_reflex() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), n
 
 
+STEP_EVENTS = [("2022-11-30", "ChatGPT launch"),
+               ("2023-03-14", "GPT-4 launch"),
+               ("2024-09-12", "o1 reasoning launch"),
+               ("2025-01-20", "DeepSeek-R1 shock")]
+
+
+def e053_step_obsolescence() -> tuple[dict, str, int]:
+    """H-STEP-1: LLM capability steps permanently impair software (IGV vs SPY)."""
+    import datetime as _dt
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-STEP-1", "model releases step IGV down vs SPY without full recovery",
+        "mean 60d excess(IGV-SPY) post-event < 0 AND no V-recovery by d60",
+        "excess >= 0 or full recovery (market prices obsolescence instantly)",
+        "IGV vs SPY daily; 4 pre-listed LLM events; entry t+5 to dodge noise")
+    try:
+        igv = {c["date"]: c["close"] for c in P.history("IGV", "5y").get("closes", [])}
+        spy = {c["date"]: c["close"] for c in P.history("SPY", "5y").get("closes", [])}
+    except Exception as e:
+        return {"error": str(e)[:120]}, "INCONCLUSIVE", 0
+    dys = sorted(set(igv) & set(spy))
+    if len(dys) < 500:
+        return {"error": "thin overlap"}, "INCONCLUSIVE", 0
+
+    def _px(m, d):
+        while d not in m and d >= dys[0]:
+            d = (_dt.date.fromisoformat(d) - _dt.timedelta(days=1)).isoformat()
+        return m.get(d)
+
+    rows = []
+    for ev, name in STEP_EVENTS:
+        try:
+            t5 = (_dt.date.fromisoformat(ev) + _dt.timedelta(days=7)).isoformat()
+            t60 = (_dt.date.fromisoformat(ev) + _dt.timedelta(days=90)).isoformat()
+        except ValueError:
+            continue
+        i0, i1 = _px(igv, t5), _px(igv, t60)
+        s0, s1 = _px(spy, t5), _px(spy, t60)
+        if not all([i0, i1, s0, s1]):
+            continue
+        # max drawdown of excess leg + endpoint excess (V-recovery check)
+        win = [d for d in dys if t5 <= d <= t60]
+        if len(win) < 20:
+            continue
+        ex = [(igv[d] / i0 - 1) - (spy[d] / s0 - 1) for d in win]
+        rows.append({"event": name, "date": ev,
+                     "excess_end": round(ex[-1], 4),
+                     "excess_min": round(min(ex), 4),
+                     "recovered": bool(ex[-1] > -0.005)})
+    if len(rows) < 3:
+        return {"rows": rows}, "INCONCLUSIVE", len(rows)
+    mean_end = sum(r["excess_end"] for r in rows) / len(rows)
+    norecov = sum(1 for r in rows if not r["recovered"])
+    res = {"events": rows, "mean_excess_end": round(mean_end, 4),
+           "no_recovery": f"{norecov}/{len(rows)}",
+           "note": f"mean 60d excess {mean_end:.1%}, {norecov}/{len(rows)} unrecovered"}
+    ok = mean_end < 0 and norecov >= len(rows) // 2 + 1
+    return res, ("CONFIRMED" if ok else "REFUTED"), len(rows)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2177,6 +2238,7 @@ REGISTRY = {
     "G002": g002_layer_backbone,
     "E051": e051_reflexivity,
     "E052": e052_capex_reflex,
+    "E053": e053_step_obsolescence,
 }
 
 
@@ -2301,6 +2363,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
