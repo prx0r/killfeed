@@ -2308,6 +2308,108 @@ def e055_ai_beta() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if mu > 0 and sh > 0.5 else "REFUTED"), len(spread)
 
 
+def _pmap_scores() -> dict:
+    import json as _j
+    uni = _j.load(open(ROOT / "third_party" / "prophetmap" / "data" / "universe.json"))
+    us = uni if isinstance(uni, list) else uni.get("tickers", [])
+    out = {}
+    for u in us:
+        s = u.get("symbol")
+        if s and "." not in s and "-" not in s:
+            out[s] = {"ai": u.get("aiContribution"),
+                      "moat": u.get("moatCapture")}
+    return out
+
+
+def _tercile_spread(px: dict, scores: dict[str, float], step: int = 63,
+                    fwd: int = 63) -> tuple[list[float], int]:
+    dys = sorted(set().union(*[set(v) for v in px.values()]))
+    if len(dys) < 300:
+        return [], 0
+    spread = []
+    for i in range(0, len(dys) - fwd - 5, step):
+        d0, d1 = dys[i], dys[i + fwd]
+        rs = {}
+        for t, s in px.items():
+            if d0 in s and d1 in s and s[d0] and t in scores and scores[t] is not None:
+                rs[t] = (s[d1] / s[d0] - 1, scores[t])
+        if len(rs) < 9:
+            continue
+        ranked = sorted(rs, key=lambda t: rs[t][1])
+        k = max(len(ranked) // 3, 1)
+        hi = [rs[t][0] for t in ranked[-k:]]
+        lo = [rs[t][0] for t in ranked[:k]]
+        spread.append(sum(hi) / len(hi) - sum(lo) / len(lo))
+    return spread, len(px)
+
+
+def _summ(spread: list[float]) -> dict:
+    import math as _m
+    n = len(spread)
+    mu = sum(spread) / n
+    sd = _m.sqrt(sum((x - mu) ** 2 for x in spread) / (n - 1)) if n > 1 else 0.0
+    sh = (mu * 4) / (sd * _m.sqrt(4)) if sd > 0 else 0.0
+    return {"n": n, "mean": round(mu, 4),
+            "sharpe": round(sh, 3) if n >= 4 else None}
+
+
+def e056_aicontrib() -> tuple[dict, str, int]:
+    """H-PMAP-1: high AI-contribution names outperform (complement channel)."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-PMAP-1", "high aiContribution spread > 0 quarterly",
+        "complement exposure wins forward",
+        "spread <= 0 (substitution dominates even complements)",
+        "prophetmap 89 Universe tickers; 2y Yahoo; 63d fwd quarterly")
+    sc = _pmap_scores()
+    px = {}
+    for t in sc:
+        try:
+            cs = P.history(t, "2y").get("closes", [])
+            if len(cs) >= 300:
+                px[t] = {c["date"]: c["close"] for c in cs}
+        except Exception:
+            pass
+    sp, n = _tercile_spread(px, {t: v["ai"] for t, v in sc.items()})
+    if len(sp) < 4:
+        return {"names": n, "windows": len(sp)}, "INCONCLUSIVE", len(sp)
+    s = _summ(sp)
+    res = {"names": n, **s, "note": f"aiContrib L/S {s['mean']:.1%}/q (n={n})"}
+    return res, ("CONFIRMED" if s["mean"] > 0 else "REFUTED"), s["n"]
+
+
+def e057_moatshield() -> tuple[dict, str, int]:
+    """H-PMAP-2: high-moat names outperform low-moat (distribution shield)."""
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-PMAP-2", "high moatCapture spread > 0 quarterly",
+        "moats shield forward returns",
+        "spread <= 0 (moats don't protect vs AI repricing)",
+        "same panel; moatCapture terciles")
+    sc = _pmap_scores()
+    px = {}
+    for t in sc:
+        try:
+            cs = P.history(t, "2y").get("closes", [])
+            if len(cs) >= 300:
+                px[t] = {c["date"]: c["close"] for c in cs}
+        except Exception:
+            pass
+    vals = [v["moat"] for v in sc.values() if v["moat"] is not None]
+    if not vals:
+        return {"error": "no moat scores"}, "INCONCLUSIVE", 0
+    sp, n = _tercile_spread(
+        px, {t: (float(v["moat"]) if v["moat"] is not None else None)
+             for t, v in sc.items()})
+    if len(sp) < 4:
+        return {"names": n, "windows": len(sp)}, "INCONCLUSIVE", len(sp)
+    s = _summ(sp)
+    res = {"names": n, **s, "note": f"moat L/S {s['mean']:.1%}/q (n={n})"}
+    return res, ("CONFIRMED" if s["mean"] > 0 else "REFUTED"), s["n"]
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2367,6 +2469,8 @@ REGISTRY = {
     "G003": g003_death_watch,
     "E054": e054_death_watch_test,
     "E055": e055_ai_beta,
+    "E056": e056_aicontrib,
+    "E057": e057_moatshield,
 }
 
 
@@ -2491,6 +2595,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
