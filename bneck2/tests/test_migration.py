@@ -336,7 +336,7 @@ class TestFocusedNames(unittest.TestCase):
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
                   "E024", "E025", "E026", "E027", "E028", "E032", "E033",
                   "E034", "E035", "E036", "E037", "E038", "E039", "E040", "E041",
-                  "E042", "E043", "E044", "E045", "E046", "E047"):
+                  "E042", "E043", "E044", "E045", "E046", "E047", "E048"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

@@ -103,6 +103,8 @@ Dependency rules:
 | E045 | short_fade Sharpe 0.82 beats 3x-bh 0.42 on NVDA test yr (return trails) | experiments |
 | E046 | rules do NOT generalize cross-sectionally (REFUTED) | experiments |
 | E047 | forward paper test, 90 days, logging daily | scripts/paper.py |
+| E048 | fish bounce rule REFUTED (-0.65 vs bh +0.87; their 62% was artifact) | experiments |
+| fish-ml | conf>0.8 adds nothing over BUY baseline (62.5 vs 62.2); HOLDs auto-wrong | third_party/fish |
 | secret gate | pre-commit grep (seed0 Rule 0/5) | scripts/check_secrets.sh (+suite) |
 | NVDA ladders | 123 markets; resolved 39/39 calibrate | E042 |
 | NVDA stack | X+SEC co-occurrence empty; solo +3.6% vs base +2.5% | E043 |

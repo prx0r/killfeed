@@ -1733,6 +1733,57 @@ def e047_forward_paper() -> tuple[dict, str, int]:
             "note": f"short {last['eq_short']} burst {last['eq_burst']} vs bh {last['eq_bh1x']}"}, ("CONFIRMED" if win else "REFUTED"), len(rows)
 
 
+def e048_support_bounce() -> tuple[dict, str, int]:
+    """H-SUP-1: trailing-low bounce (fish sequence rule, de-lookaheaded)
+    beats buy-hold cross-sectionally."""
+    import json as _j
+    from bneck2 import backtest as BT
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-SUP-1", "bounce-near-trailing-low beats buy-hold",
+        "walk-forward Sharpe(bounce) > Sharpe(uniform buy-hold)",
+        "bounce <= buy-hold (fish edge was lookahead/HOLD-label artifact)",
+        "atoms + NVDA, 2y daily, trailing-252d low, next-day execution")
+    atoms = _j.load(open(ROOT / "data" / "universe" / "ai_atoms.json"))
+    names = ["NVDA"] + [a["ticker"] for a in atoms.get("companies", [])]
+    rows, ndates = [], set()
+    for t in names:
+        try:
+            cs = P.history(t, "2y").get("closes", [])
+        except Exception:
+            continue
+        if len(cs) < 300:
+            continue
+        closes = [c["close"] for c in cs]
+        for i in range(252, len(cs) - 21):
+            lo = min(closes[i - 252:i + 1])
+            if not lo:
+                continue
+            dist = (closes[i] - lo) / lo
+            if dist > 0.30:  # only consider names within 30% of low
+                continue
+            fwd = (closes[i + 21] - closes[i + 1]) / closes[i + 1] if closes[i + 1] else None
+            if fwd is None:
+                continue
+            rows.append({"date": cs[i]["date"], "ticker": t,
+                         "score": -dist, "forward_return": fwd})
+            ndates.add(cs[i]["date"])
+    if len(ndates) < 30:
+        return {"rows": len(rows)}, "INCONCLUSIVE", len(ndates)
+    _, st = BT.walk_forward(rows, quantile=0.25)
+    import math as _m
+    fr = [r["forward_return"] for r in rows]
+    mu = sum(fr) / len(fr)
+    var = sum((x - mu) ** 2 for x in fr) / (len(fr) - 1)
+    bh_sh = round((mu * 12) / _m.sqrt(var * 12), 3) if var > 0 else 0.0
+    res = {"bounce_sharpe": st.get("sharpe"), "bh_sharpe": bh_sh,
+           "rows": len(rows),
+           "note": f"bounce {st.get('sharpe')} vs bh {bh_sh}"}
+    ok = (st.get("sharpe") is not None and st["sharpe"] > bh_sh)
+    return res, ("CONFIRMED" if ok else "REFUTED"), len(ndates)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1781,6 +1832,7 @@ REGISTRY = {
     "E045": e045_nvda_alpha,
     "E046": e046_rules_generalize,
     "E047": e047_forward_paper,
+    "E048": e048_support_bounce,
 }
 
 
@@ -1905,6 +1957,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
