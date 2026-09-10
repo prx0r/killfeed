@@ -18,8 +18,12 @@ def facts_url(cik: str) -> str:
     return f"https://data.sec.gov/api/xbrl/companyfacts/CIK{str(cik).zfill(10)}.json"
 
 
+REVENUE_TAGS = ("RevenueFromContractWithCustomerExcludingAssessedTax",
+                "Revenues", "SalesRevenueNet")
+
+
 def _annual(facts: dict, tag: str, form: str = "10-K") -> list[tuple[int, float]]:
-    out = []
+    by_fy: dict[int, float] = {}
     for u in facts.get(tag, {}).get("units", {}).get("USD", []):
         try:
             fy = int(u.get("fy", 0))
@@ -27,8 +31,22 @@ def _annual(facts: dict, tag: str, form: str = "10-K") -> list[tuple[int, float]
         except (ValueError, TypeError):
             continue
         if u.get("form") == form and fy > 0:
-            out.append((fy, v))
-    return sorted(out)
+            by_fy[fy] = v  # last filing for the year wins (amendments)
+    return sorted(by_fy.items())
+
+
+def _revenue_series(gaap: dict, form: str = "10-K") -> list[tuple[int, float]]:
+    """Revenue across tag renames (firms switch tags; e.g. Meta 2018).
+    Per year, first tag in REVENUE_TAGS order wins."""
+    per_tag = {t: dict(_annual(gaap, t, form)) for t in REVENUE_TAGS}
+    years = sorted({f for d in per_tag.values() for f in d})
+    out = []
+    for f in years:
+        for t in REVENUE_TAGS:
+            if f in per_tag[t]:
+                out.append((f, per_tag[t][f]))
+                break
+    return out
 
 
 def fundamentals(cik: str, timeout: int = 30) -> dict:
@@ -40,7 +58,7 @@ def fundamentals(cik: str, timeout: int = 30) -> dict:
     except Exception as exc:
         return {"cik": cik, "error": str(exc)[:120]}
     gaap = (doc.get("facts", {}).get("us-gaap", {}))
-    rev = _annual(gaap, "Revenues") or _annual(gaap, "SalesRevenueNet")
+    rev = _revenue_series(gaap)
     rnd = _annual(gaap, "ResearchAndDevelopmentExpense")
     rev_d = dict(rev)
     out = {"cik": cik, "entity": doc.get("entityName", ""),

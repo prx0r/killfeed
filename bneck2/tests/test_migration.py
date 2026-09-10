@@ -177,5 +177,31 @@ class TestAtoms(unittest.TestCase):
                            A.convexity(one, sev)["convexity"])
 
 
+class TestAcq(unittest.TestCase):
+    def test_map_and_eligible(self):
+        from bneck2 import acq as A
+        self.assertEqual(A.map_tickers("OpenAI", "AMD GPUs 6 GW"), ["AMD"])
+        self.assertEqual(A.map_tickers("OpenAI", "Cerebras"), [])
+        good, dropped = A.eligible([
+            {"date": "2026-01-01", "lab": "x", "target": "y", "kind": "k"},
+            {"date": "2026-04-06", "lab": "Anthropic",
+             "target": "Google/Broadcom", "kind": "deployment"},
+            {"date": "2026-01-14", "lab": "OpenAI", "target": "Cerebras",
+             "kind": "deployment"}])
+        self.assertEqual(len(good), 1)
+        self.assertEqual(
+            {d["reason"] for d in dropped},
+            {"placeholder-date", "private-or-ambiguous-target"})
+
+    def test_summarize_gates(self):
+        from bneck2 import acq as A
+        rows = [{"excess": 0.20}, {"excess": 0.01},
+                {"excess": -0.01}, {"excess": 0.30}, {"excess": 0.10}]
+        s = A.summarize(rows)
+        self.assertEqual(s["verdict"], "CONFIRMED")
+        self.assertEqual(A.summarize([{"excess": None}])["verdict"],
+                         "INCONCLUSIVE")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -73,6 +73,8 @@ Dependency rules:
 | PM venues | Polymarket Gamma + Kalshi open-events (keyword match), best book wins | collectors/polymarket.py, collectors/kalshi.py |
 | PM queries | topical overrides (AGI-2027, nuclear, robot…) — labels return noise | killfeed.py PM_QUERY_OVERRIDES |
 | pm reliability | high-liq 0.82 / mid 0.60 / low 0.50 (never p alone) | killfeed.py |
+| acq event study | 20d fwd vs SPY per dated lab deal; drops logged | bneck2/acq.py (H-ACQ-1 refuted → H-ACQ-2/3 refine) |
+| XBRL revenue | tag-rename aware series (Contract→Revenues→Sales) | collectors/sec_facts.py |
 | whale consensus | N+ wallets same outcome ≥$1k → WHALE_CONSENSUS signal (best-book mkt, 1 call) | collectors/polywhale.py (recipes ex-polytrack/polywhale) |
 | lab receipts | preregister → run → receipt → verdict; n<30 directional-only | bneck2/lab.py, experimentation/ (cg-flow) |
 | forward returns | Yahoo daily closes; close-to-close over N trading days | bneck2/prices.py history() |

@@ -221,6 +221,93 @@ def e009_severity_crowdedness() -> tuple[dict, str, int]:
         ("CONFIRMED" if rho > 0.3 else "REFUTED"), n
 
 
+def e010_acq_chain() -> tuple[dict, str, int]:
+    """H-ACQ-1: lab capital events -> counterparty +5pp vs SPY in 20d."""
+    import json
+    from bneck2 import acq as A
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-ACQ-1", "lab capital events move counterparties",
+        "counterparty 20d excess vs SPY > +5pp on >=60% of events (n>=5)",
+        "hit rate <60% or mean excess <= 0",
+        "commitments.json dates + Yahoo daily closes vs SPY")
+    doc = json.loads((ROOT / "data" / "labs" / "commitments.json")
+                     .read_text(encoding="utf-8"))
+    good, dropped = A.eligible(doc.get("commitments", []))
+    rows = A.event_study(good)
+    s = A.summarize(rows)
+    s["events"] = len(good)
+    s["dropped"] = len(dropped)
+    s["rows"] = [(r["event"], r["ticker"], r.get("excess")) for r in rows]
+    s["note"] = (f"{s.get('hit_rate', '?')} hit rate, mean excess "
+                 f"{s.get('mean_excess', '?')}, n={s['n']} directional")
+    return s, s["verdict"], s["n"]
+
+
+def e011_acq_silicon() -> tuple[dict, str, int]:
+    """H-ACQ-2 (refine of H-ACQ-1): irreversible silicon/capacity/nuclear
+    commitments move counterparties; generic deployments do not."""
+    from bneck2 import acq as A
+    from bneck2 import lab as LAB
+    LAB.preregister(
+        "H-ACQ-2", "only irreversible commitments move prices",
+        "silicon-roadmap/capacity-contract/multidecade kinds: hit>=60%, n>=5",
+        "hit <60% (no better than all-events)",
+        "same event study, kind subset; parent H-ACQ-1")
+    rows, _ = _acq_rows()
+    sub = [r for r in rows if r.get("kind") in
+           ("silicon-roadmap", "capacity-contract", "multidecade-contract")]
+    s = A.summarize(sub)
+    s["rows"] = [(r["event"], r["ticker"], r["kind"], r["excess"]) for r in sub]
+    s["parent"] = "H-ACQ-1 (refine)"
+    s["note"] = (f"silicon/capacity subset: hit {s.get('hit_rate','?')}, "
+                 f"mean {s.get('mean_excess','?')}, n={s['n']}")
+    return s, s["verdict"], s["n"]
+
+
+def e012_acq_size_split() -> tuple[dict, str, int]:
+    """H-ACQ-3 (refine of H-ACQ-1): revenue-scale split in event response.
+
+    Prereg amendment (receipt-logged): Yahoo chart meta carries no
+    marketCap here and v7 needs crumbs, so size = XBRL revenue TTM
+    (>= $100B = mega), measured via collectors/sec_facts.py. Same
+    hypothesis, honest instrument.
+    """
+    from bneck2 import acq as A
+    from bneck2 import lab as LAB
+    from collectors import sec_facts as SF
+    LAB.preregister(
+        "H-ACQ-3", "size split in event response",
+        "sub-$100B-revenue hit>=60%; mega hit<40%",
+        "no size pattern",
+        "XBRL revenue TTM split; parent H-ACQ-1")
+    CIK = {"NVDA": "1045810", "AMD": "2488", "AVGO": "1730168",
+           "GOOGL": "1652044", "AMZN": "1018724", "META": "1326801",
+           "CSCO": "858877", "MU": "1430265", "CRWV": "1763920"}
+    rows, _ = _acq_rows()
+    rev = {}
+    for r in rows:
+        t = r["ticker"]
+        if t not in rev:
+            f = SF.fundamentals(CIK[t]) if t in CIK else {}
+            rev[t] = f.get("revenue_ttm")
+    mega = [r for r in rows if (rev.get(r["ticker"]) or 0) >= 1e11]
+    rest = [r for r in rows if rev.get(r["ticker"]) is not None
+            and rev[r["ticker"]] < 1e11]
+    unknown = sorted({r["ticker"] for r in rows if rev.get(r["ticker"]) is None})
+    sm, sr = A.summarize(mega), A.summarize(rest)
+    out = {"mega": {**sm, "tickers": sorted({r["ticker"] for r in mega})},
+           "rest": {**sr, "tickers": sorted({r["ticker"] for r in rest})},
+           "unknown_size": unknown,
+           "parent": "H-ACQ-1 (refine)",
+           "note": f"mega(rev>=$100B) hit {sm.get('hit_rate', '?')} n={sm['n']} "
+                   f"vs rest hit {sr.get('hit_rate', '?')} n={sr['n']}"}
+    verdict = ("CONFIRMED" if sr.get("hit_rate", 0) >= 0.6 and sm.get("hit_rate", 1) < 0.4
+               and sr.get("n", 0) >= 3 else "REFUTED"
+               if sr.get("n", 0) + sm.get("n", 0) >= 5 else "INCONCLUSIVE")
+    return out, verdict, sr.get("n", 0) + sm.get("n", 0)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -231,4 +318,28 @@ REGISTRY = {
     "E007": e007_burst_panel,
     "E008": e008_venue_segmentation,
     "E009": e009_severity_crowdedness,
+    "E010": e010_acq_chain,
+    "E011": e011_acq_silicon,
+    "E012": e012_acq_size_split,
 }
+
+
+
+
+def _acq_rows():
+    import json
+    from bneck2 import acq as A
+    doc = json.loads((ROOT / "data" / "labs" / "commitments.json")
+                     .read_text(encoding="utf-8"))
+    good, dropped = A.eligible(doc.get("commitments", []))
+    rows = A.event_study(good)
+    seen, uniq = set(), []
+    for r in rows:
+        if r.get("excess") is None:
+            continue
+        key = (r["event"], r["ticker"])
+        if key not in seen:
+            seen.add(key)
+            uniq.append(r)
+    return uniq, dropped
+
