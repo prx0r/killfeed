@@ -1,0 +1,46 @@
+{
+ "asof": "2026-09-10",
+ "rule": "love x (1+threat) x complacency x runup; researcher corpus + FINRA short-vol + 2y Yahoo",
+ "ranking": [
+  {
+   "t": "LITE",
+   "risk": 286.9,
+   "why": "+1835% 2y, 5 researcher positives, InP pass-through doubt + open-market laser buying (threat: merchant squeeze)"
+  },
+  {
+   "t": "COHR",
+   "risk": 87.1,
+   "why": "+328% 2y, 6 positives vs TheValueist NEGATIVE (telemetry/commodity squeeze) + InP substrate dependence"
+  },
+  {
+   "t": "MRVL",
+   "risk": 31.8,
+   "why": "most contested (3 researchers); +228%; Credo read-through cuts both ways (DSP sockets safe near-term, bundled PIC+DSP threat)"
+  },
+  {
+   "t": "NVDA",
+   "risk": 24.4,
+   "why": "most debated (4 researchers, 6 negatives); +107%; disruption chatter (AI-designed chips) vs monopoly cash flows"
+  },
+  {
+   "t": "AVGO",
+   "risk": 22.4,
+   "why": "+146%; custom-silicon exposure contested; hyperscaler-direct BOM control threat"
+  },
+  {
+   "t": "PANW",
+   "risk": 21.3,
+   "why": "most loved (+8, single researcher); +95%; one structured Negative (gross-margin risk); single-source love = fragile consensus"
+  },
+  {
+   "t": "CSCO",
+   "risk": 15.5,
+   "why": "+124%; availability-per-dollar shift favors platform, but 3 threats vs 2 loves"
+  },
+  {
+   "t": "CRWD",
+   "risk": 13.2,
+   "why": "+237% with 2 TheValueist negatives (gross-margin risk); AI-detection narrative vs margin compression"
+  }
+ ]
+}
