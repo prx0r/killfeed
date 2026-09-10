@@ -1,0 +1,34 @@
+{
+ "ticker": "PANW",
+ "layers": [
+  {
+   "id": "PML_L10",
+   "label": "Cybersecurity",
+   "crowdedness": null
+  }
+ ],
+ "reverse_chain": [],
+ "threat": {
+  "negatives": 1,
+  "researchers": [
+   "TheValueist"
+  ]
+ },
+ "crowded_rank": {
+  "t": "PANW",
+  "risk": 21.3,
+  "why": "most loved (+8, single researcher); +95%; one structured Negative (gross-margin risk); single-source love = fragile consensus"
+ },
+ "triage": null,
+ "highlevel": [],
+ "leads": [
+  "PML_L9 -REQUIRES-> PML_L10 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]"
+ ],
+ "bear_case": [
+  "TheValueist: Palo Alto Networks, Inc.: Negative"
+ ],
+ "bull_case": [
+  "ai_contribution 0.45 via PML_L10"
+ ],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}

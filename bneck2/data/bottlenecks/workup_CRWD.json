@@ -1,0 +1,47 @@
+{
+ "ticker": "CRWD",
+ "layers": [
+  {
+   "id": "PML_L10",
+   "label": "Cybersecurity",
+   "crowdedness": null
+  }
+ ],
+ "reverse_chain": [],
+ "threat": {
+  "negatives": 3,
+  "researchers": [
+   "TheValueist",
+   "nanalyzetweets"
+  ]
+ },
+ "crowded_rank": {
+  "t": "CRWD",
+  "risk": 13.2,
+  "why": "+237% with 2 TheValueist negatives (gross-margin risk); AI-detection narrative vs margin compression"
+ },
+ "triage": {
+  "ticker": "CRWD",
+  "status": "UNPRICED",
+  "first_threat": "2026-08",
+  "excess": 0.0252,
+  "maxdd": -0.178,
+  "by": [
+   "TheValueist",
+   "nanalyzetweets"
+  ]
+ },
+ "highlevel": [],
+ "leads": [
+  "PML_L9 -REQUIRES-> PML_L10 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]"
+ ],
+ "bear_case": [
+  "nanalyzetweets: I to identify attacks before they could even occur, and identified them as a leading AI cybersecurity company long before their IPO. Says Bl",
+  "TheValueist: Moderate on gross-margin risk. CrowdStrike Holdings, Inc.: Negative",
+  "TheValueist: High. CrowdStrike Holdings, Inc.: Negative"
+ ],
+ "bull_case": [
+  "ai_contribution 0.5 via PML_L10"
+ ],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}

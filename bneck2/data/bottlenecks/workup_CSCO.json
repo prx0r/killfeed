@@ -1,0 +1,35 @@
+{
+ "ticker": "CSCO",
+ "layers": [],
+ "reverse_chain": [],
+ "threat": {
+  "negatives": 3,
+  "researchers": [
+   "TheValueist"
+  ]
+ },
+ "crowded_rank": {
+  "t": "CSCO",
+  "risk": 15.5,
+  "why": "+124%; availability-per-dollar shift favors platform, but 3 threats vs 2 loves"
+ },
+ "triage": {
+  "ticker": "CSCO",
+  "status": "UNPRICED",
+  "first_threat": "2026-08",
+  "excess": -0.0617,
+  "maxdd": -0.1233,
+  "by": [
+   "TheValueist"
+  ]
+ },
+ "highlevel": [],
+ "leads": [],
+ "bear_case": [
+  "TheValueist: High. Cisco Systems, Inc.: Negative",
+  "TheValueist: High. Cisco Systems, Inc.: Negative",
+  "TheValueist: Moderate-to-High. Cisco Systems, Inc.: Negative"
+ ],
+ "bull_case": [],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}

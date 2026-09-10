@@ -101,6 +101,8 @@ def main() -> int:
         check("verdict_coverage json", "cells_tested" in t, t[:60])
         t = m.tool("scarcity_scan", {"text": "cryogenic wafer probing"})["_text"]
         check("scarcity_scan tickers", "FORM" in t, t[:120])
+        t = m.tool("target_workup", {"ticker": "COHR"})["_text"]
+        check("target_workup content", "COHR" in t and "leads:" in t, t[:60])
         r = m.call("tools/call", {"name": "does_not_exist"})
         check("unknown tool errors", "error" in r)
         r = m.call("bogus/method")

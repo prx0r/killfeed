@@ -342,6 +342,18 @@ class TestEdges(unittest.TestCase):
             g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
         self.assertEqual(m2, [])
 
+    def test_target_workup(self):
+        import json
+        import subprocess
+        r = subprocess.run(["python3", "scripts/work_target.py", "MRVL"],
+                           capture_output=True, text=True, timeout=120)
+        self.assertEqual(r.returncode, 0, r.stderr[-500:])
+        w = json.load(open("data/bottlenecks/workup_MRVL.json"))
+        self.assertEqual(w["ticker"], "MRVL")
+        self.assertTrue(w["layers"])
+        self.assertIn(w["verdict"], ("OVERLOADED-LONG-AT-RISK", "THREATENED",
+                                     "STRUCTURAL", "UNKNOWN"))
+
     def test_death_watch_ranked(self):
         import json as _j
         from bneck2 import propagate as P

@@ -1,0 +1,103 @@
+{
+ "ticker": "LITE",
+ "layers": [
+  {
+   "id": "optical_io",
+   "label": "Optical interconnect / CPO",
+   "crowdedness": 0.677
+  },
+  {
+   "id": "PML_L8_OPT",
+   "label": "Optical Fiber & Transceiver",
+   "crowdedness": null
+  }
+ ],
+ "reverse_chain": [
+  {
+   "from": "optical_io",
+   "needs": "packaging",
+   "relation": "DEPENDS_ON",
+   "grade": "HYPOTHESIS",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Advanced packaging / glass interposers",
+   "crowdedness": 0.3,
+   "constraint": ""
+  },
+  {
+   "from": "PML_L8_OPT",
+   "needs": "PML_L9",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Data Center Construction & Real Estate",
+   "crowdedness": null,
+   "constraint": "\u6240\u6709AI\u7b97\u529b\u5fc5\u987b\u6709\u7269\u7406\u673a\u623f\u5bb9\u7eb3\uff0c\u571f\u5730+\u7535\u529b\u5ba1\u6279\u6210\u4e3a\u65b0\u74f6\u9888"
+  },
+  {
+   "from": "PML_L9",
+   "needs": "PML_L10",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 2,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Cybersecurity",
+   "crowdedness": null,
+   "constraint": "AI\u6570\u636e\u4e2d\u5fc3\u89c4\u6a21\u6269\u5f20\u2192\u653b\u51fb\u9762\u6269\u5927\u2192\u5408\u89c4\u5f3a\u5236\u5b89\u5168\u652f\u51fa"
+  }
+ ],
+ "threat": {
+  "negatives": 1,
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ]
+ },
+ "crowded_rank": {
+  "t": "LITE",
+  "risk": 286.9,
+  "why": "+1835% 2y, 5 researcher positives, InP pass-through doubt + open-market laser buying (threat: merchant squeeze)"
+ },
+ "triage": null,
+ "highlevel": [],
+ "leads": [
+  "PML_L8_COOL -REQUIRES-> PML_L8_OPT [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L8_OPT -REQUIRES-> PML_L9 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L9 -REQUIRES-> PML_L10 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]"
+ ],
+ "bear_case": [
+  "aleabitoreddit: the $AXTI InP substrates bottleneck/chokepoint got validated. With AXT it\u2019s more of a matter of ASP hikes moving forward with their agreemen"
+ ],
+ "bull_case": [
+  "ai_contribution 0.8 via PML_L8_OPT"
+ ],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}

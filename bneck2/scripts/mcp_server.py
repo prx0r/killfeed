@@ -108,6 +108,28 @@ def t_signals_board(args: dict) -> str:
                      for r in sorted(scored, key=lambda x: -x["score"]))
 
 
+def t_target_workup(args: dict) -> str:
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "workup_mod", str(ROOT / "scripts" / "work_target.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    tick = str(args.get("ticker", "LITE")).upper()
+    w = mod.workup(tick)
+    lines = [f"{tick} verdict={w['verdict']}",
+             f"layers={[(l['id'], l['crowdedness']) for l in w['layers']]}",
+             "reverse-chain:"]
+    for c in w["reverse_chain"][:8]:
+        lines.append(f"  {c['from']} -{c['relation']}-> {c['needs']} "
+                     f"[{c['grade']}] {c.get('label', '')[:40]}")
+    lines.append(f"threats={w['threat']} triage={w['triage']}")
+    lines.append("leads:")
+    for lead in w["leads"][:10]:
+        lines.append(f"  + {lead[:100]}")
+    lines.append(f"bear={w['bear_case'][:2]}")
+    return "\n".join(lines)
+
+
 def t_experiment_run(args: dict) -> str:
     from bneck2 import experiments as X
     from bneck2 import lab as LAB
@@ -182,6 +204,9 @@ TOOLS = {
     "scarcity_scan": (t_scarcity_scan, "Breakthrough text -> nodes + tickers.",
                       {"text": "cryogenic wafer probing"}),
 }
+TOOLS["target_workup"] = (
+    t_target_workup, "Reverse-chain workup: ticker -> layers -> upstream leads.",
+    {"ticker": "LITE"})
 
 
 def handle(msg: dict):

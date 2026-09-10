@@ -1,0 +1,239 @@
+{
+ "ticker": "NVDA",
+ "layers": [
+  {
+   "id": "accelerators",
+   "label": "AI accelerators (compute)",
+   "crowdedness": 0.9
+  },
+  {
+   "id": "PML_L2",
+   "label": "AI Training Compute",
+   "crowdedness": null
+  }
+ ],
+ "reverse_chain": [
+  {
+   "from": "accelerators",
+   "needs": "memory_hbm",
+   "relation": "DEPENDS_ON",
+   "grade": "HYPOTHESIS",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "HBM / high-bandwidth memory",
+   "crowdedness": 0.583,
+   "constraint": ""
+  },
+  {
+   "from": "accelerators",
+   "needs": "packaging",
+   "relation": "DEPENDS_ON",
+   "grade": "HYPOTHESIS",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Advanced packaging / glass interposers",
+   "crowdedness": 0.3,
+   "constraint": ""
+  },
+  {
+   "from": "accelerators",
+   "needs": "power",
+   "relation": "DEPENDS_ON",
+   "grade": "HYPOTHESIS",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Power conversion / power quality",
+   "crowdedness": 0.837,
+   "constraint": ""
+  },
+  {
+   "from": "PML_L2",
+   "needs": "PML_L2_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "AI Inference & Edge Silicon",
+   "crowdedness": null,
+   "constraint": "\u63a8\u7406\u9700\u6c42\u4e0e\u8bad\u7ec3\u9700\u6c42\u5728\u529f\u8017/\u5ef6\u8fdf/\u6210\u672c\u7ef4\u5ea6\u5b8c\u5168\u5206\u79bb\uff0c\u4ea7\u751f\u72ec\u7acb\u82af\u7247\u5e02\u573a"
+  },
+  {
+   "from": "memory_hbm",
+   "needs": "memory_dram",
+   "relation": "CASCADE",
+   "grade": "HYPOTHESIS",
+   "depth": 2,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Conventional DRAM (conversion cascade)",
+   "crowdedness": 0.583,
+   "constraint": ""
+  },
+  {
+   "from": "PML_L2_5",
+   "needs": "PML_L3",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 2,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "EDA & Chip Design Tools",
+   "crowdedness": null,
+   "constraint": "\u65e0EDA\u5de5\u5177\u65e0\u6cd5\u8fdb\u884c\u5148\u8fdb\u5236\u7a0b\u82af\u7247\u8bbe\u8ba1\uff0c\u5ba2\u6237\u5207\u6362\u6210\u672c\u6781\u9ad8"
+  },
+  {
+   "from": "memory_dram",
+   "needs": "storage",
+   "relation": "CASCADE",
+   "grade": "HYPOTHESIS",
+   "depth": 3,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Enterprise NAND / SSD / HDD",
+   "crowdedness": 0.583,
+   "constraint": ""
+  },
+  {
+   "from": "PML_L3",
+   "needs": "PML_L3_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 3,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Semiconductor Materials & Specialty Gases",
+   "crowdedness": null,
+   "constraint": "\u5149\u523b\u80f6/CMP\u6d46\u6599/\u7279\u79cd\u6c14\u4f53\u7b49\u65e0\u53ef\u66ff\u4ee3\uff0c\u8bbe\u5907\u65e0\u6b64\u7c7b\u6750\u6599\u65e0\u6cd5\u8fd0\u4f5c"
+  },
+  {
+   "from": "PML_L3_5",
+   "needs": "PML_L4",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 4,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Semiconductor Manufacturing Equipment",
+   "crowdedness": null,
+   "constraint": "\u5148\u8fdb\u5236\u7a0b\u6269\u4ea7\u5fc5\u987b\u91c7\u8d2d\u65b0\u8bbe\u5907\uff0c\u8bbe\u5907\u4e0d\u53ef\u79df\u7528/\u5171\u4eab\uff0c\u7269\u7406\u7ea6\u675f\u6781\u5f3a"
+  }
+ ],
+ "threat": {
+  "negatives": 6,
+  "researchers": [
+   "ArjunNMurti_historical",
+   "HyperTechInvest",
+   "TheValueist",
+   "nanalyzetweets"
+  ]
+ },
+ "crowded_rank": {
+  "t": "NVDA",
+  "risk": 24.4,
+  "why": "most debated (4 researchers, 6 negatives); +107%; disruption chatter (AI-designed chips) vs monopoly cash flows"
+ },
+ "triage": {
+  "ticker": "NVDA",
+  "status": "UNPRICED",
+  "first_threat": "2026-08",
+  "excess": 0.0762,
+  "maxdd": -0.0747,
+  "by": [
+   "HyperTechInvest"
+  ]
+ },
+ "highlevel": [],
+ "leads": [
+  "PML_L1 -REQUIRES-> PML_L2 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L2 -REQUIRES-> PML_L2_5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L2_5 -REQUIRES-> PML_L3 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L3 -REQUIRES-> PML_L3_5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L3_5 -REQUIRES-> PML_L4 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L4 -REQUIRES-> PML_L5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]"
+ ],
+ "bear_case": [
+  "HyperTechInvest: as to wonder: If OpenAI says AI played a key role in designing Jalape\u00f1o, what is the new potential for other chip designers? One would imagi",
+  "HyperTechInvest: $NVDA created the neocloud industry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to ",
+  "HyperTechInvest: dustry from 0 by leveraging the GPU shortage It took massive confidence in its moat, but NVIDIA knew it had to take advantage of its quasi-m"
+ ],
+ "bull_case": [
+  "ai_contribution 0.85 via PML_L2"
+ ],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}

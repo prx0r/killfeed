@@ -1239,6 +1239,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.583->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "id": "memory_hbm",
@@ -1311,6 +1317,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.583->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "id": "memory_dram",
@@ -1373,6 +1385,12 @@
     "Roundhill cascade: more inference/agents -> more stored data",
     {
      "value": "crowdedness 0.5->0.583 from FINRA short-vol avg 0.425 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.583->0.583 from FINRA short-vol avg 0.425 (n=1)",
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
@@ -1495,6 +1513,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.677->0.677 from FINRA short-vol avg 0.453 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "id": "optical_io",
@@ -1562,6 +1586,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.837->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "id": "power",
@@ -1623,6 +1653,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.837->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "id": "motors",
@@ -1678,6 +1714,12 @@
     "20-40+ joints per humanoid; inference cost cuts do nothing for backlash",
     {
      "value": "crowdedness 0.3->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.837->0.837 from FINRA short-vol avg 0.501 (n=1)",
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
@@ -1746,6 +1788,12 @@
     "Priced: ~5.5x sales, ~38x forward earnings",
     {
      "value": "crowdedness 0.55->0.837 from FINRA short-vol avg 0.501 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 0.837->0.837 from FINRA short-vol avg 0.501 (n=1)",
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
@@ -1949,6 +1997,12 @@
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 1.0->1.0 from FINRA short-vol avg 0.588 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ],
    "relieved_by": [
@@ -1999,6 +2053,12 @@
     "CRISPR precedent: patents decide who captures rents, not whether science proceeds",
     {
      "value": "crowdedness 0.35->1.0 from FINRA short-vol avg 0.588 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    },
+    {
+     "value": "crowdedness 1.0->1.0 from FINRA short-vol avg 0.588 (n=1)",
      "source": "FINRA",
      "date": "2026-09-10",
      "confidence": 0.65
@@ -2089,7 +2149,7 @@
    "label": "AI Foundation Model & Platform",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.357,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2155,6 +2215,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.357 from FINRA short-vol avg 0.357 (n=3)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2163,7 +2231,7 @@
    "label": "AI Demand & Application",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.762,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2201,6 +2269,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.762 from FINRA short-vol avg 0.479 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2209,7 +2285,7 @@
    "label": "AI Training Compute",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2261,6 +2337,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.550 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2269,7 +2353,7 @@
    "label": "AI Inference & Edge Silicon",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.724,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2349,6 +2433,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.724 from FINRA short-vol avg 0.468 (n=4)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2357,7 +2449,7 @@
    "label": "EDA & Chip Design Tools",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.523,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2409,6 +2501,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.523 from FINRA short-vol avg 0.407 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2417,7 +2517,7 @@
    "label": "Semiconductor Materials & Specialty Gases",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2497,6 +2597,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.550 (n=4)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2505,7 +2613,7 @@
    "label": "Semiconductor Manufacturing Equipment",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.733,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2599,6 +2707,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.733 from FINRA short-vol avg 0.470 (n=5)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2607,7 +2723,7 @@
    "label": "Advanced Packaging",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.814,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2659,6 +2775,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.814 from FINRA short-vol avg 0.494 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2691,7 +2815,8 @@
       }
      ]
     }
-   ]
+   ],
+   "evidence": []
   },
   {
    "id": "PML_L6",
@@ -2723,7 +2848,8 @@
       }
      ]
     }
-   ]
+   ],
+   "evidence": []
   },
   {
    "id": "PML_L7",
@@ -2731,7 +2857,7 @@
    "label": "Server OEM & EMS",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.86,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2811,6 +2937,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.86 from FINRA short-vol avg 0.508 (n=3)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2828,7 +2962,8 @@
    "constraint": "\u4e09\u4e2a\u5b50\u5c42\u5e73\u884c\u5b58\u5728\uff0c\u5747\u4e3a\u6570\u636e\u4e2d\u5fc3\u5fc5\u5907\uff0c\u4f20\u5bfc\u901f\u5ea6\u76f8\u8fd1",
    "grade": "HYPOTHESIS",
    "provenance": "prophetmap v1.4.0",
-   "suppliers": []
+   "suppliers": [],
+   "evidence": []
   },
   {
    "id": "PML_L8_NET",
@@ -2836,7 +2971,7 @@
    "label": "Data Center Network Interconnect",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.903,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2860,6 +2995,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.903 from FINRA short-vol avg 0.521 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2868,7 +3011,7 @@
    "label": "Data Center Cooling & Power",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2920,6 +3063,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.568 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2928,7 +3079,7 @@
    "label": "Optical Fiber & Transceiver",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.781,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -2980,6 +3131,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.781 from FINRA short-vol avg 0.485 (n=3)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -2988,7 +3147,7 @@
    "label": "Data Center Construction & Real Estate",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.874,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3054,6 +3213,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.874 from FINRA short-vol avg 0.513 (n=4)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3062,7 +3229,7 @@
    "label": "Cybersecurity",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3100,6 +3267,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.621 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3108,7 +3283,7 @@
    "label": "Clean Baseload & Nuclear Power",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.832,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3174,6 +3349,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.832 from FINRA short-vol avg 0.500 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3182,7 +3365,7 @@
    "label": "Nuclear Fuel Feedstock",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.408,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3206,6 +3389,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.408 from FINRA short-vol avg 0.373 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3214,7 +3405,7 @@
    "label": "Grid Equipment & Electrical Infrastructure",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.858,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3280,6 +3471,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.858 from FINRA short-vol avg 0.508 (n=3)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3288,7 +3487,7 @@
    "label": "Energy Production (Natural Gas E&P)",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.696,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3326,6 +3525,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.696 from FINRA short-vol avg 0.459 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3334,7 +3541,7 @@
    "label": "Critical Commodities (Copper/Aluminum)",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.476,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3386,6 +3593,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.476 from FINRA short-vol avg 0.393 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3394,7 +3609,7 @@
    "label": "Quantum Computing (Experimental)",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3432,6 +3647,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.588 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3440,7 +3663,7 @@
    "label": "Decentralized AI Infrastructure",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.266,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3534,6 +3757,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.266 from FINRA short-vol avg 0.330 (n=3)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3542,7 +3773,7 @@
    "label": "Embodied AI Infrastructure",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 0.781,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3622,6 +3853,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->0.781 from FINRA short-vol avg 0.484 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3630,7 +3869,7 @@
    "label": "Space Infrastructure",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3682,6 +3921,14 @@
       }
      ]
     }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.623 (n=1)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
+    }
    ]
   },
   {
@@ -3690,7 +3937,7 @@
    "label": "Defense AI",
    "status": "hypothesis",
    "prevalence": null,
-   "crowdedness": null,
+   "crowdedness": 1.0,
    "constraint_class": "layer",
    "tk_years": null,
    "td_years": null,
@@ -3727,6 +3974,14 @@
        "confidence": 0.5
       }
      ]
+    }
+   ],
+   "evidence": [
+    {
+     "value": "crowdedness None->1.0 from FINRA short-vol avg 0.606 (n=2)",
+     "source": "FINRA",
+     "date": "2026-09-10",
+     "confidence": 0.65
     }
    ]
   }

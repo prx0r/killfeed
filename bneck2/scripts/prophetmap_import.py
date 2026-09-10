@@ -29,9 +29,12 @@ def main() -> dict:
     for u in us:
         by_layer.setdefault(u.get("layer"), []).append(u)
     g = json.loads(GRAPH.read_text())
+    keep = {n["id"]: n for n in g.get("nodes", [])
+            if n.get("id", "").startswith("PML_")}
     nodes = [n for n in g.get("nodes", []) if not n.get("id", "").startswith("PML_")]
     for lyr in ls:
         lid = lyr.get("id")
+        prev = keep.get(f"PML_{lid}", {})
         sups = [{"ticker": u.get("symbol"),
                  "exposure": u.get("layerRole"),
                  "moat_capture": u.get("moatCapture"),
@@ -48,7 +51,9 @@ def main() -> dict:
                       "chain": lyr.get("chain"), "position": lyr.get("position"),
                       "constraint": (lyr.get("physicalConstraintDesc") or "")[:300],
                       "grade": "HYPOTHESIS", "provenance": "prophetmap v1.4.0",
-                      "suppliers": sups})
+                      "suppliers": sups,
+                      "crowdedness": prev.get("crowdedness"),
+                      "evidence": prev.get("evidence", [])})
     g["nodes"] = nodes
     GRAPH.write_text(json.dumps(g, indent=1))
     # skeleton edges along chain position order (quarantine)
@@ -56,9 +61,13 @@ def main() -> dict:
         return sorted([l for l in ls if l.get("chain") == letter
                        and lo <= (l.get("position") or 999) <= hi],
                       key=lambda l: l.get("position", 0))
+    prod = {(e.get("source"), e.get("target"), e.get("relation"))
+            for e in g.get("edges", [])}
     n_edge = 0
     for seq in (_chain("A", 0, 10), _chain("B", 11, 14)):
         for a, b in zip(seq, seq[1:]):
+            if (f"PML_{a['id']}", f"PML_{b['id']}", "REQUIRES") in prod:
+                continue
             e = E.blank_edge(f"PML_{a['id']}", f"PML_{b['id']}", "REQUIRES")
             e["note"] = ("skeleton: downstream layer requires upstream layer "
                          "(ProphetMap chain order — validate physically)")

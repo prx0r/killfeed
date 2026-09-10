@@ -1,0 +1,132 @@
+{
+ "ticker": "AVGO",
+ "layers": [
+  {
+   "id": "PML_L2_5",
+   "label": "AI Inference & Edge Silicon",
+   "crowdedness": null
+  }
+ ],
+ "reverse_chain": [
+  {
+   "from": "PML_L2_5",
+   "needs": "PML_L3",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 1,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "EDA & Chip Design Tools",
+   "crowdedness": null,
+   "constraint": "\u65e0EDA\u5de5\u5177\u65e0\u6cd5\u8fdb\u884c\u5148\u8fdb\u5236\u7a0b\u82af\u7247\u8bbe\u8ba1\uff0c\u5ba2\u6237\u5207\u6362\u6210\u672c\u6781\u9ad8"
+  },
+  {
+   "from": "PML_L3",
+   "needs": "PML_L3_5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 2,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Semiconductor Materials & Specialty Gases",
+   "crowdedness": null,
+   "constraint": "\u5149\u523b\u80f6/CMP\u6d46\u6599/\u7279\u79cd\u6c14\u4f53\u7b49\u65e0\u53ef\u66ff\u4ee3\uff0c\u8bbe\u5907\u65e0\u6b64\u7c7b\u6750\u6599\u65e0\u6cd5\u8fd0\u4f5c"
+  },
+  {
+   "from": "PML_L3_5",
+   "needs": "PML_L4",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 3,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Semiconductor Manufacturing Equipment",
+   "crowdedness": null,
+   "constraint": "\u5148\u8fdb\u5236\u7a0b\u6269\u4ea7\u5fc5\u987b\u91c7\u8d2d\u65b0\u8bbe\u5907\uff0c\u8bbe\u5907\u4e0d\u53ef\u79df\u7528/\u5171\u4eab\uff0c\u7269\u7406\u7ea6\u675f\u6781\u5f3a"
+  },
+  {
+   "from": "PML_L4",
+   "needs": "PML_L5",
+   "relation": "REQUIRES",
+   "grade": "SUPPORTED",
+   "depth": 4,
+   "supply": {
+    "global_capacity": null,
+    "utilization": null,
+    "lead_time_months": null,
+    "capacity_growth_rate": null
+   },
+   "timing": {
+    "needed_by": null,
+    "capacity_available_by": null
+   },
+   "label": "Advanced Packaging",
+   "crowdedness": null,
+   "constraint": "HBM\u4e0eGPU\u96c6\u6210\u5fc5\u987b\u901a\u8fc7CoWoS\u7b49\u5148\u8fdb\u5c01\u88c5\uff0c\u65e0\u53ef\u66ff\u4ee3\uff0c\u4ea7\u80fd\u6781\u5ea6\u7d27\u5f20"
+  }
+ ],
+ "threat": {
+  "negatives": 2,
+  "researchers": [
+   "TheValueist",
+   "aleabitoreddit"
+  ]
+ },
+ "crowded_rank": {
+  "t": "AVGO",
+  "risk": 22.4,
+  "why": "+146%; custom-silicon exposure contested; hyperscaler-direct BOM control threat"
+ },
+ "triage": {
+  "ticker": "AVGO",
+  "status": "UNPRICED",
+  "first_threat": "2026-08",
+  "excess": -0.0772,
+  "maxdd": -0.1687,
+  "by": [
+   "TheValueist",
+   "aleabitoreddit"
+  ]
+ },
+ "highlevel": [],
+ "leads": [
+  "PML_L2 -REQUIRES-> PML_L2_5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L2_5 -REQUIRES-> PML_L3 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L3 -REQUIRES-> PML_L3_5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L3_5 -REQUIRES-> PML_L4 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L4 -REQUIRES-> PML_L5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]",
+  "PML_L5 -REQUIRES-> PML_L5_5 [skeleton: downstream layer requires upstream layer (ProphetMap chain order \u2014 val]"
+ ],
+ "bear_case": [
+  "aleabitoreddit: ntly eased some substrate export controls\" but there's a \"severe InP substrate shortage\" per digitimes. Just some $AXTI related updates 14. ",
+  "TheValueist: Moderate. Broadcom Inc.: Negative"
+ ],
+ "bull_case": [
+  "ai_contribution 0.55 via PML_L2_5"
+ ],
+ "verdict": "OVERLOADED-LONG-AT-RISK"
+}
