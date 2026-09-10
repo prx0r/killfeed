@@ -16,5 +16,17 @@
   "p": 0.455,
   "snapshot": "2026-09-10",
   "resolved": null
+ },
+ {
+  "question": "Will the price of Bitcoin be above $76,000 on September 10?",
+  "p": 0.948,
+  "snapshot": "2026-09-10",
+  "resolved": null
+ },
+ {
+  "question": "Will the price of Bitcoin be above $78,000 on September 10?",
+  "p": 0.365,
+  "snapshot": "2026-09-10",
+  "resolved": null
  }
 ]

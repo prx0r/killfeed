@@ -18,3 +18,9 @@
 {"id": "V018", "def": "ClinicalTrials totals per bio term (validation queue depth)", "measures_via": "collectors/bio.py", "status": "candidate"}
 {"id": "V019", "def": "Kalshi candle momentum per tracked market (pm velocity)", "measures_via": "collectors/kalshi.py candles", "status": "candidate"}
 {"id": "V020", "def": "CLOB spread/depth per best-book token (book quality beyond tiers)", "measures_via": "collectors/clob.py", "status": "candidate"}
+{"id": "V021", "lens": "abductive", "def": "NVDA weekly options-implied move vs realized (vol surprise)", "measures_via": "CLOB/PM implied distributions vs Yahoo realized", "status": "candidate"}
+{"id": "V022", "lens": "analogical", "def": "TSMC monthly revenue as HBM-demand proxy (like SOXX-billings for semis)", "measures_via": "TW revenue releases + node tickers", "status": "candidate"}
+{"id": "V023", "lens": "counterfactual", "def": "names WITHOUT insider selling vs matched sellers (control leg for E018)", "measures_via": "OpenInsider tape + Yahoo", "status": "candidate"}
+{"id": "V024", "lens": "causal", "def": "Grid queue additions per county (permission flow rate)", "measures_via": "FedRegister + EIA (queued key) \u2014 spec only", "status": "candidate"}
+{"id": "V025", "lens": "deductive", "def": "if scarcity migrates HBM->packaging, packaging-lead-time spread over HBM-lead-time", "measures_via": "supplier polls (unmeasured \u2014 spec)", "status": "candidate"}
+{"id": "V026", "lens": "inductive", "def": "Friday-vs-Monday forward drift asymmetry in semi names (weekend effect)", "measures_via": "Yahoo daily closes", "status": "candidate"}

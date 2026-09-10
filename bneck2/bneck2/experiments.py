@@ -1118,6 +1118,50 @@ def e035_attribution() -> tuple[dict, str, int]:
     return out, ("CONFIRMED" if flip else "REFUTED"), len(tickers)
 
 
+def e036_tilt_attribution() -> tuple[dict, str, int]:
+    """H-ATT-2: E017 +2.24% was concentrated luck, not a factor."""
+    from collections import defaultdict
+    from bneck2 import lab as LAB
+    from bneck2 import predict as PD
+    LAB.preregister(
+        "H-ATT-2", "tilt concentrated in few names",
+        "top-3 contributors >80% of total positive excess on original panel",
+        "broad-based (no 3-name dominance)",
+        "monthly 15-ticker panel holdout")
+    import json as _j
+    rows = []
+    for f in sorted((ROOT / "data" / "predict").glob("panel-*.jsonl")):
+        rows += [_j.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [r for r in rows if r.get("fwd_20") is not None]
+    dates = sorted({r["date"] for r in rows})
+    cut = dates[max(len(dates) - 3, 0)]
+    hold = [r for r in rows if r["date"] >= cut]
+    train = [r for r in rows if r["date"] < cut]
+    scr = PD.screen(train)
+    winners = [s["factor"] for s in scr
+               if s["IC"] is not None and abs(s["IC"]) > 0.1 and s["n"] >= 20]
+    signs = {s["factor"]: 1.0 if (s["IC"] or 0) >= 0 else -1.0 for s in scr}
+    scored = PD.composite_by_date(hold, winners or ["f_mom_20"], signs)
+    by_date = {}
+    for r in scored:
+        by_date.setdefault(r["date"], []).append(r)
+    contrib, pos_total = defaultdict(float), 0.0
+    for d in sorted(by_date):
+        g = sorted(by_date[d], key=lambda r: -r["score"])
+        k = max(len(g) // 3, 1)
+        uni = sum(r["fwd_20"] for r in g) / len(g)
+        for r in g[:k]:
+            contrib[r["ticker"]] += r["fwd_20"] - uni
+            if r["fwd_20"] - uni > 0:
+                pos_total += r["fwd_20"] - uni
+    top3 = sorted(contrib.items(), key=lambda kv: -kv[1])[:3]
+    share = (sum(v for _, v in top3 if v > 0) / pos_total) if pos_total > 0 else 0.0
+    out = {"top3": [(t, round(v, 4)) for t, v in top3],
+           "concentration": round(share, 3),
+           "note": f"top-3 share of positive excess: {share:.0%}"}
+    return out, ("CONFIRMED" if share > 0.8 else "REFUTED"), len(by_date)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1154,6 +1198,7 @@ REGISTRY = {
     "E033": e033_x_calls,
     "E034": e034_kalshi_momentum,
     "E035": e035_attribution,
+    "E036": e036_tilt_attribution,
 }
 
 
@@ -1251,6 +1296,7 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
 
 
 
