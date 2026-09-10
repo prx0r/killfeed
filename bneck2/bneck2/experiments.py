@@ -2233,6 +2233,81 @@ def e054_death_watch_test() -> tuple[dict, str, int]:
     return res, ("CONFIRMED" if ok else "REFUTED"), n
 
 
+def e055_ai_beta() -> tuple[dict, str, int]:
+    """H-AIBETA-1: trailing AI-beta (vs IGV) predicts forward returns."""
+    import json as _j
+    from bneck2 import lab as LAB
+    from bneck2 import prices as P
+    LAB.preregister(
+        "H-AIBETA-1", "high AI-beta names outperform forward (Borri 2026)",
+        "L/S tercile spread > 0 over 2y walk-forward",
+        "spread <= 0 (AI beta not priced cross-sectionally here)",
+        "atoms+NVDA ~17 names; 252d beta vs IGV; 21d fwd; monthly steps")
+    atoms = _j.load(open(ROOT / "data" / "universe" / "ai_atoms.json"))
+    names = ["NVDA"] + [a["ticker"] for a in atoms.get("companies", [])]
+    px = {}
+    for t in names:
+        try:
+            cs = P.history(t, "5y").get("closes", [])
+            if len(cs) >= 600:
+                px[t] = {c["date"]: c["close"] for c in cs}
+        except Exception:
+            pass
+    try:
+        mkt = {c["date"]: c["close"] for c in P.history("IGV", "5y").get("closes", [])}
+    except Exception:
+        return {"error": "no IGV"}, "INCONCLUSIVE", 0
+    dys = sorted(set(mkt) & set().union(*[set(v) for v in px.values()]))
+    if len(dys) < 600 or len(px) < 8:
+        return {"names": len(px), "days": len(dys)}, "INCONCLUSIVE", 0
+    rets = {}
+    for t, s in px.items():
+        rets[t] = {d: (s[d] / s[p] - 1) for d, p in zip(dys[1:], dys[:-1])
+                   if d in s and p in s and s[p]}
+    mr = {d: (mkt[d] / mkt[p] - 1) for d, p in zip(dys[1:], dys[:-1])
+          if d in mkt and p in mkt and mkt[p]}
+    spread = []
+    for i in range(252, len(dys) - 21, 21):
+        d0 = dys[i]
+        betas = {}
+        for t, s in rets.items():
+            xs = [mr.get(d, 0) for d in dys[i - 252:i]]
+            ys = [s.get(d, 0) for d in dys[i - 252:i]]
+            mx = sum(xs) / len(xs)
+            vx = sum((x - mx) ** 2 for x in xs) / len(xs)
+            if vx <= 0:
+                continue
+            my = sum(ys) / len(ys)
+            betas[t] = sum((x - mx) * (y - my) for x, y in zip(xs, ys)) / vx
+        if len(betas) < 6:
+            continue
+        ranked = sorted(betas)
+        k = max(len(ranked) // 3, 1)
+        lo, hi = ranked[:k], ranked[-k:]
+        fl, fh = [], []
+        for t in lo:
+            if dys[i] in px[t] and dys[i + 21] in px[t] and px[t][dys[i]]:
+                fl.append(px[t][dys[i + 21]] / px[t][dys[i]] - 1)
+        for t in hi:
+            if dys[i] in px[t] and dys[i + 21] in px[t] and px[t][dys[i]]:
+                fh.append(px[t][dys[i + 21]] / px[t][dys[i]] - 1)
+        if fl and fh:
+            spread.append(sum(fh) / len(fh) - sum(fl) / len(fl))
+    if len(spread) < 12:
+        return {"windows": len(spread)}, "INCONCLUSIVE", len(spread)
+    import math as _m
+    mu = sum(spread) / len(spread)
+    sd = _m.sqrt(sum((x - mu) ** 2 for x in spread) / (len(spread) - 1))
+    sh = (mu * 12) / (sd * _m.sqrt(12)) if sd > 0 else 0.0
+    tot = 1.0
+    for x in spread:
+        tot *= 1 + x
+    res = {"windows": len(spread), "mean_spread": round(mu, 4),
+           "sharpe": round(sh, 3), "total": round(tot - 1, 3),
+           "note": f"AI-beta L/S {mu:.2%}/window, Sharpe {sh:.2f}, total {tot-1:.1%}"}
+    return res, ("CONFIRMED" if mu > 0 and sh > 0.5 else "REFUTED"), len(spread)
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -2291,6 +2366,7 @@ REGISTRY = {
     "E053": e053_step_obsolescence,
     "G003": g003_death_watch,
     "E054": e054_death_watch_test,
+    "E055": e055_ai_beta,
 }
 
 
@@ -2415,6 +2491,7 @@ def _nvda_pm_markets():
         except Exception:
             pass
     return out
+
 
 
 
