@@ -28,7 +28,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 UNIVERSE = ["NVDA", "AMD", "MU", "INTC", "FORM", "KEYS", "COHR", "LITE",
-            "IONQ", "RGTI", "AVGO", "GOOGL", "AMZN", "META", "CSCO"]
+            "IONQ", "RGTI", "AVGO", "GOOGL", "AMZN", "META", "CSCO",
+            "ONTO", "AEHR", "ALAB", "SNPS", "ANET", "MRVL", "ARM", "TSM",
+            "CRWV", "NBIS", "NOK", "TER", "KLAC", "AMAT", "LRCX"]
 
 
 def grid(freq: str = "monthly", n: int = 12) -> list[str]:

@@ -233,10 +233,25 @@ class TestDeep(unittest.TestCase):
 
 
 class TestFocusedNames(unittest.TestCase):
+    def test_kalshi_series_fields(self):
+        from collectors import kalshi as KL
+        doc = {"events": [{"title": "T", "series_ticker": "KX",
+                           "markets": [{"ticker": "KX-1", "last_price_dollars": "0.4",
+                                        "volume_24h_fp": "5", "liquidity_dollars": "6"}]}]}
+        rows = KL.parse_events(doc, "whatever txyz")
+        self.assertEqual(rows, [])
+
+    def test_universe_expanded(self):
+        from bneck2 import predict as PD
+        self.assertGreaterEqual(len(PD.UNIVERSE), 25)
+        for t in ("ONTO", "SNPS", "TSM"):
+            self.assertIn(t, PD.UNIVERSE)
+
     def test_registry_has_focus(self):
         from bneck2 import experiments as X
         for e in ("E018", "E019", "E020", "E021", "E022", "E023",
-                  "E024", "E025", "E026", "E027", "E028", "E032", "E033"):
+                  "E024", "E025", "E026", "E027", "E028", "E032", "E033",
+                  "E034"):
             self.assertIn(e, X.REGISTRY)
 
     def test_crypto_history_shape(self):

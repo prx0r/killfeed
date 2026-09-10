@@ -1035,6 +1035,42 @@ def e033_x_calls() -> tuple[dict, str, int]:
     return out, verdict, n
 
 
+def e034_kalshi_momentum() -> tuple[dict, str, int]:
+    """H-KAL-1: Kalshi 7d candle momentum persists next 7d (pm velocity)."""
+    from bneck2 import lab as LAB
+    from collectors import kalshi as KL
+    LAB.preregister(
+        "H-KAL-1", "kalshi momentum persists week-over-week",
+        "sign(7d momentum) matches sign(next 7d move) on >=60% of windows",
+        "hit < 60% (pm prices random-walk at weekly grid)",
+        "30d daily candles, top-3 liquid markets")
+    import time as _t
+    mkts = sorted(KL.fetch_markets("artificial intelligence")
+                  + KL.fetch_markets("nuclear power")
+                  + KL.fetch_markets("robot"),
+                  key=lambda m: -(m.get("liquidity", 0) + m.get("volume", 0)))[:3]
+    now = int(_t.time())
+    hits, n, detail = 0, 0, []
+    for m in mkts:
+        if not m.get("series") or not m.get("ticker"):
+            continue
+        cs = KL.fetch_candles(m["series"], m["ticker"], now - 30 * 86400, now)
+        closes = [c["close"] for c in cs if c.get("close") is not None]
+        if len(closes) < 21:
+            continue
+        mom = closes[-8] - closes[-15] if len(closes) >= 15 else 0
+        fwd = closes[-1] - closes[-8]
+        n += 1
+        hit = (mom > 0) == (fwd > 0) and mom != 0
+        hits += hit
+        detail.append({"q": m["question"][:50], "hit": hit})
+    out = {"n": n, "hits": hits, "detail": detail,
+           "note": f"kalshi momentum {hits}/{n} carry"}
+    verdict = ("CONFIRMED" if n >= 5 and hits / n >= 0.6 else "REFUTED"
+               if n >= 5 else "INCONCLUSIVE")
+    return out, verdict, n
+
+
 REGISTRY = {
     "E001": e001_burst_forward,
     "E002": e002_attack_crowded,
@@ -1069,6 +1105,7 @@ REGISTRY = {
     "E031": e031_momentum_only,
     "E032": e032_nvda_basket,
     "E033": e033_x_calls,
+    "E034": e034_kalshi_momentum,
 }
 
 
@@ -1166,5 +1203,6 @@ def _deep_rows():
         return [_j.loads(l) for l in fp.read_text(encoding="utf-8").splitlines() if l.strip()]
     except (OSError, ValueError):
         return []
+
 
 

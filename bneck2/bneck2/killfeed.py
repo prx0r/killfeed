@@ -228,10 +228,33 @@ def pm_reading(markets: list[dict]) -> dict | None:
     best = max(markets, key=lambda m: (float(m.get("liquidity", 0)),
                                        float(m.get("volume", 0))))
     tier = best.get("tier") or "low-liquidity"
+    rel = THRESHOLDS["pm_reliability"].get(tier, 0.50)
+    depth_note = ""
+    if best.get("venue") == "polymarket" and best.get("conditionId"):
+        try:
+            from collectors import clob as _CLOB
+            import json as _j
+            import urllib.request as _u
+            req = _u.Request(
+                "https://gamma-api.polymarket.com/markets?condition_id="
+                + best["conditionId"], headers={"User-Agent": "bneck"})
+            with _u.urlopen(req, timeout=15) as _r:
+                _det = _j.loads(_r.read().decode("utf-8", "replace"))
+            tids = _j.loads((_det[0].get("clobTokenIds") or "[]")) if _det else []
+            if tids:
+                book = _CLOB.book(str(tids[0]))
+                depth_note = (f" depth=${book.get('depth_top5', 0):,.0f}"
+                              f" spread={book.get('spread')}")
+                if book.get("depth_top5", 0) >= 1_000_000:
+                    rel = min(rel + 0.1, 0.95)
+                if (book.get("spread") or 0) > 0.2:
+                    rel = max(rel - 0.1, 0.3)
+        except Exception:
+            pass
     return {"question": best.get("question", "")[:160],
             "p": float(best.get("p", 0.0)), "tier": tier,
-            "venue": best.get("venue", "?"),
-            "reliability": THRESHOLDS["pm_reliability"].get(tier, 0.50)}
+            "venue": best.get("venue", "?") + depth_note,
+            "reliability": rel}
 
 
 def evaluate(node: dict, sec: list[dict] | None = None,

@@ -63,6 +63,8 @@ def parse_events(doc: dict, query: str) -> list[dict]:
         title = str(ev.get("title", ""))[:160]
         for m in ev.get("markets", []) or []:
             out.append({"question": title, "p": market_price(m),
+                        "series": ev.get("series_ticker", ""),
+                        "ticker": m.get("ticker", ""),
                         "volume": _f(m.get("volume_24h_fp") or m.get("volume_fp")),
                         "liquidity": _f(m.get("liquidity_dollars")),
                         "venue": "kalshi"})

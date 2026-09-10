@@ -89,6 +89,9 @@ Dependency rules:
 | backtest panel | snapshots append idempotent; forwards fill; <2 dates INSUFFICIENT | bneck2/backtest.py, data/backtest/panel.jsonl |
 | oneclick | all streams → report, graceful degradation per step | scripts/oneclick.py |
 | senate-blocked | efdsearch 403s bots; needs session/key — unknowns ledger | docs (queued) |
+| universe | 30 tickers, Yahoo-verified (15 graph + 15 atoms) | predict.UNIVERSE |
+| CLOB depth | ±0.1 reliability on $1M depth / 0.2 spread | killfeed pm_reading |
+| kalshi momentum | 7d carry on top-3 liquid (INCONCLUSIVE n=2) | E034 |
 | X scout | gateway+ledger, recon gate, history, extractor, outcomes | xscout/xextract/x_backtest, E033 |
 | X verdict | 76 calls 5d +0.33% — below bar, REFUTED (dnystedt carries) | E033 |
 | deep panel | weekly 2y x6, point-in-time; FINRA tapes cached forever | build_deep_panel.py |
