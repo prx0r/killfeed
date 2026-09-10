@@ -1,0 +1,190 @@
+{
+ "LITE": {
+  "p_bear": 0.0,
+  "coverage": 0.333,
+  "conditions": [
+   {
+    "id": "merchant_squeeze",
+    "q": "Merchant laser supply normalizes; LITE open-market buying ends",
+    "w": 3,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "margin_break",
+    "q": "LITE >30% off 2y high (margin fear priced)",
+    "w": 2,
+    "value": false,
+    "source": "price poll"
+   },
+   {
+    "id": "inP_pass",
+    "q": "InP substrate ASP hikes passed through (AXT raises sustained)",
+    "w": 1,
+    "value": null,
+    "source": "unresolved"
+   }
+  ]
+ },
+ "COHR": {
+  "p_bear": 0.0,
+  "coverage": 0.333,
+  "conditions": [
+   {
+    "id": "telemetry_shift",
+    "q": "Hyperscaler RFPs require telemetry/predictive diagnostics",
+    "w": 3,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "margin_break",
+    "q": "COHR >30% off 2y high",
+    "w": 2,
+    "value": false,
+    "source": "price poll"
+   },
+   {
+    "id": "inP_cost",
+    "q": "InP substrate costs rise faster than module ASPs",
+    "w": 1,
+    "value": null,
+    "source": "unresolved"
+   }
+  ]
+ },
+ "MRVL": {
+  "p_bear": 0.0,
+  "coverage": 0.833,
+  "conditions": [
+   {
+    "id": "bundle_win",
+    "q": "Credo (or rival) announces bundled PIC+DSP production win displacing MRVL socket",
+    "w": 3,
+    "value": false,
+    "source": "feedify:TheValueist/Credo read-through: first 2 PIC wins exclude DSP; bundled displacement not yet occurred"
+   },
+   {
+    "id": "share_loss",
+    "q": "MRVL >30% off 2y high",
+    "w": 2,
+    "value": false,
+    "source": "price poll"
+   },
+   {
+    "id": "cpo_skip",
+    "q": "Major CPO ramp skips pluggable DSP (architecture bypass)",
+    "w": 1,
+    "value": null,
+    "source": "unresolved"
+   }
+  ]
+ },
+ "NVDA": {
+  "p_bear": 0.0,
+  "coverage": 0.8,
+  "conditions": [
+   {
+    "id": "ai_chips",
+    "q": "AI-designed merchant silicon wins a hyperscaler socket from NVDA",
+    "w": 2,
+    "value": false,
+    "source": "no hyperscaler socket loss announced; allocation ongoing per 13F/capex prints"
+   },
+   {
+    "id": "share_loss",
+    "q": "NVDA >30% off 2y high",
+    "w": 2,
+    "value": false,
+    "source": "price poll"
+   },
+   {
+    "id": "capex_cut",
+    "q": "2+ hyperscalers cut AI capex guides same quarter",
+    "w": 1,
+    "value": null,
+    "source": "unresolved"
+   }
+  ]
+ },
+ "AVGO": {
+  "p_bear": 0.0,
+  "coverage": 0.25,
+  "conditions": [
+   {
+    "id": "bom_control",
+    "q": "Hyperscaler specifies module BOM excluding AVGO content (design loss)",
+    "w": 3,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "share_loss",
+    "q": "AVGO >30% off 2y high",
+    "w": 1,
+    "value": false,
+    "source": "price poll"
+   }
+  ]
+ },
+ "PANW": {
+  "p_bear": 0.0,
+  "coverage": 0.25,
+  "conditions": [
+   {
+    "id": "margin_crack",
+    "q": "Gross margin declines 2+ quarters (platform discounting)",
+    "w": 3,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "share_loss",
+    "q": "PANW >30% off 2y high",
+    "w": 1,
+    "value": false,
+    "source": "price poll"
+   }
+  ]
+ },
+ "CSCO": {
+  "p_bear": 0.0,
+  "coverage": 0.333,
+  "conditions": [
+   {
+    "id": "share_loss",
+    "q": "Arista takes 2+ hyperscaler switching deals from CSCO",
+    "w": 2,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "weak",
+    "q": "CSCO >20% off 2y high",
+    "w": 1,
+    "value": false,
+    "source": "price poll"
+   }
+  ]
+ },
+ "CRWD": {
+  "p_bear": 0.0,
+  "coverage": 0.25,
+  "conditions": [
+   {
+    "id": "margin_crack",
+    "q": "Gross margin declines 2+ quarters (AI-detection commoditized)",
+    "w": 3,
+    "value": null,
+    "source": "unresolved"
+   },
+   {
+    "id": "share_loss",
+    "q": "CRWD >30% off 2y high",
+    "w": 1,
+    "value": false,
+    "source": "price poll"
+   }
+  ]
+ }
+}

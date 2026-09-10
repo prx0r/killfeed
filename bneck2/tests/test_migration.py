@@ -342,6 +342,23 @@ class TestEdges(unittest.TestCase):
             g, {"Y": {"form4": 2, "deal": 0, "base4": 3}}, "2026-09-10")
         self.assertEqual(m2, [])
 
+    def test_bearcase_boolean(self):
+        from bneck2 import bearcase as B
+        doc = {"trees": {"T": [{"id": "a", "w": 3, "poll": "manual", "q": "x"},
+                               {"id": "b", "w": 1, "poll": "price_vs_high",
+                                "ticker": "T", "below": 0.7, "q": "y"}]},
+               "states": {"T": {"a": {"value": True, "source": "t"}}}}
+        out = B.evaluate(doc, {})
+        self.assertEqual(out["T"]["p_bear"], 1.0)
+        self.assertEqual(out["T"]["coverage"], 0.75)
+        import datetime as _dt
+        base = _dt.date(2024, 1, 1)
+        px = {"T": {(base + _dt.timedelta(days=i)).isoformat(): 100.0
+                    for i in range(250)}}
+        out2 = B.evaluate(doc, px)
+        self.assertEqual(out2["T"]["p_bear"], 0.75)
+        self.assertIsNone(B.poll_price({"ticker": "ZZ"}, {}))
+
     def test_target_workup(self):
         import json
         import subprocess
